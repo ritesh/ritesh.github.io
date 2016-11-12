@@ -1,0 +1,37 @@
+baseurl= "http://ritesh.github.io"
+languageCode= "en-gb"
+pygmentsstyle = "vim"
+theme = "internet-weblog"
+title= "Blog"
+Paginate = 10
+SectionPagesMenu = "main"
+
+[author]
+	Handle = "rsinha"
+	FirstName = "Ritesh"
+	LastName = "Sinha"
+	AboutPage = "/about"
+	Location = "London, UK"
+[params]
+	Description = "Stuff I rant about"
+	ShowCopyright = true 
+	RSSEnabled = true 
+	RSSSections = ["Posts"] 
+
+[taxonomies]
+	tag = "tags"
+	category = "categories"
+	series = "series"
+
+[[menu.main]]
+  name = "Posts"
+  weight = 1
+	identifier = "posts"
+  url = "/posts/"
+
+#[[menu.main]]
+# name = "Snippets"
+# weight = 2
+#	identifier = "snippets"
+# url = "/snippets/"
+
