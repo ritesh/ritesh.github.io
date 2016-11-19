@@ -5,6 +5,7 @@ theme = "internet-weblog"
 title= "Blog"
 Paginate = 10
 SectionPagesMenu = "main"
+canonifyurls = true
 
 [author]
 	Handle = "rsinha"
