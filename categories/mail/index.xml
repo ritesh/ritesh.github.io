@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog - Mail</title>
-    <link>http://ritesh.github.io/categories/mail/</link>
+    <link>https://ritesh.github.io/categories/mail/</link>
     <description>All entries in Mail on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Sun, 06 May 2012 10:00:18 +0000</lastBuildDate>
-    <atom:link href="http://ritesh.github.io/categories/mail/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ritesh.github.io/categories/mail/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>No Push Email</title>
-        <link>http://ritesh.github.io/2012/05/06/no-push-email/</link>
+        <link>https://ritesh.github.io/2012/05/06/no-push-email/</link>
         <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/05/06/no-push-email/</guid>
+        <guid>https://ritesh.github.io/2012/05/06/no-push-email/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve had a Gmail account for the last few years and the number of emails I get every day varies between ten to thirty. Out of the emails I receive, there are probably five or six emails per week that require either my attention or a reply. The majority of these are spammy emails that come from Indian companies with dubious privacy policies. I remember unsubscribing from most of them but I still keep getting emails from them or their &amp;lsquo;selected&amp;rsquo; partners (Find your life partner! Find a new job!). Keeping up with filtering emails is annoying especially if you primarily rely on your phone for managing email. Getting constantly notified about emails that you don&amp;rsquo;t care to read is both annoying and distracting.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;rsquo;ve owned a smartphone in the last few years, the first thing you probably did was setup up push email (either Exchange or IMAP IDLE). This is definitely the case if you&amp;rsquo;ve owned an Android device where it is the default behaviour. This is great if you rely on your Gmail/Google Apps/Exchange account for work but not useful at all if most of the email you receive is borderline spam. In most cases, the majority  of your friends probably send you messages on social sites rather than write you an email.&lt;/p&gt;

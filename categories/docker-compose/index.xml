@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog - Docker Compose</title>
-    <link>http://ritesh.github.io/categories/docker-compose/</link>
+    <link>https://ritesh.github.io/categories/docker-compose/</link>
     <description>All entries in Docker Compose on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Fri, 10 Jul 2015 14:49:50 +0000</lastBuildDate>
-    <atom:link href="http://ritesh.github.io/categories/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ritesh.github.io/categories/docker-compose/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Building Dockerized Application Security Scanners</title>
-        <link>http://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</link>
+        <link>https://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</link>
         <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</guid>
+        <guid>https://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</guid>
         <description>
 
 &lt;p&gt;I read an &lt;a href=&#34;https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/&#34;&gt;interesting post&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/anshuman_bh&#34;&gt;@anshuman_bh&lt;/a&gt; on automating ZAP scans for dockerized web applications. At the time, I was exploring &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;docker compose&lt;/a&gt; (formerly fig) as a way to &amp;ldquo;container-ize&amp;rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that &lt;code&gt;docker-compose&lt;/code&gt; would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &amp;ldquo;glue&amp;rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.&lt;/p&gt;

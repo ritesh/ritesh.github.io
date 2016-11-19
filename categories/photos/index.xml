@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog - Photos</title>
-    <link>http://ritesh.github.io/categories/photos/</link>
+    <link>https://ritesh.github.io/categories/photos/</link>
     <description>All entries in Photos on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Tue, 21 May 2013 22:11:18 +0000</lastBuildDate>
-    <atom:link href="http://ritesh.github.io/categories/photos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ritesh.github.io/categories/photos/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>More Black &amp; White</title>
-        <link>http://ritesh.github.io/2013/05/21/more-black-white/</link>
+        <link>https://ritesh.github.io/2013/05/21/more-black-white/</link>
         <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/05/21/more-black-white/</guid>
+        <guid>https://ritesh.github.io/2013/05/21/more-black-white/</guid>
         <description>&lt;p&gt;I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other.
 Found an old photo in Lightroom and decided to mess about with it. I think it is about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; a stop underexposed, but I like it anyway.&lt;/p&gt;
 
@@ -31,10 +31,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Brussels</title>
-        <link>http://ritesh.github.io/2013/05/11/brussels/</link>
+        <link>https://ritesh.github.io/2013/05/11/brussels/</link>
         <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/05/11/brussels/</guid>
+        <guid>https://ritesh.github.io/2013/05/11/brussels/</guid>
         <description>&lt;p&gt;Found this while digging through some old photos.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/riteshkumarsinha/8729206759&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7394/8729206759_b5c581e91b_h.jpg&#34; alt=&#34;DSCF0925.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -45,10 +45,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Finally, a Flickr Account</title>
-        <link>http://ritesh.github.io/2012/09/30/finally-a-flickr-account/</link>
+        <link>https://ritesh.github.io/2012/09/30/finally-a-flickr-account/</link>
         <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/09/30/finally-a-flickr-account/</guid>
+        <guid>https://ritesh.github.io/2012/09/30/finally-a-flickr-account/</guid>
         <description>&lt;p&gt;&lt;a href=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34;&gt;&lt;img src=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34; alt=&#34;Glasgow Central&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Decided to host my images on Flickr as I&amp;rsquo;m hoping they&amp;rsquo;ll do a better job of backing them up than me. As I don&amp;rsquo;t develop photos myself, it cost quite a bit to get just one roll developed. I&amp;rsquo;ve since moved to a fixed lens digital camera and I hope to put up more nice pictures soon.&lt;/p&gt;
@@ -59,10 +59,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Creating an Animated GIF</title>
-        <link>http://ritesh.github.io/2011/11/12/creating-an-animated-gif/</link>
+        <link>https://ritesh.github.io/2011/11/12/creating-an-animated-gif/</link>
         <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2011/11/12/creating-an-animated-gif/</guid>
+        <guid>https://ritesh.github.io/2011/11/12/creating-an-animated-gif/</guid>
         <description>&lt;p&gt;There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, &lt;a href=&#34;http://imagemagick.org&#34;&gt;ImageMagick&lt;/a&gt; can help.&lt;/p&gt;
 
 &lt;p&gt;ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&amp;rsquo;ve ever used. Take for example, the task of converting a BMP image to JPEG.&lt;/p&gt;

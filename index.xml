@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog</title>
-    <link>http://ritesh.github.io/</link>
+    <link>https://ritesh.github.io/</link>
     <description>All entries on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Fri, 10 Jul 2015 14:49:50 +0000</lastBuildDate>
-    <atom:link href="http://ritesh.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ritesh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Building Dockerized Application Security Scanners</title>
-        <link>http://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</link>
+        <link>https://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</link>
         <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</guid>
+        <guid>https://ritesh.github.io/2015/07/10/building-dockerized-application-security-scanners/</guid>
         <description>
 
 &lt;p&gt;I read an &lt;a href=&#34;https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/&#34;&gt;interesting post&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/anshuman_bh&#34;&gt;@anshuman_bh&lt;/a&gt; on automating ZAP scans for dockerized web applications. At the time, I was exploring &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;docker compose&lt;/a&gt; (formerly fig) as a way to &amp;ldquo;container-ize&amp;rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that &lt;code&gt;docker-compose&lt;/code&gt; would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &amp;ldquo;glue&amp;rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.&lt;/p&gt;
@@ -55,10 +55,10 @@
       
       <item>
         <title>Inhibiting Sleep on Xubuntu 14.04</title>
-        <link>http://ritesh.github.io/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
+        <link>https://ritesh.github.io/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
         <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
+        <guid>https://ritesh.github.io/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
         <description>&lt;p&gt;My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.&lt;/p&gt;
 
 &lt;p&gt;When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&amp;rsquo;t know how to unlock it when it wakes back up. Instead of the disk unlocking, I get a ton of ATA error messages about a missing disk, the laptop locks up and needs to be power cycled. To save me from myself, I removed the &amp;ldquo;Sleep&amp;rdquo; and &amp;ldquo;Hibernate&amp;rdquo; (can&amp;rsquo;t remember if this was already disabled) options from the logout menu, but there was still a chance that I might close the lid and lose hours of work.&lt;/p&gt;
@@ -81,10 +81,10 @@ HandleLidSwitch=ignore
       
       <item>
         <title>Chunky binaries and bsdiff</title>
-        <link>http://ritesh.github.io/2015/01/14/chunky-binaries-and-bsdiff/</link>
+        <link>https://ritesh.github.io/2015/01/14/chunky-binaries-and-bsdiff/</link>
         <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2015/01/14/chunky-binaries-and-bsdiff/</guid>
+        <guid>https://ritesh.github.io/2015/01/14/chunky-binaries-and-bsdiff/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language &lt;em&gt;du jour&lt;/em&gt; for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;rsquo;re not familiar with go, I highly recommend that you check out &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:&lt;/p&gt;
@@ -135,10 +135,10 @@ chmod +x binary
       
       <item>
         <title>Another day, another blog</title>
-        <link>http://ritesh.github.io/2014/11/17/another-day/</link>
+        <link>https://ritesh.github.io/2014/11/17/another-day/</link>
         <pubDate>Mon, 17 Nov 2014 22:41:00 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2014/11/17/another-day/</guid>
+        <guid>https://ritesh.github.io/2014/11/17/another-day/</guid>
         <description>&lt;pre&gt;
 Teathet6quiu yah4ooxi7AhB ciezei1Gahwu Quui2queixie 
 eeveahuy2ENi eoj8sa5iew4S eibeo8AuPhoo eeZe4peighoh 
@@ -168,10 +168,10 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
       
       <item>
         <title>Getting Live USB sticks to boot consistently</title>
-        <link>http://ritesh.github.io/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
+        <link>https://ritesh.github.io/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
         <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
+        <guid>https://ritesh.github.io/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
         <description>&lt;p&gt;Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &amp;ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&amp;rsquo;s hit and miss on my desktop. I&amp;rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&amp;rsquo;ve found great way around it.&lt;/p&gt;
 
 &lt;p&gt;Enter the &lt;a href=&#34;http://www.plop.at/en/bootmanager/index.html&#34;&gt;plop boot manager&lt;/a&gt;. Install this nifty little tool and it gives you a boot menu before windows starts up. You can now select your USB stick and it should boot, provided that unetbootin or a similar tool did it&amp;rsquo;s job.&lt;/p&gt;
@@ -182,10 +182,10 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
       
       <item>
         <title>Geared bikes</title>
-        <link>http://ritesh.github.io/2013/08/10/geared-bikes/</link>
+        <link>https://ritesh.github.io/2013/08/10/geared-bikes/</link>
         <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/08/10/geared-bikes/</guid>
+        <guid>https://ritesh.github.io/2013/08/10/geared-bikes/</guid>
         <description>&lt;p&gt;Got a sweet road bike off Gumtree. I thought the gears weren&amp;rsquo;t working, having never ridden a geared bike before.&lt;/p&gt;
 
 &lt;p&gt;Me: &amp;ldquo;The gears on this bike don&amp;rsquo;t work&amp;rdquo;&lt;/p&gt;
@@ -208,10 +208,10 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
       
       <item>
         <title>More Black &amp; White</title>
-        <link>http://ritesh.github.io/2013/05/21/more-black-white/</link>
+        <link>https://ritesh.github.io/2013/05/21/more-black-white/</link>
         <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/05/21/more-black-white/</guid>
+        <guid>https://ritesh.github.io/2013/05/21/more-black-white/</guid>
         <description>&lt;p&gt;I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other.
 Found an old photo in Lightroom and decided to mess about with it. I think it is about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; a stop underexposed, but I like it anyway.&lt;/p&gt;
 
@@ -225,10 +225,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Brussels</title>
-        <link>http://ritesh.github.io/2013/05/11/brussels/</link>
+        <link>https://ritesh.github.io/2013/05/11/brussels/</link>
         <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2013/05/11/brussels/</guid>
+        <guid>https://ritesh.github.io/2013/05/11/brussels/</guid>
         <description>&lt;p&gt;Found this while digging through some old photos.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/riteshkumarsinha/8729206759&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7394/8729206759_b5c581e91b_h.jpg&#34; alt=&#34;DSCF0925.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -239,10 +239,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Finally, a Flickr Account</title>
-        <link>http://ritesh.github.io/2012/09/30/finally-a-flickr-account/</link>
+        <link>https://ritesh.github.io/2012/09/30/finally-a-flickr-account/</link>
         <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/09/30/finally-a-flickr-account/</guid>
+        <guid>https://ritesh.github.io/2012/09/30/finally-a-flickr-account/</guid>
         <description>&lt;p&gt;&lt;a href=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34;&gt;&lt;img src=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34; alt=&#34;Glasgow Central&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Decided to host my images on Flickr as I&amp;rsquo;m hoping they&amp;rsquo;ll do a better job of backing them up than me. As I don&amp;rsquo;t develop photos myself, it cost quite a bit to get just one roll developed. I&amp;rsquo;ve since moved to a fixed lens digital camera and I hope to put up more nice pictures soon.&lt;/p&gt;
@@ -253,10 +253,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Giving up on Linux desktop</title>
-        <link>http://ritesh.github.io/2012/09/15/giving-up-on-native-linux/</link>
+        <link>https://ritesh.github.io/2012/09/15/giving-up-on-native-linux/</link>
         <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/09/15/giving-up-on-native-linux/</guid>
+        <guid>https://ritesh.github.io/2012/09/15/giving-up-on-native-linux/</guid>
         <description>&lt;p&gt;I recently acquired a shiny new-ish desktop from a friend. Intel Core-i7 with 8 cores and a whopping 12 GB of RAM with a high-end ATI Radeon graphics card. It came with Windows 7 pre-installed and I decided to install Ubuntu 12.04 amd64 as a dual boot option. Initially, I had some trouble getting it to install on the inbuilt SSD (which should have been the first warning sign in retrospect). Having gotten it to install on the slower 500GB HDD, I was quite happy with it until I ran into the first few glitches. These issues were small to begin with but they irked me enough to get rid of Ubuntu altogether from the system.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -279,10 +279,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>No Push Email</title>
-        <link>http://ritesh.github.io/2012/05/06/no-push-email/</link>
+        <link>https://ritesh.github.io/2012/05/06/no-push-email/</link>
         <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/05/06/no-push-email/</guid>
+        <guid>https://ritesh.github.io/2012/05/06/no-push-email/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve had a Gmail account for the last few years and the number of emails I get every day varies between ten to thirty. Out of the emails I receive, there are probably five or six emails per week that require either my attention or a reply. The majority of these are spammy emails that come from Indian companies with dubious privacy policies. I remember unsubscribing from most of them but I still keep getting emails from them or their &amp;lsquo;selected&amp;rsquo; partners (Find your life partner! Find a new job!). Keeping up with filtering emails is annoying especially if you primarily rely on your phone for managing email. Getting constantly notified about emails that you don&amp;rsquo;t care to read is both annoying and distracting.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;rsquo;ve owned a smartphone in the last few years, the first thing you probably did was setup up push email (either Exchange or IMAP IDLE). This is definitely the case if you&amp;rsquo;ve owned an Android device where it is the default behaviour. This is great if you rely on your Gmail/Google Apps/Exchange account for work but not useful at all if most of the email you receive is borderline spam. In most cases, the majority  of your friends probably send you messages on social sites rather than write you an email.&lt;/p&gt;
@@ -299,10 +299,10 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
       
       <item>
         <title>Prevent accidental rm</title>
-        <link>http://ritesh.github.io/2012/05/05/prevent-accidental-rm/</link>
+        <link>https://ritesh.github.io/2012/05/05/prevent-accidental-rm/</link>
         <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2012/05/05/prevent-accidental-rm/</guid>
+        <guid>https://ritesh.github.io/2012/05/05/prevent-accidental-rm/</guid>
         <description>&lt;p&gt;If you&amp;rsquo;re anything like me, you might casually type &lt;code&gt;rm -rf *&lt;/code&gt; in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.&lt;/p&gt;
 
 &lt;p&gt;There is simple hack to force &lt;code&gt;rm&lt;/code&gt; to prompt you to think about the files that are going to be deleted. Create a file called &amp;lsquo;-i&amp;rsquo; in the directory whose contents you want to protect from accidental deletion.&lt;/p&gt;
@@ -327,10 +327,10 @@ remove 100.txt?
       
       <item>
         <title>Do batch things well</title>
-        <link>http://ritesh.github.io/2011/12/04/do-batch-things-well/</link>
+        <link>https://ritesh.github.io/2011/12/04/do-batch-things-well/</link>
         <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2011/12/04/do-batch-things-well/</guid>
+        <guid>https://ritesh.github.io/2011/12/04/do-batch-things-well/</guid>
         <description>&lt;p&gt;I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# for file in `find . -type f`; do somescript.py $file; done
@@ -354,10 +354,10 @@ remove 100.txt?
       
       <item>
         <title>Revisiting MIUI</title>
-        <link>http://ritesh.github.io/2011/12/03/revisiting-miui/</link>
+        <link>https://ritesh.github.io/2011/12/03/revisiting-miui/</link>
         <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2011/12/03/revisiting-miui/</guid>
+        <guid>https://ritesh.github.io/2011/12/03/revisiting-miui/</guid>
         <description>
 
 &lt;p&gt;After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself. I&amp;rsquo;m usually reluctant to switch Android ROMs as I&amp;rsquo;ve switched to using 2 factor authentication for my Google account and having to reset the authenticator etc is annoying.&lt;/p&gt;
@@ -387,10 +387,10 @@ Another little useful feature was a birthday reminder notification. I&amp;rsquo;
       
       <item>
         <title>Creating an Animated GIF</title>
-        <link>http://ritesh.github.io/2011/11/12/creating-an-animated-gif/</link>
+        <link>https://ritesh.github.io/2011/11/12/creating-an-animated-gif/</link>
         <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2011/11/12/creating-an-animated-gif/</guid>
+        <guid>https://ritesh.github.io/2011/11/12/creating-an-animated-gif/</guid>
         <description>&lt;p&gt;There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, &lt;a href=&#34;http://imagemagick.org&#34;&gt;ImageMagick&lt;/a&gt; can help.&lt;/p&gt;
 
 &lt;p&gt;ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&amp;rsquo;ve ever used. Take for example, the task of converting a BMP image to JPEG.&lt;/p&gt;
@@ -411,10 +411,10 @@ Another little useful feature was a birthday reminder notification. I&amp;rsquo;
       
       <item>
         <title>Why I like Python</title>
-        <link>http://ritesh.github.io/2011/11/09/hello-world/</link>
+        <link>https://ritesh.github.io/2011/11/09/hello-world/</link>
         <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
         
-        <guid>http://ritesh.github.io/2011/11/09/hello-world/</guid>
+        <guid>https://ritesh.github.io/2011/11/09/hello-world/</guid>
         <description>&lt;p&gt;I&amp;rsquo;m a big fan of Python, especially its syntax which feels close to natural language. My programming skills are average, as I&amp;rsquo;ve never done any serious full time development, apart from some code I wrote for my MSc project. The project was mostly built using &lt;a href=&#34;http://scrapy.org/&#34;&gt;scrapy&lt;/a&gt; with little hacks thrown in to implement concurrency for processing data. Nowadays, I tend to use Python mostly as a glue language to automate stuff when bash doesn&amp;rsquo;t cut it. Stuff like this makes me like it even more:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# python -m SimpleHTTPServer
