@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog - Android</title>
-    <link>https://ritesh.github.io/categories/android/</link>
+    <link>https://blog.rsinha.org/categories/android/</link>
     <description>All entries in Android on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Sat, 03 Dec 2011 11:28:59 +0000</lastBuildDate>
-    <atom:link href="https://ritesh.github.io/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rsinha.org/categories/android/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Revisiting MIUI</title>
-        <link>https://ritesh.github.io/2011/12/03/revisiting-miui/</link>
+        <link>https://blog.rsinha.org/2011/12/03/revisiting-miui/</link>
         <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
         
-        <guid>https://ritesh.github.io/2011/12/03/revisiting-miui/</guid>
+        <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
         <description>
 
 &lt;p&gt;After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself. I&amp;rsquo;m usually reluctant to switch Android ROMs as I&amp;rsquo;ve switched to using 2 factor authentication for my Google account and having to reset the authenticator etc is annoying.&lt;/p&gt;

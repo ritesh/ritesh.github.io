@@ -3,21 +3,21 @@
   <channel>
 
     <title>@rsinha’s Blog - Sh</title>
-    <link>https://ritesh.github.io/categories/sh/</link>
+    <link>https://blog.rsinha.org/categories/sh/</link>
     <description>All entries in Sh on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Sun, 04 Dec 2011 11:24:19 +0000</lastBuildDate>
-    <atom:link href="https://ritesh.github.io/categories/sh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rsinha.org/categories/sh/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Do batch things well</title>
-        <link>https://ritesh.github.io/2011/12/04/do-batch-things-well/</link>
+        <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
         <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
         
-        <guid>https://ritesh.github.io/2011/12/04/do-batch-things-well/</guid>
+        <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
         <description>&lt;p&gt;I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# for file in `find . -type f`; do somescript.py $file; done
