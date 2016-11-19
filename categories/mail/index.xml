@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s Blog - Mail</title>
+    <title>@rsinha’s blog - Mail</title>
     <link>https://blog.rsinha.org/categories/mail/</link>
-    <description>All entries in Mail on Blog</description>
+    <description>All entries in Mail on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     

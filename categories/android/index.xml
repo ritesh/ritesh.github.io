@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s Blog - Android</title>
+    <title>@rsinha’s blog - Android</title>
     <link>https://blog.rsinha.org/categories/android/</link>
-    <description>All entries in Android on Blog</description>
+    <description>All entries in Android on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     

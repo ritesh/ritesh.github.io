@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s Blog - Bikes</title>
+    <title>@rsinha’s blog - Bikes</title>
     <link>https://blog.rsinha.org/categories/bikes/</link>
-    <description>All entries in Bikes on Blog</description>
+    <description>All entries in Bikes on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     

@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <title>Linux &middot; @rsinha’s Blog</title>
+    <title>Linux &middot; @rsinha’s blog</title>
 
     <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
@@ -17,14 +17,14 @@
 
 
     
-		<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="Blog" />
+		<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
 		
   </head>
   <body class="site">
 
 <header>
   <nav>
-    <h1><a href="/">@rsinha</a>’s Blog.</h1>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
     <div class="menu">
       
       <ul>
@@ -346,12 +346,12 @@
       <div>
         <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
         <p>
-          I’m a software security person who likes to learn new things and share some of my experiences here. Find me at @rsinha on twitter.
+          I’m an information security person who loves learning new things and am easily <a href="https://xkcd.com/356/">nerd-sniped</a>. I'm not a regular blogger, you may find old stuff here. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
 
         </p>
       </div>
       <div>
-          <h3><a href="https://www.flickr.com/photos//">Photo Stream</a></h3>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
           <div id="photos"></div>
         </div>
       </div>
@@ -375,7 +375,7 @@
   
   $(function() {
     
-    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=&format=json&jsoncallback=?", function(data) {
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
       iweblog.application.displayImages(data, 8);
     });
   });
