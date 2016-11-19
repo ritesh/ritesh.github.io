@@ -6,7 +6,6 @@ title= "Blog"
 Paginate = 10
 SectionPagesMenu = "main"
 canonifyurls = false
-googleAnalytics = "UA-65020746-1"
 
 [author]
 	Handle = "rsinha"
