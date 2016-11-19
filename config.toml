@@ -1,11 +1,11 @@
-baseurl= "https://ritesh.github.io/"
+baseurl= "https://blog.rsinha.org/"
 languageCode= "en-gb"
 pygmentsstyle = "vim"
 theme = "internet-weblog"
 title= "Blog"
 Paginate = 10
 SectionPagesMenu = "main"
-canonifyurls = true
+canonifyurls = false
 googleAnalytics = "UA-65020746-1"
 
 [author]
