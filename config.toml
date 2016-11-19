@@ -1,4 +1,4 @@
-baseurl= "http://ritesh.github.io"
+baseurl= "https://ritesh.github.io/"
 languageCode= "en-gb"
 pygmentsstyle = "vim"
 theme = "internet-weblog"
