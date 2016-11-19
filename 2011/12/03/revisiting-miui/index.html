@@ -122,7 +122,7 @@ Another little useful feature was a birthday reminder notification. I&rsquo;m no
   
   $(function() {
     
-    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=&format=json&jsoncallback=?", function(data) {
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=&format=json&jsoncallback=?", function(data) {
       iweblog.application.displayImages(data, 8);
     });
   });
