@@ -2,7 +2,7 @@ baseurl= "https://blog.rsinha.org/"
 languageCode= "en-gb"
 pygmentsstyle = "vim"
 theme = "internet-weblog"
-title= "Blog"
+title= "blog"
 Paginate = 10
 SectionPagesMenu = "main"
 canonifyurls = false
@@ -13,6 +13,7 @@ canonifyurls = false
 	LastName = "Sinha"
 	AboutPage = "/about"
 	Location = "London, UK"
+	FlickrID = "55603500@N04"
 [params]
 	Description = "Stuff I rant about"
 	ShowCopyright = true 
