@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog - Bike</title>
-    <link>https://blog.rsinha.org/tags/bike/</link>
-    <description>All entries in Bike on blog</description>
+    <title>@rsinha’s blog</title>
+    <link>https://blog.rsinha.org/tags/bike/index.xml</link>
+    <description>All entries on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    <lastBuildDate>Sat, 10 Aug 2013 18:08:46 +0000</lastBuildDate>
-    <atom:link href="https://blog.rsinha.org/tags/bike/index.xml" rel="self" type="application/rss+xml" />
+    
+    <atom:link href="/tags/bike/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
