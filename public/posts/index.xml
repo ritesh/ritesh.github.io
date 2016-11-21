@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog - Posts</title>
-    <link>https://blog.rsinha.org/posts/</link>
-    <description>All entries in Posts on blog</description>
+    <title>@rsinha’s blog - Posts-rsses</title>
+    <link>https://blog.rsinha.org/posts/index.xml</link>
+    <description>All entries in Posts-rsses on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
     <lastBuildDate>Sat, 19 Nov 2016 22:17:58 +0000</lastBuildDate>
-    <atom:link href="https://blog.rsinha.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>
@@ -26,7 +26,7 @@
 
 &lt;p&gt;Hugo&amp;rsquo;s written in Go, which means that all you need to get started is a binary of Hugo somewhere in your &lt;code&gt;$PATH&lt;/code&gt;. That&amp;rsquo;s it. Everything it needs is baked into this statically compiled binary. Go code is easy to follow and the template code used by Hugo is Go&amp;rsquo;s &lt;code&gt;html/template&lt;/code&gt; which is available as part of the standard library. Besides, all the cool kids today use go for both personal and professional projects and I didn&amp;rsquo;t want to miss out.&lt;/p&gt;
 
-&lt;p&gt;Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of &lt;a href=&#34;https://www.staticgen.com/&#34;&gt;static site generators&lt;/a&gt; available today. You write your blog posts in markdown and they are rendered to HTML. They layout of your content and the look of your blog is decided by &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;community created themes&lt;/a&gt; that you can either customise or use out of the box.  If you&amp;rsquo;re used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn&amp;rsquo;t give you an editor or a point and click interface to add upload and add images, for example. But it&amp;rsquo;s not just for people who are suckers for punishment, it&amp;rsquo;s a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn&amp;rsquo;t hold my breath). If you&amp;rsquo;re the type of person who avoids Finder and uses &lt;code&gt;mv&lt;/code&gt; &amp;amp; &lt;code&gt;cp&lt;/code&gt; instead, Hugo is probably for you.&lt;/p&gt;
+&lt;p&gt;Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of &lt;a href=&#34;https://www.staticgen.com/&#34;&gt;static site generators&lt;/a&gt; available today. You write your blog posts in markdown and they are rendered to HTML. The layout of your content and the look of your blog is decided by &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;community created themes&lt;/a&gt; that you can either customise or use out of the box.  If you&amp;rsquo;re used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn&amp;rsquo;t give you an editor or a point and click interface to add upload and add images, for example. But it&amp;rsquo;s not just for people who are suckers for punishment, it&amp;rsquo;s a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn&amp;rsquo;t hold my breath). If you&amp;rsquo;re the type of person who avoids Finder and uses &lt;code&gt;mv&lt;/code&gt; &amp;amp; &lt;code&gt;cp&lt;/code&gt; instead, Hugo is probably for you.&lt;/p&gt;
 
 &lt;p&gt;This is not meant to be a Hugo tutorial; if you want to learn how to start out with a Hugo blog or website, try the &lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
 
@@ -82,7 +82,7 @@ cd ..
 
 &lt;p&gt;Overall, I&amp;rsquo;m quite happy with this setup and I looking to tweak it a little more to my liking as and when I have free time. I&amp;rsquo;d highly recommend it for anyone looking to move over from Jekyll or for people who don&amp;rsquo;t need self-hosted WordPress sites. It&amp;rsquo;s a fun learning experience and it creates a site that is free from bloat and does not require security patches or other maintenance.&lt;/p&gt;
 
-&lt;p&gt;Also, if you&amp;rsquo;re wandering why this is categorised as yak-shaving, read the &lt;a href=&#34;https://en.wiktionary.org/wiki/yak_shaving&#34;&gt;Wiktionary article&lt;/a&gt; to know more.&lt;/p&gt;
+&lt;p&gt;Also, if you&amp;rsquo;re wondering why this is categorised as yak-shaving, read the &lt;a href=&#34;https://en.wiktionary.org/wiki/yak_shaving&#34;&gt;Wiktionary article&lt;/a&gt; to know more.&lt;/p&gt;
 </description>
       </item>
       
@@ -189,18 +189,18 @@ HandleLidSwitch=ignore
 
 &lt;p&gt;The clue is in the name; &lt;code&gt;bsdiff&lt;/code&gt; lets you &lt;code&gt;diff&lt;/code&gt; an old binary with a new binary and generates a patch for you. You take this patch, give it to &lt;code&gt;bspatch&lt;/code&gt; along with an old binary and it gets transformed to the new one. If the changes between the binaries are small, the generated patch file (as you&amp;rsquo;d think) is tiny. On average, the patch file is 2-3% of the full binary for the application I&amp;rsquo;m working on. Instead of copying over the binary to a production host once I&amp;rsquo;ve compiled my application, I copy the patch instead:&lt;/p&gt;
 
-
-mv binary binary.old
+&lt;div class=&#34;highlight&#34; style=&#34;background: #000000&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mv binary binary.old
 go build
 bsdiff binary.old binary binary_patch
 scp binary_patch /path/to/production/binary
 
-# On production host
+&lt;span style=&#34;color: #000080&#34;&gt;# On production host&lt;/span&gt;
 mv binary binary.old
 bspatch binary.old binary binary_patch
-# Need to do this because the binary loses +x 
+&lt;span style=&#34;color: #000080&#34;&gt;# Need to do this because the binary loses +x &lt;/span&gt;
 chmod +x binary
-# All done
+&lt;span style=&#34;color: #000080&#34;&gt;# All done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by &lt;code&gt;go build&lt;/code&gt;, but there&amp;rsquo;s no reason why it shouldn&amp;rsquo;t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a &lt;code&gt;SIGHUP&lt;/code&gt;. Go gives you &lt;code&gt;&amp;quot;os/signal&amp;quot;&lt;/code&gt; but I haven&amp;rsquo;t had the chance to play around with it yet.&lt;/p&gt;
