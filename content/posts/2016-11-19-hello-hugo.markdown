@@ -13,7 +13,7 @@ I had been running this blog using [Jekyll](https://jekyllrb.com/) for a while n
 ### Why, Hugo?
 Hugo's written in Go, which means that all you need to get started is a binary of Hugo somewhere in your `$PATH`. That's it. Everything it needs is baked into this statically compiled binary. Go code is easy to follow and the template code used by Hugo is Go's `html/template` which is available as part of the standard library. Besides, all the cool kids today use go for both personal and professional projects and I didn't want to miss out. 
 
-Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of [static site generators](https://www.staticgen.com/) available today. You write your blog posts in markdown and they are rendered to HTML. They layout of your content and the look of your blog is decided by [community created themes](http://themes.gohugo.io/) that you can either customise or use out of the box.  If you're used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn't give you an editor or a point and click interface to add upload and add images, for example. But it's not just for people who are suckers for punishment, it's a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn't hold my breath). If you're the type of person who avoids Finder and uses `mv` & `cp` instead, Hugo is probably for you.
+Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of [static site generators](https://www.staticgen.com/) available today. You write your blog posts in markdown and they are rendered to HTML. The layout of your content and the look of your blog is decided by [community created themes](http://themes.gohugo.io/) that you can either customise or use out of the box.  If you're used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn't give you an editor or a point and click interface to add upload and add images, for example. But it's not just for people who are suckers for punishment, it's a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn't hold my breath). If you're the type of person who avoids Finder and uses `mv` & `cp` instead, Hugo is probably for you.
 
 This is not meant to be a Hugo tutorial; if you want to learn how to start out with a Hugo blog or website, try the [official documentation](https://gohugo.io/overview/introduction/). 
 
@@ -68,7 +68,7 @@ Everything's set up and works fine for now, but there are a few things that I st
 
 Overall, I'm quite happy with this setup and I looking to tweak it a little more to my liking as and when I have free time. I'd highly recommend it for anyone looking to move over from Jekyll or for people who don't need self-hosted WordPress sites. It's a fun learning experience and it creates a site that is free from bloat and does not require security patches or other maintenance.
 
-Also, if you're wandering why this is categorised as yak-shaving, read the [Wiktionary article](https://en.wiktionary.org/wiki/yak_shaving) to know more.   
+Also, if you're wondering why this is categorised as yak-shaving, read the [Wiktionary article](https://en.wiktionary.org/wiki/yak_shaving) to know more.   
 
 
 
