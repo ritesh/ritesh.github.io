@@ -10,6 +10,7 @@ cd public
 # Add changes to git.
 git add -A
 
+
 # Commit changes.
 msg="rebuilding site `date`"
 if [ $# -eq 1 ]
@@ -22,3 +23,4 @@ git push origin master
 
 # Come Back
 cd ..
+git subtree push --prefix=public git@github.com:ritesh/ritesh.github.io.git master
