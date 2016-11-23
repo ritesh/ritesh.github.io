@@ -14,7 +14,7 @@ machine:
          
 dependencies:
   pre:
-    - bash ./ci-install.hugo.sh
+    - bash ./ci-install-hugo.sh
   cache_directories:
     - bin
 
