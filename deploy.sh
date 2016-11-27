@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-git subtree add --prefix=public git@github.com:ritesh/ritesh.github.io.git master --squash
+git subtree pull --prefix=public git@github.com:ritesh/ritesh.github.io.git master --squash
 hugo 
 
 # Commit changes.
