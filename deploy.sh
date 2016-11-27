@@ -20,5 +20,5 @@ git commit -m "$msg"
 
 # Come Back
 echo -e "\033[0;32mPushing subtree containing blog posts...\033[0m"
-git push origin `git subtree split --prefix=public ritesh-github-io:master`:master --force
+git push origin `git subtree split --prefix=public master`:master --force
 # git subtree push --prefix=public git@github.com:ritesh/ritesh.github.io.git master
