@@ -22,4 +22,4 @@ deployment:
   production:
     branch: master
     commands:
-     - bash ./deploy.sh
+     - bash ./deploy_ci.sh

@@ -15,4 +15,5 @@ if [ $# -eq 1 ]
 fi
 
 echo -e "\033[0;32mPushing subtree containing blog posts...\033[0m"
+git commit -m $msg
 git subtree push --prefix public public public/master
