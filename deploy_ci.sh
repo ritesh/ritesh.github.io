@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-git remote add -f public git@github.com:ritesh/ritesh.github.io.git master 
+git remote add -f public git@github.com:ritesh/ritesh.github.io.git
 
 git merge -s ours --no-commit public/master
 git read-tree --prefix=public/ -u public/master
