@@ -1,8 +1,10 @@
 #!/bin/bash
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-git subtree pull --prefix=public git@github.com:ritesh/ritesh.github.io.git master --squash
-git remote add -f ritesh-github-io git@github.com:ritesh/ritesh.github.io.git master 
+git remote add -f public git@github.com:ritesh/ritesh.github.io.git master 
+
+git merge -s ours --no-commit public/master
+git read-tree --prefix=public/ -u public/master
 
 hugo 
 
@@ -12,13 +14,5 @@ if [ $# -eq 1 ]
   then msg="$1"
 fi
 
-git add -A
-git commit -m "$msg"
-
-# Push source and build repos.
-# git push origin master
-
-# Come Back
 echo -e "\033[0;32mPushing subtree containing blog posts...\033[0m"
-git push origin `git subtree split --prefix=public master`:master --force
-# git subtree push --prefix=public git@github.com:ritesh/ritesh.github.io.git master
+git subtree push --prefix public public public/master
