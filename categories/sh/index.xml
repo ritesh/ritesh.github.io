@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog - Sh</title>
-    <link>https://blog.rsinha.org/categories/sh/</link>
-    <description>All entries in Sh on blog</description>
+    <title>@rsinha’s blog</title>
+    <link>https://blog.rsinha.org/categories/sh/index.xml</link>
+    <description>All entries on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    <lastBuildDate>Sun, 04 Dec 2011 11:24:19 +0000</lastBuildDate>
-    <atom:link href="https://blog.rsinha.org/categories/sh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <atom:link href="/categories/sh/index.xml" rel="self" type="application/rss+xml" />
     
       
       <item>

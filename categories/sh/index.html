@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ritesh">
     <meta name="description" content="Stuff I rant about">
-    <meta name="generator" content="Hugo 0.16" />
+    <meta name="generator" content="Hugo 0.17" />
 
     
     <title>Sh &middot; @rsinha’s blog</title>
@@ -73,7 +73,9 @@
 
   <p>
     
-      I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS. # for file in `find . -type f`; do somescript.py $file; done If you&rsquo;re relying on the output of find it is probably best to use the xargs option to find like so: # find . -type f -print0 | xargs -0 somescript.py Even better, you can avoid using xargs, instead use the exec option to find.
+      I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.
+# for file in `find . -type f`; do somescript.py $file; done  If you&rsquo;re relying on the output of find it is probably best to use the xargs option to find like so:
+# find . -type f -print0 | xargs -0 somescript.py  Even better, you can avoid using xargs, instead use the exec option to find.
     
   </p>
 
@@ -117,7 +119,7 @@
 
   
     <div class="footer_copyright">
-      &copy; 2016 <a href="/about">Ritesh Sinha</a>
+      &copy; 2017 <a href="/about">Ritesh Sinha</a>
        - Made in London, UK
     </div>
   

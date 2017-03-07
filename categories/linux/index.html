@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ritesh">
     <meta name="description" content="Stuff I rant about">
-    <meta name="generator" content="Hugo 0.16" />
+    <meta name="generator" content="Hugo 0.17" />
 
     
     <title>Linux &middot; @rsinha’s blog</title>
@@ -73,7 +73,8 @@
 
   <p>
     
-      My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists. When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&rsquo;t know how to unlock it when it wakes back up.
+      My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.
+When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&rsquo;t know how to unlock it when it wakes back up.
     
   </p>
 
@@ -155,7 +156,7 @@
 
   <p>
     
-      Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&rsquo;s hit and miss on my desktop. I&rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&rsquo;ve found great way around it. Enter the plop boot manager.
+      Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&rsquo;s hit and miss on my desktop. I&rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&rsquo;ve found great way around it.
     
   </p>
 
@@ -233,7 +234,8 @@
 
   <p>
     
-      If you&rsquo;re anything like me, you might casually type rm -rf * in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens. There is simple hack to force rm to prompt you to think about the files that are going to be deleted. Create a file called &lsquo;-i&rsquo; in the directory whose contents you want to protect from accidental deletion.
+      If you&rsquo;re anything like me, you might casually type rm -rf * in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.
+There is simple hack to force rm to prompt you to think about the files that are going to be deleted. Create a file called &lsquo;-i&rsquo; in the directory whose contents you want to protect from accidental deletion.
     
   </p>
 
@@ -274,7 +276,9 @@
 
   <p>
     
-      I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS. # for file in `find . -type f`; do somescript.py $file; done If you&rsquo;re relying on the output of find it is probably best to use the xargs option to find like so: # find . -type f -print0 | xargs -0 somescript.py Even better, you can avoid using xargs, instead use the exec option to find.
+      I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.
+# for file in `find . -type f`; do somescript.py $file; done  If you&rsquo;re relying on the output of find it is probably best to use the xargs option to find like so:
+# find . -type f -print0 | xargs -0 somescript.py  Even better, you can avoid using xargs, instead use the exec option to find.
     
   </p>
 
@@ -315,7 +319,8 @@
 
   <p>
     
-      There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&rsquo;t require any post processing, ImageMagick can help. ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&rsquo;ve ever used.
+      There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&rsquo;t require any post processing, ImageMagick can help.
+ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&rsquo;ve ever used.
     
   </p>
 
@@ -359,7 +364,7 @@
 
   
     <div class="footer_copyright">
-      &copy; 2016 <a href="/about">Ritesh Sinha</a>
+      &copy; 2017 <a href="/about">Ritesh Sinha</a>
        - Made in London, UK
     </div>
   
