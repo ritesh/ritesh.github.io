@@ -8,8 +8,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    <lastBuildDate>Sat, 19 Nov 2016 22:17:58 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Mar 2017 22:38:48 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+      <item>
+        <title>header files</title>
+        <link>https://blog.rsinha.org/microposts/header-files/</link>
+        <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
+        
+        <guid>https://blog.rsinha.org/microposts/header-files/</guid>
+        <description>&lt;p&gt;Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like &lt;code&gt;ext4&lt;/code&gt;, this causes a whole lot of problems. &lt;code&gt;gcc&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt; try and fail to find &lt;code&gt;coolHeader.h&lt;/code&gt; if it&amp;rsquo;s called &lt;code&gt;CoolHeader.h&lt;/code&gt;. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious &lt;code&gt;sed&lt;/code&gt;-fu.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s an easier hack, if you&amp;rsquo;re not ready to use lowercase header filenames in your C++ code like Bjarne Stroustrup probably intended. Create an empty file large enough to contain both your source and build artifacts, format it as a FAT32 volume and mount it as a loop device. Use this loop device to build your code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd if=/dev/zero of=/fakedisk bs=1024 count=200000 
+losetup /dev/loop0 /fakedisk 
+mkfs.vfat /dev/loop0 # Make it a VFAT filesystem
+mkdir /mnt/faker
+mount -t vfat /dev/loop0 /mnt/faker
+cp -Rv ~/your/QtCode /mnt/faker/
+cd /mnt/faker/QtCode/ &amp;amp;&amp;amp; qmake -makefile
+make # Job done, off to the pub 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But hey, if &lt;code&gt;sed&lt;/code&gt; works to refactor your codebase, more power to you!&lt;/p&gt;
+</description>
+      </item>
+      
     
       
       <item>
