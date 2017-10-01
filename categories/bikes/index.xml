@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog</title>
-    <link>https://blog.rsinha.org/categories/bikes/index.xml</link>
-    <description>All entries on blog</description>
+    <title>@rsinha’s blog - Bikes</title>
+    <link>https://blog.rsinha.org/categories/bikes/</link>
+    <description>All entries in Bikes on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    
-    <atom:link href="/categories/bikes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Aug 2013 18:08:46 +0000</lastBuildDate>
+    <atom:link href="/categories/bikes/" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Geared bikes</title>
         <link>https://blog.rsinha.org/2013/08/10/geared-bikes/</link>
         <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/08/10/geared-bikes/</guid>
         <description>&lt;p&gt;Got a sweet road bike off Gumtree. I thought the gears weren&amp;rsquo;t working, having never ridden a geared bike before.&lt;/p&gt;
 

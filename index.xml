@@ -2,21 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog</title>
-    <link>https://blog.rsinha.org/index.xml</link>
-    <description>All entries on blog</description>
+    <title>@rsinha’s blog - blog</title>
+    <link>https://blog.rsinha.org/</link>
+    <description>All entries in blog on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    <lastBuildDate>Tue, 07 Mar 2017 22:38:48 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Sep 2017 20:19:00 +0100</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+      
+      <item>
+        <title>The Go Programming Language</title>
+        <link>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</link>
+        <pubDate>Sun, 10 Sep 2017 20:19:00 +0100</pubDate>
+        <author> (Ritesh Sinha)</author>
+        <guid>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</guid>
+        <description>&lt;p&gt;I have too many books to read, and too little time! I&amp;rsquo;m currently making my way through &lt;a href=&#34;https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;amp;ie=UTF8&amp;amp;qid=1505071377&amp;amp;sr=1-4&#34;&gt;The Go Programming Language&lt;/a&gt; by Alan Donovan &amp;amp; the Brian Kernighan, slowly but steadily. I&amp;rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&amp;rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&amp;rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees. This makes it an easy language to pick up for someone familiar with Python (and without a software development background).&lt;/p&gt;
+
+&lt;p&gt;There are some aspects of the language that I don&amp;rsquo;t yet fully understand and I&amp;rsquo;m always keen to improve. This book is an enjoyable introduction to the language and feels like an excellent text book on the subject - with exercises that I should probably do, at some point. I suspect that even seasoned programmers will get a lot of out it as it covers some interesting bugs from programs that are syntactically correct, but logically wrong. It is often easy to resort to stackoverflow or find a blog post about a particular issue when learning a new language and hitting a wall but it is easier to dive deep to get a better understanding, especially when you&amp;rsquo;re learning a new language.&lt;/p&gt;
+</description>
+      </item>
+      
     
       
       <item>
         <title>header files</title>
         <link>https://blog.rsinha.org/microposts/header-files/</link>
         <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/microposts/header-files/</guid>
         <description>&lt;p&gt;Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like &lt;code&gt;ext4&lt;/code&gt;, this causes a whole lot of problems. &lt;code&gt;gcc&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt; try and fail to find &lt;code&gt;coolHeader.h&lt;/code&gt; if it&amp;rsquo;s called &lt;code&gt;CoolHeader.h&lt;/code&gt;. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious &lt;code&gt;sed&lt;/code&gt;-fu.&lt;/p&gt;
 
@@ -42,7 +56,7 @@ make # Job done, off to the pub
         <title>Hello, Hugo!</title>
         <link>https://blog.rsinha.org/2016/11/09/hello-hugo/</link>
         <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
         <description>
 
@@ -118,7 +132,7 @@ cd ..
         <title>Building Dockerized Application Security Scanners</title>
         <link>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</link>
         <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</guid>
         <description>
 
@@ -159,7 +173,7 @@ cd ..
         <title>Inhibiting Sleep on Xubuntu 14.04</title>
         <link>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
         <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
         <description>&lt;p&gt;My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.&lt;/p&gt;
 
@@ -185,7 +199,7 @@ HandleLidSwitch=ignore
         <title>Chunky binaries and bsdiff</title>
         <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
         <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language &lt;em&gt;du jour&lt;/em&gt; for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.&lt;/p&gt;
 
@@ -239,7 +253,7 @@ chmod +x binary
         <title>Another day, another blog</title>
         <link>https://blog.rsinha.org/2014/11/17/another-day/</link>
         <pubDate>Mon, 17 Nov 2014 22:41:00 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2014/11/17/another-day/</guid>
         <description>&lt;pre&gt;
 Teathet6quiu yah4ooxi7AhB ciezei1Gahwu Quui2queixie 
@@ -272,7 +286,7 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
         <title>Getting Live USB sticks to boot consistently</title>
         <link>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
         <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
         <description>&lt;p&gt;Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &amp;ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&amp;rsquo;s hit and miss on my desktop. I&amp;rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&amp;rsquo;ve found great way around it.&lt;/p&gt;
 
@@ -286,7 +300,7 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
         <title>Geared bikes</title>
         <link>https://blog.rsinha.org/2013/08/10/geared-bikes/</link>
         <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/08/10/geared-bikes/</guid>
         <description>&lt;p&gt;Got a sweet road bike off Gumtree. I thought the gears weren&amp;rsquo;t working, having never ridden a geared bike before.&lt;/p&gt;
 
@@ -312,7 +326,7 @@ ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h
         <title>More Black &amp; White</title>
         <link>https://blog.rsinha.org/2013/05/21/more-black-white/</link>
         <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/05/21/more-black-white/</guid>
         <description>&lt;p&gt;I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other.
 Found an old photo in Lightroom and decided to mess about with it. I think it is about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; a stop underexposed, but I like it anyway.&lt;/p&gt;
@@ -329,7 +343,7 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
         <title>Brussels</title>
         <link>https://blog.rsinha.org/2013/05/11/brussels/</link>
         <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/05/11/brussels/</guid>
         <description>&lt;p&gt;Found this while digging through some old photos.&lt;/p&gt;
 
@@ -343,7 +357,7 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
         <title>Finally, a Flickr Account</title>
         <link>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</link>
         <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</guid>
         <description>&lt;p&gt;&lt;a href=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34;&gt;&lt;img src=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34; alt=&#34;Glasgow Central&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -357,7 +371,7 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
         <title>Giving up on Linux desktop</title>
         <link>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</link>
         <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
         <description>&lt;p&gt;I recently acquired a shiny new-ish desktop from a friend. Intel Core-i7 with 8 cores and a whopping 12 GB of RAM with a high-end ATI Radeon graphics card. It came with Windows 7 pre-installed and I decided to install Ubuntu 12.04 amd64 as a dual boot option. Initially, I had some trouble getting it to install on the inbuilt SSD (which should have been the first warning sign in retrospect). Having gotten it to install on the slower 500GB HDD, I was quite happy with it until I ran into the first few glitches. These issues were small to begin with but they irked me enough to get rid of Ubuntu altogether from the system.&lt;/p&gt;
 
@@ -383,7 +397,7 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
         <title>No Push Email</title>
         <link>https://blog.rsinha.org/2012/05/06/no-push-email/</link>
         <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/05/06/no-push-email/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve had a Gmail account for the last few years and the number of emails I get every day varies between ten to thirty. Out of the emails I receive, there are probably five or six emails per week that require either my attention or a reply. The majority of these are spammy emails that come from Indian companies with dubious privacy policies. I remember unsubscribing from most of them but I still keep getting emails from them or their &amp;lsquo;selected&amp;rsquo; partners (Find your life partner! Find a new job!). Keeping up with filtering emails is annoying especially if you primarily rely on your phone for managing email. Getting constantly notified about emails that you don&amp;rsquo;t care to read is both annoying and distracting.&lt;/p&gt;
 
@@ -403,7 +417,7 @@ Found an old photo in Lightroom and decided to mess about with it. I think it is
         <title>Prevent accidental rm</title>
         <link>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</link>
         <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
         <description>&lt;p&gt;If you&amp;rsquo;re anything like me, you might casually type &lt;code&gt;rm -rf *&lt;/code&gt; in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.&lt;/p&gt;
 
@@ -431,7 +445,7 @@ remove 100.txt?
         <title>Do batch things well</title>
         <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
         <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
         <description>&lt;p&gt;I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.&lt;/p&gt;
 
@@ -458,7 +472,7 @@ remove 100.txt?
         <title>Revisiting MIUI</title>
         <link>https://blog.rsinha.org/2011/12/03/revisiting-miui/</link>
         <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
         <description>
 
@@ -491,7 +505,7 @@ Another little useful feature was a birthday reminder notification. I&amp;rsquo;
         <title>Creating an Animated GIF</title>
         <link>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</link>
         <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</guid>
         <description>&lt;p&gt;There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, &lt;a href=&#34;http://imagemagick.org&#34;&gt;ImageMagick&lt;/a&gt; can help.&lt;/p&gt;
 
@@ -515,7 +529,7 @@ Another little useful feature was a birthday reminder notification. I&amp;rsquo;
         <title>Why I like Python</title>
         <link>https://blog.rsinha.org/2011/11/09/hello-world/</link>
         <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/11/09/hello-world/</guid>
         <description>&lt;p&gt;I&amp;rsquo;m a big fan of Python, especially its syntax which feels close to natural language. My programming skills are average, as I&amp;rsquo;ve never done any serious full time development, apart from some code I wrote for my MSc project. The project was mostly built using &lt;a href=&#34;http://scrapy.org/&#34;&gt;scrapy&lt;/a&gt; with little hacks thrown in to implement concurrency for processing data. Nowadays, I tend to use Python mostly as a glue language to automate stuff when bash doesn&amp;rsquo;t cut it. Stuff like this makes me like it even more:&lt;/p&gt;
 

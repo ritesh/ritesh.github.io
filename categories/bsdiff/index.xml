@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog</title>
-    <link>https://blog.rsinha.org/categories/bsdiff/index.xml</link>
-    <description>All entries on blog</description>
+    <title>@rsinha’s blog - Bsdiff</title>
+    <link>https://blog.rsinha.org/categories/bsdiff/</link>
+    <description>All entries in Bsdiff on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    
-    <atom:link href="/categories/bsdiff/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jan 2015 12:19:54 +0000</lastBuildDate>
+    <atom:link href="/categories/bsdiff/" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Chunky binaries and bsdiff</title>
         <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
         <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language &lt;em&gt;du jour&lt;/em&gt; for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.&lt;/p&gt;
 

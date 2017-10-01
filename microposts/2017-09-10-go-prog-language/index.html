@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.20.2" />
 
     
-    <title>Microposts &middot; @rsinha’s blog</title>
+    <title>The Go Programming Language &middot; @rsinha’s blog</title>
 
     <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
@@ -49,11 +49,6 @@
 
 
   <main class="content">
-    
-
-  
-
-  
     <article class="micropost">
   <p>I have too many books to read, and too little time! I&rsquo;m currently making my way through <a href="https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4">The Go Programming Language</a> by Alan Donovan &amp; the Brian Kernighan, slowly but steadily. I&rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees. This makes it an easy language to pick up for someone familiar with Python (and without a software development background).</p>
 
@@ -61,53 +56,6 @@
 
   <a href='https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/'><aside class="dates">→ 2017/09/10 8:19 PM</aside></a>
 </article>
-
-  
-
-  
-
-  
-
-
-  
-
-  
-    <article class="micropost">
-  <p>Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like <code>ext4</code>, this causes a whole lot of problems. <code>gcc</code> and <code>g++</code> try and fail to find <code>coolHeader.h</code> if it&rsquo;s called <code>CoolHeader.h</code>. I&rsquo;m sure that this isn&rsquo;t an uncommon problem, but I couldn&rsquo;t find a solution that didn&rsquo;t involve serious <code>sed</code>-fu.</p>
-
-<p>There&rsquo;s an easier hack, if you&rsquo;re not ready to use lowercase header filenames in your C++ code like Bjarne Stroustrup probably intended. Create an empty file large enough to contain both your source and build artifacts, format it as a FAT32 volume and mount it as a loop device. Use this loop device to build your code.</p>
-
-<pre><code>dd if=/dev/zero of=/fakedisk bs=1024 count=200000 
-losetup /dev/loop0 /fakedisk 
-mkfs.vfat /dev/loop0 # Make it a VFAT filesystem
-mkdir /mnt/faker
-mount -t vfat /dev/loop0 /mnt/faker
-cp -Rv ~/your/QtCode /mnt/faker/
-cd /mnt/faker/QtCode/ &amp;&amp; qmake -makefile
-make # Job done, off to the pub 
-</code></pre>
-
-<p>But hey, if <code>sed</code> works to refactor your codebase, more power to you!</p>
-
-  <a href='https://blog.rsinha.org/microposts/header-files/'><aside class="dates">→ 2017/03/07 10:38 PM</aside></a>
-</article>
-
-  
-
-  
-
-  
-
-
-
-<div class="pagination">
-  
-
-  
-
-  
-</div>
-
 
   </main>
 

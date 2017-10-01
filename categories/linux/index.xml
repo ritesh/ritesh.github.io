@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
 
-    <title>@rsinha’s blog</title>
-    <link>https://blog.rsinha.org/categories/linux/index.xml</link>
-    <description>All entries on blog</description>
+    <title>@rsinha’s blog - Linux</title>
+    <link>https://blog.rsinha.org/categories/linux/</link>
+    <description>All entries in Linux on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    
-    <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Apr 2015 19:35:03 +0000</lastBuildDate>
+    <atom:link href="/categories/linux/" rel="self" type="application/rss+xml" />
     
       
       <item>
         <title>Inhibiting Sleep on Xubuntu 14.04</title>
         <link>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
         <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
         <description>&lt;p&gt;My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.&lt;/p&gt;
 
@@ -42,7 +42,7 @@ HandleLidSwitch=ignore
         <title>Chunky binaries and bsdiff</title>
         <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
         <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
         <description>&lt;p&gt;I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language &lt;em&gt;du jour&lt;/em&gt; for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.&lt;/p&gt;
 
@@ -96,7 +96,7 @@ chmod +x binary
         <title>Getting Live USB sticks to boot consistently</title>
         <link>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
         <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
         <description>&lt;p&gt;Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &amp;ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&amp;rsquo;s hit and miss on my desktop. I&amp;rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&amp;rsquo;ve found great way around it.&lt;/p&gt;
 
@@ -110,7 +110,7 @@ chmod +x binary
         <title>Giving up on Linux desktop</title>
         <link>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</link>
         <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
         <description>&lt;p&gt;I recently acquired a shiny new-ish desktop from a friend. Intel Core-i7 with 8 cores and a whopping 12 GB of RAM with a high-end ATI Radeon graphics card. It came with Windows 7 pre-installed and I decided to install Ubuntu 12.04 amd64 as a dual boot option. Initially, I had some trouble getting it to install on the inbuilt SSD (which should have been the first warning sign in retrospect). Having gotten it to install on the slower 500GB HDD, I was quite happy with it until I ran into the first few glitches. These issues were small to begin with but they irked me enough to get rid of Ubuntu altogether from the system.&lt;/p&gt;
 
@@ -136,7 +136,7 @@ chmod +x binary
         <title>Prevent accidental rm</title>
         <link>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</link>
         <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
         <description>&lt;p&gt;If you&amp;rsquo;re anything like me, you might casually type &lt;code&gt;rm -rf *&lt;/code&gt; in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.&lt;/p&gt;
 
@@ -164,7 +164,7 @@ remove 100.txt?
         <title>Do batch things well</title>
         <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
         <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
         <description>&lt;p&gt;I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.&lt;/p&gt;
 
@@ -191,7 +191,7 @@ remove 100.txt?
         <title>Creating an Animated GIF</title>
         <link>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</link>
         <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
-        
+        <author> (Ritesh Sinha)</author>
         <guid>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</guid>
         <description>&lt;p&gt;There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, &lt;a href=&#34;http://imagemagick.org&#34;&gt;ImageMagick&lt;/a&gt; can help.&lt;/p&gt;
 

@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.rsinha.org/</loc>
-    <lastmod>2017-03-07T22:38:48+00:00</lastmod>
+    <loc>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</loc>
+    <lastmod>2017-09-10T20:19:00+01:00</lastmod>
   </url>
   
   <url>
@@ -98,6 +98,131 @@
   
   <url>
     <loc>https://blog.rsinha.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/android/</loc>
+    <lastmod>2011-12-03T11:28:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/tags/bike/</loc>
+    <lastmod>2013-08-10T18:08:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/bikes/</loc>
+    <lastmod>2013-08-10T18:08:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/bsdiff/</loc>
+    <lastmod>2015-01-14T12:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/</loc>
+    <lastmod>2011-12-03T11:28:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/docker/</loc>
+    <lastmod>2015-07-10T14:49:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/docker-compose/</loc>
+    <lastmod>2015-07-10T14:49:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/go/</loc>
+    <lastmod>2015-01-14T12:19:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/linux/</loc>
+    <lastmod>2015-04-05T19:35:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/mail/</loc>
+    <lastmod>2012-05-06T10:00:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/microposts/</loc>
+    <lastmod>2017-09-10T20:19:00+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/phone/</loc>
+    <lastmod>2012-05-06T10:00:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/photos/</loc>
+    <lastmod>2013-05-21T22:11:18+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/posts/</loc>
+    <lastmod>2016-11-19T22:17:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/python/</loc>
+    <lastmod>2011-11-09T22:41:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/sh/</loc>
+    <lastmod>2011-12-04T11:24:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/tags/</loc>
+    <lastmod>2013-08-10T18:08:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/xubuntu/</loc>
+    <lastmod>2015-04-05T19:35:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/categories/yak-shaving/</loc>
+    <lastmod>2016-11-19T22:17:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.rsinha.org/</loc>
+    <lastmod>2017-09-10T20:19:00+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
