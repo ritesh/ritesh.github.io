@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-
-    <title>@rsinha’s blog - Series</title>
+    <title>Series on blog</title>
     <link>https://blog.rsinha.org/series/</link>
-    <description>All entries in Series on blog</description>
+    <description>Recent content in Series on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
+	<atom:link href="https://blog.rsinha.org/series/index.xml" rel="self" type="application/rss+xml" />
     
-    <atom:link href="/series/" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

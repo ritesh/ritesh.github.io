@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+
+    <article class="post">
+      
+        <h2><a rel="full-article" href="https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/">Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB</a></h2>
+      
+
+      <div class="postmeta">Posted on <time datetime="2009-09-02 18:23:00 &#43;0000 UTC" pubdate="">September 2, 2009</time> in
+        <span class="categories">
+          
+            <a class="category" href="/categories/grub">grub</a>, 
+          
+            <a class="category" href="/categories/lazy">lazy</a>, 
+          
+            <a class="category" href="/categories/ubuntu">ubuntu</a>
+          
+        </span>
+      </div>
+
+      <p>
+        <p>Prior to using any Debian derivatives, I was a RedHat fan and hence<br />
+heavily favoured Fedora/CentOS/RHEL over other distributions. Over the<br />
+last few releases Fedora has been a disappointment and I was stuck<br />
+between using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked<br />
+for me). Gentoo was my favoured distribution about 2-3 years ago but<br />
+the excessive kernel recompilation was really getting to me. To go the<br />
+more <em>stable</em> path I decided to give Debian a shot. Debian lenny is an<br />
+amazing release, except it sucked as a desktop OS for me. Random sound<br />
+issues, flash taking the whole system down and poor 3D acceleration<br />
+really ruined it for me (couldn&rsquo;t play quake live even with<br />
+proprietary drivers).</p>
+
+<p>I decided to finally switch to Ubuntu Jaunty (9.04). Being too lazy to<br />
+connect an optical drive or buying blank CDs, I decided to install it<br />
+using my existing GRUB setup (Debian). Turns out it&rsquo;s easier than<br />
+Lindsay Lohan excessively inebriated.</p>
+
+<p> A few preliminary notes: This has been tested using the Jaunty mini<br />
+iso, not sure if other versions work as designed. Did not try<br />
+installing using the wireless network (that would be stupid). Need a<br />
+decent broadband connection (say 512kbps upward) for the installation<br />
+to finish within a reasonable time (leave it overnight only after<br />
+you&rsquo;re done selecting packages). Will hose your system if power goes<br />
+out and you&rsquo;ve crossed the partitioning stage. Take like a backup,<br />
+man.</p>
+
+<p> Step 1: Get the mini.iso from here :<br />
+<a href="https://help.ubuntu.com/community/Installation/MinimalCD">https://help.ubuntu.com/community/Installation/MinimalCD</a><br />
+Step 2: Extract the mini.iso to get two files, linux and initrd.gz<br />
+Step 3: Rename those files for easy reference (eg linux_ubuntu &amp;<br />
+initrd_ubuntu.gz)<br />
+Step 4: Move them to your boot directory<br />
+  #sudo mv linux_ubuntu initrd_ubuntu.gz /boot/<br />
+Step 5: Edit /boot/grub/menu.lst using your favourite editor and add<br />
+the lines to point to these</p>
+
+<pre><code>  title		Ubuntu 9.04 installer   
+  root (hd0,0)   
+  kernel		/linux_ubuntu   
+  initrd /initrd_ubuntu.gz
+</code></pre>
+
+<p> Remember the above setting should be <em>exactly</em> the same as the other<br />
+lines on your existing linux install (If your current linux uses UUIDs<br />
+then the root line would be replaced with a suitable UUID, the &ldquo;root&rdquo;<br />
+parameter might work but I&rsquo;m not sure) except for the last two lines<br />
+(kernel and initrd)</p>
+
+<p> Step 6: Reboot select Ubuntu installer, proceed as usual, select your<br />
+mirror, repartition your disks (even the partition you booted from can<br />
+be destroyed; is that cool or what?) and let the installer do its<br />
+thing.</p>
+
+<p> I live in an area where powercuts are fairly common (even after a<br />
+lying politician promised there would be no more), so i went with the<br />
+minimal install during the initial setup (so that I&rsquo;d have something<br />
+to fall back on as soon as possible) . After this I was able to reboot<br />
+to a desktop-less OS. Doing an <code>sudo apt-get install ubuntu-desktop</code><br />
+got the latest version of GNOME and associated stuff fresh from the<br />
+repositories. Jaunty works great for me, even though I&rsquo;m afflicted<br />
+with an ATI card (on board) and a faulty USB controller (disabled,<br />
+using a PCI addon USB card instead).</p>
+
+<p>Time taken to do the initial install: Approx an hour (including download time)<br />
+Time taken to download the ubuntu-desktop packages: About 1 hr 30 minutes<br />
+Time taken to install/configure the desktop package: About 15 minutes</p>
+
+<p> My broadband connection is allegedly 1Mbps (ADSL) but it usually hangs<br />
+somewhere between 512 and 768 and peaks at 1Mbps sometimes.</p>
+
+<p> Hope this helps someone.</p>
+
+      </p>
+    </article>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

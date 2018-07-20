@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>Random idea number eleventeen &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+
+    <article class="post">
+      
+        <h2><a rel="full-article" href="https://blog.rsinha.org/posts/random-idea-number-eleventeen/">Random idea number eleventeen</a></h2>
+      
+
+      <div class="postmeta">Posted on <time datetime="2010-04-20 13:48:00 &#43;0000 UTC" pubdate="">April 20, 2010</time> in
+        <span class="categories">
+          
+        </span>
+      </div>
+
+      <p>
+        <p>On a tech forum I visit often, we were discussing the various ways to<br />
+power down a computer when power goes out (apart from the boring way<br />
+of making your UPS automatically doing it for you). Now that I think<br />
+about it, I&rsquo;m really obsessed with shutting computers down. I had an<br />
+idea long ago which was quite stupid but I&rsquo;m gonna note it down anyway<br />
+so that I can laugh about it later. Also, I want to ensure that<br />
+Shampoo doesn&rsquo;t patent it.</p>
+
+<p>What if I could shut down my computer by making it listen to the<br />
+annoying beeps that UPSes usually make? All the cheap ones don&rsquo;t have<br />
+an option to turn that off, so I could probably use it as signal to<br />
+power down. Considering that linux has finally implemented some sort<br />
+of &ldquo;sound framework&rdquo; that doesn&rsquo;t (theoretically at least) lock sound<br />
+devices when a process accesses it, it should be quite trivial to<br />
+create a lightweight daemon that samples from the system microphone<br />
+and checks for the annoying beep waveform. If it matches, kill the<br />
+system.</p>
+
+<p>Two or three questions come to mind. The &ldquo;Why do this?&rdquo; can be<br />
+answered with &ldquo;whatevs, becoz i can&rdquo;. The other more pertinent<br />
+questions are:</p>
+
+<ul>
+<li>How difficult would this be to pull off?<br /></li>
+<li>Wouldn&rsquo;t it be annoying to have a microphone connected to your<br />
+system all the time?<br /></li>
+<li>Would it not be resource intensive to continuously poll the mic?<br /></li>
+<li>Are there any libraries which would make it easy for me to pull<br />
+this off without resorting to hacks?<br /></li>
+<li>And finally, if i ran around with a beeping thingamajig, would it<br />
+not be possible to start a shutdown? How can one protect against this?</li>
+</ul>
+
+<p>I hope to try it out this weekend, let&rsquo;s see if it can be done.</p>
+
+      </p>
+    </article>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

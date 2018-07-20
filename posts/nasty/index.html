@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>NASty &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+
+    <article class="post">
+      
+        <h2><a rel="full-article" href="https://blog.rsinha.org/posts/nasty/">NASty</a></h2>
+      
+
+      <div class="postmeta">Posted on <time datetime="2008-06-12 01:41:00 &#43;0000 UTC" pubdate="">June 12, 2008</time> in
+        <span class="categories">
+          
+            <a class="category" href="/categories/freenas">freenas</a>, 
+          
+            <a class="category" href="/categories/nas">nas</a>, 
+          
+            <a class="category" href="/categories/openfiler">openfiler</a>, 
+          
+            <a class="category" href="/categories/vmware">vmware</a>
+          
+        </span>
+      </div>
+
+      <p>
+        <p>So a friend wanted to implement some sort of NAS setup on his old, decaying PC. The friend in question has quite a large amount of legitimate <em>ahem</em> data. I recommended that he use Openfiler. I found the <a href="http://www.rpath.org/rbuilder/project/openfiler/">rPath version </a> first and so I decided to check it out. I keep hearing that rPath builds very good task specific Machines, so I decided to give it a spin. rPath linux describes itself as a meta-distribution. God knows what that means, I was too lazy to look it up.</p>
+
+<p>Downloaded a copy of the installation CD rather than a pre-built VM since my friend would probably use a physical install. Standard install, resembles the CentOS installation (It even uses Anaconda, so I&rsquo;m guessing that it&rsquo;s a customized RedHat distribution). The CD is about 350 MB or so, after installation it takes up 750 MB of space. Quite a lot for a NAS appliance wouldn&rsquo;t you say? The application throws up a friendly URL that you can access it with. Like an idiot I logged in as root and didn&rsquo;t get much of an administrative interface. Upon RTFM, I realized that the admin account is openfiler with the default password as &lsquo;password&rsquo;. One more reason to always <a href="http://wwwold.openfiler.com/docs/manual/">read the fine manual.</a></p>
+
+<p>Many, many, many configuration options are available. That is to say this is a serious NAS offering. Inbuilt LDAP, FTP, SSH, CIFS/SMB. The sad part is I was too lazy to try any of them out.</p>
+
+<p>Then I read about FreeNAS and their <a href="http://www.vmware.com/appliances/directory/168">killer 15MB award winning Virtual Machine </a>. So I start up VMware and give it a go. And my, does it work like a charm. Out of the box. Nothing else required. The argument here would probably be that FreeNAS is quite insecure by default, but what the heck, I know what I&rsquo;m doing and it&rsquo;s my goddamn home network. I will configure security later. The main feature that I care about, SMB, works perfectly. Haven&rsquo;t tested other features, but I&rsquo;m guessing they work too.</p>
+
+<p>Wish I had an old PC to turn into a home file server. Ah well, VMWare keeps me alive until then.</p>
+
+      </p>
+    </article>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

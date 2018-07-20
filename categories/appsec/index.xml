@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Appsec on blog</title>
+    <link>https://blog.rsinha.org/categories/appsec/</link>
+    <description>Recent content in Appsec on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 15 Dec 2009 13:29:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.rsinha.org/categories/appsec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EC-Council | ECSA</title>
+      <link>https://blog.rsinha.org/posts/ec-council-ecsa/</link>
+      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
+      <description>How is ECSA different from CEH?   CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
+ via eccouncil.org
+Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? HEAD EXPLODES</description>
+    </item>
+    
+    <item>
+      <title>Opening for Application Security Architect</title>
+      <link>https://blog.rsinha.org/posts/opening-for-application-security-architect/</link>
+      <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/opening-for-application-security-architect/</guid>
+      <description>Brilliant email for a job opening. Have removed the relevant bits :)
+Dear Ritesh,
+Dear Candidate,
+Greetings from
+This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
+More details given below
+The candidate MUST HAVE THE FOLLOWING SKILLS
+1. Developer
+2. Cross site scripting – different classes
+3. Web Application - Get Post
+GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+    </item>
+    
+  </channel>
+</rss>

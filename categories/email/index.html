@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>Email &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+    
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/using-mutt-with-gmail/">Using mutt with Gmail</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-08-26 18:14:00 &#43;0000 UTC" pubdate="">August 26, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/cli">cli</a>, 
+        
+          <a class="category" href="/categories/command">command</a>, 
+        
+          <a class="category" href="/categories/email">email</a>, 
+        
+          <a class="category" href="/categories/mutt">mutt</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      Why bother? I can&rsquo;t think of a reason other than because. My muttrc
+(single gmail account) copied from various muttrcs around the
+internet.
+set imap_user = &quot;EMAILID@gmail.com&quot; set imap_pass = &quot;Password&quot; set smtp_url = &quot;smtp://EMAILID@smtp.gmail.com:587/&quot; set smtp_pass = &quot;&quot; set from = &quot;EMAILID&quot; set realname = &quot;Ritesh Sinha&quot; set folder = &quot;imaps://imap.gmail.com:993&quot; set spoolfile = &quot;+INBOX&quot; set postponed=&quot;+[Gmail]/Drafts&quot; set record = &quot;+[Gmail]/Sent Mail&quot; set header_cache=~/.mutt/cache/headers set message_cachedir=~/.mutt/cache/bodies set certificate_file=~/.mutt/certificates set move = no set include set sort = 'threads' set sort_aux = 'reverse-last-date-received' set auto_tag = yes set imap_check_subscribed set hostname = gmail.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/using-mutt-with-gmail/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+
+<div class="pagination">
+  
+
+  
+
+  
+</div>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

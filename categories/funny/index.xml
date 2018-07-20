@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Funny on blog</title>
+    <link>https://blog.rsinha.org/categories/funny/</link>
+    <description>Recent content in Funny on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Mon, 14 Dec 2009 14:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.rsinha.org/categories/funny/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Opening for Application Security Architect</title>
+      <link>https://blog.rsinha.org/posts/opening-for-application-security-architect/</link>
+      <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/opening-for-application-security-architect/</guid>
+      <description>Brilliant email for a job opening. Have removed the relevant bits :)
+Dear Ritesh,
+Dear Candidate,
+Greetings from
+This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
+More details given below
+The candidate MUST HAVE THE FOLLOWING SKILLS
+1. Developer
+2. Cross site scripting – different classes
+3. Web Application - Get Post
+GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+    </item>
+    
+    <item>
+      <title>Hey Jude Flow Chart</title>
+      <link>https://blog.rsinha.org/posts/hey-jude-flow-chart/</link>
+      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/hey-jude-flow-chart/</guid>
+      <description>Inspired by the Total Eclipse Of The Heart flow chart, love all this created the Hey Jude Flow Chart to help you unravel one of The Beatles’ most complicated songs.
+via Merlin Mann
+ 
+ via feeds.laughingsquid.com
+So useful!</description>
+    </item>
+    
+  </channel>
+</rss>

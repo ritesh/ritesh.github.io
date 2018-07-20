@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>blog &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+    
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/">Our security auditor is an idiot</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2011-07-23 10:34:00 &#43;0000 UTC" pubdate="">July 23, 2011</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/audit">audit</a>, 
+        
+          <a class="category" href="/categories/security">security</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      A security auditor for our servers has demanded the following within two weeks:
+ A list of current usernames and plain-text passwords for all user accounts on all servers A list of all password changes for the past six months, again in plain-text A list of &ldquo;every file added to the server from remote devices&rdquo; in the past six months The public and private keys of any SSH keys An email sent to him every time a user changes their password, containing the plain text password  We&rsquo;re running Red Hat Linux 5&frasl;6 and CentOS 5 boxes with LDAP authentication.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/">Installing rubygems in your home folder</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2011-07-16 12:38:00 &#43;0000 UTC" pubdate="">July 16, 2011</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/programming">programming</a>, 
+        
+          <a class="category" href="/categories/ruby">ruby</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      No root? No problem! Obtain a copy of rubygems from ruby forge.
+$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &quot;RUBYLIB=$HOME:/same/path/as/above/lib&quot; &gt;&gt; ~/.bash_profile $ echo &quot;export RUBYLIB&quot; &gt;&gt; ~/.bash_profile $ source ~/.bash_profile  This should give you a working install of rubygems. Check out the environment
+$ gem env  Install something
+$ gem install rake  
+    
+  </p>
+
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/">India Graduates Millions, But Too Few Are Fit to Hire via WSJ.com</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2011-04-05 22:49:00 &#43;0000 UTC" pubdate="">April 5, 2011</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/news">news</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      BANGALORE, India—Call-center company 24&frasl;7 Customer Pvt. Ltd. is desperate to find new recruits who can answer questions by phone and email. It wants to hire 3,000 people this year. Yet in this country of 1.2 billion people, that is beginning to look like an impossible goal.
+So few of the high school and college graduates who come through the door can communicate effectively in English, and so many lack a grasp of educational basics such as reading comprehension, that the company can hire just three out of every 100 applicants.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/cdecl/">cdecl</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2011-02-24 00:47:00 &#43;0000 UTC" pubdate="">February 24, 2011</time>
+    
+  </div>
+
+  <p>
+    
+      Found this wonderful way to understand complicated c code. Cdecl at www.cdecl.org
+    
+  </p>
+
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/rubbish-job-opening/">Rubbish job opening</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-08-27 09:23:00 &#43;0000 UTC" pubdate="">August 27, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/job">job</a>, 
+        
+          <a class="category" href="/categories/nonsense">nonsense</a>, 
+        
+          <a class="category" href="/categories/vmware">vmware</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      Received an email today about a job opening at a major CMM level
+something company. Required skill : VMWare. Experience required 2 - 15
+years. VMWare was founded in 1998, that gives us 12 years since it&rsquo;s
+been around. How does one have 15 years of experience with something
+that wasn&rsquo;t around until 12 years ago? Who writes these job
+descriptions?
+    
+  </p>
+
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/using-mutt-with-gmail/">Using mutt with Gmail</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-08-26 18:14:00 &#43;0000 UTC" pubdate="">August 26, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/cli">cli</a>, 
+        
+          <a class="category" href="/categories/command">command</a>, 
+        
+          <a class="category" href="/categories/email">email</a>, 
+        
+          <a class="category" href="/categories/mutt">mutt</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      Why bother? I can&rsquo;t think of a reason other than because. My muttrc
+(single gmail account) copied from various muttrcs around the
+internet.
+set imap_user = &quot;EMAILID@gmail.com&quot; set imap_pass = &quot;Password&quot; set smtp_url = &quot;smtp://EMAILID@smtp.gmail.com:587/&quot; set smtp_pass = &quot;&quot; set from = &quot;EMAILID&quot; set realname = &quot;Ritesh Sinha&quot; set folder = &quot;imaps://imap.gmail.com:993&quot; set spoolfile = &quot;+INBOX&quot; set postponed=&quot;+[Gmail]/Drafts&quot; set record = &quot;+[Gmail]/Sent Mail&quot; set header_cache=~/.mutt/cache/headers set message_cachedir=~/.mutt/cache/bodies set certificate_file=~/.mutt/certificates set move = no set include set sort = 'threads' set sort_aux = 'reverse-last-date-received' set auto_tag = yes set imap_check_subscribed set hostname = gmail.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/using-mutt-with-gmail/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/">Getting rid of annoying UPS beeps</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-05-15 06:38:00 &#43;0000 UTC" pubdate="">May 15, 2010</time>
+    
+  </div>
+
+  <p>
+    
+      Living in an area with very frequent powercuts, I&rsquo;m often annoyed by the constant beeping of the UPS at odd hours. I have a system that is constantly on and is connected to a very basic UPS that provides no power management features at all (via USB or serial). In Bangalore, you don&rsquo;t really need a constant buzzing sound to remind you that the power is out, the unbearable heat is enough to get you up and about.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/python-aes/">Python AES</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-05-13 18:59:00 &#43;0000 UTC" pubdate="">May 13, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/aes">aes</a>, 
+        
+          <a class="category" href="/categories/encryption">encryption</a>, 
+        
+          <a class="category" href="/categories/example">example</a>, 
+        
+          <a class="category" href="/categories/python">python</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      Cryptography isn&rsquo;t available by default on python. One needs to install the PyCrypto toolkit to make it work. Looks something like this:
+from Crypto.Cipher import AES import base64 key = &quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&quot; objAes=AES.new(key, AES.MODE_ECB) plaintext='This is sparta!!' #looks nicer with base64 enc = objAes.encrypt(plaintext) print &quot;Encrypted: &quot; + base64.b64encode(enc) print &quot;Decrypted: &quot; + objAes.decrypt(enc)  
+    
+  </p>
+
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/random-idea-number-eleventeen/">Random idea number eleventeen</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-04-20 13:48:00 &#43;0000 UTC" pubdate="">April 20, 2010</time>
+    
+  </div>
+
+  <p>
+    
+      On a tech forum I visit often, we were discussing the various ways to
+power down a computer when power goes out (apart from the boring way
+of making your UPS automatically doing it for you). Now that I think
+about it, I&rsquo;m really obsessed with shutting computers down. I had an
+idea long ago which was quite stupid but I&rsquo;m gonna note it down anyway
+so that I can laugh about it later.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/random-idea-number-eleventeen/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Shutdown on no network connectivity</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-04-09 06:50:00 &#43;0000 UTC" pubdate="">April 9, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/bash">bash</a>, 
+        
+          <a class="category" href="/categories/shutdown">shutdown</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      #!/bin/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http://ritesh.posterous.com #License: WTFPL http://sam.zoy.org/wtfpl/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=/usr/sbin/ethtool IF=/dev/eth0 GREP=/bin/grep AWK=/usr/bin/awk LOG=/var/log/outages SDOWN=/sbin/poweroff function checklink() { if [ &quot;$($ETHTOOL eth0 | $GREP Link | $AWK {'print $3'})&quot; == 'yes' ] then return 0 else return 1 fi } # call checklink echo &quot;Checking if link is up&quot; checklink if [ $?
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+
+<div class="pagination">
+  
+    <a href="/page/2/">« Newer</a>
+  
+
+  
+  <span>|</span>
+  
+
+  
+    <a href="/page/4/">Older »</a>
+  
+</div>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

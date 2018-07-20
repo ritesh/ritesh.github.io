@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ritesh Sinha">
+    <meta name="description" content="Stuff I rant about">
+    <meta name="generator" content="Hugo 0.42.2" />
+
+    
+    <title>Installing TrueCrypt on Fedora 9 HOWTO &middot; @rsinha’s blog</title>
+
+    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
+    
+
+
+    
+	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
+	
+  </head>
+  <body class="site">
+
+<header>
+  <nav>
+    <h1><a href="/">@rsinha</a>’s blog.</h1>
+    <div class="menu">
+      
+      <ul>
+        
+            <li>
+              <a href="/posts/">Posts</a>
+              
+                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
+              
+            </li>
+        
+            <li>
+              <a href="/microposts/">Snippets</a>
+              
+            </li>
+        
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main class="content">
+
+    <article class="post">
+      
+        <h2><a rel="full-article" href="https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/">Installing TrueCrypt on Fedora 9 HOWTO</a></h2>
+      
+
+      <div class="postmeta">Posted on <time datetime="2008-07-09 11:13:00 &#43;0000 UTC" pubdate="">July 9, 2008</time> in
+        <span class="categories">
+          
+            <a class="category" href="/categories/6">6</a>, 
+          
+            <a class="category" href="/categories/9">9</a>, 
+          
+            <a class="category" href="/categories/fedora">fedora</a>, 
+          
+            <a class="category" href="/categories/fedora9">fedora9</a>, 
+          
+            <a class="category" href="/categories/howto">howto</a>, 
+          
+            <a class="category" href="/categories/install">install</a>, 
+          
+            <a class="category" href="/categories/truecrypt">truecrypt</a>, 
+          
+            <a class="category" href="/categories/truecrypt6">truecrypt6</a>
+          
+        </span>
+      </div>
+
+      <p>
+        <p>On the 4th of July, the TrueCrypt team released version 6.0 of its amazing product. I am generally quite excited by new software releases and can&rsquo;t wait to try them out as soon as possible. From the web-site, some of the new features in the TrueCrypt version 6.0 are:</p>
+
+<p>Parallelized encryption/decryption on multi-core processors (or multi-processor systems). Increase in encryption/decryption speed is directly proportional to the number of cores and/or processors.</p>
+
+<p>Ability to create and run an encrypted hidden operating system whose existence is impossible to prove (provided that certain guidelines are followed).</p>
+
+<p>And many more <a href="http://www.truecrypt.org/docs/?s=version-history">killer features</a></p>
+
+<p>I was disappointed to see that there were no ready-made packages available for Fedora 9 so I decided to compile from source. Here are the quick steps you could follow to install TrueCrypt on your Fedora Machine. I assume that you are familiar with TrueCrypt and its features, so I will not explain any of that. Be sure to read the <a href="http://www.truecrypt.org/docs/">TrueCrypt documentation </a></p>
+
+<p>**Obligatory Warning: I do not claim that this is the best way to go about installing TrueCrypt on your system and I am not liable for any damages caused **</p>
+
+<p>With that out of the way here is what you need:</p>
+
+<ol>
+<li><p>Ensure that your box is up to date<br />
+$ sudo yum -y update</p></li>
+
+<li><p>Install fuse and development packages<br />
+$ sudo yum install fuse fuse-devel</p></li>
+
+<li><p>Install gtk2 development libraries<br />
+$ sudo yum -y install gtk2-devel</p></li>
+
+<li><p>Obtain a copy of the wxWidgets source version 2.8 from SourceForge<br />
+$ wget <a href="http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.7.tar.gz">http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.7.tar.gz</a></p></li>
+
+<li><p>Download the latest TrueCrypt source package from their <a href="http://www.truecrypt.org/downloads2.php">website </a>(As of writing this, it was version 6.0a)</p></li>
+
+<li><p>Untar the wxWidgets source into a directory of your choice. I chose /usr/src<br />
+$ tar xzvf wxWidgets-2.8.7.tar.gz -C /usr/src</p></li>
+
+<li><p>Untar the TrueCrypt package to the temporary directory<br />
+$ tar xzvf TrueCrypt 6.0a Source.tar.gz -C /tmp</p></li>
+
+<li><p>Change to the truecrypt directory to build the application<br />
+$ cd /tmp/truecrypt-6.0a-source/<br />
+$ make WX_ROOT=/usr/src/wxWidgets-2.8.7 wxbuild ##change accordingly to point to the wxWidgets source<br />
+$ make</p></li>
+
+<li><p>If all goes well, you should have a truecrypt binary in the Main folder in the truecrypt source folder (/tmp/truecrypt-6.0a-source/Main/truecrypt). Copy this to /usr/bin (As root of course)</p></li>
+
+<li><p>The next part involves creating a group called truecrypt, adding users who are permitted to use truecrypt to it and ensuring that no password is required for them to run truecrypt. This is explained in a very user friendly manner by Oliver Meyer on howtoforge. Follow <em>ONLY</em> the first section of <a href="http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8">this guide</a> . Be sure to check out the other easy to follow and highly informative tutorials on <a href="http://www.howtoforge.com/">howtoforge</a>.</p></li>
+</ol>
+
+<p>When I get a little more time, I&rsquo;ll clean this up and put it on howtoforge. I doubt that would be required though, since someone will eventually <a href="http://www.lfarkas.org/linux/packages/fedora/9/i386/">package it for Fedora 9.</a></p>
+
+<p>Resources:</p>
+
+<p><a href="http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8">http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8</a><br />
+<a href="http://meandubuntu.wordpress.com/2008/02/07/my-first-compile-truecrypt-50/">http://meandubuntu.wordpress.com/2008/02/07/my-first-compile-truecrypt-50/</a></p>
+
+<p>Hope this helps.</p>
+
+<p><img src="https://blogger.googleusercontent.com/tracker/2563657433103433322-8521877477819807390?l=arbitness.blogspot.com" alt="" /></p>
+
+      </p>
+    </article>
+
+
+  </main>
+
+<footer>
+  <div class="footer_text">
+      <div>
+        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
+        <p>
+          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
+
+        </p>
+      </div>
+      
+      <div>
+          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
+          <div id="photos"></div>
+        </div>
+      </div>
+      
+  </div>
+
+  
+    <div class="footer_copyright">
+      &copy; 2018 <a href="/about">Ritesh Sinha</a>
+       - Made in London, UK
+    </div>
+  
+</footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
+    <script src="/js/weblog.js" charset="utf-8"></script>
+    
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
+    _paq.push(['setSiteId', 1]);
+    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+    <script type="text/javascript">
+
+  
+  $(function() {
+    
+    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
+      iweblog.application.displayImages(data, 8);
+    });
+  });
+
+</script>
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Legal on blog</title>
+    <link>https://blog.rsinha.org/categories/legal/</link>
+    <description>Recent content in Legal on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 05 Nov 2009 05:53:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.rsinha.org/categories/legal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Murderer with &#39;aggression genes&#39; gets sentence cut</title>
+      <link>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</link>
+      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</guid>
+      <description>In 2007, Abdelmalek Bayout admitted to stabbing and killing a man and received a sentenced of 9 years and 2 months. Last week, _Nature _ reported that Pier Valerio Reinotti, an appeal court judge in Trieste, Italy, cut Bayout&amp;rsquo;s sentence by a year after finding out he has gene variants linked to aggression. Leaving aside the question of whether this link is well enough understood to justify Reinotti&amp;rsquo;s decision, should genes ever be considered a legitimate defence?</description>
+    </item>
+    
+  </channel>
+</rss>
