@@ -8,8 +8,68 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     
-    <lastBuildDate>Sun, 10 Sep 2017 20:19:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 14:50:01 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+      
+      <item>
+        <title>Testing an AWS Lambda function locally</title>
+        <link>https://blog.rsinha.org/testing-aws-lambda-locally/</link>
+        <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
+        <author> (Ritesh Sinha)</author>
+        <guid>https://blog.rsinha.org/testing-aws-lambda-locally/</guid>
+        <description>
+
+&lt;h1 id=&#34;integration-testing-lambda-functions-locally&#34;&gt;Integration Testing Lambda Functions Locally&lt;/h1&gt;
+
+&lt;p&gt;Never had to test AWS Lambda functions locally (test in production YOLO).  I&amp;rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&amp;rsquo;s probably best to test them locally to discover any regressions early on.&lt;/p&gt;
+
+&lt;p&gt;While walking through the docs with a colleague, we found that the nifty way to test a lambda function created &lt;a href=&#34;https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html&#34;&gt;using SAM&lt;/a&gt; is to run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sam local start-lambda&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the directory where you have your SAM &lt;code&gt;template.yml&lt;/code&gt;. This is &lt;code&gt;LambdaInvoking&lt;/code&gt; the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import boto3
+import botocore
+
+# Set &amp;quot;running_locally&amp;quot; flag if you are running the integration test locally
+running_locally = True
+
+if running_locally:
+
+    # Create Lambda SDK client to connect to appropriate Lambda endpoint
+    lambda_client = boto3.client(&#39;lambda&#39;,
+        region_name=&amp;quot;eu-west-1&amp;quot;,
+        endpoint_url=&amp;quot;http://127.0.0.1:3001&amp;quot;,
+        use_ssl=False,
+        verify=False,
+        config=botocore.client.Config(
+            signature_version=botocore.UNSIGNED,
+            read_timeout=30,
+            retries={&#39;max_attempts&#39;: 0},
+        )
+    )
+else:
+    lambda_client = boto3.client(&#39;lambda&#39;)
+
+
+# Invoke your Lambda function as you normally usually do. The function will run
+# locally if it is configured to do so
+response = lambda_client.invoke(FunctionName=&amp;quot;HelloFunction&amp;quot;)
+
+# Verify the response
+assert response == &amp;quot;Hello World&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is from the docs, but it took me a while to figure out that &lt;code&gt;FunctionName&lt;/code&gt; above needs to refer to the &lt;em&gt;logical&lt;/em&gt; name of your Lambda function in the CloudFormation template.&lt;/p&gt;
+
+&lt;p&gt;The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust &lt;code&gt;read_timeout&lt;/code&gt;accordingly).&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re a security nerd, the bits above that say &lt;code&gt;use_ssl=False&lt;/code&gt; and &lt;code&gt;verify=False&lt;/code&gt; should give you pause. In this instance, you&amp;rsquo;re connecting to a service locally and not reaching out to the internet, so you&amp;rsquo;re OK.&lt;/p&gt;
+</description>
+      </item>
+      
     
       
       <item>

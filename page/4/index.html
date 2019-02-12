@@ -60,6 +60,47 @@
   
     <article class="post">
   
+    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Shutdown on no network connectivity</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2010-04-09 06:50:00 &#43;0000 UTC" pubdate="">April 9, 2010</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/bash">bash</a>, 
+        
+          <a class="category" href="/categories/shutdown">shutdown</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      #!/bin/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http://ritesh.posterous.com #License: WTFPL http://sam.zoy.org/wtfpl/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=/usr/sbin/ethtool IF=/dev/eth0 GREP=/bin/grep AWK=/usr/bin/awk LOG=/var/log/outages SDOWN=/sbin/poweroff function checklink() { if [ &quot;$($ETHTOOL eth0 | $GREP Link | $AWK {'print $3'})&quot; == 'yes' ] then return 0 else return 1 fi } # call checklink echo &quot;Checking if link is up&quot; checklink if [ $?
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
     <h2><a rel="full-article" href="https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/">Excerpt from raiding eternity</a></h2>
   
 
@@ -409,55 +450,6 @@ Among Thunderbird 3&rsquo;s new features is Content Tabs, a way to monitor other
   
     
       <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/">Continue Reading »</a>
-    
-  
-</article>
-
-  
-
-
-  
-
-  
-
-  
-
-  
-    <article class="post">
-  
-    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/my-favorite-s60-apps/">My favorite S60 apps</a></h2>
-  
-
-  <div class="postmeta">Posted on <time datetime="2009-11-29 10:03:00 &#43;0000 UTC" pubdate="">November 29, 2009</time>
-    
-       in
-      <span class="categories">
-        
-          <a class="category" href="/categories/apps">apps</a>, 
-        
-          <a class="category" href="/categories/s60">s60</a>, 
-        
-          <a class="category" href="/categories/symbian">symbian</a>
-        
-      </span>
-    
-  </div>
-
-  <p>
-    
-      I try and use my phone for everything I can. Some of the apps that I
-find very useful are:
- fring (free): Works with gtalk, twitter, fb, msn etc. If you have
-one of those newfangled Nseries phones, you can use the front camera
-to make skype video calls (over WiFi).
- Nokia Messaging Email (free beta, might change in the future): The
-native email application on the E71 is a load of crap.
-    
-  </p>
-
-  
-    
-      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/my-favorite-s60-apps/">Continue Reading »</a>
     
   
 </article>

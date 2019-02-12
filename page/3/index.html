@@ -60,6 +60,49 @@
   
     <article class="post">
   
+    <h2><a rel="full-article" href="https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/">Getting SmartVOIP to work on CM7</a></h2>
+  
+
+  <div class="postmeta">Posted on <time datetime="2011-07-24 14:55:00 &#43;0000 UTC" pubdate="">July 24, 2011</time>
+    
+       in
+      <span class="categories">
+        
+          <a class="category" href="/categories/android">android</a>, 
+        
+          <a class="category" href="/categories/smartvoip">smartvoip</a>, 
+        
+          <a class="category" href="/categories/voip">voip</a>
+        
+      </span>
+    
+  </div>
+
+  <p>
+    
+      Android 2.3 (Gingerbread) claims to support SIP natively. For some weird reason it does not play well with SmartVOIP, probably due to missing STUN server support. SmartVOIP provide a native android app called MobileVOIP but it doesn&rsquo;t integrate with the Android UI. I found this nifty little app called CSipSimple which has loads of configuration options (e.g. connect when on WiFi and or 3G etc). It integrates really well with the native CyanogenMod UI and seems to be working really well in my limited tests.
+    
+  </p>
+
+  
+    
+      <a class="continue" rel="full-article" href="https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/">Continue Reading »</a>
+    
+  
+</article>
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    <article class="post">
+  
     <h2><a rel="full-article" href="https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/">Our security auditor is an idiot</a></h2>
   
 
@@ -397,47 +440,6 @@ so that I can laugh about it later.
   
     
       <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/random-idea-number-eleventeen/">Continue Reading »</a>
-    
-  
-</article>
-
-  
-
-
-  
-
-  
-
-  
-
-  
-    <article class="post">
-  
-    <h2><a rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Shutdown on no network connectivity</a></h2>
-  
-
-  <div class="postmeta">Posted on <time datetime="2010-04-09 06:50:00 &#43;0000 UTC" pubdate="">April 9, 2010</time>
-    
-       in
-      <span class="categories">
-        
-          <a class="category" href="/categories/bash">bash</a>, 
-        
-          <a class="category" href="/categories/shutdown">shutdown</a>
-        
-      </span>
-    
-  </div>
-
-  <p>
-    
-      #!/bin/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http://ritesh.posterous.com #License: WTFPL http://sam.zoy.org/wtfpl/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=/usr/sbin/ethtool IF=/dev/eth0 GREP=/bin/grep AWK=/usr/bin/awk LOG=/var/log/outages SDOWN=/sbin/poweroff function checklink() { if [ &quot;$($ETHTOOL eth0 | $GREP Link | $AWK {'print $3'})&quot; == 'yes' ] then return 0 else return 1 fi } # call checklink echo &quot;Checking if link is up&quot; checklink if [ $?
-    
-  </p>
-
-  
-    
-      <a class="continue" rel="full-article" href="https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/">Continue Reading »</a>
     
   
 </article>
