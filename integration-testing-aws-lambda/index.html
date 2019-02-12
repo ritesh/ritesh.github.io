@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.42.2" />
 
     
-    <title>Categories &middot; @rsinha’s blog</title>
+    <title>Integration Testing AWS Lambda &middot; @rsinha’s blog</title>
 
     <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
@@ -49,56 +49,58 @@
 
 
   <main class="content">
-    
+    <article class="page">
+      <p>
+        
 
-  
+<h1 id="integration-testing-lambda-functions-locally">Integration Testing Lambda Functions Locally</h1>
 
-  
+<p>Never had to test AWS Lambda functions locally (test in production YOLO). While walking through the docs with a colleague, we found that the nifty way to test a lambda function created <a href="https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html">using SAM</a> is to run:</p>
 
-  
+<p><code>$ sam local start-lambda</code></p>
 
-  
+<p>In the directory where you have your SAM <code>template.yml</code>. This is <code>LambdaInvoking</code> the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.</p>
 
+<pre><code>import boto3
+import botocore
 
-  
+# Set &quot;running_locally&quot; flag if you are running the integration test locally
+running_locally = True
 
-  
+if running_locally:
 
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
+    # Create Lambda SDK client to connect to appropriate Lambda endpoint
+    lambda_client = boto3.client('lambda',
+        region_name=&quot;eu-west-1&quot;,
+        endpoint_url=&quot;http://127.0.0.1:3001&quot;,
+        use_ssl=False,
+        verify=False,
+        config=botocore.client.Config(
+            signature_version=botocore.UNSIGNED,
+            read_timeout=30,
+            retries={'max_attempts': 0},
+        )
+    )
+else:
+    lambda_client = boto3.client('lambda')
 
 
+# Invoke your Lambda function as you normally usually do. The function will run
+# locally if it is configured to do so
+response = lambda_client.invoke(FunctionName=&quot;HelloFunction&quot;)
 
-<div class="pagination">
-  
-    <a href="/categories/page/9/">« Newer</a>
-  
+# Verify the response
+assert response == &quot;Hello World&quot;
+</code></pre>
 
-  
+<p>This is from the docs, but it took me a while to figure out that <code>FunctionName</code> above needs to refer to the <em>logical</em> name of your Lambda function in the CloudFormation template.</p>
 
-  
-</div>
+<p>The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust <code>read_timeout</code>accordingly).</p>
 
+<p>If you&rsquo;re a security nerd, the bits above that say <code>use_ssl=False</code> and <code>verify=False</code> should give you pause. In this instance, you&rsquo;re connecting to a service locally and not reaching out to the internet, so you&rsquo;re OK.</p>
 
+      </p>
+    </article>
   </main>
 
 <footer>

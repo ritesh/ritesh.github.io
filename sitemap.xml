@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.rsinha.org/integration-testing-aws-lambda/</loc>
+    <lastmod>2019-02-12T14:37:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</loc>
     <lastmod>2017-09-10T20:19:00+01:00</lastmod>
   </url>
@@ -345,6 +350,12 @@
   </url>
   
   <url>
+    <loc>https://blog.rsinha.org/categories/aws/</loc>
+    <lastmod>2019-02-12T14:37:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.rsinha.org/categories/backblaze/</loc>
     <lastmod>2009-09-02T17:40:00+00:00</lastmod>
     <priority>0</priority>
@@ -591,6 +602,12 @@
   </url>
   
   <url>
+    <loc>https://blog.rsinha.org/categories/lambda/</loc>
+    <lastmod>2019-02-12T14:37:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.rsinha.org/categories/lazy/</loc>
     <lastmod>2009-09-02T18:23:00+00:00</lastmod>
     <priority>0</priority>
@@ -812,6 +829,12 @@
   </url>
   
   <url>
+    <loc>https://blog.rsinha.org/categories/til/</loc>
+    <lastmod>2019-02-12T14:37:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.rsinha.org/categories/truecrypt/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
     <priority>0</priority>
@@ -879,7 +902,7 @@
   
   <url>
     <loc>https://blog.rsinha.org/</loc>
-    <lastmod>2017-09-10T20:19:00+01:00</lastmod>
+    <lastmod>2019-02-12T14:37:12+00:00</lastmod>
     <priority>0</priority>
   </url>
   
