@@ -1,121 +1,136 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ritesh Sinha">
-    <meta name="description" content="Stuff I rant about">
-    <meta name="generator" content="Hugo 0.42.2" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.69.0" />
 
-    
-    <title>The Go Programming Language &middot; @rsinha’s blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/" />
+  <link rel="canonical" href="https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/" /><link rel="alternate" type="application/atom+xml" href="https://blog.rsinha.org/index.xml" title="blog">
 
-    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
-    
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.rsinha.org\/"
+      },
+      "articleSection" : "microposts",
+      "name" : "The Go Programming Language",
+      "headline" : "The Go Programming Language",
+      "description" : "I have too many books to read, and too little time! I\x26rsquo;m currently making my way through [The Go Programming Language] (https:\/\/www.amazon.co.uk\/Programming-Language-Addison-Wesley-Professional-Computing-ebook\/dp\/B0184N7WWS\/ref=sr_1_4?s=books\x26amp;ie=UTF8\x26amp;qid=1505071377\x26amp;sr=1-4) by Alan Donovan \x26amp; the Brian Kernighan, slowly but steadily. I\x26rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I\x26rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don\x26rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees.",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-09-10 20:19:00 \x2b0100 BST",
+      "dateModified" : "2017-09-10 20:19:00 \x2b0100 BST",
+      "url" : "https:\/\/blog.rsinha.org\/microposts\/2017-09-10-go-prog-language\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>The Go Programming Language - blog</title>
+  <meta property="og:title" content="The Go Programming Language - blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="I have too many books to read, and too little time! I&rsquo;m currently making my way through [The Go Programming Language] (https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4) by Alan Donovan &amp; the Brian Kernighan, slowly but steadily. I&rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees." />
+  <meta name="description" content="I have too many books to read, and too little time! I&rsquo;m currently making my way through [The Go Programming Language] (https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4) by Alan Donovan &amp; the Brian Kernighan, slowly but steadily. I&rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees." />
+  <meta property="og:locale" content="en-gb" />
 
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
-    
-	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
-	
-  </head>
-  <body class="site">
+  
+</head>
 
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
 <header>
-  <nav>
-    <h1><a href="/">@rsinha</a>’s blog.</h1>
-    <div class="menu">
-      
-      <ul>
-        
-            <li>
-              <a href="/posts/">Posts</a>
-              
-                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
-              
-            </li>
-        
-            <li>
-              <a href="/microposts/">Snippets</a>
-              
-            </li>
-        
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="signatures site-title">
+    <a href="/">Ritesh Sinha</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">The Go Programming Language</h1>
+          
+        </header>
 
-  <main class="content">
-    <article class="micropost">
-  <p>I have too many books to read, and too little time! I&rsquo;m currently making my way through <a href="https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4">The Go Programming Language</a> by Alan Donovan &amp; the Brian Kernighan, slowly but steadily. I&rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees. This makes it an easy language to pick up for someone familiar with Python (and without a software development background).</p>
-
+        <div class="post-content markdown-body">
+          
+          <p>I have too many books to read, and too little time! I&rsquo;m currently making my way through [The Go Programming Language] (<a href="https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4">https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1505071377&amp;sr=1-4</a>) by Alan Donovan &amp; the Brian Kernighan, slowly but steadily. I&rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees. This makes it an easy language to pick up for someone familiar with Python (and without a software development background).</p>
 <p>There are some aspects of the language that I don&rsquo;t yet fully understand and I&rsquo;m always keen to improve. This book is an enjoyable introduction to the language and feels like an excellent text book on the subject - with exercises that I should probably do, at some point. I suspect that even seasoned programmers will get a lot of out it as it covers some interesting bugs from programs that are syntactically correct, but logically wrong. It is often easy to resort to stackoverflow or find a blog post about a particular issue when learning a new language and hitting a wall but it is easier to dive deep to get a better understanding, especially when you&rsquo;re learning a new language.</p>
 
-  <a href='https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/'><aside class="dates">→ 2017/09/10 8:19 PM</aside></a>
-</article>
-
-  </main>
-
-<footer>
-  <div class="footer_text">
-      <div>
-        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
-        <p>
-          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
-
-        </p>
-      </div>
-      
-      <div>
-          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
-          <div id="photos"></div>
         </div>
-      </div>
-      
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/rsinha" target="_blank">Twitter</a>
   </div>
-
   
-    <div class="footer_copyright">
-      &copy; 2019 <a href="/about">Ritesh Sinha</a>
-       - Made in London, UK
+  <div class="site-footer-item">
+    <a href="https://github.com/ritesh" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
     </div>
-  
-</footer>
+  </article>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
-    <script src="/js/weblog.js" charset="utf-8"></script>
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
     
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
-    _paq.push(['setSiteId', 1]);
-    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
-  })();
+    
+  
 </script>
 
-
-    <script type="text/javascript">
-
   
-  $(function() {
-    
-    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
-      iweblog.application.displayImages(data, 8);
-    });
-  });
 
-</script>
+</body>
 
-    
-  </body>
 </html>
-

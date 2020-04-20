@@ -1,1732 +1,640 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-
-    <title>@rsinha’s blog - blog</title>
+    <title>blog</title>
     <link>https://blog.rsinha.org/</link>
-    <description>All entries in blog on blog</description>
+    <description>Recent content on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    
     <lastBuildDate>Tue, 12 Feb 2019 14:50:01 +0000</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
     
-      
-      <item>
-        <title>Testing an AWS Lambda function locally</title>
-        <link>https://blog.rsinha.org/testing-aws-lambda-locally/</link>
-        <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/testing-aws-lambda-locally/</guid>
-        <description>
-
-&lt;h1 id=&#34;integration-testing-lambda-functions-locally&#34;&gt;Integration Testing Lambda Functions Locally&lt;/h1&gt;
-
-&lt;p&gt;Never had to test AWS Lambda functions locally (test in production YOLO).  I&amp;rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&amp;rsquo;s probably best to test them locally to discover any regressions early on.&lt;/p&gt;
-
-&lt;p&gt;While walking through the docs with a colleague, we found that the nifty way to test a lambda function created &lt;a href=&#34;https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html&#34;&gt;using SAM&lt;/a&gt; is to run:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ sam local start-lambda&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;In the directory where you have your SAM &lt;code&gt;template.yml&lt;/code&gt;. This is &lt;code&gt;LambdaInvoking&lt;/code&gt; the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import boto3
-import botocore
-
-# Set &amp;quot;running_locally&amp;quot; flag if you are running the integration test locally
-running_locally = True
-
-if running_locally:
-
-    # Create Lambda SDK client to connect to appropriate Lambda endpoint
-    lambda_client = boto3.client(&#39;lambda&#39;,
-        region_name=&amp;quot;eu-west-1&amp;quot;,
-        endpoint_url=&amp;quot;http://127.0.0.1:3001&amp;quot;,
-        use_ssl=False,
-        verify=False,
-        config=botocore.client.Config(
-            signature_version=botocore.UNSIGNED,
-            read_timeout=30,
-            retries={&#39;max_attempts&#39;: 0},
-        )
-    )
-else:
-    lambda_client = boto3.client(&#39;lambda&#39;)
-
-
-# Invoke your Lambda function as you normally usually do. The function will run
-# locally if it is configured to do so
-response = lambda_client.invoke(FunctionName=&amp;quot;HelloFunction&amp;quot;)
-
-# Verify the response
-assert response == &amp;quot;Hello World&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is from the docs, but it took me a while to figure out that &lt;code&gt;FunctionName&lt;/code&gt; above needs to refer to the &lt;em&gt;logical&lt;/em&gt; name of your Lambda function in the CloudFormation template.&lt;/p&gt;
-
-&lt;p&gt;The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust &lt;code&gt;read_timeout&lt;/code&gt;accordingly).&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re a security nerd, the bits above that say &lt;code&gt;use_ssl=False&lt;/code&gt; and &lt;code&gt;verify=False&lt;/code&gt; should give you pause. In this instance, you&amp;rsquo;re connecting to a service locally and not reaching out to the internet, so you&amp;rsquo;re OK.&lt;/p&gt;
-</description>
-      </item>
-      
+	<atom:link href="https://blog.rsinha.org/index.xml" rel="self" type="application/rss+xml" />
     
-      
-      <item>
-        <title>The Go Programming Language</title>
-        <link>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</link>
-        <pubDate>Sun, 10 Sep 2017 20:19:00 +0100</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</guid>
-        <description>&lt;p&gt;I have too many books to read, and too little time! I&amp;rsquo;m currently making my way through &lt;a href=&#34;https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;amp;ie=UTF8&amp;amp;qid=1505071377&amp;amp;sr=1-4&#34;&gt;The Go Programming Language&lt;/a&gt; by Alan Donovan &amp;amp; the Brian Kernighan, slowly but steadily. I&amp;rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&amp;rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&amp;rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees. This makes it an easy language to pick up for someone familiar with Python (and without a software development background).&lt;/p&gt;
-
-&lt;p&gt;There are some aspects of the language that I don&amp;rsquo;t yet fully understand and I&amp;rsquo;m always keen to improve. This book is an enjoyable introduction to the language and feels like an excellent text book on the subject - with exercises that I should probably do, at some point. I suspect that even seasoned programmers will get a lot of out it as it covers some interesting bugs from programs that are syntactically correct, but logically wrong. It is often easy to resort to stackoverflow or find a blog post about a particular issue when learning a new language and hitting a wall but it is easier to dive deep to get a better understanding, especially when you&amp;rsquo;re learning a new language.&lt;/p&gt;
-</description>
-      </item>
-      
     
+    <item>
+      <title>Testing an AWS Lambda function locally</title>
+      <link>https://blog.rsinha.org/testing-aws-lambda-locally/</link>
+      <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
       
-      <item>
-        <title>header files</title>
-        <link>https://blog.rsinha.org/microposts/header-files/</link>
-        <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/microposts/header-files/</guid>
-        <description>&lt;p&gt;Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like &lt;code&gt;ext4&lt;/code&gt;, this causes a whole lot of problems. &lt;code&gt;gcc&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt; try and fail to find &lt;code&gt;coolHeader.h&lt;/code&gt; if it&amp;rsquo;s called &lt;code&gt;CoolHeader.h&lt;/code&gt;. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious &lt;code&gt;sed&lt;/code&gt;-fu.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s an easier hack, if you&amp;rsquo;re not ready to use lowercase header filenames in your C++ code like Bjarne Stroustrup probably intended. Create an empty file large enough to contain both your source and build artifacts, format it as a FAT32 volume and mount it as a loop device. Use this loop device to build your code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;dd if=/dev/zero of=/fakedisk bs=1024 count=200000 
-losetup /dev/loop0 /fakedisk 
-mkfs.vfat /dev/loop0 # Make it a VFAT filesystem
-mkdir /mnt/faker
-mount -t vfat /dev/loop0 /mnt/faker
-cp -Rv ~/your/QtCode /mnt/faker/
-cd /mnt/faker/QtCode/ &amp;amp;&amp;amp; qmake -makefile
-make # Job done, off to the pub 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But hey, if &lt;code&gt;sed&lt;/code&gt; works to refactor your codebase, more power to you!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/testing-aws-lambda-locally/</guid>
+      <description>tl;dr Testing a SAM lambda locally</description>
+    </item>
     
+    <item>
+      <title>The Go Programming Language</title>
+      <link>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</link>
+      <pubDate>Sun, 10 Sep 2017 20:19:00 +0100</pubDate>
       
-      <item>
-        <title>Hello, Hugo!</title>
-        <link>https://blog.rsinha.org/2016/11/09/hello-hugo/</link>
-        <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
-        <description>
-
-&lt;p&gt;I had been running this blog using &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; for a while now, but didn&amp;rsquo;t quite understand how it all worked. Jekyll is a great tool, and you don&amp;rsquo;t need a whole lot of configuration to get started. If you&amp;rsquo;re using github to host either personal, project or organisation pages, Jekyll is a no-brainer to get started. However, as I&amp;rsquo;m not much of a Ruby programmer, I didn&amp;rsquo;t quite understand how Jekyll worked and having to &lt;code&gt;gem install ruby&lt;/code&gt; felt wrong &amp;ndash; especially since it also installs a whole lot of other dependencies that I don&amp;rsquo;t understand, either. Having to get the &amp;lsquo;right&amp;rsquo; version of ruby for jekyll to run is also pretty annoying. After some digging around, I discovered &lt;a href=&#34;http://gethugo.io&#34;&gt;hugo&lt;/a&gt;, which is a static site generator written in Go. I decided to finally take the plunge and move my Jekyll site to Hugo, in the hope that I could eke out at least one blog post about my experience.&lt;/p&gt;
-
-&lt;h3 id=&#34;why-hugo&#34;&gt;Why, Hugo?&lt;/h3&gt;
-
-&lt;p&gt;Hugo&amp;rsquo;s written in Go, which means that all you need to get started is a binary of Hugo somewhere in your &lt;code&gt;$PATH&lt;/code&gt;. That&amp;rsquo;s it. Everything it needs is baked into this statically compiled binary. Go code is easy to follow and the template code used by Hugo is Go&amp;rsquo;s &lt;code&gt;html/template&lt;/code&gt; which is available as part of the standard library. Besides, all the cool kids today use go for both personal and professional projects and I didn&amp;rsquo;t want to miss out.&lt;/p&gt;
-
-&lt;p&gt;Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of &lt;a href=&#34;https://www.staticgen.com/&#34;&gt;static site generators&lt;/a&gt; available today. You write your blog posts in markdown and they are rendered to HTML. The layout of your content and the look of your blog is decided by &lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;community created themes&lt;/a&gt; that you can either customise or use out of the box.  If you&amp;rsquo;re used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn&amp;rsquo;t give you an editor or a point and click interface to add upload and add images, for example. But it&amp;rsquo;s not just for people who are suckers for punishment, it&amp;rsquo;s a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn&amp;rsquo;t hold my breath). If you&amp;rsquo;re the type of person who avoids Finder and uses &lt;code&gt;mv&lt;/code&gt; &amp;amp; &lt;code&gt;cp&lt;/code&gt; instead, Hugo is probably for you.&lt;/p&gt;
-
-&lt;p&gt;This is not meant to be a Hugo tutorial; if you want to learn how to start out with a Hugo blog or website, try the &lt;a href=&#34;https://gohugo.io/overview/introduction/&#34;&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;hugo-and-jekyll-github-pages&#34;&gt;Hugo and Jekyll Github pages&lt;/h3&gt;
-
-&lt;p&gt;Jekyll works great with Github pages of all kinds as Github automatically recognises Jekyll based sites and automatically &amp;ldquo;builds&amp;rdquo; them into great looking static websites. Unfortunately, Github doesn&amp;rsquo;t know what to do with Hugo based sites, so it attempts to build them automatically and fails. When moving from Jekyll to Hugo, this was the first hurdle that I ran into - which seems obvious in hindsight. There&amp;rsquo;s a well written tutorial on using Github for &lt;a href=&#34;https://gohugo.io/tutorials/github-pages-blog/&#34;&gt;hosting with Hugo&lt;/a&gt; and I&amp;rsquo;ll try and summarise my experience in getting it to work with personal sites i.e. served from the master branch of your &lt;code&gt;&amp;lt;YOUR_USERNAME&amp;gt;.github.io&lt;/code&gt; repository.&lt;/p&gt;
-
-&lt;p&gt;If you don&amp;rsquo;t already have a &lt;code&gt;&amp;lt;YOUR_USERNAME&amp;gt;.github.io&lt;/code&gt; repository, you should create one now, whether you plan to use Hugo or not. It&amp;rsquo;s a great way to host content. The most important bit of information that I missed when reading the Hugo Github tutorial was that for personal sites, GitHub will only serve pages from the master branch of the &lt;code&gt;&amp;lt;YOUR_USERNAME&amp;gt;.github.io&lt;/code&gt; repository. Not the &lt;code&gt;gh-pages&lt;/code&gt; branch, which I thought was the case. The &lt;code&gt;gh-pages&lt;/code&gt; branch is only relevant to organisation and project pages. This took me way too long to figure out and was frustrating, even though the tutorial clearly calls it out. RTFM is important, friends.&lt;/p&gt;
-
-&lt;p&gt;To host and serve your user github page, you&amp;rsquo;ll need to set up two repositories. One that stores the source for your blog and the other is the static site itself (e.g. ritesh.github.io). First, you want to create a git repository that is going to store all the contents of your blog. This includes the entire directory structure your site as created by Hugo on first run. Next, you want to add the &lt;code&gt;&amp;lt;YOUR_GITHUB_USERNAME&amp;gt;.github.io&lt;/code&gt; repository as a git submodule as Hugo&amp;rsquo;s &lt;code&gt;public&lt;/code&gt; directory. I&amp;rsquo;ve added the theme as a submodule too, but this is not stricly required if you don&amp;rsquo;t intend to modify the theme. After you&amp;rsquo;re happy with the way your site looks, you need a way to push the generated site to your &lt;code&gt;&amp;lt;YOUR_GITHUB_USERNAME&amp;gt;.github.io&lt;/code&gt;. To do this, the following script from the tutorial above works perfectly. The script looks like this, what it does should be self-explanatory. The &lt;code&gt;public&lt;/code&gt; directory is a git submodule that contains your Hugo generated site:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
-
-# Build the project.
-hugo # if using a theme, replace by `hugo -t &amp;lt;yourtheme&amp;gt;`
-
-# Go To Public folder
-cd public
-# Add changes to git.
-git add -A
-
-# Commit changes.
-msg=&amp;quot;rebuilding site `date`&amp;quot;
-if [ $# -eq 1 ]
-  then msg=&amp;quot;$1&amp;quot;
-fi
-git commit -m &amp;quot;$msg&amp;quot;
-
-# Push source and build repos.
-git push origin master
-
-# Come Back
-cd ..
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Each time you run this deploy script a new commit is created in the submodule that contains your rendered site (i.e. public) and changes are pushed to master. This automatically updates your blog or website.&lt;/p&gt;
-
-&lt;h3 id=&#34;adding-ssl-tls&#34;&gt;Adding SSL/TLS&lt;/h3&gt;
-
-&lt;p&gt;Github offers free a free SSL certificate for you &lt;code&gt;&amp;lt;YOURNAME_USERNAME&amp;gt;.github.io&lt;/code&gt; site, but you&amp;rsquo;re in trouble if using a custom domain name as the name on the certificate will not match &lt;code&gt;yourvanitydomain.coolTLD&lt;/code&gt;. To enable SSL/TLS (without origin SSL), I&amp;rsquo;ve used Cloudflare as my DNS servers for *.rsinha.org. Cloudflare can also be configured to provide additional features, such as caching and lots of other knobs and whistles, even on their free plan. When setting up Cloudflare, you can also configure it to rewrite all URLs to HTTPS rather than HTTP. This took me a while to figure out, since some of my assets were being served over HTTP even when I&amp;rsquo;d configured the assets on my site to point to https://. Chrome prevented the site from rendering correctly due to mixed-content warnings.&lt;/p&gt;
-
-&lt;h3 id=&#34;cost-benefits&#34;&gt;Cost, Benefits&lt;/h3&gt;
-
-&lt;p&gt;The total cost to host all of this is zero (thanks Github and the Cloudflare free plan!). That is, if you don&amp;rsquo;t count time spent fiddling around to get everything right. To their credit, Hugo has great documentation and you want to RTFM and not skim. In return for time spent, you get a nice static website consisting of bits that you can customize to your heart&amp;rsquo;s content. You also get a site with HTTPS enabled, caching, and free DDoS protection if the two readers of your blog decide to take you down.&lt;/p&gt;
-
-&lt;h3 id=&#34;it-works&#34;&gt;It works!&lt;/h3&gt;
-
-&lt;p&gt;Everything&amp;rsquo;s set up and works fine for now, but there are a few things that I still need to get right to make my life easier. For one, I can only edit my blog by checking it out somewhere and then writing content. There isn&amp;rsquo;t a web editor that works directly with Hugo that I&amp;rsquo;m aware of. You can set it up so that a commit to your blog source automatically builds your blog, but I&amp;rsquo;ve not set this up. This should be possible with a CI service like Travis.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io/internet-weblog/&#34;&gt;This theme&lt;/a&gt; is great, but I still need to tweak some of the metadata generated to my liking. To do that, I need a better understanding of how metadata is generated for each post. For example, hugo can automatically generate metadata items such as title and date. I&amp;rsquo;m still not sure how I can get it to automatically generate custom slugs and URLs. I&amp;rsquo;m doing this manually for now and it feels wrong, surely the computer can do this for me!&lt;/p&gt;
-
-&lt;p&gt;Overall, I&amp;rsquo;m quite happy with this setup and I looking to tweak it a little more to my liking as and when I have free time. I&amp;rsquo;d highly recommend it for anyone looking to move over from Jekyll or for people who don&amp;rsquo;t need self-hosted WordPress sites. It&amp;rsquo;s a fun learning experience and it creates a site that is free from bloat and does not require security patches or other maintenance.&lt;/p&gt;
-
-&lt;p&gt;Also, if you&amp;rsquo;re wondering why this is categorised as yak-shaving, read the &lt;a href=&#34;https://en.wiktionary.org/wiki/yak_shaving&#34;&gt;Wiktionary article&lt;/a&gt; to know more.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/microposts/2017-09-10-go-prog-language/</guid>
+      <description>I have too many books to read, and too little time! I&amp;rsquo;m currently making my way through [The Go Programming Language] (https://www.amazon.co.uk/Programming-Language-Addison-Wesley-Professional-Computing-ebook/dp/B0184N7WWS/ref=sr_1_4?s=books&amp;amp;ie=UTF8&amp;amp;qid=1505071377&amp;amp;sr=1-4) by Alan Donovan &amp;amp; the Brian Kernighan, slowly but steadily. I&amp;rsquo;d purchased the book a while ago, but have been reading it in bite sized chunks. I&amp;rsquo;m somewhat familiar with Go as it is fairly easy to learn and you don&amp;rsquo;t have to keep fighting the compiler but it gives you excellent compile time guarantees.</description>
+    </item>
     
+    <item>
+      <title>header files</title>
+      <link>https://blog.rsinha.org/microposts/header-files/</link>
+      <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
       
-      <item>
-        <title>Building Dockerized Application Security Scanners</title>
-        <link>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</link>
-        <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</guid>
-        <description>
-
-&lt;p&gt;I read an &lt;a href=&#34;https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/&#34;&gt;interesting post&lt;/a&gt; by &lt;a href=&#34;https://twitter.com/anshuman_bh&#34;&gt;@anshuman_bh&lt;/a&gt; on automating ZAP scans for dockerized web applications. At the time, I was exploring &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;docker compose&lt;/a&gt; (formerly fig) as a way to &amp;ldquo;container-ize&amp;rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that &lt;code&gt;docker-compose&lt;/code&gt; would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &amp;ldquo;glue&amp;rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-problem&#34;&gt;The Problem&lt;/h3&gt;
-
-&lt;p&gt;If you haven&amp;rsquo;t read Anshuman&amp;rsquo;s post yet, I suggest that you &lt;a href=&#34;https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/&#34;&gt;check it out&lt;/a&gt; to get an understanding of what he&amp;rsquo;s trying to accomplish. The goal is to automate scans against a web application that runs in a docker container. This is useful if you&amp;rsquo;re trying to set-up some sort of CI infrastructure that automatically scans new builds of the web application. We want to ensure that no human interaction is required, and reports generated from scans are saved somewhere on the host machine (outside the containers) to be processed or read.&lt;/p&gt;
-
-&lt;h3 id=&#34;the-setup&#34;&gt;The Setup&lt;/h3&gt;
-
-&lt;p&gt;To accomplish this, I&amp;rsquo;ll use docker-compose instead of plain docker. To follow along, install docker-compose &lt;a href=&#34;https://docs.docker.com/compose/#installation-and-set-up&#34;&gt;from here&lt;/a&gt;. We&amp;rsquo;ll use three containers:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The application being tested. For this example, I&amp;rsquo;ll use the famous WebGoat application because, well, goats.&lt;/li&gt;
-&lt;li&gt;The &lt;a href=&#34;https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project&#34;&gt;Zed Attack Proxy&lt;/a&gt;. You could use any other application scanner that supports automation here.&lt;/li&gt;
-&lt;li&gt;A container that contains custom scripts. We could build on the ZAP container too, but I&amp;rsquo;ve found that this is more flexible.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The idea is to spin up the test application, followed by an instance of ZAP. After these containers are up, we want to connect to the ZAP container and direct it to scan the target and save the results once done.&lt;/p&gt;
-
-&lt;h3 id=&#34;docker-composing-all-the-things&#34;&gt;Docker-composing All The Things&lt;/h3&gt;
-
-&lt;p&gt;Using docker-compose is easy. All you need is one YAML file to define your containers and how they&amp;rsquo;re linked. Here&amp;rsquo;s what it looks like for my setup:
-&lt;script src=&#34;https://gist.github.com/ritesh/2fcd9fd32995ffeb30f1.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;To test my setup out, start by &lt;a href=&#34;https://github.com/ritesh/dockerscan&#34;&gt;cloning this repo&lt;/a&gt;. Once you have cloned it, run &lt;code&gt;docker-compose build&lt;/code&gt;. This will take a while to download images for the first time. Once this is done, run &lt;code&gt;docker-compose up&lt;/code&gt; to bring up all containers listed in &lt;code&gt;docker-compose.yml&lt;/code&gt;. After the last container exits, you should have a report from the ZAP scan in &lt;code&gt;reports/&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;So, what just happened? &lt;code&gt;docker-compose&lt;/code&gt; looks at the YAML file and figures out what containers need to be started in what sequence. It starts the &amp;ldquo;target&amp;rdquo; container, which contains our test application (WebGoat in this case), followed by the ZAP container. The &amp;ldquo;tooling&amp;rdquo; container is started last. The &lt;code&gt;Dockerfile&lt;/code&gt; for tooling is defined in &lt;code&gt;tools&lt;/code&gt;. It builds on the &lt;code&gt;python 2.7&lt;/code&gt; image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.&lt;/p&gt;
-
-&lt;p&gt;Hope this gives you ideas for workflows for automating scans. Send comments/questions/flames to &lt;a href=&#34;https://twitter.com/rsinha&#34;&gt;@rsinha&lt;/a&gt;.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/microposts/header-files/</guid>
+      <description>Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like ext4, this causes a whole lot of problems. gcc and g++ try and fail to find coolHeader.h if it&amp;rsquo;s called CoolHeader.h. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious sed-fu.</description>
+    </item>
     
+    <item>
+      <title>Header files voodoo</title>
+      <link>https://blog.rsinha.org/posts/2017-03-07-header-files-qt/</link>
+      <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
       
-      <item>
-        <title>Inhibiting Sleep on Xubuntu 14.04</title>
-        <link>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
-        <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
-        <description>&lt;p&gt;My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.&lt;/p&gt;
-
-&lt;p&gt;When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&amp;rsquo;t know how to unlock it when it wakes back up. Instead of the disk unlocking, I get a ton of ATA error messages about a missing disk, the laptop locks up and needs to be power cycled. To save me from myself, I removed the &amp;ldquo;Sleep&amp;rdquo; and &amp;ldquo;Hibernate&amp;rdquo; (can&amp;rsquo;t remember if this was already disabled) options from the logout menu, but there was still a chance that I might close the lid and lose hours of work.&lt;/p&gt;
-
-&lt;p&gt;To disable the lid-close event from doing anything, you can make the following changes to &lt;code&gt;/etc/systemd/logind.conf&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;HandleSuspendKey=ignore
-HandleHibernateKey=ignore
-HandleLidSwitch=ignore
-#Ignore ALL THE THINGS
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This tip is courtesy StackOverflow user &lt;a href=&#34;http://askubuntu.com/users/205327/john-t%C3%B6rnblom&#34;&gt;John Törnblom&lt;/a&gt; and this answer for &lt;a href=&#34;http://askubuntu.com/questions/362667/xubuntu-13-10-disabling-suspend-on-lid-being-closed&#34;&gt;Ubuntu 13.04&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Apart from the die-when-wake-up-from-sleep issue, I can highly recommend Xubuntu 14.04 as a daily desktop operating system for work. Heck, even PulseAudio does the right things with Bluetooth speakers &amp;amp; headsets and works as you&amp;rsquo;d expect.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/2017-03-07-header-files-qt/</guid>
+      <description>Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like ext4, this causes a whole lot of problems. gcc and g++ try and fail to find coolHeader.h if it&amp;rsquo;s called CoolHeader.h. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious sed-fu.</description>
+    </item>
     
+    <item>
+      <title>Hello, Hugo!</title>
+      <link>https://blog.rsinha.org/2016/11/09/hello-hugo/</link>
+      <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
-      <item>
-        <title>Chunky binaries and bsdiff</title>
-        <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
-        <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
-        <description>&lt;p&gt;I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language &lt;em&gt;du jour&lt;/em&gt; for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re not familiar with go, I highly recommend that you check out &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Compile your application (&lt;code&gt;go build&lt;/code&gt;). You may need to cross-compile if you&amp;rsquo;re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds.&lt;/li&gt;
-&lt;li&gt;Copy the generated binary over to the server that you want to run it. If you want, you could strip the binary to shave off a few MB.&lt;/li&gt;
-&lt;li&gt;Run it :)&lt;/li&gt;
-&lt;li&gt;Set up a reverse proxy to forward all traffic to your application. You only need to do this once.&lt;/li&gt;
-&lt;li&gt;There is no step 5.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Contrast this with my current workflow for deploying Python web applications:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Ensure Python versions match on dev and prod. This can be a nightmare sometimes, but is avoidable by ensuring that dev and production match as closely as possible (use the same version of Ubuntu/Fedora/Debian). Not an issue if your dev box runs the same flavour of Linux as uat/prod.&lt;/li&gt;
-&lt;li&gt;Ensure that native libraries required by Python packages are available on both dev and production hosts (I&amp;rsquo;m looking at you &lt;code&gt;libpq&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Have a well defined fabfile for deployments, or similar. This is not really a complaint, I think &lt;code&gt;fab deploy&lt;/code&gt; sounds hilarious when said out loud and is also a nice way to deploy Python web applications.&lt;/li&gt;
-&lt;li&gt;Restart apache/nginx so that it reloads your WSGI application. I think you can &lt;code&gt;touch&lt;/code&gt; a file and &lt;code&gt;mod_wsgi&lt;/code&gt; reloads your application, but this has never worked reliably for me.&lt;/li&gt;
-&lt;li&gt;The way to set up debug logs for Python applications deployed with &lt;code&gt;mod_wsgi&lt;/code&gt; is not straightforward. I gave up after spending a few hours trying, this shouldn&amp;rsquo;t be that difficult! I&amp;rsquo;m stuck with trying to reproduce production issues on my dev box.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Executable files are all well and good but copying them over to production hosts multiple times a day, usually over SSH, can be slow if you&amp;rsquo;re on crappy DSL. If I need to do this for servers sitting inside my company&amp;rsquo;s network, I have to ship files inside an SSH tunnel &lt;em&gt;wrapped&lt;/em&gt; inside a VPN connection. This makes it unbearably slow for files larger than 10MB. Why can&amp;rsquo;t you just diff a binary file and upload &lt;em&gt;only&lt;/em&gt; the changed bits? Surely this is possible?&lt;/p&gt;
-
-&lt;p&gt;This is when I discovered &lt;code&gt;bsdiff&lt;/code&gt; and its friend &lt;code&gt;bspatch&lt;/code&gt;. I guess I&amp;rsquo;m fairly late to this party, since &lt;code&gt;bsdiff&lt;/code&gt; has been around since the early 2000s (or earlier?). This pair of amazing utilities was written by the Colin Percival of &lt;a href=&#34;http://tarsnap.com&#34;&gt;Tarsnap&lt;/a&gt; fame. I understand that lots of binary applications use either &lt;code&gt;bsdiff&lt;/code&gt; or an application that uses a similar algorithm to generate patches for binary applications.&lt;/p&gt;
-
-&lt;p&gt;The clue is in the name; &lt;code&gt;bsdiff&lt;/code&gt; lets you &lt;code&gt;diff&lt;/code&gt; an old binary with a new binary and generates a patch for you. You take this patch, give it to &lt;code&gt;bspatch&lt;/code&gt; along with an old binary and it gets transformed to the new one. If the changes between the binaries are small, the generated patch file (as you&amp;rsquo;d think) is tiny. On average, the patch file is 2-3% of the full binary for the application I&amp;rsquo;m working on. Instead of copying over the binary to a production host once I&amp;rsquo;ve compiled my application, I copy the patch instead:&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#ccc;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mv binary binary.old
-go build
-bsdiff binary.old binary binary_patch
-scp binary_patch /path/to/production/binary
-
-&lt;span style=&#34;color:#000080&#34;&gt;# On production host
-&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;&lt;/span&gt;mv binary binary.old
-bspatch binary.old binary binary_patch
-&lt;span style=&#34;color:#000080&#34;&gt;# Need to do this because the binary loses +x 
-&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;&lt;/span&gt;chmod +x binary
-# All &lt;span style=&#34;color:#cdcd00&#34;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by &lt;code&gt;go build&lt;/code&gt;, but there&amp;rsquo;s no reason why it shouldn&amp;rsquo;t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a &lt;code&gt;SIGHUP&lt;/code&gt;. Go gives you &lt;code&gt;&amp;quot;os/signal&amp;quot;&lt;/code&gt; but I haven&amp;rsquo;t had the chance to play around with it yet.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
+      <description>Finally got around to moving this blog from Jekyll to Hugo and setting up a Cloudflare account with SSL.</description>
+    </item>
     
+    <item>
+      <title>Building Dockerized Application Security Scanners</title>
+      <link>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</link>
+      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
       
-      <item>
-        <title>Another day, another blog</title>
-        <link>https://blog.rsinha.org/2014/11/17/another-day/</link>
-        <pubDate>Mon, 17 Nov 2014 22:41:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2014/11/17/another-day/</guid>
-        <description>&lt;pre&gt;
-Teathet6quiu yah4ooxi7AhB ciezei1Gahwu Quui2queixie 
-eeveahuy2ENi eoj8sa5iew4S eibeo8AuPhoo eeZe4peighoh 
-ao4oPhashiez Mee8quahmeet quae6eiVaep6 aep6quu9eiYo 
-pooyoh5Reeji jeiz2OoRefae Vaegohpek1Pa ahGh9pe1bohb 
-Oopheec6faic Ooka2capheZ7 Axuewee7Eiqu vooph2ee9Eij 
-Quahxaivohv1 eVu8eed9yeji uk8ingee8uFu shohz3tei9AB 
-Aw4oT2oongea VeeSh8ahghen aiqu2ioNgohk zuaBoth3aex7 
-Aroog7aivaeh cie3ongeTooF sha1looTohyi vaeheneigh9S 
-ChaefaeWiec3 fah9Hookee1i ahh6koThe1ae eYe2oFi7ieCh 
-aeR9ohg5Shae ii1po5Ujeiy8 cai3Ahnu0xie neDuiquuY7oh 
-Book0feeziez DooMoo4queib eish7aeKahv2 Eimai9eTe0Zo 
-Oojou2shu8oh oophioSuesh5 ex4ru3aD8uye zut7Heigahjo 
-Giet7eejei7e mioqu8doKi8e Laitai1ohquo ooRuaQuuZ9jo 
-iome1Eithi9j aaNgah0bupee ne8xaiphahVo wahtah9uru0F 
-upatai5aeS9o phohXoph7ohs mieQuiet9ael iemohpu0iiPi 
-ahFoo0Phu7th joa8aew0ooCh ko8za1ood9Te chei2Gepeil6 
-Deijimoa9sie Kai6Wah3johb Eegh3Eegho0f ooRie0AhR8ie 
-haiviuf7Ahno EiQu5theeCh7 Eeyeidae4uus lohzaeGhiph3 
-ieC0zaepeJ6a NaiTh4poh6we AiPuvohM6ahc Eew0see3eeph 
-ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h 
-&lt;/pre&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</guid>
+      <description>A first attempt at automating web application security scans for dockerized web-applications</description>
+    </item>
     
+    <item>
+      <title>Inhibiting Sleep on Xubuntu 14.04</title>
+      <link>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
+      <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
       
-      <item>
-        <title>Getting Live USB sticks to boot consistently</title>
-        <link>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
-        <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
-        <description>&lt;p&gt;Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &amp;ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&amp;rsquo;s hit and miss on my desktop. I&amp;rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&amp;rsquo;ve found great way around it.&lt;/p&gt;
-
-&lt;p&gt;Enter the &lt;a href=&#34;http://www.plop.at/en/bootmanager/index.html&#34;&gt;plop boot manager&lt;/a&gt;. Install this nifty little tool and it gives you a boot menu before windows starts up. You can now select your USB stick and it should boot, provided that unetbootin or a similar tool did it&amp;rsquo;s job.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
+      <description>Have a laptop that refuses to wake up after falling asleep? Try this!</description>
+    </item>
     
+    <item>
+      <title>Chunky binaries and bsdiff</title>
+      <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
+      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
       
-      <item>
-        <title>Geared bikes</title>
-        <link>https://blog.rsinha.org/2013/08/10/geared-bikes/</link>
-        <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2013/08/10/geared-bikes/</guid>
-        <description>&lt;p&gt;Got a sweet road bike off Gumtree. I thought the gears weren&amp;rsquo;t working, having never ridden a geared bike before.&lt;/p&gt;
-
-&lt;p&gt;Me: &amp;ldquo;The gears on this bike don&amp;rsquo;t work&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Bike shop guy: &amp;ldquo;Have you tried shifting these levers right here?&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Me: &amp;ldquo;Those are brakes, right?&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Bike shop guy: &amp;ldquo;How have you been shifting gears until this point?&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Me: &amp;ldquo;I&amp;rsquo;ll show myself out, thanks&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Laughter in the background as I walk out of the bike shop.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Never making fun of my computer illiterate friends and family ever again.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
+      <description>If you&amp;rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful</description>
+    </item>
     
+    <item>
+      <title>Another day, another blog</title>
+      <link>https://blog.rsinha.org/2014/11/17/another-day/</link>
+      <pubDate>Mon, 17 Nov 2014 22:41:00 +0000</pubDate>
       
-      <item>
-        <title>More Black &amp; White</title>
-        <link>https://blog.rsinha.org/2013/05/21/more-black-white/</link>
-        <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2013/05/21/more-black-white/</guid>
-        <description>&lt;p&gt;I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other.
-Found an old photo in Lightroom and decided to mess about with it. I think it is about &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; a stop underexposed, but I like it anyway.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/riteshkumarsinha/8770024243&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7368/8770024243_7bafb80e46_h.jpg&#34; alt=&#34;DSCF0540.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones work to bring out details in photographs.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2014/11/17/another-day/</guid>
+      <description>This is another attempt at a blog. If I can manage more than 140 chars per day, this will have been a successful experiment.</description>
+    </item>
     
+    <item>
+      <title>Getting Live USB sticks to boot consistently</title>
+      <link>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
+      <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
       
-      <item>
-        <title>Brussels</title>
-        <link>https://blog.rsinha.org/2013/05/11/brussels/</link>
-        <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2013/05/11/brussels/</guid>
-        <description>&lt;p&gt;Found this while digging through some old photos.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/riteshkumarsinha/8729206759&#34;&gt;&lt;img src=&#34;https://farm8.staticflickr.com/7394/8729206759_b5c581e91b_h.jpg&#34; alt=&#34;DSCF0925.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
+      <description>Pro-tip for booting Linux via a USB stick for computers that don&amp;rsquo;t allow native USB booting</description>
+    </item>
     
+    <item>
+      <title>Geared bikes</title>
+      <link>https://blog.rsinha.org/2013/08/10/geared-bikes/</link>
+      <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
       
-      <item>
-        <title>Finally, a Flickr Account</title>
-        <link>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</link>
-        <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</guid>
-        <description>&lt;p&gt;&lt;a href=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34;&gt;&lt;img src=&#34;http://farm9.staticflickr.com/8319/8035579978_ce7dd59e22_o.jpg&#34; alt=&#34;Glasgow Central&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Decided to host my images on Flickr as I&amp;rsquo;m hoping they&amp;rsquo;ll do a better job of backing them up than me. As I don&amp;rsquo;t develop photos myself, it cost quite a bit to get just one roll developed. I&amp;rsquo;ve since moved to a fixed lens digital camera and I hope to put up more nice pictures soon.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2013/08/10/geared-bikes/</guid>
+      <description>A mildly interesting anecdote involving a noob cyclist and a road bike.</description>
+    </item>
     
+    <item>
+      <title>More Black &amp; White</title>
+      <link>https://blog.rsinha.org/2013/05/21/more-black-white/</link>
+      <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
       
-      <item>
-        <title>Giving up on Linux desktop</title>
-        <link>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</link>
-        <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
-        <description>&lt;p&gt;I recently acquired a shiny new-ish desktop from a friend. Intel Core-i7 with 8 cores and a whopping 12 GB of RAM with a high-end ATI Radeon graphics card. It came with Windows 7 pre-installed and I decided to install Ubuntu 12.04 amd64 as a dual boot option. Initially, I had some trouble getting it to install on the inbuilt SSD (which should have been the first warning sign in retrospect). Having gotten it to install on the slower 500GB HDD, I was quite happy with it until I ran into the first few glitches. These issues were small to begin with but they irked me enough to get rid of Ubuntu altogether from the system.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The audio was glitchy. At first I thought this had something to do with Adobe Flash which has historically been rubbish on Linux and &lt;em&gt;especially&lt;/em&gt; on 64 bit Linux. I removed amd64 and replaced it with the 32 bits release instead. It turned out that audio was glitchy even for other applications (Rhythmbox, Spotify) regardless of the bitness. By glitchy I mean that it stuttered randomly if I so much as scrolled inside a browser window. As a responsible netizen, I&amp;rsquo;ve reported a bug but I don&amp;rsquo;t expect it to be fixed anytime soon.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Suspend to RAM was not available as an option. Suspend to disk worked sometimes but the computer often refused to &amp;ldquo;wake up&amp;rdquo; after going to sleep.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;I tried to like Unity, I really did. It didn&amp;rsquo;t really work for my workflow which involves running multiple terminals. There might be an easier way to smoothly switch between windows of the same application but I could not find it. OSX, for example, has this nice feature that lets you use number keys to switch between terminals (Cmd+1, Cmd+2, etc.).&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Compiz was also glitchy for me, even with the proprietary fglrx drivers.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I love the power of having a bash shell at hand but using Linux as a full time desktop OS is &lt;em&gt;still&lt;/em&gt; a nightmare. I want to just boot my system and get shit done and I don&amp;rsquo;t want to have to fiddle around with pulseaudio or any other crap. I have an older laptop running the old Ubuntu LTS just fine; I think that if you have old or fully supported hardware (mostly anything but ATI graphics), it &lt;em&gt;just works&lt;/em&gt;. In any case, I suspect I&amp;rsquo;ll probably try again when the next Ubuntu LTS release is out. Until then I am grudgingly obliged to run Ubuntu as a virtual machine on the Windows system.&lt;/p&gt;
-
-&lt;p&gt;A quick tip to get rid of grub from within Windows 7. Use &lt;a href=&#34;http://www.sysint.no/nedlasting/mbrfix.htm&#34;&gt;MbrFix&lt;/a&gt;. You might want to be careful though, the wrong command could wreck your hard disk(s).&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2013/05/21/more-black-white/</guid>
+      <description>Photo</description>
+    </item>
     
+    <item>
+      <title>Brussels</title>
+      <link>https://blog.rsinha.org/2013/05/11/brussels/</link>
+      <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
       
-      <item>
-        <title>No Push Email</title>
-        <link>https://blog.rsinha.org/2012/05/06/no-push-email/</link>
-        <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2012/05/06/no-push-email/</guid>
-        <description>&lt;p&gt;I&amp;rsquo;ve had a Gmail account for the last few years and the number of emails I get every day varies between ten to thirty. Out of the emails I receive, there are probably five or six emails per week that require either my attention or a reply. The majority of these are spammy emails that come from Indian companies with dubious privacy policies. I remember unsubscribing from most of them but I still keep getting emails from them or their &amp;lsquo;selected&amp;rsquo; partners (Find your life partner! Find a new job!). Keeping up with filtering emails is annoying especially if you primarily rely on your phone for managing email. Getting constantly notified about emails that you don&amp;rsquo;t care to read is both annoying and distracting.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;ve owned a smartphone in the last few years, the first thing you probably did was setup up push email (either Exchange or IMAP IDLE). This is definitely the case if you&amp;rsquo;ve owned an Android device where it is the default behaviour. This is great if you rely on your Gmail/Google Apps/Exchange account for work but not useful at all if most of the email you receive is borderline spam. In most cases, the majority  of your friends probably send you messages on social sites rather than write you an email.&lt;/p&gt;
-
-&lt;p&gt;I turned off push emails on my phone for the first time in many years since owning many kinds of &amp;lsquo;smartphones&amp;rsquo;, relying instead on an email client that &lt;a href=&#34;http://sparrowmailapp.com/&#34;&gt;checks your email&lt;/a&gt; when you start it up. This &amp;lsquo;feature&amp;rsquo; is due to an issue in the way the Apple handles push notifications and might go away soon. I&amp;rsquo;m sure the default Mail app can be configured to manually sync as well but I much prefer Sparrow due to it&amp;rsquo;s nice integration with Gmail labels. It also has a really nice UI.&lt;/p&gt;
-
-&lt;p&gt;After using this setup for about three weeks, I realised that I&amp;rsquo;d been spending less time responding to random buzzes at all times of the day. I now check my email maybe 3 to 4 times a day at most when I&amp;rsquo;m taking a break at work. I&amp;rsquo;ve also started to relive the olden days, when one had to wait for the email client to fetch messages and display notifications. The anticipation of novelty in any form is a wonderful experience.&lt;/p&gt;
-
-&lt;p&gt;Overall, this works out really well for me since the people who send me an email don&amp;rsquo;t expect an instantaneous response. People who need to reach me urgently usually call or text me and I can get back to them immediately.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2013/05/11/brussels/</guid>
+      <description>Photo</description>
+    </item>
     
+    <item>
+      <title>Finally, a Flickr Account</title>
+      <link>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</link>
+      <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
       
-      <item>
-        <title>Prevent accidental rm</title>
-        <link>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</link>
-        <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
-        <description>&lt;p&gt;If you&amp;rsquo;re anything like me, you might casually type &lt;code&gt;rm -rf *&lt;/code&gt; in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.&lt;/p&gt;
-
-&lt;p&gt;There is simple hack to force &lt;code&gt;rm&lt;/code&gt; to prompt you to think about the files that are going to be deleted. Create a file called &amp;lsquo;-i&amp;rsquo; in the directory whose contents you want to protect from accidental deletion.&lt;/p&gt;
-
-&lt;p&gt;An easy way to do this is to run &lt;code&gt;touch ./-i&lt;/code&gt; which gives you:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ritesh@viridian:/var/tmp/aa$ ls -a
--i      .       ..      100.txt 200.txt l.txt   seq.txt
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you now try and run rm -rf * now, this is what happens instead of everything getting nuked all at once.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ritesh@viridian:/var/tmp/aa$ rm -rf *
-remove 100.txt? 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve tried this on bash, I&amp;rsquo;m not sure if this works with other shells (zsh, ksh). Sure, you could always remember to use &lt;code&gt;rm -rfi&lt;/code&gt; but who can remember that whole extra letter?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</guid>
+      <description>Photo</description>
+    </item>
     
+    <item>
+      <title>Giving up on Linux desktop</title>
+      <link>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</link>
+      <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
       
-      <item>
-        <title>Do batch things well</title>
-        <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
-        <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
-        <description>&lt;p&gt;I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# for file in `find . -type f`; do somescript.py $file; done
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you&amp;rsquo;re relying on the output of find it is probably best to use the &lt;code&gt;xargs&lt;/code&gt; option to &lt;code&gt;find&lt;/code&gt; like so:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# find . -type f -print0 | xargs -0 somescript.py
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Even better, you can avoid using &lt;code&gt;xargs&lt;/code&gt;, instead use the &lt;code&gt;exec&lt;/code&gt; option to find. Although I think this is available only on newer versions of &lt;code&gt;find&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# find . -type f -exec somescript.py &#39;{}&#39; +
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sure, I could&amp;rsquo;ve written the batch file handling feature as part of my script but why waste my time when there are existing tools that already &lt;a href=&#34;http://en.wikipedia.org/wiki/Unix_philosophy#McIlroy:_A_Quarter_Century_of_Unix&#34;&gt;do one thing well&lt;/a&gt;?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
+      <description>In which I whine about Linux not working for me. Being a sucker for punishment, I&amp;rsquo;m typing this from a laptop running Linux. Stockholm syndrome, perhaps?</description>
+    </item>
     
+    <item>
+      <title>No Push Email</title>
+      <link>https://blog.rsinha.org/2012/05/06/no-push-email/</link>
+      <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
       
-      <item>
-        <title>Revisiting MIUI</title>
-        <link>https://blog.rsinha.org/2011/12/03/revisiting-miui/</link>
-        <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
-        <description>
-
-&lt;p&gt;After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself. I&amp;rsquo;m usually reluctant to switch Android ROMs as I&amp;rsquo;ve switched to using 2 factor authentication for my Google account and having to reset the authenticator etc is annoying.&lt;/p&gt;
-
-&lt;p&gt;The last time that I used MIUI I was happy for a few days until the random crashes started. These were usually triggered by the camera application, which was frustrating as I was travelling at the time and needed the camera more than the phone. However I gave in and decided to get the latest version of MIUI and see if things had improved. The original ROM is created by a Chinese company called xiaomi. It is available repackaged through a number of other distributors who usually add a language pack for other languages. There&amp;rsquo;s even a Scottish distribution which I was tempted to try but wasn&amp;rsquo;t too sure about.&lt;/p&gt;
-
-&lt;p&gt;I obtained a copy from miui.us and quickly realised that it ships only with Chinese and US English. Which isn&amp;rsquo;t too much of a problem until the dialer started borking my phone numbers US style. A UK version is available from miui android, which worked perfectly for me. Some of the English words are a bit dodgy at times (machine translation?) but otherwise it&amp;rsquo;s really well done. The MIUI ROM is smaller in size (about 88 MB compared to 100+ MB) than the CM7 ROM, which is strange because apart from being derived from CM7, it adds a few extras of its own. I suppose many of the applications that come with CM7 have been stripped out (Advanced Call Settings etc).&lt;/p&gt;
-
-&lt;p&gt;The first thing one notices after a fresh install is how the UI borrows from vendor customisations for Android like TouchWiz. It also feels like it&amp;rsquo;s a lawsuit away from being decimated by a well known fruit company. The default font is different from what ships with AOSP or CyanogenMod, I&amp;rsquo;m not sure what it is but it looks great. Most of the applications are the same as on CyanogenMod with one glaring exception. The stock browser has been replaced with a custom &amp;lsquo;MIUI browser&amp;rsquo; which offers tabbed browsing and ostensible speed improvements. I&amp;rsquo;m used to the stock browser and was a little disappointed with it and am planning to revert to the stock browser when I have the time (this is relatively annoying process). A &amp;lsquo;MiTalk&amp;rsquo; application is provided which is probably similar to WhatsApp/Kik but exclusive to MIUI. I don&amp;rsquo;t have any use for it and couldn&amp;rsquo;t find an easy way to get rid of it as it is a system application.&lt;/p&gt;
-
-&lt;p&gt;The ROM ships with apps2sd built-in, which allows you to move applications and the dalvik cache to your SD card. This feature is really important for phones like mine (HTC Desire) which ship with a tiny partition for applications. I had an ext3 partition ready on my SD card from my previous install of CM7 and was able to move the dalvik cache to the SD card. There isn&amp;rsquo;t a GUI option to do this but you can use a terminal emulator (or adb) to run apps2sd.&lt;/p&gt;
-
-&lt;p&gt;`# su -&lt;/p&gt;
-
-&lt;h1 id=&#34;a2sd&#34;&gt;a2sd&lt;/h1&gt;
-
-&lt;p&gt;`
-Another little useful feature was a birthday reminder notification. I&amp;rsquo;m not sure if this is available on CyanogenMod but it is quite useful in nagging you to wish people on their birthday or buy them gifts. The notifications show up in the top notification bar every day after midnight. Presumably this data is derived from the Google profiles of the people you have on your contacts list.&lt;/p&gt;
-
-&lt;p&gt;After about 2 weeks of use, I can say I&amp;rsquo;m really happy with this ROM and feel that it works really well for me. I haven&amp;rsquo;t run into any deal breaking issues or encountered any force-close bugs. If you&amp;rsquo;re looking for a no-nonsense ROM I would still recommend CM7 as it is closest to the stock Android experience. I doubt there will ever be an Ice Cream Sandwich ROM for my phone so I&amp;rsquo;ll stick to this until things change.&lt;/p&gt;
-
-&lt;p&gt;[gallery link=&amp;ldquo;file&amp;rdquo;]&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2012/05/06/no-push-email/</guid>
+      <description>In which I experiment with turning off push email and check email occassionally instead. I&amp;rsquo;ve moved devices since I wrote this and haven&amp;rsquo;t disabled push, yet.</description>
+    </item>
     
+    <item>
+      <title>Prevent accidental rm</title>
+      <link>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</link>
+      <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
       
-      <item>
-        <title>Creating an Animated GIF</title>
-        <link>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</link>
-        <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</guid>
-        <description>&lt;p&gt;There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, &lt;a href=&#34;http://imagemagick.org&#34;&gt;ImageMagick&lt;/a&gt; can help.&lt;/p&gt;
-
-&lt;p&gt;ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&amp;rsquo;ve ever used. Take for example, the task of converting a BMP image to JPEG.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ convert mypic001.bmp mypic001.jpg
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Similarly, to convert a directory full of JPEG images to an animated GIF do this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ convert -loop 0 -delay 100 -size 200x200 *.jpg animated.gif
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Delay represents the time in milliseconds between each frame, and loop 0 ensures that the animation runs forever. The files in the directory are numbered incrementally, so they should be added in the correct order. Ensure that the dimensions of the resulting GIF are not too large, anything over 300x300 made my browser choke. For more information, check out the &lt;a href=&#34;http://www.imagemagick.org/Usage/anim_basics/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
+      <description>Pro-tip to prevent accidently hosing your home directory. If you&amp;rsquo;re too smart for your own good, this may not be sufficient.</description>
+    </item>
     
+    <item>
+      <title>Do batch things well</title>
+      <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
+      <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
       
-      <item>
-        <title>Why I like Python</title>
-        <link>https://blog.rsinha.org/2011/11/09/why-i-like-python/</link>
-        <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2011/11/09/why-i-like-python/</guid>
-        <description>&lt;p&gt;I&amp;rsquo;m a big fan of Python, especially its syntax which feels close to natural language. My programming skills are average, as I&amp;rsquo;ve never done any serious full time development, apart from some code I wrote for my MSc project. The project was mostly built using &lt;a href=&#34;http://scrapy.org/&#34;&gt;scrapy&lt;/a&gt; with little hacks thrown in to implement concurrency for processing data. Nowadays, I tend to use Python mostly as a glue language to automate stuff when bash doesn&amp;rsquo;t cut it. Stuff like this makes me like it even more:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# python -m SimpleHTTPServer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It&amp;rsquo;s a basic but mostly functional HTTP server. If an index.html file is found it is served; if not, you get a directory listing instead.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
+      <description>Some tips on doing batch things well. I will follow this up some day with my daily workflow which involves being as lazy as possible and letting the computer do all the work.</description>
+    </item>
     
+    <item>
+      <title>Revisiting MIUI</title>
+      <link>https://blog.rsinha.org/2011/12/03/revisiting-miui/</link>
+      <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
       
-      <item>
-        <title>Getting SmartVOIP to work on CM7</title>
-        <link>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</link>
-        <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</guid>
-        <description>&lt;p&gt;Android 2.3 (Gingerbread) claims to support SIP natively. For some weird reason it does not play well with SmartVOIP, probably due to missing STUN server support. SmartVOIP provide a native android app called MobileVOIP but it doesn&amp;rsquo;t integrate with the Android UI. I found this nifty little app called &lt;a href=&#34;http://code.google.com/p/csipsimple/&#34;&gt;CSipSimple&lt;/a&gt; which has loads of configuration options (e.g. connect when on WiFi and or 3G etc). It integrates really well with the native CyanogenMod UI and seems to be working really well in my limited tests. It&amp;rsquo;s available on the android market by the same name. I finally decided to get rid of Skype from my phone as it tends to use a lot of memory and isn&amp;rsquo;t particularly cheap when calling other phones.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-7937762906244820264?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
+      <description>Some thoughts on using the MIUI ROM for Android. I&amp;rsquo;m currently on Cyanogenmod and quite happy with it.</description>
+    </item>
     
+    <item>
+      <title>Creating an Animated GIF</title>
+      <link>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</link>
+      <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
       
-      <item>
-        <title>Our security auditor is an idiot</title>
-        <link>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</link>
-        <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;A security auditor for our servers has demanded the following within two weeks:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A list of current usernames and plain-text passwords for all user accounts on all servers&lt;/li&gt;
-&lt;li&gt;A list of all password changes for the past six months, again in plain-text&lt;/li&gt;
-&lt;li&gt;A list of &amp;ldquo;every file added to the server from remote devices&amp;rdquo; in the past six months&lt;/li&gt;
-&lt;li&gt;The public and private keys of any SSH keys&lt;/li&gt;
-&lt;li&gt;An email sent to him every time a user changes their password, containing the plain text password&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We&amp;rsquo;re running Red Hat Linux &lt;sup&gt;5&lt;/sup&gt;&amp;frasl;&lt;sub&gt;6&lt;/sub&gt; and CentOS 5 boxes with LDAP authentication.&lt;/p&gt;
-
-&lt;p&gt;As far as I&amp;rsquo;m aware, everything on that list is ether impossible or incredibly difficult to get, but if I don&amp;rsquo;t provide this information we loose access to our payments platform, and any income we might have got while we move away. Any suggestions for how I can solve or fake this information?&lt;/p&gt;
-
-&lt;p&gt;The only way I can think to get all the plain text passwords, is to get everyone to reset their password and make a note of what they set it to. That doesn&amp;rsquo;t solve the problem of the past six months of password changes, because I can&amp;rsquo;t retroactively log that sort of stuff, the same goes for logging all the remote files.&lt;/p&gt;
-
-&lt;p&gt;Getting the public and private parts of the SSH keys is possible, but annoying as we have a few users with a few computers, all with their own SSH keys. Unless I&amp;rsquo;ve missed an easier way to do that?&lt;/p&gt;
-
-&lt;p&gt;I have explained to him many times the things he&amp;rsquo;s asking for are impossible, he responded in an email:&lt;/p&gt;
-
-&lt;p&gt;I have over 10 years experience in security auditing and a full&lt;br /&gt;
- understanding of the redhat security methods, so I suggest you check&lt;br /&gt;
- your facts about what is and isn&amp;rsquo;t possible. You say no company could&lt;br /&gt;
- possibly have this information but I have performed hundreds of audits&lt;br /&gt;
- where this information has been readily available. All [generic credit&lt;br /&gt;
- card processing provider] clients are required to conform with our new&lt;br /&gt;
- security policies and this audit is intended to ensure those policies&lt;br /&gt;
- have been implemented* correctly.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://serverfault.com/questions/293217/our-security-auditor-is-an-idiot-how-do-i-give-him-the-information-he-wants&#34;&gt;serverfault.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;What the what? This is probably the funniest thing I&amp;rsquo;ve read in a while. How does this auditor still have a job?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</guid>
+      <description>There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, ImageMagick can help.
+ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&amp;rsquo;ve ever used.</description>
+    </item>
     
+    <item>
+      <title>Why I like Python</title>
+      <link>https://blog.rsinha.org/2011/11/09/why-i-like-python/</link>
+      <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
       
-      <item>
-        <title>Installing rubygems in your home folder</title>
-        <link>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</link>
-        <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</guid>
-        <description>&lt;p&gt;No root? No problem! Obtain a copy of rubygems from ruby forge.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ tar xzvf rubygems-1.4.2   
-$ cd rubygems-1.4.2   
-$ ruby setup.rb --prefix=/your/home/folder/local   
-$ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile   
-$ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile   
-$ source ~/.bash_profile   
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This should give you a working install of rubygems. Check out the environment&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem env   
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install something&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ gem install rake   
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2011/11/09/why-i-like-python/</guid>
+      <description>Some (brief) thoughts on why I like Python. I meant for this to be longer, but didn&amp;rsquo;t actually get around to finishing it.</description>
+    </item>
     
+    <item>
+      <title>Getting SmartVOIP to work on CM7</title>
+      <link>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</link>
+      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
       
-      <item>
-        <title>India Graduates Millions, But Too Few Are Fit to Hire via WSJ.com</title>
-        <link>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</link>
-        <pubDate>Tue, 05 Apr 2011 22:49:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;BANGALORE, India—Call-center company &lt;sup&gt;24&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; Customer Pvt. Ltd. is desperate to find new recruits who can answer questions by phone and email. It wants to hire 3,000 people this year. Yet in this country of 1.2 billion people, that is beginning to look like an impossible goal.&lt;/p&gt;
-
-&lt;p&gt;So few of the high school and college graduates who come through the door can communicate effectively in English, and so many lack a grasp of educational basics such as reading comprehension, that the company can hire just three out of every 100 applicants.&lt;/p&gt;
-
-&lt;p&gt;India projects an image of a nation churning out hundreds of thousands of students every year who are well educated, a looming threat to the better-paid middle-class workers of the West. Their abilities in math have been cited by President Barack Obama as a reason why the U.S. is facing competitive challenges.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://online.wsj.com/article/SB20001424052748703515504576142092863219826.html&#34;&gt;online.wsj.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;More depressing news about the state of graduate education in India.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</guid>
+      <description>Android 2.3 (Gingerbread) claims to support SIP natively. For some weird reason it does not play well with SmartVOIP, probably due to missing STUN server support. SmartVOIP provide a native android app called MobileVOIP but it doesn&amp;rsquo;t integrate with the Android UI. I found this nifty little app called CSipSimple which has loads of configuration options (e.g. connect when on WiFi and or 3G etc). It integrates really well with the native CyanogenMod UI and seems to be working really well in my limited tests.</description>
+    </item>
     
+    <item>
+      <title>Our security auditor is an idiot</title>
+      <link>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</link>
+      <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
       
-      <item>
-        <title>cdecl</title>
-        <link>https://blog.rsinha.org/posts/cdecl/</link>
-        <pubDate>Thu, 24 Feb 2011 00:47:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/cdecl/</guid>
-        <description>&lt;p&gt;Found this wonderful way to understand complicated c code. Cdecl at &lt;a href=&#34;http://www.cdecl.org&#34;&gt;www.cdecl.org&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</guid>
+      <description>A security auditor for our servers has demanded the following within two weeks:
+ A list of current usernames and plain-text passwords for all user accounts on all servers A list of all password changes for the past six months, again in plain-text A list of &amp;ldquo;every file added to the server from remote devices&amp;rdquo; in the past six months The public and private keys of any SSH keys An email sent to him every time a user changes their password, containing the plain text password  We&amp;rsquo;re running Red Hat Linux 5/6 and CentOS 5 boxes with LDAP authentication.</description>
+    </item>
     
+    <item>
+      <title>Installing rubygems in your home folder</title>
+      <link>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</link>
+      <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
       
-      <item>
-        <title>Rubbish job opening</title>
-        <link>https://blog.rsinha.org/posts/rubbish-job-opening/</link>
-        <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/rubbish-job-opening/</guid>
-        <description>&lt;p&gt;Received an email today about a job opening at a major CMM level&lt;br /&gt;
-something company. Required skill : VMWare. Experience required 2 - 15&lt;br /&gt;
-years. VMWare was founded in 1998, that gives us 12 years since it&amp;rsquo;s&lt;br /&gt;
-been around. How does one have 15 years of experience with something&lt;br /&gt;
-that wasn&amp;rsquo;t around until 12 years ago? Who writes these job&lt;br /&gt;
-descriptions?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</guid>
+      <description>No root? No problem! Obtain a copy of rubygems from ruby forge.
+$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile This should give you a working install of rubygems. Check out the environment
+$ gem env Install something
+$ gem install rake </description>
+    </item>
     
+    <item>
+      <title>India Graduates Millions, But Too Few Are Fit to Hire via WSJ.com</title>
+      <link>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</link>
+      <pubDate>Tue, 05 Apr 2011 22:49:00 +0000</pubDate>
       
-      <item>
-        <title>Using mutt with Gmail</title>
-        <link>https://blog.rsinha.org/posts/using-mutt-with-gmail/</link>
-        <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/using-mutt-with-gmail/</guid>
-        <description>&lt;p&gt;Why bother? I can&amp;rsquo;t think of a reason other than because. My muttrc&lt;br /&gt;
-(single gmail account) copied from various muttrcs around the&lt;br /&gt;
-internet.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;set imap_user = &amp;quot;EMAILID@gmail.com&amp;quot;   
-set imap_pass = &amp;quot;Password&amp;quot;   
-set smtp_url = &amp;quot;smtp://EMAILID@smtp.gmail.com:587/&amp;quot;   
-set smtp_pass = &amp;quot;&amp;quot;   
-set from = &amp;quot;EMAILID&amp;quot;   
-set realname = &amp;quot;Ritesh Sinha&amp;quot;   
-set folder = &amp;quot;imaps://imap.gmail.com:993&amp;quot;   
-set spoolfile = &amp;quot;+INBOX&amp;quot;   
-set postponed=&amp;quot;+[Gmail]/Drafts&amp;quot;   
-set record = &amp;quot;+[Gmail]/Sent Mail&amp;quot;   
-set header_cache=~/.mutt/cache/headers   
-set message_cachedir=~/.mutt/cache/bodies   
-set certificate_file=~/.mutt/certificates   
-set move = no   
-set include   
-set sort = &#39;threads&#39;   
-set sort_aux = &#39;reverse-last-date-received&#39;   
-set auto_tag = yes   
-set imap_check_subscribed   
-set hostname = gmail.com   
-ignore headers *   
-unignore headers from to subject date cc   
-hdr_order Date From To Cc   
-color attachment brightmagenta black   
-color error brightwhite red # errors yell at you in red   
-color hdrdefault white black # headers   
-color indicator default magenta # currently selected message   
-color markers brightcyan black # the + for wrapped pager lines   
-color message brightcyan black # informational messages, not mail   
-color normal white black # plain text   
-color quoted green black # quoted text   
-color search brightgreen black # hilite search patterns in the pager   
-color signature green black # signature (after &amp;quot;-- &amp;quot;) is red   
-color status brightyellow blue # status bar is yellow *on blue*   
-color tilde blue black # ~&#39;s after message body   
-color tree red black # thread tree in index menu is magenta   
-color underline yellow black   
-color header brightwhite black ^(From|Subject): # Important headers   
-color body magenta black &amp;quot;(ftp|http)://[^ ]+&amp;quot; # picks up URLs   
-color body magenta black [-a-z_0-9.]+@[-a-z_0-9.]+   
-color index brightgreen black ~N   
-source &amp;quot;/usr/share/doc/mutt/examples/gpg.rc&amp;quot; # This is for GPG   
-set pgp_sign_as=0xB8914BE6   
-set pgp_autosign=no   
-auto_view text/html   
-set sort=reverse-date-sent   
-set query_command=&amp;quot;goobook query &#39;%s&#39;&amp;quot;   
-bind editor  complete-query   
-bind editor  noop   
-# Gmail-style keyboard shortcuts   
-macro index,pager y &amp;quot;unset trashn &amp;quot;   
-&amp;quot;Gmail archive message&amp;quot;   
-macro index,pager d &amp;quot;set   
-trash=&amp;quot;imaps://imap.googlemail.com/[GMail]/Bin&amp;quot;n &amp;quot;   
-&amp;quot;Gmail delete message&amp;quot;   
-macro index,pager gi &amp;quot;=INBOX&amp;quot; &amp;quot;Go to inbox&amp;quot;   
-macro index,pager ga &amp;quot;=[Gmail]/All Mail&amp;quot; &amp;quot;Go to all mail&amp;quot;   
-macro index,pager gs &amp;quot;=[Gmail]/Starred&amp;quot; &amp;quot;Go to   
-starred messages&amp;quot;   
-macro index,pager gd &amp;quot;=[Gmail]/Drafts&amp;quot; &amp;quot;Go to drafts&amp;quot;   
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</guid>
+      <description>BANGALORE, India—Call-center company 24/7 Customer Pvt. Ltd. is desperate to find new recruits who can answer questions by phone and email. It wants to hire 3,000 people this year. Yet in this country of 1.2 billion people, that is beginning to look like an impossible goal.
+  So few of the high school and college graduates who come through the door can communicate effectively in English, and so many lack a grasp of educational basics such as reading comprehension, that the company can hire just three out of every 100 applicants.</description>
+    </item>
     
+    <item>
+      <title>cdecl</title>
+      <link>https://blog.rsinha.org/posts/cdecl/</link>
+      <pubDate>Thu, 24 Feb 2011 00:47:00 +0000</pubDate>
       
-      <item>
-        <title>Getting rid of annoying UPS beeps</title>
-        <link>https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/</link>
-        <pubDate>Sat, 15 May 2010 06:38:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/</guid>
-        <description>&lt;p&gt;Living in an area with very frequent powercuts, I&amp;rsquo;m often annoyed by the constant beeping of the UPS at odd hours. I have a system that is constantly on and is connected to a very basic UPS that provides no power management features at all (via USB or serial). In Bangalore, you don&amp;rsquo;t really need a constant buzzing sound to remind you that the power is out, the unbearable heat is enough to get you up and about. I thought of many ways to try and kill the stupid buzzer but all (non intrusive) methods failed. Today, during a &amp;ldquo;scheduled&amp;rdquo; power outage decided to take the damn thing apart and figure out how I could get rid of it.  The UPS in question is made by APC with the model number BackUPS ES 500. It&amp;rsquo;s pretty easy to take apart with a standard star screwdriver.&lt;/p&gt;
-
-&lt;p&gt;I had a look at the circuit board inside and found an area helpfully labeled BZR1 with a tiny buzzer attached. One could easily remove the buzzer from the circuit board using a soldering iron or a similar implement but I was fresh out of luck. Using a pair of pliers I twisted the buzzer until it came off clean. I double checked to see that I hadn&amp;rsquo;t shorted any connections and put it back together. It took me almost forty minutes to re-assemble the UPS but it was well worth it. Back to beep free power outages!  Related comic:  &lt;a href=&#34;http://www.flyyoufools.com/power-supply-alarms&#34;&gt;Fly you fools!&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/cdecl/</guid>
+      <description>Found this wonderful way to understand complicated c code. Cdecl at www.cdecl.org</description>
+    </item>
     
+    <item>
+      <title>Rubbish job opening</title>
+      <link>https://blog.rsinha.org/posts/rubbish-job-opening/</link>
+      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
       
-      <item>
-        <title>Python AES</title>
-        <link>https://blog.rsinha.org/posts/python-aes/</link>
-        <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/python-aes/</guid>
-        <description>&lt;p&gt;Cryptography isn&amp;rsquo;t available by default on python. One needs to install the &lt;a href=&#34;http://www.dlitz.net/software/pycrypto/&#34;&gt;PyCrypto&lt;/a&gt; toolkit to make it work. Looks something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from Crypto.Cipher import AES   
-import base64   
-  
-key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot;   
-objAes=AES.new(key, AES.MODE_ECB)   
-plaintext=&#39;This is sparta!!&#39;   
-#looks nicer with base64   
-enc = objAes.encrypt(plaintext)   
-print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc)   
-print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc)   
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/rubbish-job-opening/</guid>
+      <description>Received an email today about a job opening at a major CMM level
+something company. Required skill : VMWare. Experience required 2 - 15
+years. VMWare was founded in 1998, that gives us 12 years since it&amp;rsquo;s
+been around. How does one have 15 years of experience with something
+that wasn&amp;rsquo;t around until 12 years ago? Who writes these job
+descriptions?</description>
+    </item>
     
+    <item>
+      <title>Using mutt with Gmail</title>
+      <link>https://blog.rsinha.org/posts/using-mutt-with-gmail/</link>
+      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
       
-      <item>
-        <title>Random idea number eleventeen</title>
-        <link>https://blog.rsinha.org/posts/random-idea-number-eleventeen/</link>
-        <pubDate>Tue, 20 Apr 2010 13:48:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/random-idea-number-eleventeen/</guid>
-        <description>&lt;p&gt;On a tech forum I visit often, we were discussing the various ways to&lt;br /&gt;
-power down a computer when power goes out (apart from the boring way&lt;br /&gt;
-of making your UPS automatically doing it for you). Now that I think&lt;br /&gt;
-about it, I&amp;rsquo;m really obsessed with shutting computers down. I had an&lt;br /&gt;
-idea long ago which was quite stupid but I&amp;rsquo;m gonna note it down anyway&lt;br /&gt;
-so that I can laugh about it later. Also, I want to ensure that&lt;br /&gt;
-Shampoo doesn&amp;rsquo;t patent it.&lt;/p&gt;
-
-&lt;p&gt;What if I could shut down my computer by making it listen to the&lt;br /&gt;
-annoying beeps that UPSes usually make? All the cheap ones don&amp;rsquo;t have&lt;br /&gt;
-an option to turn that off, so I could probably use it as signal to&lt;br /&gt;
-power down. Considering that linux has finally implemented some sort&lt;br /&gt;
-of &amp;ldquo;sound framework&amp;rdquo; that doesn&amp;rsquo;t (theoretically at least) lock sound&lt;br /&gt;
-devices when a process accesses it, it should be quite trivial to&lt;br /&gt;
-create a lightweight daemon that samples from the system microphone&lt;br /&gt;
-and checks for the annoying beep waveform. If it matches, kill the&lt;br /&gt;
-system.&lt;/p&gt;
-
-&lt;p&gt;Two or three questions come to mind. The &amp;ldquo;Why do this?&amp;rdquo; can be&lt;br /&gt;
-answered with &amp;ldquo;whatevs, becoz i can&amp;rdquo;. The other more pertinent&lt;br /&gt;
-questions are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How difficult would this be to pull off?&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Wouldn&amp;rsquo;t it be annoying to have a microphone connected to your&lt;br /&gt;
-system all the time?&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Would it not be resource intensive to continuously poll the mic?&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Are there any libraries which would make it easy for me to pull&lt;br /&gt;
-this off without resorting to hacks?&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;And finally, if i ran around with a beeping thingamajig, would it&lt;br /&gt;
-not be possible to start a shutdown? How can one protect against this?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I hope to try it out this weekend, let&amp;rsquo;s see if it can be done.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/using-mutt-with-gmail/</guid>
+      <description>Why bother? I can&amp;rsquo;t think of a reason other than because. My muttrc
+(single gmail account) copied from various muttrcs around the
+internet.
+set imap_user = &amp;quot;EMAILID@gmail.com&amp;quot; set imap_pass = &amp;quot;Password&amp;quot; set smtp_url = &amp;quot;smtp://EMAILID@smtp.gmail.com:587/&amp;quot; set smtp_pass = &amp;quot;&amp;quot; set from = &amp;quot;EMAILID&amp;quot; set realname = &amp;quot;Ritesh Sinha&amp;quot; set folder = &amp;quot;imaps://imap.gmail.com:993&amp;quot; set spoolfile = &amp;quot;+INBOX&amp;quot; set postponed=&amp;quot;+[Gmail]/Drafts&amp;quot; set record = &amp;quot;+[Gmail]/Sent Mail&amp;quot; set header_cache=~/.mutt/cache/headers set message_cachedir=~/.mutt/cache/bodies set certificate_file=~/.mutt/certificates set move = no set include set sort = &#39;threads&#39; set sort_aux = &#39;reverse-last-date-received&#39; set auto_tag = yes set imap_check_subscribed set hostname = gmail.</description>
+    </item>
     
+    <item>
+      <title>Getting rid of annoying UPS beeps</title>
+      <link>https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/</link>
+      <pubDate>Sat, 15 May 2010 06:38:00 +0000</pubDate>
       
-      <item>
-        <title>Shutdown on no network connectivity</title>
-        <link>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</link>
-        <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</guid>
-        <description>&lt;pre&gt;&lt;code&gt;#!/bin/bash  
-#Lame attempt at automated shutdown during power outages  
-#Author: Ritesh Sinha  
-#Email: riteshkumarsinha # GMAIL.com  
-#http://ritesh.posterous.com  
-#License: WTFPL http://sam.zoy.org/wtfpl/COPYING  
-#Checks for network connectivity, if none, wait for ten minutes then shutdown  
-#TODO: Add email notification (email sent at next boot, requires MTA reconfiguration)  
-#NOTETOSELF: Use gmail as smarthost?  
-#TODO: Figure out a better way to pull this off  
-  
-ETHTOOL=/usr/sbin/ethtool  
-IF=/dev/eth0  
-GREP=/bin/grep  
-AWK=/usr/bin/awk  
-LOG=/var/log/outages  
-SDOWN=/sbin/poweroff  
-function checklink()  
-{  
-if [ &amp;quot;$($ETHTOOL eth0 | $GREP Link | $AWK {&#39;print $3&#39;})&amp;quot; == &#39;yes&#39; ]  
-then  
-return 0   
-else  
-return 1  
-fi  
-}  
-  
-# call checklink  
-echo &amp;quot;Checking if link is up&amp;quot;  
-checklink  
-if [ $? -eq 0 ]  
-then  
-echo &amp;quot;Link is up, all good&amp;quot;  
-else  
-echo &amp;quot;Link seems to be down&amp;quot;  
-echo &amp;quot;Waiting for ten minutes before checking again&amp;quot;  
-#Will put longer sleep after testing  
-sleep 600  
-checklink  
-if [ $? -gt 0 ]  
-then  
-echo &amp;quot;Link is still down&amp;quot;  
-echo &amp;quot;Shutting down&amp;quot;  
-echo &amp;quot;SHUTDOWN:$(date)&amp;quot; &amp;gt;&amp;gt; $LOG  
-$SDOWN  
-fi  
-fi  
-  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Bugs? Gosh, I hope not!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/</guid>
+      <description>Living in an area with very frequent powercuts, I&amp;rsquo;m often annoyed by the constant beeping of the UPS at odd hours. I have a system that is constantly on and is connected to a very basic UPS that provides no power management features at all (via USB or serial). In Bangalore, you don&amp;rsquo;t really need a constant buzzing sound to remind you that the power is out, the unbearable heat is enough to get you up and about.</description>
+    </item>
     
+    <item>
+      <title>Python AES</title>
+      <link>https://blog.rsinha.org/posts/python-aes/</link>
+      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
       
-      <item>
-        <title>Excerpt from raiding eternity</title>
-        <link>https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/</link>
-        <pubDate>Mon, 22 Mar 2010 11:25:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Chances are we&amp;rsquo;ll each be lost to time. 100 billion people have been&lt;br /&gt;
-born before us. Most of them no longer exist as individuals in our&lt;br /&gt;
-memories. No names. Faces only reflected in our own and not in any way&lt;br /&gt;
-that really matters.&lt;/p&gt;
-
-&lt;p&gt;But not us. We might be remembered forever. All our Twitter&lt;br /&gt;
-updates, our email, our Vimeo movies, our Xbox Live profiles, our&lt;br /&gt;
-wormy FourSquare maps. They won&amp;rsquo;t be important. Not to most people,&lt;br /&gt;
-anyway. But they&amp;rsquo;ll be there if the sysadmins take care of us, if the&lt;br /&gt;
-corporations and machines to whom we&amp;rsquo;ve entrusted our records do not&lt;br /&gt;
-fail or are not destroyed.&lt;/p&gt;
-
-&lt;p&gt;We won&amp;rsquo;t matter to most. But our memories will be cataloged,&lt;br /&gt;
-indexed, made available along with our stories, our names.&lt;br /&gt;
-$viewcount++.&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via : &lt;a href=&#34;http://gizmodo.com/5491404/raiding-eternity&#34;&gt;http://gizmodo.com/5491404/raiding-eternity&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/python-aes/</guid>
+      <description>Cryptography isn&amp;rsquo;t available by default on python. One needs to install the PyCrypto toolkit to make it work. Looks something like this:
+from Crypto.Cipher import AES import base64 key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot; objAes=AES.new(key, AES.MODE_ECB) plaintext=&#39;This is sparta!!&#39; #looks nicer with base64 enc = objAes.encrypt(plaintext) print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc) print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc) </description>
+    </item>
     
+    <item>
+      <title>Random idea number eleventeen</title>
+      <link>https://blog.rsinha.org/posts/random-idea-number-eleventeen/</link>
+      <pubDate>Tue, 20 Apr 2010 13:48:00 +0000</pubDate>
       
-      <item>
-        <title>Upgrade from Backtrack 4 Beta to final</title>
-        <link>https://blog.rsinha.org/posts/fixing-the-upgrade-from-backtrack-4-beta-to-final/</link>
-        <pubDate>Tue, 12 Jan 2010 12:09:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/fixing-the-upgrade-from-backtrack-4-beta-to-final/</guid>
-        <description>&lt;p&gt;Backtrack 4 was released today. I had just completed downloading the&lt;br /&gt;
-beta version only yesterday and finished installing it today. Since&lt;br /&gt;
-BT4 has now moved to Ubuntu, I&amp;rsquo;d assumed that upgrading it to the&lt;br /&gt;
-final would be easy as apt-get pie. I did and pretty much hosed KDE. A&lt;br /&gt;
-little research showed that KDE is now in a different path (&lt;code&gt;/opt/kde3&lt;/code&gt;)&lt;br /&gt;
-than it was before (&lt;code&gt;/usr/kde3&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;The quickest hack to fix this is to add &lt;code&gt;/usr/kde3&lt;/code&gt; to the &lt;code&gt;PATH&lt;/code&gt; line in&lt;br /&gt;
-your &lt;code&gt;.bashrc&lt;/code&gt; . This still doesn&amp;rsquo;t start KDE when you type startx&lt;br /&gt;
-however. I resorted to another (sigh) hack to make this run as I badly&lt;br /&gt;
-needed BT4 for work. echo &amp;ldquo;&lt;code&gt;exec startkde&lt;/code&gt;&amp;rdquo; &amp;gt; &lt;code&gt;~/.xinitrc&lt;/code&gt; fixes that&lt;br /&gt;
-issue.&lt;br /&gt;
-This is cheap hackery. I&amp;rsquo;m sure there are better ways to fix this.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/random-idea-number-eleventeen/</guid>
+      <description>On a tech forum I visit often, we were discussing the various ways to
+power down a computer when power goes out (apart from the boring way
+of making your UPS automatically doing it for you). Now that I think
+about it, I&amp;rsquo;m really obsessed with shutting computers down. I had an
+idea long ago which was quite stupid but I&amp;rsquo;m gonna note it down anyway
+so that I can laugh about it later.</description>
+    </item>
     
+    <item>
+      <title>Shutdown on no network connectivity</title>
+      <link>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</link>
+      <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
       
-      <item>
-        <title>arora</title>
-        <link>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</link>
-        <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Arora is a lightweight cross-platform web browser. It&amp;rsquo;s free (as in free speech and free beer). Arora runs on Linux, embedded Linux, FreeBSD, Mac OS X, Windows, Haiku, and any other platforms supported by the Qt toolkit.&lt;/p&gt;
-
-&lt;p&gt;Arora uses the &lt;a href=&#34;http://code.google.com/p/arora/p/arora/wiki/QtWebKit&#34;&gt;QtWebKit&lt;/a&gt; port of the fully standards-compliant WebKit layout engine. It features fast rendering, powerful JavaScript engine and supports Netscape plugins.&lt;/p&gt;
-
-&lt;p&gt;Apart from the must-have features such as bookmarks, history and tabbed browsing Arora boasts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;very fast startup&lt;/li&gt;
-&lt;li&gt;integration with desktop environments&lt;/li&gt;
-&lt;li&gt;smart location bar&lt;/li&gt;
-&lt;li&gt;session management&lt;/li&gt;
-&lt;li&gt;privacy mode&lt;/li&gt;
-&lt;li&gt;flexible search engine management&lt;/li&gt;
-&lt;li&gt;ClickToFlash plugin&lt;/li&gt;
-&lt;li&gt;download manager&lt;/li&gt;
-&lt;li&gt;WebInspector, a set of tools for web developers&lt;/li&gt;
-&lt;li&gt;30 translations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://code.google.com/p/arora/&#34;&gt;code.google.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Very cool browser to have as an alternative to Firefox. Starts up quickly as promised, all pages render flawlessly!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</guid>
+      <description>#!/bin/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http://ritesh.posterous.com #License: WTFPL http://sam.zoy.org/wtfpl/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=/usr/sbin/ethtool IF=/dev/eth0 GREP=/bin/grep AWK=/usr/bin/awk LOG=/var/log/outages SDOWN=/sbin/poweroff function checklink() { if [ &amp;quot;$($ETHTOOL eth0 | $GREP Link | $AWK {&#39;print $3&#39;})&amp;quot; == &#39;yes&#39; ] then return 0 else return 1 fi } # call checklink echo &amp;quot;Checking if link is up&amp;quot; checklink if [ $?</description>
+    </item>
     
+    <item>
+      <title>Excerpt from raiding eternity</title>
+      <link>https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/</link>
+      <pubDate>Mon, 22 Mar 2010 11:25:00 +0000</pubDate>
       
-      <item>
-        <title>Patrick Stewart To Be Knighted | TrekMovie.com</title>
-        <link>https://blog.rsinha.org/posts/make-it-sir-patrick-stewart-to-be-knighted-trekmovie-com/</link>
-        <pubDate>Mon, 21 Dec 2009 09:10:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/make-it-sir-patrick-stewart-to-be-knighted-trekmovie-com/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Patrick Stewart got used to being called ’sir’ playing Captain Jean Luc Picard during seven seasons of &lt;em&gt;Star Trek The Next Generation&lt;/em&gt; and four feature films. But now it appears he will be being called ’sir’ in real life as news out of the UK reports the actor will be knighted by the Queen.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://trekmovie.com/2009/12/18/patrick-stewart-to-be-knighted/&#34;&gt;trekmovie.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally! Moustache looks weird though.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/</guid>
+      <description>Chances are we&amp;rsquo;ll each be lost to time. 100 billion people have been
+born before us. Most of them no longer exist as individuals in our
+memories. No names. Faces only reflected in our own and not in any way
+that really matters.
+  But not us. We might be remembered forever. All our Twitter
+updates, our email, our Vimeo movies, our Xbox Live profiles, our
+wormy FourSquare maps.</description>
+    </item>
     
+    <item>
+      <title>Upgrade from Backtrack 4 Beta to final</title>
+      <link>https://blog.rsinha.org/posts/fixing-the-upgrade-from-backtrack-4-beta-to-final/</link>
+      <pubDate>Tue, 12 Jan 2010 12:09:00 +0000</pubDate>
       
-      <item>
-        <title>Game Theory - The Art Of Acting Rational</title>
-        <link>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</link>
-        <pubDate>Fri, 18 Dec 2009 07:18:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;&lt;em&gt;Greed!&lt;/em&gt;&amp;rsquo;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;. Whether your request is indeed &amp;lsquo;non-greedy&amp;rsquo; will be decided once all twenty request have been received by the host of the show. Your requested amount will be labeled &amp;lsquo;non-greedy&amp;rsquo; if no other player has asked for less, and at least one player has asked for more.&lt;/p&gt;
-
-&lt;p&gt;How do you play?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.scientificblogging.com/hammock_physicist/game_theory_art_acting_rational&#34;&gt;scientificblogging.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Interesting problem. Must try this out when I meet some people!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/fixing-the-upgrade-from-backtrack-4-beta-to-final/</guid>
+      <description>Backtrack 4 was released today. I had just completed downloading the
+beta version only yesterday and finished installing it today. Since
+BT4 has now moved to Ubuntu, I&amp;rsquo;d assumed that upgrading it to the
+final would be easy as apt-get pie. I did and pretty much hosed KDE. A
+little research showed that KDE is now in a different path (/opt/kde3)
+than it was before (/usr/kde3).
+The quickest hack to fix this is to add /usr/kde3 to the PATH line in</description>
+    </item>
     
+    <item>
+      <title>arora</title>
+      <link>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
       
-      <item>
-        <title>The Iron Ammonite: The Deadliest place on Earth?</title>
-        <link>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</link>
-        <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</guid>
-        <description>&lt;blockquote&gt;It&#39;s 50oC and has a humidity of 100%, less than a hundred people have been inside and it&#39;s so deadly that even with respirators and suits of ice you can only survive for 20 minutes before your body starts to fail. It’s the nearest thing to visiting another planet – it’s going deep inside our own.&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.ironammonite.com/2009/12/surviving-cueva-de-los-cristales-giant.html&#34;&gt;ironammonite.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Brilliant account of a visit to the Giant Crystal Cave.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-4704231898389758083?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</guid>
+      <description>Arora is a lightweight cross-platform web browser. It&amp;rsquo;s free (as in free speech and free beer). Arora runs on Linux, embedded Linux, FreeBSD, Mac OS X, Windows, Haiku, and any other platforms supported by the Qt toolkit.
+Arora uses the QtWebKit port of the fully standards-compliant WebKit layout engine. It features fast rendering, powerful JavaScript engine and supports Netscape plugins.
+Apart from the must-have features such as bookmarks, history and tabbed browsing Arora boasts:</description>
+    </item>
     
+    <item>
+      <title>Patrick Stewart To Be Knighted | TrekMovie.com</title>
+      <link>https://blog.rsinha.org/posts/make-it-sir-patrick-stewart-to-be-knighted-trekmovie-com/</link>
+      <pubDate>Mon, 21 Dec 2009 09:10:00 +0000</pubDate>
       
-      <item>
-        <title>EC-Council | ECSA</title>
-        <link>https://blog.rsinha.org/posts/ec-council-ecsa/</link>
-        <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
-        <description>&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;How is ECSA different from CEH?
-
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;CEH exposes the learner to various hacking tools and techniques,              while ECSA exposes the learner to the analysis and interpretation of            results obtained from using those tools and techniques.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.eccouncil.org/ecsa.htm&#34;&gt;eccouncil.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? &lt;em&gt;HEAD EXPLODES&lt;/em&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/make-it-sir-patrick-stewart-to-be-knighted-trekmovie-com/</guid>
+      <description>Patrick Stewart got used to being called ’sir’ playing Captain Jean Luc Picard during seven seasons of Star Trek The Next Generation and four feature films. But now it appears he will be being called ’sir’ in real life as news out of the UK reports the actor will be knighted by the Queen.
+ via trekmovie.com
+Finally! Moustache looks weird though.</description>
+    </item>
     
+    <item>
+      <title>Game Theory - The Art Of Acting Rational</title>
+      <link>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</link>
+      <pubDate>Fri, 18 Dec 2009 07:18:00 +0000</pubDate>
       
-      <item>
-        <title>Opening for Application Security Architect</title>
-        <link>https://blog.rsinha.org/posts/opening-for-application-security-architect/</link>
-        <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/opening-for-application-security-architect/</guid>
-        <description>&lt;p&gt;&lt;em&gt;Brilliant email for a job opening. Have removed the relevant bits :)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Dear Ritesh,&lt;/p&gt;
-
-&lt;p&gt;Dear Candidate,&lt;/p&gt;
-
-&lt;p&gt;Greetings from&lt;br /&gt;
-This mail is to SCHEDULE your interview for the position of “Application Security Architect”.&lt;/p&gt;
-
-&lt;p&gt;More details given below&lt;br /&gt;
-The candidate MUST HAVE THE FOLLOWING SKILLS&lt;br /&gt;
-1. Developer&lt;br /&gt;
-2. Cross site scripting – different classes&lt;br /&gt;
-3. Web Application - Get Post&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;User Agent&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;I have User Agent skills. In fact my user agent skills are so good, everyone thinks I&amp;rsquo;m 100% Netscape compatible.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Apache read write&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;The native American language? What the hell? That&amp;rsquo;s hard, man.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Fishing&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Show me a lake.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Cookies&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;mmmmm&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Https&lt;br /&gt;
-4. SSL- SECURED SOCKET LAYER&lt;br /&gt;
-Good to have skills:&lt;br /&gt;
-OWAS - Open web security project&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Now you&amp;rsquo;re just making shit up.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;AJAX&lt;br /&gt;
-Secuel Injection&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;My Secuel injection skills are so great that they&amp;rsquo;re always begging for sequels. Couldn&amp;rsquo;t think of a better one, sorry.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Salary Package will be good to your expectations&lt;br /&gt;
-&lt;em&gt;Something is always fishy when they say that.&lt;/em&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</guid>
+      <description>You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;Greed!&#39;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;.</description>
+    </item>
     
+    <item>
+      <title>The Iron Ammonite: The Deadliest place on Earth?</title>
+      <link>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</link>
+      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
       
-      <item>
-        <title>Run Google Wave Inside Thunderbird 3</title>
-        <link>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</link>
-        <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Google&amp;rsquo;s Wave tool suffers from a &amp;ldquo;just another inbox&amp;rdquo; problem. So it&amp;rsquo;s great to see Wave running inside a tab in Thunderbird, right next to your email inbox, with a single JavaScript line.&lt;/p&gt;
-
-&lt;p&gt;Among Thunderbird 3&amp;rsquo;s new features is &lt;a href=&#34;https://developer.mozilla.org/en/Thunderbird/Content_Tabs&#34;&gt;Content Tabs&lt;/a&gt;, a way to monitor other web sites and web-based messaging from inside Thunderbird. The Quetzalcoatal blog hacked together a little code that opens Wave cleanly and conveniently inside one of these tabs, and even keeps it open after you restart Thunderbird.&lt;/p&gt;
-
-&lt;p&gt;To load it up, head to the Tools menu, select Error Console, and enter this line (be sure to select all of it):&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Components.classes[&#39;@mozilla.org/appshell/window-mediator;1&#39;].getService(Components.interfaces.nsIWindowMediator).i&lt;/code&gt;
-&lt;code&gt;getMostRecentWindow(&amp;quot;mail:3pane&amp;quot;).&lt;/code&gt;
-&lt;code&gt;document.getElementById(&amp;quot;tabmail&amp;quot;).openTab(&amp;quot;contentTab&amp;quot;, {contentPage: &amp;quot;https://wave.google.com/wave/?nouacheck&amp;quot;});&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Hit the &amp;ldquo;Evaluate&amp;rdquo; button when you&amp;rsquo;re done, and you&amp;rsquo;ll see a new tab asking for your Wave login. Log in, click &amp;ldquo;Remember&amp;rdquo; to have Thunderbird remember your password, and now it&amp;rsquo;s just like having a little browser tab opened on Wave.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://quetzalcoatal.blogspot.com/2009/12/google-wave-in-thunderbird-3.html&#34;&gt;Google Wave in Thunderbird 3&lt;/a&gt; [Quetzalcoatal via &lt;a href=&#34;http://www.kabatology.com/12/09/a-line-of-code-that-opens-google-wave-inside-thunderbird-3&#34;&gt;Kabatology&lt;/a&gt;]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://lifehacker.com/5423317/run-google-wave-inside-thunderbird-3&#34;&gt;lifehacker.com&lt;/a&gt;
-Nifty trick to run Google Wave with thunderbird&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</guid>
+      <description>via ironammonite.com
+Brilliant account of a visit to the Giant Crystal Cave.</description>
+    </item>
     
+    <item>
+      <title>EC-Council | ECSA</title>
+      <link>https://blog.rsinha.org/posts/ec-council-ecsa/</link>
+      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
       
-      <item>
-        <title>My favorite S60 apps</title>
-        <link>https://blog.rsinha.org/posts/my-favorite-s60-apps/</link>
-        <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/my-favorite-s60-apps/</guid>
-        <description>&lt;p&gt;I try and use my phone for everything I can. Some of the apps that I&lt;br /&gt;
-find very useful are:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;fring (free): Works with gtalk, twitter, fb, msn etc. If you have&lt;br /&gt;
-one of those newfangled Nseries phones, you can use the front camera&lt;br /&gt;
-to make skype video calls (over WiFi).&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Nokia Messaging Email (free beta, might change in the future): The&lt;br /&gt;
-native email application on the E71 is a load of crap. It&amp;rsquo;s amazing&lt;br /&gt;
-how they pitch it as a business phone and ship with a pathetic Email&lt;br /&gt;
-application. The Nokia Messaging application is pretty good, it has a&lt;br /&gt;
-very usable interface and supports HTML email. The only downside is&lt;br /&gt;
-that Nokia wants a copy of your email username and password.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Mail for Exchange (free) : I don&amp;rsquo;t actually use this for email,&lt;br /&gt;
-I&amp;rsquo;ve set it to synchronize my contacts with Google Contacts. You can&lt;br /&gt;
-use this for push email if you need to use it with MS Exchange.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Splash ID (slightly expensive, USD 29) : I have this magical&lt;br /&gt;
-ability of forgetting passwords and PIN codes. This is the best&lt;br /&gt;
-application I&amp;rsquo;ve found so far that does a good job of remembering them&lt;br /&gt;
-for me. The interface is slightly dated, but it works like a charm.&lt;br /&gt;
-Highly recommend it, as you should have different complex passwords&lt;br /&gt;
-for different services.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Truphone (free app, pay for recharges): This is similar to the&lt;br /&gt;
-Gizmo application for making phone calls over WiFi. It is a lifesaver&lt;br /&gt;
-if you need to make a lot of international phone calls. It uses WiFi&lt;br /&gt;
-to connect and the call is carried out using VoIP. Pretty reasonable&lt;br /&gt;
-rates too.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Putty for S60 (free, OSS): Most of you would never need/use this&lt;br /&gt;
-application. I use this to connect to my home computers to check on&lt;br /&gt;
-stuff. Also the ability to remotely reboot one&amp;rsquo;s computer is awesome.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
+      <description>How is ECSA different from CEH?    CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
+ via eccouncil.org
+Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? HEAD EXPLODES</description>
+    </item>
     
+    <item>
+      <title>Opening for Application Security Architect</title>
+      <link>https://blog.rsinha.org/posts/opening-for-application-security-architect/</link>
+      <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
       
-      <item>
-        <title>India to set up automatic monitoring of communications</title>
-        <link>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</link>
-        <pubDate>Fri, 27 Nov 2009 09:05:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;India plans to set up a centralized system to monitor communications on mobile phones, landlines and the Internet in the country, a minister told the Rajya Sabha, the upper house of Parliament, on Thursday.&lt;/p&gt;
-
-&lt;p&gt;Indian laws allow the interception and monitoring of communications under certain conditions, including to counter terrorism.&lt;/p&gt;
-
-&lt;p&gt;A pilot of the new Centralized Monitoring System (CMS) is to be started by June next year, subject to clearances by other government agencies, Gurudas Kamat, Minister of State for Communications and Information Technology told the Rajya Sabha, according to an announcement by the government&amp;rsquo;s Press Information Bureau.&lt;/p&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.goodgearguide.com.au/article/327850&#34;&gt;goodgearguide.com.au&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Another amazing plan by the Indian Govt. What is going to stop people from using encrypted communications? Will they outlaw encryption then?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/opening-for-application-security-architect/</guid>
+      <description>Brilliant email for a job opening. Have removed the relevant bits :)
+Dear Ritesh,
+Dear Candidate,
+Greetings from
+This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
+More details given below
+The candidate MUST HAVE THE FOLLOWING SKILLS
+ Developer Cross site scripting – different classes Web Application - Get Post  GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+    </item>
     
+    <item>
+      <title>Run Google Wave Inside Thunderbird 3</title>
+      <link>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</link>
+      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
       
-      <item>
-        <title>Not one Music player</title>
-        <link>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</link>
-        <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</guid>
-        <description>&lt;p&gt;All I want is for my podcasts to automatically sync with my ancient&lt;br /&gt;
-iPod. So far, not one media player on Ubuntu Karmic can accomplish&lt;br /&gt;
-this. Tried Rhythmbox, banshee, Amarok. FFFFFFUUUUUUUUUU!!!!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</guid>
+      <description>Google&amp;rsquo;s Wave tool suffers from a &amp;ldquo;just another inbox&amp;rdquo; problem. So it&amp;rsquo;s great to see Wave running inside a tab in Thunderbird, right next to your email inbox, with a single JavaScript line.
+  Among Thunderbird 3&amp;rsquo;s new features is Content Tabs, a way to monitor other web sites and web-based messaging from inside Thunderbird. The Quetzalcoatal blog hacked together a little code that opens Wave cleanly and conveniently inside one of these tabs, and even keeps it open after you restart Thunderbird.</description>
+    </item>
     
+    <item>
+      <title>My favorite S60 apps</title>
+      <link>https://blog.rsinha.org/posts/my-favorite-s60-apps/</link>
+      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
       
-      <item>
-        <title>Facebook and MySpace security: backdoor wide open, millions of accounts exploitable</title>
-        <link>https://blog.rsinha.org/posts/facebook-and-myspace-security-backdoor-wide-open-millions-of-accounts-exploitable/</link>
-        <pubDate>Thu, 05 Nov 2009 10:59:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/facebook-and-myspace-security-backdoor-wide-open-millions-of-accounts-exploitable/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;As a application developer on Facebook, I usually run into certain walls that limit my application functionality. But I don&amp;rsquo;t give up easily, and only recently I found a solution to one of my function limitations. Suprisingly, when looked into more carefully my solution  allowed full access and control to the Facebook user account that accessed my application. Did I mention this would also be untraceable since exploit actions would happen from the users IP and own domain cookie?&lt;/blockquote&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.yvoschaap.com/index.php/weblog/facebook_myspace_accounts_hijacked/#close=1&#34;&gt;yvoschaap.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Apparently this is an issue with crossdomain permissions. Should be fixed soon. You  might have already been compromised!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/my-favorite-s60-apps/</guid>
+      <description>I try and use my phone for everything I can. Some of the apps that I
+find very useful are:
+  fring (free): Works with gtalk, twitter, fb, msn etc. If you have
+one of those newfangled Nseries phones, you can use the front camera
+to make skype video calls (over WiFi).
+  Nokia Messaging Email (free beta, might change in the future): The
+native email application on the E71 is a load of crap.</description>
+    </item>
     
+    <item>
+      <title>India to set up automatic monitoring of communications</title>
+      <link>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</link>
+      <pubDate>Fri, 27 Nov 2009 09:05:00 +0000</pubDate>
       
-      <item>
-        <title>Murderer with &#39;aggression genes&#39; gets sentence cut</title>
-        <link>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</link>
-        <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;In 2007, Abdelmalek Bayout admitted to stabbing and killing a man and received a sentenced of 9 years and 2 months. Last week, &lt;a href=&#34;http://www.nature.com/news/2009/091030/full/news.2009.1050.html&#34;&gt;_Nature _ reported&lt;/a&gt;  that Pier Valerio Reinotti, an appeal court judge in Trieste, Italy, cut Bayout&amp;rsquo;s sentence by a year after finding out he has &lt;a href=&#34;https://blog.rsinha.org/article/dn8896-a-brain-primed-for-violence.html&#34;&gt;gene variants linked to aggression&lt;/a&gt;. Leaving aside the question of whether this link is well enough understood to justify Reinotti&amp;rsquo;s decision, should genes ever be considered a legitimate defence?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.newscientist.com/article/dn18098-murderer-with-aggression-genes-gets-sentence-cut.html&#34;&gt;newscientist.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This should be an interesting precedent!&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</guid>
+      <description>India plans to set up a centralized system to monitor communications on mobile phones, landlines and the Internet in the country, a minister told the Rajya Sabha, the upper house of Parliament, on Thursday.
+  Indian laws allow the interception and monitoring of communications under certain conditions, including to counter terrorism.
+  A pilot of the new Centralized Monitoring System (CMS) is to be started by June next year, subject to clearances by other government agencies, Gurudas Kamat, Minister of State for Communications and Information Technology told the Rajya Sabha, according to an announcement by the government&amp;rsquo;s Press Information Bureau.</description>
+    </item>
     
+    <item>
+      <title>Not one Music player</title>
+      <link>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</link>
+      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
       
-      <item>
-        <title>Why a high IQ doesn&#39;t mean you&#39;re smart</title>
-        <link>https://blog.rsinha.org/posts/clever-fools/</link>
-        <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/clever-fools/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;IS GEORGE W. BUSH stupid? It&amp;rsquo;s a question that occupied a good many minds of all political persuasions during his turbulent eight-year presidency. The strict answer is no. Bush&amp;rsquo;s IQ score is estimated to be above 120, which suggests an intelligence in the top 10 per cent of the population. But this, surely, does not tell the whole story. Even those sympathetic to the former president have acknowledged that as a thinker and decision-maker he is not all there. Even his loyal speechwriter David Frum called him glib, incurious and &amp;ldquo;as a result ill-informed&amp;rdquo;. The political pundit and former Republican congressman Joe Scarborough accused him of lacking intellectual depth, claiming that compared with other US presidents whose intellect had been questioned, Bush junior was &amp;ldquo;in a league by himself&amp;rdquo;. Bush himself has described his thinking style as &amp;ldquo;not very analytical&amp;rdquo;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.newscientist.com/article/mg20427321.000-clever-fools-why-a-high-iq-doesnt-mean-youre-smart.html?full=true&#34;&gt;newscientist.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Interesting study that explores the possibility that having a high IQ doesn&amp;rsquo;t necessarily mean you&amp;rsquo;re smart. I, for one, feel vindicated as my last IQ test results were comparable to that of a pumpkin.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</guid>
+      <description>All I want is for my podcasts to automatically sync with my ancient
+iPod. So far, not one media player on Ubuntu Karmic can accomplish
+this. Tried Rhythmbox, banshee, Amarok. FFFFFFUUUUUUUUUU!!!!</description>
+    </item>
     
+    <item>
+      <title>Facebook and MySpace security: backdoor wide open, millions of accounts exploitable</title>
+      <link>https://blog.rsinha.org/posts/facebook-and-myspace-security-backdoor-wide-open-millions-of-accounts-exploitable/</link>
+      <pubDate>Thu, 05 Nov 2009 10:59:00 +0000</pubDate>
       
-      <item>
-        <title>Hey Jude Flow Chart</title>
-        <link>https://blog.rsinha.org/posts/hey-jude-flow-chart/</link>
-        <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/hey-jude-flow-chart/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://loveallthis.tumblr.com/post/166124704&#34;&gt;&lt;img src=&#34;http://laughingsquid.com/wp-content/uploads/hey-jude-flow-chart-20091029-133742.jpg&#34; alt=&#34;Hey Jude Flow Chart&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Inspired by the &lt;a href=&#34;http://jeannr.tumblr.com/post/165291081/i-made-a-flow-chart-that-we-might-better&#34;&gt;Total Eclipse Of The Heart&lt;/a&gt; flow chart, &lt;a href=&#34;http://loveallthis.tumblr.com/&#34;&gt;love all this&lt;/a&gt; created the &lt;a href=&#34;http://loveallthis.tumblr.com/post/166124704&#34;&gt;Hey Jude Flow Chart&lt;/a&gt; to help you unravel one of The Beatles’ most complicated songs.&lt;/p&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://www.kungfugrippe.com/post/227010489/via-thememegeneration&#34;&gt;Merlin Mann&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;/blockquote&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;via &lt;a href=&#34;http://feeds.laughingsquid.com/~r/laughingsquid/~3/5rHh5OM-SGk/&#34;&gt;feeds.laughingsquid.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;So useful!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-3387237815931038311?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/facebook-and-myspace-security-backdoor-wide-open-millions-of-accounts-exploitable/</guid>
+      <description>As a application developer on Facebook, I usually run into certain walls that limit my application functionality. But I don&amp;rsquo;t give up easily, and only recently I found a solution to one of my function limitations. Suprisingly, when looked into more carefully my solution allowed full access and control to the Facebook user account that accessed my application. Did I mention this would also be untraceable since exploit actions would happen from the users IP and own domain cookie?</description>
+    </item>
     
+    <item>
+      <title>Murderer with &#39;aggression genes&#39; gets sentence cut</title>
+      <link>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</link>
+      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
       
-      <item>
-        <title>Nokia Beta Labs Introduces New Apps: Ovi Lifecasting, Social Messaging</title>
-        <link>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</link>
-        <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</guid>
-        <description>&lt;p&gt;via &lt;a href=&#34;http://feedproxy.google.com/%7Er/Techcrunch/%7E3/LZd-kv311CU/&#34;&gt;feedproxy.google.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If it&amp;rsquo;s anything like the Ovi Store, kill it with fire!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-7187455843933411361?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</guid>
+      <description>In 2007, Abdelmalek Bayout admitted to stabbing and killing a man and received a sentenced of 9 years and 2 months. Last week, _Nature _ reported that Pier Valerio Reinotti, an appeal court judge in Trieste, Italy, cut Bayout&amp;rsquo;s sentence by a year after finding out he has gene variants linked to aggression. Leaving aside the question of whether this link is well enough understood to justify Reinotti&amp;rsquo;s decision, should genes ever be considered a legitimate defence?</description>
+    </item>
     
+    <item>
+      <title>Why a high IQ doesn&#39;t mean you&#39;re smart</title>
+      <link>https://blog.rsinha.org/posts/clever-fools/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
       
-      <item>
-        <title>Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB</title>
-        <link>https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/</link>
-        <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/</guid>
-        <description>&lt;p&gt;Prior to using any Debian derivatives, I was a RedHat fan and hence&lt;br /&gt;
-heavily favoured Fedora/CentOS/RHEL over other distributions. Over the&lt;br /&gt;
-last few releases Fedora has been a disappointment and I was stuck&lt;br /&gt;
-between using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked&lt;br /&gt;
-for me). Gentoo was my favoured distribution about 2-3 years ago but&lt;br /&gt;
-the excessive kernel recompilation was really getting to me. To go the&lt;br /&gt;
-more &lt;em&gt;stable&lt;/em&gt; path I decided to give Debian a shot. Debian lenny is an&lt;br /&gt;
-amazing release, except it sucked as a desktop OS for me. Random sound&lt;br /&gt;
-issues, flash taking the whole system down and poor 3D acceleration&lt;br /&gt;
-really ruined it for me (couldn&amp;rsquo;t play quake live even with&lt;br /&gt;
-proprietary drivers).&lt;/p&gt;
-
-&lt;p&gt;I decided to finally switch to Ubuntu Jaunty (9.04). Being too lazy to&lt;br /&gt;
-connect an optical drive or buying blank CDs, I decided to install it&lt;br /&gt;
-using my existing GRUB setup (Debian). Turns out it&amp;rsquo;s easier than&lt;br /&gt;
-Lindsay Lohan excessively inebriated.&lt;/p&gt;
-
-&lt;p&gt; A few preliminary notes: This has been tested using the Jaunty mini&lt;br /&gt;
-iso, not sure if other versions work as designed. Did not try&lt;br /&gt;
-installing using the wireless network (that would be stupid). Need a&lt;br /&gt;
-decent broadband connection (say 512kbps upward) for the installation&lt;br /&gt;
-to finish within a reasonable time (leave it overnight only after&lt;br /&gt;
-you&amp;rsquo;re done selecting packages). Will hose your system if power goes&lt;br /&gt;
-out and you&amp;rsquo;ve crossed the partitioning stage. Take like a backup,&lt;br /&gt;
-man.&lt;/p&gt;
-
-&lt;p&gt; Step 1: Get the mini.iso from here :&lt;br /&gt;
-&lt;a href=&#34;https://help.ubuntu.com/community/Installation/MinimalCD&#34;&gt;https://help.ubuntu.com/community/Installation/MinimalCD&lt;/a&gt;&lt;br /&gt;
-Step 2: Extract the mini.iso to get two files, linux and initrd.gz&lt;br /&gt;
-Step 3: Rename those files for easy reference (eg linux_ubuntu &amp;amp;&lt;br /&gt;
-initrd_ubuntu.gz)&lt;br /&gt;
-Step 4: Move them to your boot directory&lt;br /&gt;
-  #sudo mv linux_ubuntu initrd_ubuntu.gz /boot/&lt;br /&gt;
-Step 5: Edit /boot/grub/menu.lst using your favourite editor and add&lt;br /&gt;
-the lines to point to these&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  title		Ubuntu 9.04 installer   
-  root (hd0,0)   
-  kernel		/linux_ubuntu   
-  initrd /initrd_ubuntu.gz
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; Remember the above setting should be &lt;em&gt;exactly&lt;/em&gt; the same as the other&lt;br /&gt;
-lines on your existing linux install (If your current linux uses UUIDs&lt;br /&gt;
-then the root line would be replaced with a suitable UUID, the &amp;ldquo;root&amp;rdquo;&lt;br /&gt;
-parameter might work but I&amp;rsquo;m not sure) except for the last two lines&lt;br /&gt;
-(kernel and initrd)&lt;/p&gt;
-
-&lt;p&gt; Step 6: Reboot select Ubuntu installer, proceed as usual, select your&lt;br /&gt;
-mirror, repartition your disks (even the partition you booted from can&lt;br /&gt;
-be destroyed; is that cool or what?) and let the installer do its&lt;br /&gt;
-thing.&lt;/p&gt;
-
-&lt;p&gt; I live in an area where powercuts are fairly common (even after a&lt;br /&gt;
-lying politician promised there would be no more), so i went with the&lt;br /&gt;
-minimal install during the initial setup (so that I&amp;rsquo;d have something&lt;br /&gt;
-to fall back on as soon as possible) . After this I was able to reboot&lt;br /&gt;
-to a desktop-less OS. Doing an &lt;code&gt;sudo apt-get install ubuntu-desktop&lt;/code&gt;&lt;br /&gt;
-got the latest version of GNOME and associated stuff fresh from the&lt;br /&gt;
-repositories. Jaunty works great for me, even though I&amp;rsquo;m afflicted&lt;br /&gt;
-with an ATI card (on board) and a faulty USB controller (disabled,&lt;br /&gt;
-using a PCI addon USB card instead).&lt;/p&gt;
-
-&lt;p&gt;Time taken to do the initial install: Approx an hour (including download time)&lt;br /&gt;
-Time taken to download the ubuntu-desktop packages: About 1 hr 30 minutes&lt;br /&gt;
-Time taken to install/configure the desktop package: About 15 minutes&lt;/p&gt;
-
-&lt;p&gt; My broadband connection is allegedly 1Mbps (ADSL) but it usually hangs&lt;br /&gt;
-somewhere between 512 and 768 and peaks at 1Mbps sometimes.&lt;/p&gt;
-
-&lt;p&gt; Hope this helps someone.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/clever-fools/</guid>
+      <description>IS GEORGE W. BUSH stupid? It&amp;rsquo;s a question that occupied a good many minds of all political persuasions during his turbulent eight-year presidency. The strict answer is no. Bush&amp;rsquo;s IQ score is estimated to be above 120, which suggests an intelligence in the top 10 per cent of the population. But this, surely, does not tell the whole story. Even those sympathetic to the former president have acknowledged that as a thinker and decision-maker he is not all there.</description>
+    </item>
     
+    <item>
+      <title>Hey Jude Flow Chart</title>
+      <link>https://blog.rsinha.org/posts/hey-jude-flow-chart/</link>
+      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
       
-      <item>
-        <title>Petabytes on a budget: How to build cheap cloud storage</title>
-        <link>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</link>
-        <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</guid>
-        <description>&lt;blockquote&gt;  
-
-&gt; 
-&gt; At Backblaze, we provide unlimited storage to our customers for only $5 per month, so we had to figure out how to store hundreds of petabytes of customer data in a reliable, scalable way—and keep our costs low. After looking at several overpriced commercial solutions, we decided to build our own custom Backblaze Storage Pods: 67 terabyte 4U servers for $7,867.
-&gt; 
-&gt;   
-
-&gt; 
-&gt; In this post, we’ll share how to make one of these storage pods, and you’re welcome to use this design. Our hope is that by sharing, others can benefit and, ultimately, refine this concept and send improvements back to us. Evolving and lowering costs is critical to our continuing success at Backblaze.
-&gt; 
-&gt;   
-
-&gt; 
-&gt; Below is a video that shows a 3-D model of the Backblaze Storage Pod. Continue reading to learn the exact details of the design.
-&gt; 
-&gt;   
-&lt;/blockquote&gt;
-
-&lt;p&gt;via: &lt;a href=&#34;http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/&#34;&gt;http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap&amp;hellip;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Very interesting setup!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-1964047520418771335?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/hey-jude-flow-chart/</guid>
+      <description>Inspired by the Total Eclipse Of The Heart flow chart, love all this created the Hey Jude Flow Chart to help you unravel one of The Beatles’ most complicated songs.
+  via Merlin Mann
+      via feeds.laughingsquid.com
+So useful!</description>
+    </item>
     
+    <item>
+      <title>Nokia Beta Labs Introduces New Apps: Ovi Lifecasting, Social Messaging</title>
+      <link>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</link>
+      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
       
-      <item>
-        <title>9 year old cracks MCSE</title>
-        <link>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</link>
-        <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.&lt;/blockquote&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.ndtv.com/convergence/ndtv/story.aspx?id=NEWEN20080077337&amp;amp;ch=12/22/2008%209%3A28%3A00%20AM&#34;&gt;9-year-old TN girl cracks Microsoft exam&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;On the other hand, the youngest person to crack the RHCE is 12 years old, which makes you think. Also the little boy in question did flunk the first time, which leads me to believe that RHCE is slightly more challenging.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.iosn.net/south-asia/countries/india/news/twelve-year-old-qualifies-to-wear-the-red-hat/&#34;&gt;Twelve Year Old qualifies to wear the Red Hat !&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</guid>
+      <description>via feedproxy.google.com
+If it&amp;rsquo;s anything like the Ovi Store, kill it with fire!</description>
+    </item>
     
+    <item>
+      <title>Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB</title>
+      <link>https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/</link>
+      <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
       
-      <item>
-        <title>Fedora 10 released</title>
-        <link>https://blog.rsinha.org/posts/fedora-10/</link>
-        <pubDate>Wed, 26 Nov 2008 00:31:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/fedora-10/</guid>
-        <description>&lt;p&gt;Fedora 10 released&lt;/p&gt;
-
-&lt;p&gt;I can hardly wait to test it out. Was released at 10 am EST today. Get your copies while they&amp;rsquo;re hot!!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://torrent.fedoraproject.org/&#34;&gt;Fedora torrents&lt;/a&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/</guid>
+      <description>Prior to using any Debian derivatives, I was a RedHat fan and hence
+heavily favoured Fedora/CentOS/RHEL over other distributions. Over the
+last few releases Fedora has been a disappointment and I was stuck
+between using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked
+for me). Gentoo was my favoured distribution about 2-3 years ago but
+the excessive kernel recompilation was really getting to me. To go the
+more stable path I decided to give Debian a shot.</description>
+    </item>
     
+    <item>
+      <title>Petabytes on a budget: How to build cheap cloud storage</title>
+      <link>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</link>
+      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
       
-      <item>
-        <title>Dawg</title>
-        <link>https://blog.rsinha.org/posts/dawg-2/</link>
-        <pubDate>Wed, 19 Nov 2008 07:00:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/dawg-2/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://blog.rsinha.org/static/dawg.jpg&#34; alt=&#34;Dog&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Whats up, dog?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</guid>
+      <description>At Backblaze, we provide unlimited storage to our customers for only $5 per month, so we had to figure out how to store hundreds of petabytes of customer data in a reliable, scalable way—and keep our costs low. After looking at several overpriced commercial solutions, we decided to build our own custom Backblaze Storage Pods: 67 terabyte 4U servers for $7,867.
+  In this post, we’ll share how to make one of these storage pods, and you’re welcome to use this design.</description>
+    </item>
     
+    <item>
+      <title>9 year old cracks MCSE</title>
+      <link>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</link>
+      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
       
-      <item>
-        <title>Corsair Mini 4GB HDTach scores</title>
-        <link>https://blog.rsinha.org/posts/corsair-mini-4gb-hdtach-scores-2/</link>
-        <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/corsair-mini-4gb-hdtach-scores-2/</guid>
-        <description>&lt;p&gt;&lt;a href=&#34;http://www.corsair.com/products/voyagermini/photo4.jpg&#34;&gt;&lt;img src=&#34;http://www.corsair.com/products/voyagermini/photo4.jpg&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;br /&gt;
-I have this weird hobby of amassing USB sticks/pen drives. My latest acquisition is a Corsair Voyager Mini 4G. I&amp;rsquo;d heard great things about the Corsair Voyager so I decided to pick one up. The voyager mini is really tiny and packs 4GB of storage.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blog.rsinha.org/static/corsairHDtach.jpeg&#34; alt=&#34;Corsair HDTach&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;My experience with it was quite unfortunate though, as I had to get the drive replaced twice (my work system refuses to copy large files to it). I just got the latest replacement today, seems to be working fine. Here are the HDTach scores if you care. I was quite impressed with the burst speed of 28.4MB/s. Plan to install and run the latest Fedora 10 preview. Let&amp;rsquo;s see how it goes.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: The USB stick works perfectly. Turns out the issue was that the USB ports at work are faulty (possibly misconfigured in the BIOS). So it didn&amp;rsquo;t need replacement after all. Woot.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</guid>
+      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination. I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
+9-year-old TN girl cracks Microsoft exam
+On the other hand, the youngest person to crack the RHCE is 12 years old, which makes you think.</description>
+    </item>
     
+    <item>
+      <title>Fedora 10 released</title>
+      <link>https://blog.rsinha.org/posts/fedora-10/</link>
+      <pubDate>Wed, 26 Nov 2008 00:31:00 +0000</pubDate>
       
-      <item>
-        <title>Bucket</title>
-        <link>https://blog.rsinha.org/posts/bucket/</link>
-        <pubDate>Mon, 13 Oct 2008 19:55:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/bucket/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://blog.rsinha.org/static/bucket.jpeg&#34; alt=&#34;Bucket&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A bucket&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/fedora-10/</guid>
+      <description>Fedora 10 released
+I can hardly wait to test it out. Was released at 10 am EST today. Get your copies while they&amp;rsquo;re hot!!
+Fedora torrents</description>
+    </item>
     
+    <item>
+      <title>Dawg</title>
+      <link>https://blog.rsinha.org/posts/dawg-2/</link>
+      <pubDate>Wed, 19 Nov 2008 07:00:00 +0000</pubDate>
       
-      <item>
-        <title>My desk at work</title>
-        <link>https://blog.rsinha.org/posts/my-desk-at-work-2/</link>
-        <pubDate>Mon, 13 Oct 2008 11:02:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/my-desk-at-work-2/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://blog.rsinha.org/static/deskwork.jpeg&#34; alt=&#34;Work desk&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Cluttered eh?&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/dawg-2/</guid>
+      <description>Whats up, dog?</description>
+    </item>
     
+    <item>
+      <title>Corsair Mini 4GB HDTach scores</title>
+      <link>https://blog.rsinha.org/posts/corsair-mini-4gb-hdtach-scores-2/</link>
+      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
       
-      <item>
-        <title>Installing TrueCrypt on Fedora 9 HOWTO</title>
-        <link>https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/</link>
-        <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/</guid>
-        <description>&lt;p&gt;On the 4th of July, the TrueCrypt team released version 6.0 of its amazing product. I am generally quite excited by new software releases and can&amp;rsquo;t wait to try them out as soon as possible. From the web-site, some of the new features in the TrueCrypt version 6.0 are:&lt;/p&gt;
-
-&lt;p&gt;Parallelized encryption/decryption on multi-core processors (or multi-processor systems). Increase in encryption/decryption speed is directly proportional to the number of cores and/or processors.&lt;/p&gt;
-
-&lt;p&gt;Ability to create and run an encrypted hidden operating system whose existence is impossible to prove (provided that certain guidelines are followed).&lt;/p&gt;
-
-&lt;p&gt;And many more &lt;a href=&#34;http://www.truecrypt.org/docs/?s=version-history&#34;&gt;killer features&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I was disappointed to see that there were no ready-made packages available for Fedora 9 so I decided to compile from source. Here are the quick steps you could follow to install TrueCrypt on your Fedora Machine. I assume that you are familiar with TrueCrypt and its features, so I will not explain any of that. Be sure to read the &lt;a href=&#34;http://www.truecrypt.org/docs/&#34;&gt;TrueCrypt documentation &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;**Obligatory Warning: I do not claim that this is the best way to go about installing TrueCrypt on your system and I am not liable for any damages caused **&lt;/p&gt;
-
-&lt;p&gt;With that out of the way here is what you need:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Ensure that your box is up to date&lt;br /&gt;
-$ sudo yum -y update&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Install fuse and development packages&lt;br /&gt;
-$ sudo yum install fuse fuse-devel&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Install gtk2 development libraries&lt;br /&gt;
-$ sudo yum -y install gtk2-devel&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Obtain a copy of the wxWidgets source version 2.8 from SourceForge&lt;br /&gt;
-$ wget &lt;a href=&#34;http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.7.tar.gz&#34;&gt;http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.7.tar.gz&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Download the latest TrueCrypt source package from their &lt;a href=&#34;http://www.truecrypt.org/downloads2.php&#34;&gt;website &lt;/a&gt;(As of writing this, it was version 6.0a)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Untar the wxWidgets source into a directory of your choice. I chose /usr/src&lt;br /&gt;
-$ tar xzvf wxWidgets-2.8.7.tar.gz -C /usr/src&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Untar the TrueCrypt package to the temporary directory&lt;br /&gt;
-$ tar xzvf TrueCrypt 6.0a Source.tar.gz -C /tmp&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Change to the truecrypt directory to build the application&lt;br /&gt;
-$ cd /tmp/truecrypt-6.0a-source/&lt;br /&gt;
-$ make WX_ROOT=/usr/src/wxWidgets-2.8.7 wxbuild ##change accordingly to point to the wxWidgets source&lt;br /&gt;
-$ make&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;If all goes well, you should have a truecrypt binary in the Main folder in the truecrypt source folder (/tmp/truecrypt-6.0a-source/Main/truecrypt). Copy this to /usr/bin (As root of course)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The next part involves creating a group called truecrypt, adding users who are permitted to use truecrypt to it and ensuring that no password is required for them to run truecrypt. This is explained in a very user friendly manner by Oliver Meyer on howtoforge. Follow &lt;em&gt;ONLY&lt;/em&gt; the first section of &lt;a href=&#34;http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8&#34;&gt;this guide&lt;/a&gt; . Be sure to check out the other easy to follow and highly informative tutorials on &lt;a href=&#34;http://www.howtoforge.com/&#34;&gt;howtoforge&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;When I get a little more time, I&amp;rsquo;ll clean this up and put it on howtoforge. I doubt that would be required though, since someone will eventually &lt;a href=&#34;http://www.lfarkas.org/linux/packages/fedora/9/i386/&#34;&gt;package it for Fedora 9.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Resources:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8&#34;&gt;http://www.howtoforge.com/encrypting-file-systems-with-truecrypt-on-fedora8&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;http://meandubuntu.wordpress.com/2008/02/07/my-first-compile-truecrypt-50/&#34;&gt;http://meandubuntu.wordpress.com/2008/02/07/my-first-compile-truecrypt-50/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-8521877477819807390?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/corsair-mini-4gb-hdtach-scores-2/</guid>
+      <description>I have this weird hobby of amassing USB sticks/pen drives. My latest acquisition is a Corsair Voyager Mini 4G. I&amp;rsquo;d heard great things about the Corsair Voyager so I decided to pick one up. The voyager mini is really tiny and packs 4GB of storage.
+My experience with it was quite unfortunate though, as I had to get the drive replaced twice (my work system refuses to copy large files to it).</description>
+    </item>
     
+    <item>
+      <title>Bucket</title>
+      <link>https://blog.rsinha.org/posts/bucket/</link>
+      <pubDate>Mon, 13 Oct 2008 19:55:00 +0000</pubDate>
       
-      <item>
-        <title>NASty</title>
-        <link>https://blog.rsinha.org/posts/nasty/</link>
-        <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/nasty/</guid>
-        <description>&lt;p&gt;So a friend wanted to implement some sort of NAS setup on his old, decaying PC. The friend in question has quite a large amount of legitimate &lt;em&gt;ahem&lt;/em&gt; data. I recommended that he use Openfiler. I found the &lt;a href=&#34;http://www.rpath.org/rbuilder/project/openfiler/&#34;&gt;rPath version &lt;/a&gt; first and so I decided to check it out. I keep hearing that rPath builds very good task specific Machines, so I decided to give it a spin. rPath linux describes itself as a meta-distribution. God knows what that means, I was too lazy to look it up.&lt;/p&gt;
-
-&lt;p&gt;Downloaded a copy of the installation CD rather than a pre-built VM since my friend would probably use a physical install. Standard install, resembles the CentOS installation (It even uses Anaconda, so I&amp;rsquo;m guessing that it&amp;rsquo;s a customized RedHat distribution). The CD is about 350 MB or so, after installation it takes up 750 MB of space. Quite a lot for a NAS appliance wouldn&amp;rsquo;t you say? The application throws up a friendly URL that you can access it with. Like an idiot I logged in as root and didn&amp;rsquo;t get much of an administrative interface. Upon RTFM, I realized that the admin account is openfiler with the default password as &amp;lsquo;password&amp;rsquo;. One more reason to always &lt;a href=&#34;http://wwwold.openfiler.com/docs/manual/&#34;&gt;read the fine manual.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Many, many, many configuration options are available. That is to say this is a serious NAS offering. Inbuilt LDAP, FTP, SSH, CIFS/SMB. The sad part is I was too lazy to try any of them out.&lt;/p&gt;
-
-&lt;p&gt;Then I read about FreeNAS and their &lt;a href=&#34;http://www.vmware.com/appliances/directory/168&#34;&gt;killer 15MB award winning Virtual Machine &lt;/a&gt;. So I start up VMware and give it a go. And my, does it work like a charm. Out of the box. Nothing else required. The argument here would probably be that FreeNAS is quite insecure by default, but what the heck, I know what I&amp;rsquo;m doing and it&amp;rsquo;s my goddamn home network. I will configure security later. The main feature that I care about, SMB, works perfectly. Haven&amp;rsquo;t tested other features, but I&amp;rsquo;m guessing they work too.&lt;/p&gt;
-
-&lt;p&gt;Wish I had an old PC to turn into a home file server. Ah well, VMWare keeps me alive until then.&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/bucket/</guid>
+      <description>A bucket</description>
+    </item>
     
+    <item>
+      <title>My desk at work</title>
+      <link>https://blog.rsinha.org/posts/my-desk-at-work-2/</link>
+      <pubDate>Mon, 13 Oct 2008 11:02:00 +0000</pubDate>
       
-      <item>
-        <title>First post!</title>
-        <link>https://blog.rsinha.org/posts/first-post/</link>
-        <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
-        <author> (Ritesh Sinha)</author>
-        <guid>https://blog.rsinha.org/posts/first-post/</guid>
-        <description>&lt;p&gt;Ok, I lied. This is a remake of the old blog by the same name. Deleted all the old posts which I thought were meaningless drivel. Incidentally, &lt;a href=&#34;http://www.dropline.net/drivel/&#34;&gt;Drivel&lt;/a&gt; seems to be a good desktop blogging client. Available through your nearest apt repository.&lt;/p&gt;
-
-&lt;p&gt;Was following news of the &lt;a href=&#34;http://developer.apple.com/wwdc/&#34;&gt;Apple WWDC&lt;/a&gt; quite closely even though I don&amp;rsquo;t own any working apple products. The only apple product I have is a 5 year old broken iPod. The set prices seems quite reasonable. $199 for the 8G version and $299 for the 16G one. I&amp;rsquo;m pretty sure there are some hidden costs, though. Engadget, Gizmodo and LifeHacker have plenty of coverage of the event.&lt;/p&gt;
-
-&lt;p&gt;More links&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.engadget.com/2008/04/25/the-second-gen-iphone-3g-gps-only-slightly-thicker/&#34;&gt;http://www.engadget.com/2008/04/25/the-second-gen-iphone-3g-gps-only-slightly-thicker/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://lifehacker.com/395548/iphone-3g-and-mobileme-our-thoughts-and-yours&#34;&gt;http://lifehacker.com/395548/iphone-3g-and-mobileme-our-thoughts-and-yours&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve just realized how hard it is to write. With every passing sentence I feel a grammatical, logical or spelling error coming on. Hats off to people who churn out pages after pages of blogs everyday.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://blogger.googleusercontent.com/tracker/2563657433103433322-8202164195679365498?l=arbitness.blogspot.com&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
-      </item>
-      
+      <guid>https://blog.rsinha.org/posts/my-desk-at-work-2/</guid>
+      <description>Cluttered eh?</description>
+    </item>
     
+    <item>
+      <title>Installing TrueCrypt on Fedora 9 HOWTO</title>
+      <link>https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/</link>
+      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
       
+      <guid>https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/</guid>
+      <description>On the 4th of July, the TrueCrypt team released version 6.0 of its amazing product. I am generally quite excited by new software releases and can&amp;rsquo;t wait to try them out as soon as possible. From the web-site, some of the new features in the TrueCrypt version 6.0 are:
+Parallelized encryption/decryption on multi-core processors (or multi-processor systems). Increase in encryption/decryption speed is directly proportional to the number of cores and/or processors.</description>
+    </item>
+    
+    <item>
+      <title>NASty</title>
+      <link>https://blog.rsinha.org/posts/nasty/</link>
+      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/nasty/</guid>
+      <description>So a friend wanted to implement some sort of NAS setup on his old, decaying PC. The friend in question has quite a large amount of legitimate ahem data. I recommended that he use Openfiler. I found the rPath version  first and so I decided to check it out. I keep hearing that rPath builds very good task specific Machines, so I decided to give it a spin. rPath linux describes itself as a meta-distribution.</description>
+    </item>
+    
+    <item>
+      <title>First post!</title>
+      <link>https://blog.rsinha.org/posts/first-post/</link>
+      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/first-post/</guid>
+      <description>Ok, I lied. This is a remake of the old blog by the same name. Deleted all the old posts which I thought were meaningless drivel. Incidentally, Drivel seems to be a good desktop blogging client. Available through your nearest apt repository.
+Was following news of the Apple WWDC quite closely even though I don&amp;rsquo;t own any working apple products. The only apple product I have is a 5 year old broken iPod.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.rsinha.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/about/</guid>
+      <description>Hello! I&amp;rsquo;m Ritesh. I&amp;rsquo;m pretty good at trivia and obscure facts. If you&amp;rsquo;d like to get in touch or want to say hi, find me on twitter @rsinha.
+ This blog uses the Hugo static site generator with the internet-weblog theme.</description>
+    </item>
     
   </channel>
 </rss>

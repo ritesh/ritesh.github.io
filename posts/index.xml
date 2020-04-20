@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on blog</title>
@@ -17,8 +17,16 @@
       <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/testing-aws-lambda-locally/</guid>
-      <description>Integration Testing Lambda Functions Locally Never had to test AWS Lambda functions locally (test in production YOLO). I&amp;rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&amp;rsquo;s probably best to test them locally to discover any regressions early on.
-While walking through the docs with a colleague, we found that the nifty way to test a lambda function created using SAM is to run:</description>
+      <description>tl;dr Testing a SAM lambda locally</description>
+    </item>
+    
+    <item>
+      <title>Header files voodoo</title>
+      <link>https://blog.rsinha.org/posts/2017-03-07-header-files-qt/</link>
+      <pubDate>Tue, 07 Mar 2017 22:38:48 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/2017-03-07-header-files-qt/</guid>
+      <description>Trying to build a Qt project on Linux today. Turns out, (some) Qt programmers are case insensitive when it comes to including heAdEr fiLEs in C++ source. This is fine on Windows and macOS, but on an OS with a case sensitive filesystem like ext4, this causes a whole lot of problems. gcc and g++ try and fail to find coolHeader.h if it&amp;rsquo;s called CoolHeader.h. I&amp;rsquo;m sure that this isn&amp;rsquo;t an uncommon problem, but I couldn&amp;rsquo;t find a solution that didn&amp;rsquo;t involve serious sed-fu.</description>
     </item>
     
     <item>
@@ -27,7 +35,7 @@ While walking through the docs with a colleague, we found that the nifty way to 
       <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
-      <description>I had been running this blog using Jekyll for a while now, but didn&amp;rsquo;t quite understand how it all worked. Jekyll is a great tool, and you don&amp;rsquo;t need a whole lot of configuration to get started. If you&amp;rsquo;re using github to host either personal, project or organisation pages, Jekyll is a no-brainer to get started. However, as I&amp;rsquo;m not much of a Ruby programmer, I didn&amp;rsquo;t quite understand how Jekyll worked and having to gem install ruby felt wrong &amp;ndash; especially since it also installs a whole lot of other dependencies that I don&amp;rsquo;t understand, either.</description>
+      <description>Finally got around to moving this blog from Jekyll to Hugo and setting up a Cloudflare account with SSL.</description>
     </item>
     
     <item>
@@ -36,7 +44,7 @@ While walking through the docs with a colleague, we found that the nifty way to 
       <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</guid>
-      <description>I read an interesting post by @anshuman_bh on automating ZAP scans for dockerized web applications. At the time, I was exploring docker compose (formerly fig) as a way to &amp;ldquo;container-ize&amp;rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that docker-compose would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &amp;ldquo;glue&amp;rdquo; code by defining links between containers.</description>
+      <description>A first attempt at automating web application security scans for dockerized web-applications</description>
     </item>
     
     <item>
@@ -45,8 +53,7 @@ While walking through the docs with a colleague, we found that the nifty way to 
       <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
-      <description>My work laptop ships with proprietary encryption software that encrypts the disk drive (a self-encrypting drive) when turned off or in sleep mode. This works perfectly fine on Windows 7, but having rid my laptop of Windows in favour of Xubuntu, I soon realised that a day-to-day Linux desktop is for masochists.
-When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&amp;rsquo;t know how to unlock it when it wakes back up.</description>
+      <description>Have a laptop that refuses to wake up after falling asleep? Try this!</description>
     </item>
     
     <item>
@@ -55,7 +62,7 @@ When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&a
       <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
-      <description>I&amp;rsquo;ve lately taken an interest in golang as it seems to be the language du jour for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&amp;rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&amp;rsquo;t require 3rd party packages installed at runtime.</description>
+      <description>If you&amp;rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful</description>
     </item>
     
     <item>
@@ -64,7 +71,7 @@ When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&a
       <pubDate>Mon, 17 Nov 2014 22:41:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2014/11/17/another-day/</guid>
-      <description> Teathet6quiu yah4ooxi7AhB ciezei1Gahwu Quui2queixie eeveahuy2ENi eoj8sa5iew4S eibeo8AuPhoo eeZe4peighoh ao4oPhashiez Mee8quahmeet quae6eiVaep6 aep6quu9eiYo pooyoh5Reeji jeiz2OoRefae Vaegohpek1Pa ahGh9pe1bohb Oopheec6faic Ooka2capheZ7 Axuewee7Eiqu vooph2ee9Eij Quahxaivohv1 eVu8eed9yeji uk8ingee8uFu shohz3tei9AB Aw4oT2oongea VeeSh8ahghen aiqu2ioNgohk zuaBoth3aex7 Aroog7aivaeh cie3ongeTooF sha1looTohyi vaeheneigh9S ChaefaeWiec3 fah9Hookee1i ahh6koThe1ae eYe2oFi7ieCh aeR9ohg5Shae ii1po5Ujeiy8 cai3Ahnu0xie neDuiquuY7oh Book0feeziez DooMoo4queib eish7aeKahv2 Eimai9eTe0Zo Oojou2shu8oh oophioSuesh5 ex4ru3aD8uye zut7Heigahjo Giet7eejei7e mioqu8doKi8e Laitai1ohquo ooRuaQuuZ9jo iome1Eithi9j aaNgah0bupee ne8xaiphahVo wahtah9uru0F upatai5aeS9o phohXoph7ohs mieQuiet9ael iemohpu0iiPi ahFoo0Phu7th joa8aew0ooCh ko8za1ood9Te chei2Gepeil6 Deijimoa9sie Kai6Wah3johb Eegh3Eegho0f ooRie0AhR8ie haiviuf7Ahno EiQu5theeCh7 Eeyeidae4uus lohzaeGhiph3 ieC0zaepeJ6a NaiTh4poh6we AiPuvohM6ahc Eew0see3eeph ouNgeiS2thae Oon4cagh4ohf gaewahChei3f ainiRi7ein0h  </description>
+      <description>This is another attempt at a blog. If I can manage more than 140 chars per day, this will have been a successful experiment.</description>
     </item>
     
     <item>
@@ -73,7 +80,7 @@ When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&a
       <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
-      <description>Occasionally I like to boot my desktop running Windows from a USB stick to try out the latest version of a Linux distribution on hardware &amp;ndash; as opposed to running it in VirtualBox. I remember that this used to be straightforward on my old Acer laptop, but it&amp;rsquo;s hit and miss on my desktop. I&amp;rsquo;ve not quite figured out why boot-from-USB fails occasionally, but I&amp;rsquo;ve found great way around it.</description>
+      <description>Pro-tip for booting Linux via a USB stick for computers that don&amp;rsquo;t allow native USB booting</description>
     </item>
     
     <item>
@@ -82,13 +89,7 @@ When the computer is set to sleep mode, the disk drive locks and Xubuntu doesn&a
       <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/08/10/geared-bikes/</guid>
-      <description>Got a sweet road bike off Gumtree. I thought the gears weren&amp;rsquo;t working, having never ridden a geared bike before.
-Me: &amp;ldquo;The gears on this bike don&amp;rsquo;t work&amp;rdquo;
-Bike shop guy: &amp;ldquo;Have you tried shifting these levers right here?&amp;rdquo;
-Me: &amp;ldquo;Those are brakes, right?&amp;rdquo;
-Bike shop guy: &amp;ldquo;How have you been shifting gears until this point?&amp;rdquo;
-Me: &amp;ldquo;I&amp;rsquo;ll show myself out, thanks&amp;rdquo;
-Laughter in the background as I walk out of the bike shop.</description>
+      <description>A mildly interesting anecdote involving a noob cyclist and a road bike.</description>
     </item>
     
     <item>
@@ -97,9 +98,7 @@ Laughter in the background as I walk out of the bike shop.</description>
       <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/05/21/more-black-white/</guid>
-      <description>I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other. Found an old photo in Lightroom and decided to mess about with it. I think it is about 1&amp;frasl;2 a stop underexposed, but I like it anyway.
-
-I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones work to bring out details in photographs.</description>
+      <description>Photo</description>
     </item>
     
     <item>
@@ -108,7 +107,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/05/11/brussels/</guid>
-      <description>Found this while digging through some old photos.</description>
+      <description>Photo</description>
     </item>
     
     <item>
@@ -117,7 +116,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</guid>
-      <description>Decided to host my images on Flickr as I&amp;rsquo;m hoping they&amp;rsquo;ll do a better job of backing them up than me. As I don&amp;rsquo;t develop photos myself, it cost quite a bit to get just one roll developed. I&amp;rsquo;ve since moved to a fixed lens digital camera and I hope to put up more nice pictures soon.</description>
+      <description>Photo</description>
     </item>
     
     <item>
@@ -126,7 +125,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
-      <description>I recently acquired a shiny new-ish desktop from a friend. Intel Core-i7 with 8 cores and a whopping 12 GB of RAM with a high-end ATI Radeon graphics card. It came with Windows 7 pre-installed and I decided to install Ubuntu 12.04 amd64 as a dual boot option. Initially, I had some trouble getting it to install on the inbuilt SSD (which should have been the first warning sign in retrospect).</description>
+      <description>In which I whine about Linux not working for me. Being a sucker for punishment, I&amp;rsquo;m typing this from a laptop running Linux. Stockholm syndrome, perhaps?</description>
     </item>
     
     <item>
@@ -135,7 +134,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2012/05/06/no-push-email/</guid>
-      <description>I&amp;rsquo;ve had a Gmail account for the last few years and the number of emails I get every day varies between ten to thirty. Out of the emails I receive, there are probably five or six emails per week that require either my attention or a reply. The majority of these are spammy emails that come from Indian companies with dubious privacy policies. I remember unsubscribing from most of them but I still keep getting emails from them or their &amp;lsquo;selected&amp;rsquo; partners (Find your life partner!</description>
+      <description>In which I experiment with turning off push email and check email occassionally instead. I&amp;rsquo;ve moved devices since I wrote this and haven&amp;rsquo;t disabled push, yet.</description>
     </item>
     
     <item>
@@ -144,8 +143,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
-      <description>If you&amp;rsquo;re anything like me, you might casually type rm -rf * in your home directory when you really meant to delete the contents of another directory. You should, of course, always have a backup of the contents of your home directory just in case this happens.
-There is simple hack to force rm to prompt you to think about the files that are going to be deleted. Create a file called &amp;lsquo;-i&amp;rsquo; in the directory whose contents you want to protect from accidental deletion.</description>
+      <description>Pro-tip to prevent accidently hosing your home directory. If you&amp;rsquo;re too smart for your own good, this may not be sufficient.</description>
     </item>
     
     <item>
@@ -154,9 +152,7 @@ There is simple hack to force rm to prompt you to think about the files that are
       <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
-      <description>I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.
-# for file in `find . -type f`; do somescript.py $file; done  If you&amp;rsquo;re relying on the output of find it is probably best to use the xargs option to find like so:
-# find . -type f -print0 | xargs -0 somescript.py  Even better, you can avoid using xargs, instead use the exec option to find.</description>
+      <description>Some tips on doing batch things well. I will follow this up some day with my daily workflow which involves being as lazy as possible and letting the computer do all the work.</description>
     </item>
     
     <item>
@@ -165,7 +161,7 @@ There is simple hack to force rm to prompt you to think about the files that are
       <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
-      <description>After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself.</description>
+      <description>Some thoughts on using the MIUI ROM for Android. I&amp;rsquo;m currently on Cyanogenmod and quite happy with it.</description>
     </item>
     
     <item>
@@ -184,7 +180,7 @@ ImageMagick is available for for Windows, Linux and MacOS X. The convert utility
       <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/11/09/why-i-like-python/</guid>
-      <description>I&amp;rsquo;m a big fan of Python, especially its syntax which feels close to natural language. My programming skills are average, as I&amp;rsquo;ve never done any serious full time development, apart from some code I wrote for my MSc project. The project was mostly built using scrapy with little hacks thrown in to implement concurrency for processing data. Nowadays, I tend to use Python mostly as a glue language to automate stuff when bash doesn&amp;rsquo;t cut it.</description>
+      <description>Some (brief) thoughts on why I like Python. I meant for this to be longer, but didn&amp;rsquo;t actually get around to finishing it.</description>
     </item>
     
     <item>
@@ -203,7 +199,7 @@ ImageMagick is available for for Windows, Linux and MacOS X. The convert utility
       
       <guid>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</guid>
       <description>A security auditor for our servers has demanded the following within two weeks:
- A list of current usernames and plain-text passwords for all user accounts on all servers A list of all password changes for the past six months, again in plain-text A list of &amp;ldquo;every file added to the server from remote devices&amp;rdquo; in the past six months The public and private keys of any SSH keys An email sent to him every time a user changes their password, containing the plain text password  We&amp;rsquo;re running Red Hat Linux 5&amp;frasl;6 and CentOS 5 boxes with LDAP authentication.</description>
+ A list of current usernames and plain-text passwords for all user accounts on all servers A list of all password changes for the past six months, again in plain-text A list of &amp;ldquo;every file added to the server from remote devices&amp;rdquo; in the past six months The public and private keys of any SSH keys An email sent to him every time a user changes their password, containing the plain text password  We&amp;rsquo;re running Red Hat Linux 5/6 and CentOS 5 boxes with LDAP authentication.</description>
     </item>
     
     <item>
@@ -213,9 +209,9 @@ ImageMagick is available for for Windows, Linux and MacOS X. The convert utility
       
       <guid>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</guid>
       <description>No root? No problem! Obtain a copy of rubygems from ruby forge.
-$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile  This should give you a working install of rubygems. Check out the environment
-$ gem env  Install something
-$ gem install rake  </description>
+$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile This should give you a working install of rubygems. Check out the environment
+$ gem env Install something
+$ gem install rake </description>
     </item>
     
     <item>
@@ -224,8 +220,8 @@ $ gem install rake  </description>
       <pubDate>Tue, 05 Apr 2011 22:49:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</guid>
-      <description>BANGALORE, India—Call-center company 24&amp;frasl;7 Customer Pvt. Ltd. is desperate to find new recruits who can answer questions by phone and email. It wants to hire 3,000 people this year. Yet in this country of 1.2 billion people, that is beginning to look like an impossible goal.
-So few of the high school and college graduates who come through the door can communicate effectively in English, and so many lack a grasp of educational basics such as reading comprehension, that the company can hire just three out of every 100 applicants.</description>
+      <description>BANGALORE, India—Call-center company 24/7 Customer Pvt. Ltd. is desperate to find new recruits who can answer questions by phone and email. It wants to hire 3,000 people this year. Yet in this country of 1.2 billion people, that is beginning to look like an impossible goal.
+  So few of the high school and college graduates who come through the door can communicate effectively in English, and so many lack a grasp of educational basics such as reading comprehension, that the company can hire just three out of every 100 applicants.</description>
     </item>
     
     <item>
@@ -279,7 +275,7 @@ set imap_user = &amp;quot;EMAILID@gmail.com&amp;quot; set imap_pass = &amp;quot;
       
       <guid>https://blog.rsinha.org/posts/python-aes/</guid>
       <description>Cryptography isn&amp;rsquo;t available by default on python. One needs to install the PyCrypto toolkit to make it work. Looks something like this:
-from Crypto.Cipher import AES import base64 key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot; objAes=AES.new(key, AES.MODE_ECB) plaintext=&#39;This is sparta!!&#39; #looks nicer with base64 enc = objAes.encrypt(plaintext) print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc) print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc)  </description>
+from Crypto.Cipher import AES import base64 key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot; objAes=AES.new(key, AES.MODE_ECB) plaintext=&#39;This is sparta!!&#39; #looks nicer with base64 enc = objAes.encrypt(plaintext) print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc) print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc) </description>
     </item>
     
     <item>
@@ -315,9 +311,9 @@ so that I can laugh about it later.</description>
 born before us. Most of them no longer exist as individuals in our
 memories. No names. Faces only reflected in our own and not in any way
 that really matters.
-But not us. We might be remembered forever. All our Twitter
+  But not us. We might be remembered forever. All our Twitter
 updates, our email, our Vimeo movies, our Xbox Live profiles, our
-wormy FourSquare maps. They won&amp;rsquo;t be important.</description>
+wormy FourSquare maps.</description>
     </item>
     
     <item>
@@ -363,7 +359,7 @@ Finally! Moustache looks weird though.</description>
       <pubDate>Fri, 18 Dec 2009 07:18:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</guid>
-      <description>You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;Greed!&amp;rsquo;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;.</description>
+      <description>You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;Greed!&#39;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;.</description>
     </item>
     
     <item>
@@ -372,7 +368,7 @@ Finally! Moustache looks weird though.</description>
       <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</guid>
-      <description>It&#39;s 50oC and has a humidity of 100%, less than a hundred people have been inside and it&#39;s so deadly that even with respirators and suits of ice you can only survive for 20 minutes before your body starts to fail. It’s the nearest thing to visiting another planet – it’s going deep inside our own. via ironammonite.com
+      <description>via ironammonite.com
 Brilliant account of a visit to the Giant Crystal Cave.</description>
     </item>
     
@@ -382,7 +378,7 @@ Brilliant account of a visit to the Giant Crystal Cave.</description>
       <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
-      <description>How is ECSA different from CEH?   CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
+      <description>How is ECSA different from CEH?    CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
  via eccouncil.org
 Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? HEAD EXPLODES</description>
     </item>
@@ -400,10 +396,7 @@ Greetings from
 This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
 More details given below
 The candidate MUST HAVE THE FOLLOWING SKILLS
-1. Developer
-2. Cross site scripting – different classes
-3. Web Application - Get Post
-GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+ Developer Cross site scripting – different classes Web Application - Get Post  GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
     </item>
     
     <item>
@@ -413,7 +406,7 @@ GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are g
       
       <guid>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</guid>
       <description>Google&amp;rsquo;s Wave tool suffers from a &amp;ldquo;just another inbox&amp;rdquo; problem. So it&amp;rsquo;s great to see Wave running inside a tab in Thunderbird, right next to your email inbox, with a single JavaScript line.
-Among Thunderbird 3&amp;rsquo;s new features is Content Tabs, a way to monitor other web sites and web-based messaging from inside Thunderbird. The Quetzalcoatal blog hacked together a little code that opens Wave cleanly and conveniently inside one of these tabs, and even keeps it open after you restart Thunderbird.</description>
+  Among Thunderbird 3&amp;rsquo;s new features is Content Tabs, a way to monitor other web sites and web-based messaging from inside Thunderbird. The Quetzalcoatal blog hacked together a little code that opens Wave cleanly and conveniently inside one of these tabs, and even keeps it open after you restart Thunderbird.</description>
     </item>
     
     <item>
@@ -424,10 +417,10 @@ Among Thunderbird 3&amp;rsquo;s new features is Content Tabs, a way to monitor o
       <guid>https://blog.rsinha.org/posts/my-favorite-s60-apps/</guid>
       <description>I try and use my phone for everything I can. Some of the apps that I
 find very useful are:
- fring (free): Works with gtalk, twitter, fb, msn etc. If you have
+  fring (free): Works with gtalk, twitter, fb, msn etc. If you have
 one of those newfangled Nseries phones, you can use the front camera
 to make skype video calls (over WiFi).
- Nokia Messaging Email (free beta, might change in the future): The
+  Nokia Messaging Email (free beta, might change in the future): The
 native email application on the E71 is a load of crap.</description>
     </item>
     
@@ -438,8 +431,8 @@ native email application on the E71 is a load of crap.</description>
       
       <guid>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</guid>
       <description>India plans to set up a centralized system to monitor communications on mobile phones, landlines and the Internet in the country, a minister told the Rajya Sabha, the upper house of Parliament, on Thursday.
-Indian laws allow the interception and monitoring of communications under certain conditions, including to counter terrorism.
-A pilot of the new Centralized Monitoring System (CMS) is to be started by June next year, subject to clearances by other government agencies, Gurudas Kamat, Minister of State for Communications and Information Technology told the Rajya Sabha, according to an announcement by the government&amp;rsquo;s Press Information Bureau.</description>
+  Indian laws allow the interception and monitoring of communications under certain conditions, including to counter terrorism.
+  A pilot of the new Centralized Monitoring System (CMS) is to be started by June next year, subject to clearances by other government agencies, Gurudas Kamat, Minister of State for Communications and Information Technology told the Rajya Sabha, according to an announcement by the government&amp;rsquo;s Press Information Bureau.</description>
     </item>
     
     <item>
@@ -487,9 +480,8 @@ this. Tried Rhythmbox, banshee, Amarok. FFFFFFUUUUUUUUUU!!!!</description>
       
       <guid>https://blog.rsinha.org/posts/hey-jude-flow-chart/</guid>
       <description>Inspired by the Total Eclipse Of The Heart flow chart, love all this created the Hey Jude Flow Chart to help you unravel one of The Beatles’ most complicated songs.
-via Merlin Mann
- 
- via feeds.laughingsquid.com
+  via Merlin Mann
+      via feeds.laughingsquid.com
 So useful!</description>
     </item>
     
@@ -524,7 +516,8 @@ more stable path I decided to give Debian a shot.</description>
       <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</guid>
-      <description>At Backblaze, we provide unlimited storage to our customers for only $5 per month, so we had to figure out how to store hundreds of petabytes of customer data in a reliable, scalable way—and keep our costs low. After looking at several overpriced commercial solutions, we decided to build our own custom Backblaze Storage Pods: 67 terabyte 4U servers for $7,867.     In this post, we’ll share how to make one of these storage pods, and you’re welcome to use this design.</description>
+      <description>At Backblaze, we provide unlimited storage to our customers for only $5 per month, so we had to figure out how to store hundreds of petabytes of customer data in a reliable, scalable way—and keep our costs low. After looking at several overpriced commercial solutions, we decided to build our own custom Backblaze Storage Pods: 67 terabyte 4U servers for $7,867.
+  In this post, we’ll share how to make one of these storage pods, and you’re welcome to use this design.</description>
     </item>
     
     <item>
@@ -533,8 +526,7 @@ more stable path I decided to give Debian a shot.</description>
       <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</guid>
-      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.
- I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
+      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination. I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
 9-year-old TN girl cracks Microsoft exam
 On the other hand, the youngest person to crack the RHCE is 12 years old, which makes you think.</description>
     </item>

@@ -1,85 +1,104 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ritesh Sinha">
-    <meta name="description" content="Stuff I rant about">
-    <meta name="generator" content="Hugo 0.42.2" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.69.0" />
 
-    
-    <title>Testing an AWS Lambda function locally &middot; @rsinha’s blog</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="https://blog.rsinha.org/testing-aws-lambda-locally/" />
+  <link rel="canonical" href="https://blog.rsinha.org/testing-aws-lambda-locally/" /><link rel="alternate" type="application/atom+xml" href="https://blog.rsinha.org/index.xml" title="blog">
 
-    <link rel="stylesheet" href="https://blog.rsinha.org/css/weblog.css" media="screen" charset="utf-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/css/lightgallery.min.css" type="text/css" />
-    
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.rsinha.org\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Testing an AWS Lambda function locally",
+      "headline" : "Testing an AWS Lambda function locally",
+      "description" : "tl;dr Testing a SAM lambda locally",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-02-12 14:50:01 \x2b0000 GMT",
+      "dateModified" : "2019-02-12 14:50:01 \x2b0000 GMT",
+      "url" : "https:\/\/blog.rsinha.org\/testing-aws-lambda-locally\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Testing an AWS Lambda function locally - blog</title>
+  <meta property="og:title" content="Testing an AWS Lambda function locally - blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="tl;dr Testing a SAM lambda locally" />
+  <meta name="description" content="tl;dr Testing a SAM lambda locally" />
+  <meta property="og:locale" content="en-gb" />
 
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
-    
-	<link href="https://blog.rsinha.org/index.xml" rel="alternate" type="application/rss+xml" title="blog" />
-	
-  </head>
-  <body class="site">
+  
+</head>
 
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
 <header>
-  <nav>
-    <h1><a href="/">@rsinha</a>’s blog.</h1>
-    <div class="menu">
-      
-      <ul>
-        
-            <li>
-              <a href="/posts/">Posts</a>
-              
-                <a href="/posts/index.xml"><img src="/img/rss.svg" class="rss-icon" /></a>
-              
-            </li>
-        
-            <li>
-              <a href="/microposts/">Snippets</a>
-              
-            </li>
-        
-        <li><a href="/about">About</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="signatures site-title">
+    <a href="/">Ritesh Sinha</a>
+  </div>
 </header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
 
-
-  <main class="content">
-
-    <article class="post">
-      
-        <h2><a rel="full-article" href="https://blog.rsinha.org/testing-aws-lambda-locally/">Testing an AWS Lambda function locally</a></h2>
-      
-
-      <div class="postmeta">Posted on <time datetime="2019-02-12 14:50:01 &#43;0000 UTC" pubdate="">February 12, 2019</time> in
-        <span class="categories">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Testing an AWS Lambda function locally</h1>
           
-            <a class="category" href="/categories/til">til</a>, 
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-02-12 14:50:01 GMT">
+                12 Feb 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
           
-            <a class="category" href="/categories/aws"> aws</a>, 
+        </header>
+
+        <div class="post-content markdown-body">
           
-            <a class="category" href="/categories/lambda"> lambda</a>
-          
-        </span>
-      </div>
-
-      <p>
-        
-
-<h1 id="integration-testing-lambda-functions-locally">Integration Testing Lambda Functions Locally</h1>
-
+          <h1 id="integration-testing-lambda-functions-locally">Integration Testing Lambda Functions Locally</h1>
 <p>Never had to test AWS Lambda functions locally (test in production YOLO).  I&rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&rsquo;s probably best to test them locally to discover any regressions early on.</p>
-
 <p>While walking through the docs with a colleague, we found that the nifty way to test a lambda function created <a href="https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html">using SAM</a> is to run:</p>
-
 <p><code>$ sam local start-lambda</code></p>
-
 <p>In the directory where you have your SAM <code>template.yml</code>. This is <code>LambdaInvoking</code> the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.</p>
-
 <pre><code>import boto3
 import botocore
 
@@ -111,76 +130,82 @@ response = lambda_client.invoke(FunctionName=&quot;HelloFunction&quot;)
 # Verify the response
 assert response == &quot;Hello World&quot;
 </code></pre>
-
 <p>This is from the docs, but it took me a while to figure out that <code>FunctionName</code> above needs to refer to the <em>logical</em> name of your Lambda function in the CloudFormation template.</p>
-
 <p>The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust <code>read_timeout</code>accordingly).</p>
-
 <p>If you&rsquo;re a security nerd, the bits above that say <code>use_ssl=False</code> and <code>verify=False</code> should give you pause. In this instance, you&rsquo;re connecting to a service locally and not reaching out to the internet, so you&rsquo;re OK.</p>
 
-      </p>
-    </article>
-
-
-  </main>
-
-<footer>
-  <div class="footer_text">
-      <div>
-        <h3>Hi, <a href="/about">I'm Ritesh</a></h3>
-        <p>
-          I'm easily <a href="http://xkcd.com/356/">nerd-sniped</a>. I also enjoy taking pictures. Find me <a href="https://twitter.com/rsinha">@rsinha</a> on twitter.
-
-        </p>
-      </div>
-      
-      <div>
-          <h3><a href="https://www.flickr.com/photos/55603500@N04/">Photo Stream</a></h3>
-          <div id="photos"></div>
         </div>
-      </div>
-      
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/til/">
+                til
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/%20aws/">
+                 aws
+              </a>
+            </div>
+            
+            <div class="post-category">
+              <a href="/categories/%20lambda/">
+                 lambda
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://twitter.com/rsinha" target="_blank">Twitter</a>
   </div>
-
   
-    <div class="footer_copyright">
-      &copy; 2019 <a href="/about">Ritesh Sinha</a>
-       - Made in London, UK
+  <div class="site-footer-item">
+    <a href="https://github.com/ritesh" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
     </div>
-  
-</footer>
+  </article>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.14/js/lightgallery-all.min.js" charset="utf-8"></script>
-    <script src="/js/weblog.js" charset="utf-8"></script>
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
     
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    _paq.push(['setTrackerUrl',  'https://api-5c01b6185ffbf6bfab59ddcc27f22388.rsinha.sandcats.io']);
-    _paq.push(['setSiteId', 1]);
-    _paq.push(['setApiToken', 'EJbYxKi8JhWDD3E7RJr30C-fSnfLkh5oL33Ju4CqaxI']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://32jt3wu5wyoczgdu3w3b.rsinha.sandcats.io/embed.js'; s.parentNode.insertBefore(g,s);
-  })();
+    
+  
 </script>
 
-
-    <script type="text/javascript">
-
   
-  $(function() {
-    
-    $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?id=55603500@N04&format=json&jsoncallback=?", function(data) {
-      iweblog.application.displayImages(data, 8);
-    });
-  });
 
-</script>
+</body>
 
-    
-  </body>
 </html>
-
