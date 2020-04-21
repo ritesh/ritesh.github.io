@@ -615,7 +615,7 @@ Was following news of the Apple WWDC quite closely even though I don&amp;rsquo;t
       
       <guid>https://blog.rsinha.org/about/</guid>
       <description>Hello! I&amp;rsquo;m Ritesh. I&amp;rsquo;m pretty good at trivia and obscure facts. If you&amp;rsquo;d like to get in touch or want to say hi, find me on twitter @rsinha.
- This blog uses the Hugo static site generator with the yinyang theme.</description>
+ This blog uses the Hugo static site generator with a forked version of the yinyang theme.</description>
     </item>
     
   </channel>

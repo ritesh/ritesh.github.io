@@ -1,7 +1,7 @@
 /* global */
 
 body {
-  font-family: "Bree Serif", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 20px;
 }
@@ -18,8 +18,8 @@ a {
 }
 
 a:hover {
-  font-weight: 600;
-  text-decoration: underline;
+  /*font-weight: 600;*/
+	 background-color: yellow;
 }
 
 .post-ads {
@@ -47,10 +47,11 @@ a:hover {
 
 .site-date-catalog {
   font-size: 2rem;
+  font-family: "Rock Salt", cursive;
 }
 
 .signatures {
-  font-family: "Permanent Marker", Impact, Charcoal, sans-serif;
+  font-family: "Rock Salt",  cursive;
 }
 
 .signatures a {
@@ -93,6 +94,8 @@ a:hover {
   padding: 3px;
   border: #000 2px solid;
   margin-bottom: 3px;
+  /* this clutters everything up */
+  display: none;
 }
 
 .site-footer {
