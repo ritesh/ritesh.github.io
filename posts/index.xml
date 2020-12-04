@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Ritesh Sinha&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 12 Feb 2019 14:50:01 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 12 Feb 2019 14:50:01 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing an AWS Lambda function locally</title>
       <link>https://blog.rsinha.org/testing-aws-lambda-locally/</link>
@@ -359,7 +355,7 @@ Finally! Moustache looks weird though.</description>
       <pubDate>Fri, 18 Dec 2009 07:18:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</guid>
-      <description>You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;Greed!&#39;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;.</description>
+      <description>You are in a game show with nineteen other players. You don&amp;rsquo;t know the other players, you can&amp;rsquo;t see them, and you can&amp;rsquo;t communicate with them. The game you are in is called &amp;lsquo;Greed!&amp;rsquo;, and is straightforward to explain. You are asked to write down a whole dollar amount in the range $1 - $1,000,000 on a piece of paper. You will be paid the amount you asked for if it is deemed to be &amp;lsquo;non-greedy&amp;rsquo;.</description>
     </item>
     
     <item>

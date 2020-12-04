@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.69.0" />
+  <meta name="generator" content="Hugo 0.79.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,7 +21,7 @@
       "articleSection" : "posts",
       "name" : "Shutdown on no network connectivity",
       "headline" : "Shutdown on no network connectivity",
-      "description" : "#!\/bin\/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http:\/\/ritesh.posterous.com #License: WTFPL http:\/\/sam.zoy.org\/wtfpl\/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=\/usr\/sbin\/ethtool IF=\/dev\/eth0 GREP=\/bin\/grep AWK=\/usr\/bin\/awk LOG=\/var\/log\/outages SDOWN=\/sbin\/poweroff function checklink() { if [ \x26quot;$($ETHTOOL eth0 | $GREP Link | $AWK {\x27print $3\x27})\x26quot; == \x27yes\x27 ] then return 0 else return 1 fi } # call checklink echo \x26quot;Checking if link is up\x26quot; checklink if [ $?",
+      "description" : "#!\/bin\/bash #Lame attempt at automated shutdown during power outages #Author: Ritesh Sinha #Email: riteshkumarsinha # GMAIL.com #http:\/\/ritesh.posterous.com #License: WTFPL http:\/\/sam.zoy.org\/wtfpl\/COPYING #Checks for network connectivity, if none, wait for ten minutes then shutdown #TODO: Add email notification (email sent at next boot, requires MTA reconfiguration) #NOTETOSELF: Use gmail as smarthost? #TODO: Figure out a better way to pull this off ETHTOOL=\/usr\/sbin\/ethtool IF=\/dev\/eth0 GREP=\/bin\/grep AWK=\/usr\/bin\/awk LOG=\/var\/log\/outages SDOWN=\/sbin\/poweroff function checklink() { if [ \u0026quot;$($ETHTOOL eth0 | $GREP Link | $AWK {\u0027print $3\u0027})\u0026quot; == \u0027yes\u0027 ] then return 0 else return 1 fi } # call checklink echo \u0026quot;Checking if link is up\u0026quot; checklink if [ $?",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -29,8 +29,8 @@
       "accountablePerson" : "",
       "copyrightHolder" : "",
       "copyrightYear" : "2010",
-      "datePublished": "2010-04-09 06:50:00 \x2b0000 \x2b0000",
-      "dateModified" : "2010-04-09 06:50:00 \x2b0000 \x2b0000",
+      "datePublished": "2010-04-09 06:50:00 \u002b0000 \u002b0000",
+      "dateModified" : "2010-04-09 06:50:00 \u002b0000 \u002b0000",
       "url" : "https:\/\/blog.rsinha.org\/posts\/shutdown-on-no-network-connectivity\/",
       "keywords" : [  ]
   }
