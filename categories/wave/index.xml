@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wave on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/categories/wave/</link>
+    <description>Recent content in wave on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 11 Dec 2009 13:22:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/wave/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run Google Wave Inside Thunderbird 3</title>
+      <link>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</link>
+      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</guid>
+      <description>Google&amp;rsquo;s Wave tool suffers from a &amp;ldquo;just another inbox&amp;rdquo; problem. So it&amp;rsquo;s great to see Wave running inside a tab in Thunderbird, right next to your email inbox, with a single JavaScript line.
+  Among Thunderbird 3&amp;rsquo;s new features is Content Tabs, a way to monitor other web sites and web-based messaging from inside Thunderbird. The Quetzalcoatal blog hacked together a little code that opens Wave cleanly and conveniently inside one of these tabs, and even keeps it open after you restart Thunderbird.</description>
+    </item>
+    
+  </channel>
+</rss>

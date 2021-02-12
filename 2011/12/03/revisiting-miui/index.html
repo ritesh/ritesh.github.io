@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Revisiting MIUI | Ritesh&#39;s Ramblings</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="Some thoughts on using the MIUI ROM for Android. I&rsquo;m currently on Cyanogenmod and quite happy with it.">
+<meta name="author" content="admin">
+<link rel="canonical" href="https://blog.rsinha.org/2011/12/03/revisiting-miui/" />
+<link href="/assets/css/stylesheet.min.535e5a8d7aca7264adb4332d615e74d4c5aab8729979763b64df11e8e1edc00c.css" integrity="sha256-U15ajXrKcmSttDMtYV501MWquHKZeXY7ZN8R6OHtwAw=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://blog.rsinha.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.rsinha.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<meta property="og:title" content="Revisiting MIUI" />
+<meta property="og:description" content="Some thoughts on using the MIUI ROM for Android. I&rsquo;m currently on Cyanogenmod and quite happy with it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.rsinha.org/2011/12/03/revisiting-miui/" />
+<meta property="article:published_time" content="2011-12-03T11:28:59+00:00" />
+<meta property="article:modified_time" content="2011-12-03T11:28:59+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Revisiting MIUI"/>
+<meta name="twitter:description" content="Some thoughts on using the MIUI ROM for Android. I&rsquo;m currently on Cyanogenmod and quite happy with it."/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Revisiting MIUI",
+  "name": "Revisiting MIUI",
+  "description": "Some thoughts on using the MIUI ROM for Android. I\u0026amp;rsquo;m currently on Cyanogenmod and quite happy with it.",
+  "keywords": [
+    
+  ],
+  "articleBody": "After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself. I’m usually reluctant to switch Android ROMs as I’ve switched to using 2 factor authentication for my Google account and having to reset the authenticator etc is annoying.\nThe last time that I used MIUI I was happy for a few days until the random crashes started. These were usually triggered by the camera application, which was frustrating as I was travelling at the time and needed the camera more than the phone. However I gave in and decided to get the latest version of MIUI and see if things had improved. The original ROM is created by a Chinese company called xiaomi. It is available repackaged through a number of other distributors who usually add a language pack for other languages. There’s even a Scottish distribution which I was tempted to try but wasn’t too sure about.\nI obtained a copy from miui.us and quickly realised that it ships only with Chinese and US English. Which isn’t too much of a problem until the dialer started borking my phone numbers US style. A UK version is available from miui android, which worked perfectly for me. Some of the English words are a bit dodgy at times (machine translation?) but otherwise it’s really well done. The MIUI ROM is smaller in size (about 88 MB compared to 100+ MB) than the CM7 ROM, which is strange because apart from being derived from CM7, it adds a few extras of its own. I suppose many of the applications that come with CM7 have been stripped out (Advanced Call Settings etc).\nThe first thing one notices after a fresh install is how the UI borrows from vendor customisations for Android like TouchWiz. It also feels like it’s a lawsuit away from being decimated by a well known fruit company. The default font is different from what ships with AOSP or CyanogenMod, I’m not sure what it is but it looks great. Most of the applications are the same as on CyanogenMod with one glaring exception. The stock browser has been replaced with a custom ‘MIUI browser’ which offers tabbed browsing and ostensible speed improvements. I’m used to the stock browser and was a little disappointed with it and am planning to revert to the stock browser when I have the time (this is relatively annoying process). A ‘MiTalk’ application is provided which is probably similar to WhatsApp/Kik but exclusive to MIUI. I don’t have any use for it and couldn’t find an easy way to get rid of it as it is a system application.\nThe ROM ships with apps2sd built-in, which allows you to move applications and the dalvik cache to your SD card. This feature is really important for phones like mine (HTC Desire) which ship with a tiny partition for applications. I had an ext3 partition ready on my SD card from my previous install of CM7 and was able to move the dalvik cache to the SD card. There isn’t a GUI option to do this but you can use a terminal emulator (or adb) to run apps2sd.\n`# su -\na2sd ` Another little useful feature was a birthday reminder notification. I’m not sure if this is available on CyanogenMod but it is quite useful in nagging you to wish people on their birthday or buy them gifts. The notifications show up in the top notification bar every day after midnight. Presumably this data is derived from the Google profiles of the people you have on your contacts list.\nAfter about 2 weeks of use, I can say I’m really happy with this ROM and feel that it works really well for me. I haven’t run into any deal breaking issues or encountered any force-close bugs. If you’re looking for a no-nonsense ROM I would still recommend CM7 as it is closest to the stock Android experience. I doubt there will ever be an Ice Cream Sandwich ROM for my phone so I’ll stick to this until things change.\n[gallery link=“file”]\n",
+  "wordCount" : "734",
+  "inLanguage": "en",
+  "datePublished": "2011-12-03T11:28:59Z",
+  "dateModified": "2011-12-03T11:28:59Z",
+  "author":{
+    "@type": "Person",
+    "name": "admin"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.rsinha.org/2011/12/03/revisiting-miui/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ritesh's Ramblings",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.rsinha.org/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        .theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
+            <span class="logo-switches">
+                <a id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </a>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://blog.rsinha.org/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.rsinha.org/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      Revisiting MIUI
+    </h1>
+    <div class="post-meta">
+
+December 3, 2011&nbsp;·&nbsp;admin
+
+    </div>
+  </header> 
+
+  <div class="post-content">
+<p>After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself. I&rsquo;m usually reluctant to switch Android ROMs as I&rsquo;ve switched to using 2 factor authentication for my Google account and having to reset the authenticator etc is annoying.</p>
+<p>The last time that I used MIUI I was happy for a few days until the random crashes started. These were usually triggered by the camera application, which was frustrating as I was travelling at the time and needed the camera more than the phone. However I gave in and decided to get the latest version of MIUI and see if things had improved. The original ROM is created by a Chinese company called xiaomi. It is available repackaged through a number of other distributors who usually add a language pack for other languages. There&rsquo;s even a Scottish distribution which I was tempted to try but wasn&rsquo;t too sure about.</p>
+<p>I obtained a copy from miui.us and quickly realised that it ships only with Chinese and US English. Which isn&rsquo;t too much of a problem until the dialer started borking my phone numbers US style. A UK version is available from miui android, which worked perfectly for me. Some of the English words are a bit dodgy at times (machine translation?) but otherwise it&rsquo;s really well done. The MIUI ROM is smaller in size (about 88 MB compared to 100+ MB) than the CM7 ROM, which is strange because apart from being derived from CM7, it adds a few extras of its own. I suppose many of the applications that come with CM7 have been stripped out (Advanced Call Settings etc).</p>
+<p>The first thing one notices after a fresh install is how the UI borrows from vendor customisations for Android like TouchWiz. It also feels like it&rsquo;s a lawsuit away from being decimated by a well known fruit company. The default font is different from what ships with AOSP or CyanogenMod, I&rsquo;m not sure what it is but it looks great. Most of the applications are the same as on CyanogenMod with one glaring exception. The stock browser has been replaced with a custom &lsquo;MIUI browser&rsquo; which offers tabbed browsing and ostensible speed improvements. I&rsquo;m used to the stock browser and was a little disappointed with it and am planning to revert to the stock browser when I have the time (this is relatively annoying process). A &lsquo;MiTalk&rsquo; application is provided which is probably similar to WhatsApp/Kik but exclusive to MIUI. I don&rsquo;t have any use for it and couldn&rsquo;t find an easy way to get rid of it as it is a system application.</p>
+<p>The ROM ships with apps2sd built-in, which allows you to move applications and the dalvik cache to your SD card. This feature is really important for phones like mine (HTC Desire) which ship with a tiny partition for applications. I had an ext3 partition ready on my SD card from my previous install of CM7 and was able to move the dalvik cache to the SD card. There isn&rsquo;t a GUI option to do this but you can use a terminal emulator (or adb) to run apps2sd.</p>
+<p>`# su -</p>
+<h1 id="a2sd">a2sd<a hidden class="anchor" aria-hidden="true" href="#a2sd">#</a></h1>
+<p>`
+Another little useful feature was a birthday reminder notification. I&rsquo;m not sure if this is available on CyanogenMod but it is quite useful in nagging you to wish people on their birthday or buy them gifts. The notifications show up in the top notification bar every day after midnight. Presumably this data is derived from the Google profiles of the people you have on your contacts list.</p>
+<p>After about 2 weeks of use, I can say I&rsquo;m really happy with this ROM and feel that it works really well for me. I haven&rsquo;t run into any deal breaking issues or encountered any force-close bugs. If you&rsquo;re looking for a no-nonsense ROM I would still recommend CM7 as it is closest to the stock Android experience. I doubt there will ever be an Ice Cream Sandwich ROM for my phone so I&rsquo;ll stick to this until things change.</p>
+<p>[gallery link=&ldquo;file&rdquo;]</p>
+
+</div>
+  <footer class="post-footer">
+  </footer>
+
+
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

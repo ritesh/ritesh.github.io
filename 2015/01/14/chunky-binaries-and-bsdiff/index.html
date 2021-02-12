@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Chunky binaries and bsdiff | Ritesh&#39;s Ramblings</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful">
+<meta name="author" content="rsinha">
+<link rel="canonical" href="https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/" />
+<link href="/assets/css/stylesheet.min.535e5a8d7aca7264adb4332d615e74d4c5aab8729979763b64df11e8e1edc00c.css" integrity="sha256-U15ajXrKcmSttDMtYV501MWquHKZeXY7ZN8R6OHtwAw=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://blog.rsinha.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.rsinha.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<meta property="og:title" content="Chunky binaries and bsdiff" />
+<meta property="og:description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/" />
+<meta property="article:published_time" content="2015-01-14T12:19:54+00:00" />
+<meta property="article:modified_time" content="2015-01-14T12:19:54+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Chunky binaries and bsdiff"/>
+<meta name="twitter:description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Chunky binaries and bsdiff",
+  "name": "Chunky binaries and bsdiff",
+  "description": "If you\u0026amp;rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful",
+  "keywords": [
+    
+  ],
+  "articleBody": "I’ve lately taken an interest in golang as it seems to be the language du jour for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go’s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn’t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.\nIf you’re not familiar with go, I highly recommend that you check out A Tour of Go and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:\n Compile your application (go build). You may need to cross-compile if you’re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds. Copy the generated binary over to the server that you want to run it. If you want, you could strip the binary to shave off a few MB. Run it :) Set up a reverse proxy to forward all traffic to your application. You only need to do this once. There is no step 5.  Contrast this with my current workflow for deploying Python web applications:\n Ensure Python versions match on dev and prod. This can be a nightmare sometimes, but is avoidable by ensuring that dev and production match as closely as possible (use the same version of Ubuntu/Fedora/Debian). Not an issue if your dev box runs the same flavour of Linux as uat/prod. Ensure that native libraries required by Python packages are available on both dev and production hosts (I’m looking at you libpq). Have a well defined fabfile for deployments, or similar. This is not really a complaint, I think fab deploy sounds hilarious when said out loud and is also a nice way to deploy Python web applications. Restart apache/nginx so that it reloads your WSGI application. I think you can touch a file and mod_wsgi reloads your application, but this has never worked reliably for me. The way to set up debug logs for Python applications deployed with mod_wsgi is not straightforward. I gave up after spending a few hours trying, this shouldn’t be that difficult! I’m stuck with trying to reproduce production issues on my dev box.  Executable files are all well and good but copying them over to production hosts multiple times a day, usually over SSH, can be slow if you’re on crappy DSL. If I need to do this for servers sitting inside my company’s network, I have to ship files inside an SSH tunnel wrapped inside a VPN connection. This makes it unbearably slow for files larger than 10MB. Why can’t you just diff a binary file and upload only the changed bits? Surely this is possible?\nThis is when I discovered bsdiff and its friend bspatch. I guess I’m fairly late to this party, since bsdiff has been around since the early 2000s (or earlier?). This pair of amazing utilities was written by the Colin Percival of Tarsnap fame. I understand that lots of binary applications use either bsdiff or an application that uses a similar algorithm to generate patches for binary applications.\nThe clue is in the name; bsdiff lets you diff an old binary with a new binary and generates a patch for you. You take this patch, give it to bspatch along with an old binary and it gets transformed to the new one. If the changes between the binaries are small, the generated patch file (as you’d think) is tiny. On average, the patch file is 2-3% of the full binary for the application I’m working on. Instead of copying over the binary to a production host once I’ve compiled my application, I copy the patch instead:\nmv binary binary.old go build bsdiff binary.old binary binary_patch scp binary_patch /path/to/production/binary # On production host mv binary binary.old bspatch binary.old binary binary_patch # Need to do this because the binary loses +x  chmod +x binary # All done Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by go build, but there’s no reason why it shouldn’t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a SIGHUP. Go gives you \"os/signal\" but I haven’t had the chance to play around with it yet.\n",
+  "wordCount" : "847",
+  "inLanguage": "en",
+  "datePublished": "2015-01-14T12:19:54Z",
+  "dateModified": "2015-01-14T12:19:54Z",
+  "author":{
+    "@type": "Person",
+    "name": "rsinha"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ritesh's Ramblings",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.rsinha.org/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        .theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
+            <span class="logo-switches">
+                <a id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </a>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://blog.rsinha.org/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.rsinha.org/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      Chunky binaries and bsdiff
+    </h1>
+    <div class="post-meta">
+
+January 14, 2015&nbsp;·&nbsp;rsinha
+
+    </div>
+  </header> 
+
+  <div class="post-content">
+<p>I&rsquo;ve lately taken an interest in golang as it seems to be the language <em>du jour</em> for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.</p>
+<p>If you&rsquo;re not familiar with go, I highly recommend that you check out <a href="https://tour.golang.org/welcome/1">A Tour of Go</a> and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:</p>
+<ol>
+<li>Compile your application (<code>go build</code>). You may need to cross-compile if you&rsquo;re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds.</li>
+<li>Copy the generated binary over to the server that you want to run it. If you want, you could strip the binary to shave off a few MB.</li>
+<li>Run it :)</li>
+<li>Set up a reverse proxy to forward all traffic to your application. You only need to do this once.</li>
+<li>There is no step 5.</li>
+</ol>
+<p>Contrast this with my current workflow for deploying Python web applications:</p>
+<ol>
+<li>Ensure Python versions match on dev and prod. This can be a nightmare sometimes, but is avoidable by ensuring that dev and production match as closely as possible (use the same version of Ubuntu/Fedora/Debian). Not an issue if your dev box runs the same flavour of Linux as uat/prod.</li>
+<li>Ensure that native libraries required by Python packages are available on both dev and production hosts (I&rsquo;m looking at you <code>libpq</code>).</li>
+<li>Have a well defined fabfile for deployments, or similar. This is not really a complaint, I think <code>fab deploy</code> sounds hilarious when said out loud and is also a nice way to deploy Python web applications.</li>
+<li>Restart apache/nginx so that it reloads your WSGI application. I think you can <code>touch</code> a file and <code>mod_wsgi</code> reloads your application, but this has never worked reliably for me.</li>
+<li>The way to set up debug logs for Python applications deployed with <code>mod_wsgi</code> is not straightforward. I gave up after spending a few hours trying, this shouldn&rsquo;t be that difficult! I&rsquo;m stuck with trying to reproduce production issues on my dev box.</li>
+</ol>
+<p>Executable files are all well and good but copying them over to production hosts multiple times a day, usually over SSH, can be slow if you&rsquo;re on crappy DSL. If I need to do this for servers sitting inside my company&rsquo;s network, I have to ship files inside an SSH tunnel <em>wrapped</em> inside a VPN connection. This makes it unbearably slow for files larger than 10MB. Why can&rsquo;t you just diff a binary file and upload <em>only</em> the changed bits? Surely this is possible?</p>
+<p>This is when I discovered <code>bsdiff</code> and its friend <code>bspatch</code>. I guess I&rsquo;m fairly late to this party, since <code>bsdiff</code> has been around since the early 2000s (or earlier?). This pair of amazing utilities was written by the Colin Percival of <a href="http://tarsnap.com">Tarsnap</a> fame. I understand that lots of binary applications use either <code>bsdiff</code> or an application that uses a similar algorithm to generate patches for binary applications.</p>
+<p>The clue is in the name; <code>bsdiff</code> lets you <code>diff</code> an old binary with a new binary and generates a patch for you. You take this patch, give it to <code>bspatch</code> along with an old binary and it gets transformed to the new one. If the changes between the binaries are small, the generated patch file (as you&rsquo;d think) is tiny. On average, the patch file is 2-3% of the full binary for the application I&rsquo;m working on. Instead of copying over the binary to a production host once I&rsquo;ve compiled my application, I copy the patch instead:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv binary binary.old
+go build
+bsdiff binary.old binary binary_patch
+scp binary_patch /path/to/production/binary
+
+<span style="color:#75715e"># On production host</span>
+mv binary binary.old
+bspatch binary.old binary binary_patch
+<span style="color:#75715e"># Need to do this because the binary loses +x </span>
+chmod +x binary
+<span style="color:#75715e"># All done</span></code></pre></div>
+<p>Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by <code>go build</code>, but there&rsquo;s no reason why it shouldn&rsquo;t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a <code>SIGHUP</code>. Go gives you <code>&quot;os/signal&quot;</code> but I haven&rsquo;t had the chance to play around with it yet.</p>
+
+</div>
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

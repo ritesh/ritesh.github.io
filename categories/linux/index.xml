@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/categories/linux/</link>
+    <description>Recent content in linux on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 05 Apr 2015 19:35:03 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inhibiting Sleep on Xubuntu 14.04</title>
+      <link>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</link>
+      <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</guid>
+      <description>Have a laptop that refuses to wake up after falling asleep? Try this!</description>
+    </item>
+    
+    <item>
+      <title>Chunky binaries and bsdiff</title>
+      <link>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</link>
+      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</guid>
+      <description>If you&amp;rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful</description>
+    </item>
+    
+    <item>
+      <title>Getting Live USB sticks to boot consistently</title>
+      <link>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</link>
+      <pubDate>Tue, 12 Nov 2013 20:53:18 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</guid>
+      <description>Pro-tip for booting Linux via a USB stick for computers that don&amp;rsquo;t allow native USB booting</description>
+    </item>
+    
+    <item>
+      <title>Giving up on Linux desktop</title>
+      <link>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</link>
+      <pubDate>Sat, 15 Sep 2012 21:36:28 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</guid>
+      <description>In which I whine about Linux not working for me. Being a sucker for punishment, I&amp;rsquo;m typing this from a laptop running Linux. Stockholm syndrome, perhaps?</description>
+    </item>
+    
+    <item>
+      <title>Prevent accidental rm</title>
+      <link>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</link>
+      <pubDate>Sat, 05 May 2012 15:53:46 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</guid>
+      <description>Pro-tip to prevent accidently hosing your home directory. If you&amp;rsquo;re too smart for your own good, this may not be sufficient.</description>
+    </item>
+    
+    <item>
+      <title>Do batch things well</title>
+      <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
+      <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
+      <description>Some tips on doing batch things well. I will follow this up some day with my daily workflow which involves being as lazy as possible and letting the computer do all the work.</description>
+    </item>
+    
+    <item>
+      <title>Creating an Animated GIF</title>
+      <link>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</link>
+      <pubDate>Sat, 12 Nov 2011 13:32:09 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</guid>
+      <description>There are many ways to do this. You could use Windows Movie Maker, iMovie or professional movie editing applications. If you&amp;rsquo;re looking for something quick and dirty from the command line, especially if you have all images in one directory and they don&amp;rsquo;t require any post processing, ImageMagick can help.
+ImageMagick is available for for Windows, Linux and MacOS X. The convert utility that comes with it is probably one of the most useful utilities I&amp;rsquo;ve ever used.</description>
+    </item>
+    
+    <item>
+      <title>Not one Music player</title>
+      <link>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</link>
+      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</guid>
+      <description>All I want is for my podcasts to automatically sync with my ancient
+iPod. So far, not one media player on Ubuntu Karmic can accomplish
+this. Tried Rhythmbox, banshee, Amarok. FFFFFFUUUUUUUUUU!!!!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fast on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/categories/fast/</link>
+    <description>Recent content in fast on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Tue, 05 Jan 2010 11:32:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/fast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>arora</title>
+      <link>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</guid>
+      <description>Arora is a lightweight cross-platform web browser. It&amp;rsquo;s free (as in free speech and free beer). Arora runs on Linux, embedded Linux, FreeBSD, Mac OS X, Windows, Haiku, and any other platforms supported by the Qt toolkit.
+Arora uses the QtWebKit port of the fully standards-compliant WebKit layout engine. It features fast rendering, powerful JavaScript engine and supports Netscape plugins.
+Apart from the must-have features such as bookmarks, history and tabbed browsing Arora boasts:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>smartvoip on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/categories/smartvoip/</link>
+    <description>Recent content in smartvoip on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 24 Jul 2011 14:55:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/smartvoip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting SmartVOIP to work on CM7</title>
+      <link>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</link>
+      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</guid>
+      <description>Android 2.3 (Gingerbread) claims to support SIP natively. For some weird reason it does not play well with SmartVOIP, probably due to missing STUN server support. SmartVOIP provide a native android app called MobileVOIP but it doesn&amp;rsquo;t integrate with the Android UI. I found this nifty little app called CSipSimple which has loads of configuration options (e.g. connect when on WiFi and or 3G etc). It integrates really well with the native CyanogenMod UI and seems to be working really well in my limited tests.</description>
+    </item>
+    
+  </channel>
+</rss>

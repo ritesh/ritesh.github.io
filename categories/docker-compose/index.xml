@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker-compose on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/categories/docker-compose/</link>
+    <description>Recent content in docker-compose on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 10 Jul 2015 14:49:50 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Dockerized Application Security Scanners</title>
+      <link>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</link>
+      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</guid>
+      <description>A first attempt at automating web application security scans for dockerized web-applications</description>
+    </item>
+    
+  </channel>
+</rss>
