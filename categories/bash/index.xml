@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on Ritesh Sinha&#39;s Ramblings</title>
+    <title>bash on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/bash/</link>
-    <description>Recent content in bash on Ritesh Sinha&#39;s Ramblings</description>
+    <description>Recent content in bash on Ritesh&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Fri, 09 Apr 2010 06:50:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/bash/index.xml" rel="self" type="application/rss+xml" />

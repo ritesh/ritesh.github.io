@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>freenas on Ritesh Sinha&#39;s Ramblings</title>
+    <title>freenas on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/freenas/</link>
-    <description>Recent content in freenas on Ritesh Sinha&#39;s Ramblings</description>
+    <description>Recent content in freenas on Ritesh&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 12 Jun 2008 01:41:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/freenas/index.xml" rel="self" type="application/rss+xml" />
