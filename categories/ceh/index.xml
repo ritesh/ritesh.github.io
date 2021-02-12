@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ceh on blog</title>
+    <title>CEH on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/ceh/</link>
-    <description>Recent content in Ceh on blog</description>
+    <description>Recent content in CEH on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 15 Dec 2009 13:29:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/ceh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Dec 2009 13:29:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/ceh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EC-Council | ECSA</title>
       <link>https://blog.rsinha.org/posts/ec-council-ecsa/</link>
       <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
-      <description>How is ECSA different from CEH?   CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
+      <description>How is ECSA different from CEH?    CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
  via eccouncil.org
 Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? HEAD EXPLODES</description>
     </item>

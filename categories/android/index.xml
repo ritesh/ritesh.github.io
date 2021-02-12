@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android on blog</title>
+    <title>android on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/android/</link>
-    <description>Recent content in Android on blog</description>
+    <description>Recent content in android on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 03 Dec 2011 11:28:59 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/android/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 03 Dec 2011 11:28:59 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Revisiting MIUI</title>
       <link>https://blog.rsinha.org/2011/12/03/revisiting-miui/</link>
       <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/12/03/revisiting-miui/</guid>
-      <description>After encountering an annoying bug on CyanogenMod, I decided to give MIUI another go. For some reason, my phone constantly vibrated in call, possibly due to an obscure proximity sensor setting. Having tried a number of ways to switch it off, I finally gave up and decided it was time to try something different. My SO got an iPhone 4s and I was very close to getting one for myself.</description>
+      <description>Some thoughts on using the MIUI ROM for Android. I&amp;rsquo;m currently on Cyanogenmod and quite happy with it.</description>
     </item>
     
     <item>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nokia on blog</title>
+    <title>nokia on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/nokia/</link>
-    <description>Recent content in Nokia on blog</description>
+    <description>Recent content in nokia on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 02 Sep 2009 18:56:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/nokia/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Sep 2009 18:56:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/nokia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nokia Beta Labs Introduces New Apps: Ovi Lifecasting, Social Messaging</title>
       <link>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</link>

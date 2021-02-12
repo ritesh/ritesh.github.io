@@ -1,25 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sh on blog</title>
+    <title>sh on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/sh/</link>
-    <description>Recent content in Sh on blog</description>
+    <description>Recent content in sh on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 04 Dec 2011 11:24:19 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/sh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 04 Dec 2011 11:24:19 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/sh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Do batch things well</title>
       <link>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</link>
       <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</guid>
-      <description>I sometimes forget this really easy one liner for doing things in a batch on Linux/MacOS.
-# for file in `find . -type f`; do somescript.py $file; done  If you&amp;rsquo;re relying on the output of find it is probably best to use the xargs option to find like so:
-# find . -type f -print0 | xargs -0 somescript.py  Even better, you can avoid using xargs, instead use the exec option to find.</description>
+      <description>Some tips on doing batch things well. I will follow this up some day with my daily workflow which involves being as lazy as possible and letting the computer do all the work.</description>
     </item>
     
   </channel>

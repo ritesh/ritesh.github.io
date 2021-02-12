@@ -1,90 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on blog</title>
+    <title>Categories on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/</link>
-    <description>Recent content in Categories on blog</description>
+    <description>Recent content in Categories on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 09 Jul 2008 11:13:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 25 Jan 2021 13:55:49 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>6</title>
-      <link>https://blog.rsinha.org/categories/6/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      <title>personal</title>
+      <link>https://blog.rsinha.org/categories/personal/</link>
+      <pubDate>Mon, 25 Jan 2021 13:55:49 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/6/</guid>
+      <guid>https://blog.rsinha.org/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>9</title>
-      <link>https://blog.rsinha.org/categories/9/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aes</title>
-      <link>https://blog.rsinha.org/categories/aes/</link>
-      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/aes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://blog.rsinha.org/categories/android/</link>
-      <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Apps</title>
-      <link>https://blog.rsinha.org/categories/apps/</link>
-      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/apps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Appsec</title>
-      <link>https://blog.rsinha.org/categories/appsec/</link>
-      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/appsec/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Arora</title>
-      <link>https://blog.rsinha.org/categories/arora/</link>
-      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/arora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Audit</title>
-      <link>https://blog.rsinha.org/categories/audit/</link>
-      <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/audit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aws</title>
+      <title> aws</title>
       <link>https://blog.rsinha.org/categories/aws/</link>
       <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
       
@@ -93,358 +26,7 @@
     </item>
     
     <item>
-      <title>Backblaze</title>
-      <link>https://blog.rsinha.org/categories/backblaze/</link>
-      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/backblaze/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://blog.rsinha.org/categories/bash/</link>
-      <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bikes</title>
-      <link>https://blog.rsinha.org/categories/bikes/</link>
-      <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/bikes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Browser</title>
-      <link>https://blog.rsinha.org/categories/browser/</link>
-      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/browser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bsdiff</title>
-      <link>https://blog.rsinha.org/categories/bsdiff/</link>
-      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/bsdiff/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cave</title>
-      <link>https://blog.rsinha.org/categories/cave/</link>
-      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/cave/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ceh</title>
-      <link>https://blog.rsinha.org/categories/ceh/</link>
-      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/ceh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cheap</title>
-      <link>https://blog.rsinha.org/categories/cheap/</link>
-      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/cheap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Clean</title>
-      <link>https://blog.rsinha.org/categories/clean/</link>
-      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/clean/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cli</title>
-      <link>https://blog.rsinha.org/categories/cli/</link>
-      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command</title>
-      <link>https://blog.rsinha.org/categories/command/</link>
-      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cooltool</title>
-      <link>https://blog.rsinha.org/categories/cooltool/</link>
-      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/cooltool/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Corsair</title>
-      <link>https://blog.rsinha.org/categories/corsair/</link>
-      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/corsair/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Crystal</title>
-      <link>https://blog.rsinha.org/categories/crystal/</link>
-      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/crystal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://blog.rsinha.org/categories/docker/</link>
-      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker Compose</title>
-      <link>https://blog.rsinha.org/categories/docker-compose/</link>
-      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/docker-compose/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Email</title>
-      <link>https://blog.rsinha.org/categories/email/</link>
-      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/email/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Encryption</title>
-      <link>https://blog.rsinha.org/categories/encryption/</link>
-      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/encryption/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Example</title>
-      <link>https://blog.rsinha.org/categories/example/</link>
-      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/example/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fast</title>
-      <link>https://blog.rsinha.org/categories/fast/</link>
-      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/fast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fedora</title>
-      <link>https://blog.rsinha.org/categories/fedora/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/fedora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fedora9</title>
-      <link>https://blog.rsinha.org/categories/fedora9/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/fedora9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Firstpost</title>
-      <link>https://blog.rsinha.org/categories/firstpost/</link>
-      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/firstpost/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flowchart</title>
-      <link>https://blog.rsinha.org/categories/flowchart/</link>
-      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/flowchart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Freenas</title>
-      <link>https://blog.rsinha.org/categories/freenas/</link>
-      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/freenas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Frustration</title>
-      <link>https://blog.rsinha.org/categories/frustration/</link>
-      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/frustration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Funny</title>
-      <link>https://blog.rsinha.org/categories/funny/</link>
-      <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/funny/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Geography</title>
-      <link>https://blog.rsinha.org/categories/geography/</link>
-      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/geography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://blog.rsinha.org/categories/go/</link>
-      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google</title>
-      <link>https://blog.rsinha.org/categories/google/</link>
-      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grub</title>
-      <link>https://blog.rsinha.org/categories/grub/</link>
-      <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/grub/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gypsum</title>
-      <link>https://blog.rsinha.org/categories/gypsum/</link>
-      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/gypsum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hdtach</title>
-      <link>https://blog.rsinha.org/categories/hdtach/</link>
-      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/hdtach/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Heyjude</title>
-      <link>https://blog.rsinha.org/categories/heyjude/</link>
-      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/heyjude/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Howto</title>
-      <link>https://blog.rsinha.org/categories/howto/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Install</title>
-      <link>https://blog.rsinha.org/categories/install/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/install/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Iq</title>
-      <link>https://blog.rsinha.org/categories/iq/</link>
-      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/iq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Job</title>
-      <link>https://blog.rsinha.org/categories/job/</link>
-      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/job/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Karmic</title>
-      <link>https://blog.rsinha.org/categories/karmic/</link>
-      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/karmic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lambda</title>
+      <title> lambda</title>
       <link>https://blog.rsinha.org/categories/lambda/</link>
       <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
       
@@ -453,304 +35,7 @@
     </item>
     
     <item>
-      <title>Lazy</title>
-      <link>https://blog.rsinha.org/categories/lazy/</link>
-      <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/lazy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Legal</title>
-      <link>https://blog.rsinha.org/categories/legal/</link>
-      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/legal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://blog.rsinha.org/categories/linux/</link>
-      <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mail</title>
-      <link>https://blog.rsinha.org/categories/mail/</link>
-      <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/mail/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mcse</title>
-      <link>https://blog.rsinha.org/categories/mcse/</link>
-      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/mcse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mini</title>
-      <link>https://blog.rsinha.org/categories/mini/</link>
-      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/mini/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mutt</title>
-      <link>https://blog.rsinha.org/categories/mutt/</link>
-      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/mutt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nas</title>
-      <link>https://blog.rsinha.org/categories/nas/</link>
-      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/nas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>News</title>
-      <link>https://blog.rsinha.org/categories/news/</link>
-      <pubDate>Tue, 05 Apr 2011 22:49:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/news/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nokia</title>
-      <link>https://blog.rsinha.org/categories/nokia/</link>
-      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/nokia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nonsense</title>
-      <link>https://blog.rsinha.org/categories/nonsense/</link>
-      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/nonsense/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Openfiler</title>
-      <link>https://blog.rsinha.org/categories/openfiler/</link>
-      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/openfiler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ovi</title>
-      <link>https://blog.rsinha.org/categories/ovi/</link>
-      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/ovi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Phone</title>
-      <link>https://blog.rsinha.org/categories/phone/</link>
-      <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/phone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Photos</title>
-      <link>https://blog.rsinha.org/categories/photos/</link>
-      <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/photos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Precedent</title>
-      <link>https://blog.rsinha.org/categories/precedent/</link>
-      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/precedent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://blog.rsinha.org/categories/programming/</link>
-      <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://blog.rsinha.org/categories/python/</link>
-      <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rant</title>
-      <link>https://blog.rsinha.org/categories/rant/</link>
-      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/rant/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redhat</title>
-      <link>https://blog.rsinha.org/categories/redhat/</link>
-      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/redhat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ruby</title>
-      <link>https://blog.rsinha.org/categories/ruby/</link>
-      <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/ruby/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S60</title>
-      <link>https://blog.rsinha.org/categories/s60/</link>
-      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/s60/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Science</title>
-      <link>https://blog.rsinha.org/categories/science/</link>
-      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://blog.rsinha.org/categories/security/</link>
-      <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sh</title>
-      <link>https://blog.rsinha.org/categories/sh/</link>
-      <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/sh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shutdown</title>
-      <link>https://blog.rsinha.org/categories/shutdown/</link>
-      <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/shutdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Smart</title>
-      <link>https://blog.rsinha.org/categories/smart/</link>
-      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/smart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Smartvoip</title>
-      <link>https://blog.rsinha.org/categories/smartvoip/</link>
-      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/smartvoip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Social</title>
-      <link>https://blog.rsinha.org/categories/social/</link>
-      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/social/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Song</title>
-      <link>https://blog.rsinha.org/categories/song/</link>
-      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/song/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Storage</title>
-      <link>https://blog.rsinha.org/categories/storage/</link>
-      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Symbian</title>
-      <link>https://blog.rsinha.org/categories/symbian/</link>
-      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/symbian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thunderbird</title>
-      <link>https://blog.rsinha.org/categories/thunderbird/</link>
-      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/thunderbird/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Til</title>
+      <title>til</title>
       <link>https://blog.rsinha.org/categories/til/</link>
       <pubDate>Tue, 12 Feb 2019 14:50:01 +0000</pubDate>
       
@@ -759,88 +44,43 @@
     </item>
     
     <item>
-      <title>Truecrypt</title>
-      <link>https://blog.rsinha.org/categories/truecrypt/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      <title>yak-shaving</title>
+      <link>https://blog.rsinha.org/categories/yak-shaving/</link>
+      <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/truecrypt/</guid>
+      <guid>https://blog.rsinha.org/categories/yak-shaving/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Truecrypt6</title>
-      <link>https://blog.rsinha.org/categories/truecrypt6/</link>
-      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      <title>docker</title>
+      <link>https://blog.rsinha.org/categories/docker/</link>
+      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/truecrypt6/</guid>
+      <guid>https://blog.rsinha.org/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ubuntu</title>
-      <link>https://blog.rsinha.org/categories/ubuntu/</link>
-      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
+      <title>docker-compose</title>
+      <link>https://blog.rsinha.org/categories/docker-compose/</link>
+      <pubDate>Fri, 10 Jul 2015 14:49:50 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/ubuntu/</guid>
+      <guid>https://blog.rsinha.org/categories/docker-compose/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vmware</title>
-      <link>https://blog.rsinha.org/categories/vmware/</link>
-      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
+      <title>linux</title>
+      <link>https://blog.rsinha.org/categories/linux/</link>
+      <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/vmware/</guid>
+      <guid>https://blog.rsinha.org/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Voip</title>
-      <link>https://blog.rsinha.org/categories/voip/</link>
-      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/voip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Voyager</title>
-      <link>https://blog.rsinha.org/categories/voyager/</link>
-      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/voyager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wave</title>
-      <link>https://blog.rsinha.org/categories/wave/</link>
-      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/wave/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wtf</title>
-      <link>https://blog.rsinha.org/categories/wtf/</link>
-      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/wtf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wwwdc</title>
-      <link>https://blog.rsinha.org/categories/wwwdc/</link>
-      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
-      
-      <guid>https://blog.rsinha.org/categories/wwwdc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xubuntu</title>
+      <title>xubuntu</title>
       <link>https://blog.rsinha.org/categories/xubuntu/</link>
       <pubDate>Sun, 05 Apr 2015 19:35:03 +0000</pubDate>
       
@@ -849,11 +89,740 @@
     </item>
     
     <item>
-      <title>Yak Shaving</title>
-      <link>https://blog.rsinha.org/categories/yak-shaving/</link>
-      <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
+      <title>bsdiff</title>
+      <link>https://blog.rsinha.org/categories/bsdiff/</link>
+      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
       
-      <guid>https://blog.rsinha.org/categories/yak-shaving/</guid>
+      <guid>https://blog.rsinha.org/categories/bsdiff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://blog.rsinha.org/categories/go/</link>
+      <pubDate>Wed, 14 Jan 2015 12:19:54 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bikes</title>
+      <link>https://blog.rsinha.org/categories/bikes/</link>
+      <pubDate>Sat, 10 Aug 2013 18:08:46 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/bikes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>photos</title>
+      <link>https://blog.rsinha.org/categories/photos/</link>
+      <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/photos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mail</title>
+      <link>https://blog.rsinha.org/categories/mail/</link>
+      <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/mail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>phone</title>
+      <link>https://blog.rsinha.org/categories/phone/</link>
+      <pubDate>Sun, 06 May 2012 10:00:18 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/phone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sh</title>
+      <link>https://blog.rsinha.org/categories/sh/</link>
+      <pubDate>Sun, 04 Dec 2011 11:24:19 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/sh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://blog.rsinha.org/categories/android/</link>
+      <pubDate>Sat, 03 Dec 2011 11:28:59 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.rsinha.org/categories/python/</link>
+      <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smartvoip</title>
+      <link>https://blog.rsinha.org/categories/smartvoip/</link>
+      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/smartvoip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voip</title>
+      <link>https://blog.rsinha.org/categories/voip/</link>
+      <pubDate>Sun, 24 Jul 2011 14:55:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/voip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>audit</title>
+      <link>https://blog.rsinha.org/categories/audit/</link>
+      <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/audit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://blog.rsinha.org/categories/security/</link>
+      <pubDate>Sat, 23 Jul 2011 10:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://blog.rsinha.org/categories/programming/</link>
+      <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ruby</title>
+      <link>https://blog.rsinha.org/categories/ruby/</link>
+      <pubDate>Sat, 16 Jul 2011 12:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>news</title>
+      <link>https://blog.rsinha.org/categories/news/</link>
+      <pubDate>Tue, 05 Apr 2011 22:49:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/news/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>job</title>
+      <link>https://blog.rsinha.org/categories/job/</link>
+      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nonsense</title>
+      <link>https://blog.rsinha.org/categories/nonsense/</link>
+      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/nonsense/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>https://blog.rsinha.org/categories/vmware/</link>
+      <pubDate>Fri, 27 Aug 2010 09:23:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://blog.rsinha.org/categories/cli/</link>
+      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command</title>
+      <link>https://blog.rsinha.org/categories/command/</link>
+      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>email</title>
+      <link>https://blog.rsinha.org/categories/email/</link>
+      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/email/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mutt</title>
+      <link>https://blog.rsinha.org/categories/mutt/</link>
+      <pubDate>Thu, 26 Aug 2010 18:14:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/mutt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aes</title>
+      <link>https://blog.rsinha.org/categories/aes/</link>
+      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/aes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encryption</title>
+      <link>https://blog.rsinha.org/categories/encryption/</link>
+      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>example</title>
+      <link>https://blog.rsinha.org/categories/example/</link>
+      <pubDate>Thu, 13 May 2010 18:59:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/example/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://blog.rsinha.org/categories/bash/</link>
+      <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shutdown</title>
+      <link>https://blog.rsinha.org/categories/shutdown/</link>
+      <pubDate>Fri, 09 Apr 2010 06:50:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/shutdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arora</title>
+      <link>https://blog.rsinha.org/categories/arora/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/arora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>browser</title>
+      <link>https://blog.rsinha.org/categories/browser/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/browser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cooltool</title>
+      <link>https://blog.rsinha.org/categories/cooltool/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/cooltool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fast</title>
+      <link>https://blog.rsinha.org/categories/fast/</link>
+      <pubDate>Tue, 05 Jan 2010 11:32:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/fast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cave</title>
+      <link>https://blog.rsinha.org/categories/cave/</link>
+      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/cave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crystal</title>
+      <link>https://blog.rsinha.org/categories/crystal/</link>
+      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/crystal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geography</title>
+      <link>https://blog.rsinha.org/categories/geography/</link>
+      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/geography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gypsum</title>
+      <link>https://blog.rsinha.org/categories/gypsum/</link>
+      <pubDate>Wed, 16 Dec 2009 09:34:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/gypsum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>appsec</title>
+      <link>https://blog.rsinha.org/categories/appsec/</link>
+      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/appsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CEH</title>
+      <link>https://blog.rsinha.org/categories/ceh/</link>
+      <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/ceh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>funny</title>
+      <link>https://blog.rsinha.org/categories/funny/</link>
+      <pubDate>Mon, 14 Dec 2009 14:42:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/funny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>google</title>
+      <link>https://blog.rsinha.org/categories/google/</link>
+      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thunderbird</title>
+      <link>https://blog.rsinha.org/categories/thunderbird/</link>
+      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/thunderbird/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wave</title>
+      <link>https://blog.rsinha.org/categories/wave/</link>
+      <pubDate>Fri, 11 Dec 2009 13:22:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/wave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apps</title>
+      <link>https://blog.rsinha.org/categories/apps/</link>
+      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/apps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>s60</title>
+      <link>https://blog.rsinha.org/categories/s60/</link>
+      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/s60/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>symbian</title>
+      <link>https://blog.rsinha.org/categories/symbian/</link>
+      <pubDate>Sun, 29 Nov 2009 10:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/symbian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>frustration</title>
+      <link>https://blog.rsinha.org/categories/frustration/</link>
+      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/frustration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>karmic</title>
+      <link>https://blog.rsinha.org/categories/karmic/</link>
+      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/karmic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://blog.rsinha.org/categories/ubuntu/</link>
+      <pubDate>Tue, 10 Nov 2009 18:03:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>legal</title>
+      <link>https://blog.rsinha.org/categories/legal/</link>
+      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/legal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>precedent</title>
+      <link>https://blog.rsinha.org/categories/precedent/</link>
+      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/precedent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wtf</title>
+      <link>https://blog.rsinha.org/categories/wtf/</link>
+      <pubDate>Thu, 05 Nov 2009 05:53:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/wtf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iq</title>
+      <link>https://blog.rsinha.org/categories/iq/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/iq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>science</title>
+      <link>https://blog.rsinha.org/categories/science/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smart</title>
+      <link>https://blog.rsinha.org/categories/smart/</link>
+      <pubDate>Thu, 05 Nov 2009 05:04:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/smart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flowchart</title>
+      <link>https://blog.rsinha.org/categories/flowchart/</link>
+      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/flowchart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>heyjude</title>
+      <link>https://blog.rsinha.org/categories/heyjude/</link>
+      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/heyjude/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>song</title>
+      <link>https://blog.rsinha.org/categories/song/</link>
+      <pubDate>Wed, 04 Nov 2009 15:12:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/song/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nokia</title>
+      <link>https://blog.rsinha.org/categories/nokia/</link>
+      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/nokia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ovi</title>
+      <link>https://blog.rsinha.org/categories/ovi/</link>
+      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/ovi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social</title>
+      <link>https://blog.rsinha.org/categories/social/</link>
+      <pubDate>Wed, 02 Sep 2009 18:56:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/social/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grub</title>
+      <link>https://blog.rsinha.org/categories/grub/</link>
+      <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/grub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lazy</title>
+      <link>https://blog.rsinha.org/categories/lazy/</link>
+      <pubDate>Wed, 02 Sep 2009 18:23:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/lazy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backblaze</title>
+      <link>https://blog.rsinha.org/categories/backblaze/</link>
+      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/backblaze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cheap</title>
+      <link>https://blog.rsinha.org/categories/cheap/</link>
+      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/cheap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage</title>
+      <link>https://blog.rsinha.org/categories/storage/</link>
+      <pubDate>Wed, 02 Sep 2009 17:40:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mcse</title>
+      <link>https://blog.rsinha.org/categories/mcse/</link>
+      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/mcse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rant</title>
+      <link>https://blog.rsinha.org/categories/rant/</link>
+      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/rant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redhat</title>
+      <link>https://blog.rsinha.org/categories/redhat/</link>
+      <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/redhat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>corsair</title>
+      <link>https://blog.rsinha.org/categories/corsair/</link>
+      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/corsair/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hdtach</title>
+      <link>https://blog.rsinha.org/categories/hdtach/</link>
+      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/hdtach/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mini</title>
+      <link>https://blog.rsinha.org/categories/mini/</link>
+      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/mini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>voyager</title>
+      <link>https://blog.rsinha.org/categories/voyager/</link>
+      <pubDate>Fri, 07 Nov 2008 07:06:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/voyager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>https://blog.rsinha.org/categories/fedora/</link>
+      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/fedora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>https://blog.rsinha.org/categories/howto/</link>
+      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>https://blog.rsinha.org/categories/install/</link>
+      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/install/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>truecrypt</title>
+      <link>https://blog.rsinha.org/categories/truecrypt/</link>
+      <pubDate>Wed, 09 Jul 2008 11:13:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/truecrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freenas</title>
+      <link>https://blog.rsinha.org/categories/freenas/</link>
+      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/freenas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nas</title>
+      <link>https://blog.rsinha.org/categories/nas/</link>
+      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/nas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openfiler</title>
+      <link>https://blog.rsinha.org/categories/openfiler/</link>
+      <pubDate>Thu, 12 Jun 2008 01:41:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/openfiler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clean</title>
+      <link>https://blog.rsinha.org/categories/clean/</link>
+      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/clean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>firstpost</title>
+      <link>https://blog.rsinha.org/categories/firstpost/</link>
+      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/firstpost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wwwdc</title>
+      <link>https://blog.rsinha.org/categories/wwwdc/</link>
+      <pubDate>Tue, 10 Jun 2008 23:38:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/categories/wwwdc/</guid>
       <description></description>
     </item>
     

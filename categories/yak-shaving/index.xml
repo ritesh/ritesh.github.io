@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Yak Shaving on blog</title>
+    <title>yak-shaving on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/yak-shaving/</link>
-    <description>Recent content in Yak Shaving on blog</description>
+    <description>Recent content in yak-shaving on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 19 Nov 2016 22:17:58 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/yak-shaving/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 19 Nov 2016 22:17:58 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/yak-shaving/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello, Hugo!</title>
       <link>https://blog.rsinha.org/2016/11/09/hello-hugo/</link>
       <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
-      <description>I had been running this blog using Jekyll for a while now, but didn&amp;rsquo;t quite understand how it all worked. Jekyll is a great tool, and you don&amp;rsquo;t need a whole lot of configuration to get started. If you&amp;rsquo;re using github to host either personal, project or organisation pages, Jekyll is a no-brainer to get started. However, as I&amp;rsquo;m not much of a Ruby programmer, I didn&amp;rsquo;t quite understand how Jekyll worked and having to gem install ruby felt wrong &amp;ndash; especially since it also installs a whole lot of other dependencies that I don&amp;rsquo;t understand, either.</description>
+      <description>Finally got around to moving this blog from Jekyll to Hugo and setting up a Cloudflare account with SSL.</description>
     </item>
     
   </channel>

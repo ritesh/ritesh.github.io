@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming on blog</title>
+    <title>programming on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/programming/</link>
-    <description>Recent content in Programming on blog</description>
+    <description>Recent content in programming on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 16 Jul 2011 12:38:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 16 Jul 2011 12:38:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing rubygems in your home folder</title>
       <link>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</link>
@@ -18,9 +14,9 @@
       
       <guid>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</guid>
       <description>No root? No problem! Obtain a copy of rubygems from ruby forge.
-$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile  This should give you a working install of rubygems. Check out the environment
-$ gem env  Install something
-$ gem install rake  </description>
+$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile This should give you a working install of rubygems. Check out the environment
+$ gem env Install something
+$ gem install rake </description>
     </item>
     
   </channel>

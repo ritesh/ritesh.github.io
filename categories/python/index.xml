@@ -1,23 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on blog</title>
+    <title>python on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/python/</link>
-    <description>Recent content in Python on blog</description>
+    <description>Recent content in python on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 09 Nov 2011 22:41:09 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 09 Nov 2011 22:41:09 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why I like Python</title>
       <link>https://blog.rsinha.org/2011/11/09/why-i-like-python/</link>
       <pubDate>Wed, 09 Nov 2011 22:41:09 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2011/11/09/why-i-like-python/</guid>
-      <description>I&amp;rsquo;m a big fan of Python, especially its syntax which feels close to natural language. My programming skills are average, as I&amp;rsquo;ve never done any serious full time development, apart from some code I wrote for my MSc project. The project was mostly built using scrapy with little hacks thrown in to implement concurrency for processing data. Nowadays, I tend to use Python mostly as a glue language to automate stuff when bash doesn&amp;rsquo;t cut it.</description>
+      <description>Some (brief) thoughts on why I like Python. I meant for this to be longer, but didn&amp;rsquo;t actually get around to finishing it.</description>
     </item>
     
     <item>
@@ -27,7 +23,7 @@
       
       <guid>https://blog.rsinha.org/posts/python-aes/</guid>
       <description>Cryptography isn&amp;rsquo;t available by default on python. One needs to install the PyCrypto toolkit to make it work. Looks something like this:
-from Crypto.Cipher import AES import base64 key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot; objAes=AES.new(key, AES.MODE_ECB) plaintext=&#39;This is sparta!!&#39; #looks nicer with base64 enc = objAes.encrypt(plaintext) print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc) print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc)  </description>
+from Crypto.Cipher import AES import base64 key = &amp;quot;x0Dx0Fx07x0Fx0Cx0Fx08x0Fx06x0Fx09x0Fx06x0Fx03x0Fx0Fx06x0Fx0Fx0Fx0Fx0Fx0Fx06x0Fx09x0Fx06x0Fx03x0F&amp;quot; objAes=AES.new(key, AES.MODE_ECB) plaintext=&#39;This is sparta!!&#39; #looks nicer with base64 enc = objAes.encrypt(plaintext) print &amp;quot;Encrypted: &amp;quot; + base64.b64encode(enc) print &amp;quot;Decrypted: &amp;quot; + objAes.decrypt(enc) </description>
     </item>
     
   </channel>

@@ -1,25 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Photos on blog</title>
+    <title>photos on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/photos/</link>
-    <description>Recent content in Photos on blog</description>
+    <description>Recent content in photos on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 21 May 2013 22:11:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/photos/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 21 May 2013 22:11:18 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/photos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>More Black &amp; White</title>
       <link>https://blog.rsinha.org/2013/05/21/more-black-white/</link>
       <pubDate>Tue, 21 May 2013 22:11:18 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/05/21/more-black-white/</guid>
-      <description>I wasted all evening trying to fix an annoying issue in this Wordpress theme. Clearly PHP and I don&amp;rsquo;t like each other. Found an old photo in Lightroom and decided to mess about with it. I think it is about 1&amp;frasl;2 a stop underexposed, but I like it anyway.
-
-I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones work to bring out details in photographs.</description>
+      <description>Photo</description>
     </item>
     
     <item>
@@ -28,7 +22,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sat, 11 May 2013 23:43:20 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2013/05/11/brussels/</guid>
-      <description>Found this while digging through some old photos.</description>
+      <description>Photo</description>
     </item>
     
     <item>
@@ -37,7 +31,7 @@ I&amp;rsquo;m enjoying black &amp;amp; photos, trying to understand how tones wo
       <pubDate>Sun, 30 Sep 2012 19:56:48 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</guid>
-      <description>Decided to host my images on Flickr as I&amp;rsquo;m hoping they&amp;rsquo;ll do a better job of backing them up than me. As I don&amp;rsquo;t develop photos myself, it cost quite a bit to get just one roll developed. I&amp;rsquo;ve since moved to a fixed lens digital camera and I hope to put up more nice pictures soon.</description>
+      <description>Photo</description>
     </item>
     
     <item>

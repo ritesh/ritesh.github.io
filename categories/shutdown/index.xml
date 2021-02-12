@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shutdown on blog</title>
+    <title>shutdown on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/shutdown/</link>
-    <description>Recent content in Shutdown on blog</description>
+    <description>Recent content in shutdown on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 09 Apr 2010 06:50:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/shutdown/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Apr 2010 06:50:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/shutdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shutdown on no network connectivity</title>
       <link>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</link>

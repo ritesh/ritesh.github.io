@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Apps on blog</title>
+    <title>apps on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/apps/</link>
-    <description>Recent content in Apps on blog</description>
+    <description>Recent content in apps on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 29 Nov 2009 10:03:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/apps/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 29 Nov 2009 10:03:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/apps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My favorite S60 apps</title>
       <link>https://blog.rsinha.org/posts/my-favorite-s60-apps/</link>
@@ -19,10 +15,10 @@
       <guid>https://blog.rsinha.org/posts/my-favorite-s60-apps/</guid>
       <description>I try and use my phone for everything I can. Some of the apps that I
 find very useful are:
- fring (free): Works with gtalk, twitter, fb, msn etc. If you have
+  fring (free): Works with gtalk, twitter, fb, msn etc. If you have
 one of those newfangled Nseries phones, you can use the front camera
 to make skype video calls (over WiFi).
- Nokia Messaging Email (free beta, might change in the future): The
+  Nokia Messaging Email (free beta, might change in the future): The
 native email application on the E71 is a load of crap.</description>
     </item>
     

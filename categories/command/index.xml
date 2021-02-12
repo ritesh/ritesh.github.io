@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Command on blog</title>
+    <title>command on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/command/</link>
-    <description>Recent content in Command on blog</description>
+    <description>Recent content in command on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 26 Aug 2010 18:14:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/command/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 26 Aug 2010 18:14:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/command/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using mutt with Gmail</title>
       <link>https://blog.rsinha.org/posts/using-mutt-with-gmail/</link>

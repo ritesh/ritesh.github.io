@@ -1,111 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.80.0" />
+<html lang="en" dir="auto">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="" />
-  <meta property="og:url" content="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/" />
-  <link rel="canonical" href="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/" /><link rel="alternate" type="application/atom+xml" href="https://blog.rsinha.org/index.xml" title="Ritesh Sinha&#39;s blog">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Building Dockerized Application Security Scanners | Ritesh Sinha&#39;s Ramblings</title>
 
-  <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type" : "BlogPosting",
-      "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https:\/\/blog.rsinha.org\/"
-      },
-      "articleSection" : "posts",
-      "name" : "Building Dockerized Application Security Scanners",
-      "headline" : "Building Dockerized Application Security Scanners",
-      "description" : "A first attempt at automating web application security scans for dockerized web-applications",
-      "inLanguage" : "en-US",
-      "author" : "",
-      "creator" : "",
-      "publisher": "",
-      "accountablePerson" : "",
-      "copyrightHolder" : "",
-      "copyrightYear" : "2015",
-      "datePublished": "2015-07-10 14:49:50 \u002b0000 UTC",
-      "dateModified" : "2015-07-10 14:49:50 \u002b0000 UTC",
-      "url" : "https:\/\/blog.rsinha.org\/2015\/07\/10\/building-dockerized-application-security-scanners\/",
-      "keywords" : [  ]
+<meta name="keywords" content="" />
+<meta name="description" content="A first attempt at automating web application security scans for dockerized web-applications">
+<meta name="author" content="rsinha">
+<link rel="canonical" href="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/" />
+<link href="/assets/css/stylesheet.min.23ca66c33946ea0cee2c04d1168bf7a5e397fb03f9bcd6cc11a233ae8e51b097.css" integrity="sha256-I8pmwzlG6gzuLATRFov3peOX&#43;wP5vNbMEaIzro5RsJc=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://blog.rsinha.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.rsinha.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<meta property="og:title" content="Building Dockerized Application Security Scanners" />
+<meta property="og:description" content="A first attempt at automating web application security scans for dockerized web-applications" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/" />
+<meta property="article:published_time" content="2015-07-10T14:49:50+00:00" />
+<meta property="article:modified_time" content="2015-07-10T14:49:50+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Building Dockerized Application Security Scanners"/>
+<meta name="twitter:description" content="A first attempt at automating web application security scans for dockerized web-applications"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Building Dockerized Application Security Scanners",
+  "name": "Building Dockerized Application Security Scanners",
+  "description": "A first attempt at automating web application security scans for dockerized web-applications",
+  "keywords": [
+    
+  ],
+  "articleBody": "I read an interesting post by @anshuman_bh on automating ZAP scans for dockerized web applications. At the time, I was exploring docker compose (formerly fig) as a way to “container-ize” a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that docker-compose would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing “glue” code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.\nThe Problem If you haven’t read Anshuman’s post yet, I suggest that you check it out to get an understanding of what he’s trying to accomplish. The goal is to automate scans against a web application that runs in a docker container. This is useful if you’re trying to set-up some sort of CI infrastructure that automatically scans new builds of the web application. We want to ensure that no human interaction is required, and reports generated from scans are saved somewhere on the host machine (outside the containers) to be processed or read.\nThe Setup To accomplish this, I’ll use docker-compose instead of plain docker. To follow along, install docker-compose from here. We’ll use three containers:\n The application being tested. For this example, I’ll use the famous WebGoat application because, well, goats. The Zed Attack Proxy. You could use any other application scanner that supports automation here. A container that contains custom scripts. We could build on the ZAP container too, but I’ve found that this is more flexible.  The idea is to spin up the test application, followed by an instance of ZAP. After these containers are up, we want to connect to the ZAP container and direct it to scan the target and save the results once done.\nDocker-composing All The Things Using docker-compose is easy. All you need is one YAML file to define your containers and how they’re linked. Here’s what it looks like for my setup:\nTo test my setup out, start by cloning this repo. Once you have cloned it, run docker-compose build. This will take a while to download images for the first time. Once this is done, run docker-compose up to bring up all containers listed in docker-compose.yml. After the last container exits, you should have a report from the ZAP scan in reports/.\nSo, what just happened? docker-compose looks at the YAML file and figures out what containers need to be started in what sequence. It starts the “target” container, which contains our test application (WebGoat in this case), followed by the ZAP container. The “tooling” container is started last. The Dockerfile for tooling is defined in tools. It builds on the python 2.7 image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.\nHope this gives you ideas for workflows for automating scans. Send comments/questions/flames to @rsinha.\n",
+  "wordCount" : "505",
+  "inLanguage": "en",
+  "datePublished": "2015-07-10T14:49:50Z",
+  "dateModified": "2015-07-10T14:49:50Z",
+  "author":{
+    "@type": "Person",
+    "name": "rsinha"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ritesh Sinha's Ramblings",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.rsinha.org/favicon.ico"
+    }
   }
+}
 </script>
-<title>Building Dockerized Application Security Scanners - Ritesh Sinha&#39;s blog</title>
-  <meta property="og:title" content="Building Dockerized Application Security Scanners - Ritesh Sinha&#39;s blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="A first attempt at automating web application security scans for dockerized web-applications" />
-  <meta name="description" content="A first attempt at automating web application security scans for dockerized web-applications" />
-  <meta property="og:locale" content="en-gb" />
-
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 
 
-  
-  
-  <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml"
-        title="Ritesh Sinha&#39;s blog">
-  
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Proza+Libre:ital@0;1&display=swap" rel="stylesheet">
-  
-  
 
-  
 </head>
 
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
 
-<body>
-  <article class="post " id="article">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="site-header">
-          
-<header>
-  <div class="signatures site-title">
-    <a href="/">Ritesh Sinha</a>
-  </div>
-</header>
-<div class="row end-xs">
-  
-  
-</div>
-<div class="header-line"></div>
+</script>
+<noscript>
+    <style type="text/css">
+        .theme-toggle,
+        .top-link {
+            display: none;
+        }
 
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh Sinha&#39;s Ramblings (Alt + H)">Ritesh Sinha&#39;s Ramblings</a>
+            <span class="logo-switches">
+                <a id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </a>
+                
+                
+            </span>
         </div>
-        <header class="post-header">
-          <h1 class="post-title">Building Dockerized Application Security Scanners</h1>
-          
-          <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2015-07-10 14:49:50 UTC">
-                10 Jul 2015
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-            </div>
-          </div>
-          
-        </header>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://blog.rsinha.org/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://blog.rsinha.org/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
 
-        <div class="post-content markdown-body">
-          
-          <p>I read an <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">interesting post</a> by <a href="https://twitter.com/anshuman_bh">@anshuman_bh</a> on automating ZAP scans for dockerized web applications. At the time, I was exploring <a href="https://docs.docker.com/compose/">docker compose</a> (formerly fig) as a way to &ldquo;container-ize&rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that <code>docker-compose</code> would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &ldquo;glue&rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.</p>
-<h3 id="the-problem">The Problem</h3>
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">
+      Building Dockerized Application Security Scanners
+    </h1>
+    <div class="post-meta">
+
+July 10, 2015&nbsp;·&nbsp;rsinha
+
+    </div>
+  </header> 
+
+  <div class="post-content">
+<p>I read an <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">interesting post</a> by <a href="https://twitter.com/anshuman_bh">@anshuman_bh</a> on automating ZAP scans for dockerized web applications. At the time, I was exploring <a href="https://docs.docker.com/compose/">docker compose</a> (formerly fig) as a way to &ldquo;container-ize&rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that <code>docker-compose</code> would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &ldquo;glue&rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.</p>
+<h3 id="the-problem">The Problem<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h3>
 <p>If you haven&rsquo;t read Anshuman&rsquo;s post yet, I suggest that you <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">check it out</a> to get an understanding of what he&rsquo;s trying to accomplish. The goal is to automate scans against a web application that runs in a docker container. This is useful if you&rsquo;re trying to set-up some sort of CI infrastructure that automatically scans new builds of the web application. We want to ensure that no human interaction is required, and reports generated from scans are saved somewhere on the host machine (outside the containers) to be processed or read.</p>
-<h3 id="the-setup">The Setup</h3>
+<h3 id="the-setup">The Setup<a hidden class="anchor" aria-hidden="true" href="#the-setup">#</a></h3>
 <p>To accomplish this, I&rsquo;ll use docker-compose instead of plain docker. To follow along, install docker-compose <a href="https://docs.docker.com/compose/#installation-and-set-up">from here</a>. We&rsquo;ll use three containers:</p>
 <ul>
 <li>The application being tested. For this example, I&rsquo;ll use the famous WebGoat application because, well, goats.</li>
@@ -113,82 +157,88 @@
 <li>A container that contains custom scripts. We could build on the ZAP container too, but I&rsquo;ve found that this is more flexible.</li>
 </ul>
 <p>The idea is to spin up the test application, followed by an instance of ZAP. After these containers are up, we want to connect to the ZAP container and direct it to scan the target and save the results once done.</p>
-<h3 id="docker-composing-all-the-things">Docker-composing All The Things</h3>
+<h3 id="docker-composing-all-the-things">Docker-composing All The Things<a hidden class="anchor" aria-hidden="true" href="#docker-composing-all-the-things">#</a></h3>
 <p>Using docker-compose is easy. All you need is one YAML file to define your containers and how they&rsquo;re linked. Here&rsquo;s what it looks like for my setup:</p>
 <!-- raw HTML omitted -->
 <p>To test my setup out, start by <a href="https://github.com/ritesh/dockerscan">cloning this repo</a>. Once you have cloned it, run <code>docker-compose build</code>. This will take a while to download images for the first time. Once this is done, run <code>docker-compose up</code> to bring up all containers listed in <code>docker-compose.yml</code>. After the last container exits, you should have a report from the ZAP scan in <code>reports/</code>.</p>
 <p>So, what just happened? <code>docker-compose</code> looks at the YAML file and figures out what containers need to be started in what sequence. It starts the &ldquo;target&rdquo; container, which contains our test application (WebGoat in this case), followed by the ZAP container. The &ldquo;tooling&rdquo; container is started last. The <code>Dockerfile</code> for tooling is defined in <code>tools</code>. It builds on the <code>python 2.7</code> image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.</p>
 <p>Hope this gives you ideas for workflows for automating scans. Send comments/questions/flames to <a href="https://twitter.com/rsinha">@rsinha</a>.</p>
 
-        </div>
-
-        <div class="row middle-xs">
-          <div class="col-xs-12">
-            
-            <div class="post-category">
-              <a href="/categories/docker/">
-                docker
-              </a>
-            </div>
-            
-            <div class="post-category">
-              <a href="/categories/docker-compose/">
-                docker-compose
-              </a>
-            </div>
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
-            
-          </div>
-        </div>
-
-        
-        
-
-        
-        
-        <div style="height: 50px;"></div>
-        
-        
-
-        <div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="https://twitter.com/rsinha" target="_blank">Twitter</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="https://github.com/ritesh" target="_blank">Github</a>
-  </div>
-  
-  <div class="site-footer-item">
-    <a href="/about/" target="_blank">About Me</a>
-  </div>
-  
-  
 </div>
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://blog.rsinha.org/">Ritesh Sinha&#39;s Ramblings</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
 
-      </div>
-    </div>
-  </article>
-
-  <script src="/js/highlight.pack.js"></script>
 
 
+<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <script>
-  hljs.initHighlightingOnLoad();
-  
-  
-  
-    
-    
-  
-</script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
-  
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 
 </body>
 

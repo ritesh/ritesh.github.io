@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wwwdc on blog</title>
+    <title>wwwdc on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/wwwdc/</link>
-    <description>Recent content in Wwwdc on blog</description>
+    <description>Recent content in wwwdc on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 10 Jun 2008 23:38:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/wwwdc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Jun 2008 23:38:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/wwwdc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First post!</title>
       <link>https://blog.rsinha.org/posts/first-post/</link>

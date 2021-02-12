@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rant on blog</title>
+    <title>rant on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/rant/</link>
-    <description>Recent content in Rant on blog</description>
+    <description>Recent content in rant on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 22 Dec 2008 13:47:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/rant/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 22 Dec 2008 13:47:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/rant/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>9 year old cracks MCSE</title>
       <link>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</link>
       <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</guid>
-      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.
- I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
+      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination. I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
 9-year-old TN girl cracks Microsoft exam
 On the other hand, the youngest person to crack the RHCE is 12 years old, which makes you think.</description>
     </item>

@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fast on blog</title>
+    <title>fast on Ritesh Sinha&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/fast/</link>
-    <description>Recent content in Fast on blog</description>
+    <description>Recent content in fast on Ritesh Sinha&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 05 Jan 2010 11:32:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.rsinha.org/categories/fast/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 05 Jan 2010 11:32:00 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/categories/fast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>arora</title>
       <link>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</link>
