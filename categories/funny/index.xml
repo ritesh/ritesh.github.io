@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>funny on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/funny/</link>
@@ -20,7 +20,7 @@ Greetings from
 This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
 More details given below
 The candidate MUST HAVE THE FOLLOWING SKILLS
- Developer Cross site scripting – different classes Web Application - Get Post  GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+Developer Cross site scripting – different classes Web Application - Get Post GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
     </item>
     
     <item>
@@ -30,8 +30,8 @@ The candidate MUST HAVE THE FOLLOWING SKILLS
       
       <guid>https://blog.rsinha.org/posts/hey-jude-flow-chart/</guid>
       <description>Inspired by the Total Eclipse Of The Heart flow chart, love all this created the Hey Jude Flow Chart to help you unravel one of The Beatles’ most complicated songs.
-  via Merlin Mann
-      via feeds.laughingsquid.com
+via Merlin Mann
+via feeds.laughingsquid.com
 So useful!</description>
     </item>
     

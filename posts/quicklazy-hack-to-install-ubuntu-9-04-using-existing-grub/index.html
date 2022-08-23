@@ -6,8 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB | Ritesh&#39;s Ramblings</title>
-
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="Prior to using any Debian derivatives, I was a RedHat fan and hence
 heavily favoured Fedora/CentOS/RHEL over other distributions. Over the
 last few releases Fedora has been a disappointment and I was stuck
@@ -16,10 +15,10 @@ for me). Gentoo was my favoured distribution about 2-3 years ago but
 the excessive kernel recompilation was really getting to me. To go the
 more stable path I decided to give Debian a shot.">
 <meta name="author" content="rsinha">
-<link rel="canonical" href="https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/" />
-<link href="/assets/css/stylesheet.min.9590a9fb00545a5229e34934427b986c9bcf53ba3336ea4493eb2c246dffe91b.css"  rel="preload stylesheet"
-    as="style">
-
+<link rel="canonical" href="https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blog.rsinha.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
@@ -27,10 +26,15 @@ more stable path I decided to give Debian a shot.">
 <link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.80.0" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-
-<meta property="og:title" content="Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB" />
+    </style>
+</noscript><meta property="og:title" content="Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB" />
 <meta property="og:description" content="Prior to using any Debian derivatives, I was a RedHat fan and hence
 heavily favoured Fedora/CentOS/RHEL over other distributions. Over the
 last few releases Fedora has been a disappointment and I was stuck
@@ -39,9 +43,10 @@ for me). Gentoo was my favoured distribution about 2-3 years ago but
 the excessive kernel recompilation was really getting to me. To go the
 more stable path I decided to give Debian a shot." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/" />
-<meta property="article:published_time" content="2009-09-02T18:23:00+00:00" />
-<meta property="article:modified_time" content="2009-09-02T18:23:00+00:00" />
+<meta property="og:url" content="https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2009-09-02T18:23:00&#43;00:00" />
+<meta property="article:modified_time" content="2009-09-02T18:23:00&#43;00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB"/>
 <meta name="twitter:description" content="Prior to using any Debian derivatives, I was a RedHat fan and hence
@@ -52,17 +57,38 @@ for me). Gentoo was my favoured distribution about 2-3 years ago but
 the excessive kernel recompilation was really getting to me. To go the
 more stable path I decided to give Debian a shot."/>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://blog.rsinha.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB",
+      "item": "https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB",
   "name": "Quick\/Lazy hack to install Ubuntu 9.04 using existing GRUB",
-  "description": "Prior to using any Debian derivatives, I was a RedHat fan and hence\nheavily favoured Fedora/CentOS/RHEL over other distributions. Over the\nlast few releases Fedora has been a …",
+  "description": "Prior to using any Debian derivatives, I was a RedHat fan and hence\nheavily favoured Fedora/CentOS/RHEL over other distributions. Over the\nlast few releases Fedora has been a disappointment and I was stuck\nbetween using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked\nfor me). Gentoo was my favoured distribution about 2-3 years ago but\nthe excessive kernel recompilation was really getting to me. To go the\nmore stable path I decided to give Debian a shot.",
   "keywords": [
     
   ],
-  "articleBody": "Prior to using any Debian derivatives, I was a RedHat fan and hence\nheavily favoured Fedora/CentOS/RHEL over other distributions. Over the\nlast few releases Fedora has been a disappointment and I was stuck\nbetween using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked\nfor me). Gentoo was my favoured distribution about 2-3 years ago but\nthe excessive kernel recompilation was really getting to me. To go the\nmore stable path I decided to give Debian a shot. Debian lenny is an\namazing release, except it sucked as a desktop OS for me. Random sound\nissues, flash taking the whole system down and poor 3D acceleration\nreally ruined it for me (couldn’t play quake live even with\nproprietary drivers).\nI decided to finally switch to Ubuntu Jaunty (9.04). Being too lazy to\nconnect an optical drive or buying blank CDs, I decided to install it\nusing my existing GRUB setup (Debian). Turns out it’s easier than\nLindsay Lohan excessively inebriated.\n A few preliminary notes: This has been tested using the Jaunty mini\niso, not sure if other versions work as designed. Did not try\ninstalling using the wireless network (that would be stupid). Need a\ndecent broadband connection (say 512kbps upward) for the installation\nto finish within a reasonable time (leave it overnight only after\nyou’re done selecting packages). Will hose your system if power goes\nout and you’ve crossed the partitioning stage. Take like a backup,\nman.\n Step 1: Get the mini.iso from here :\nhttps://help.ubuntu.com/community/Installation/MinimalCD\nStep 2: Extract the mini.iso to get two files, linux and initrd.gz\nStep 3: Rename those files for easy reference (eg linux_ubuntu \u0026\ninitrd_ubuntu.gz)\nStep 4: Move them to your boot directory\n#sudo mv linux_ubuntu initrd_ubuntu.gz /boot/\nStep 5: Edit /boot/grub/menu.lst using your favourite editor and add\nthe lines to point to these\n title\tUbuntu 9.04 installer root (hd0,0) kernel\t/linux_ubuntu initrd /initrd_ubuntu.gz  Remember the above setting should be exactly the same as the other\nlines on your existing linux install (If your current linux uses UUIDs\nthen the root line would be replaced with a suitable UUID, the “root”\nparameter might work but I’m not sure) except for the last two lines\n(kernel and initrd)\n Step 6: Reboot select Ubuntu installer, proceed as usual, select your\nmirror, repartition your disks (even the partition you booted from can\nbe destroyed; is that cool or what?) and let the installer do its\nthing.\n I live in an area where powercuts are fairly common (even after a\nlying politician promised there would be no more), so i went with the\nminimal install during the initial setup (so that I’d have something\nto fall back on as soon as possible) . After this I was able to reboot\nto a desktop-less OS. Doing an sudo apt-get install ubuntu-desktop\ngot the latest version of GNOME and associated stuff fresh from the\nrepositories. Jaunty works great for me, even though I’m afflicted\nwith an ATI card (on board) and a faulty USB controller (disabled,\nusing a PCI addon USB card instead).\nTime taken to do the initial install: Approx an hour (including download time)\nTime taken to download the ubuntu-desktop packages: About 1 hr 30 minutes\nTime taken to install/configure the desktop package: About 15 minutes\n My broadband connection is allegedly 1Mbps (ADSL) but it usually hangs\nsomewhere between 512 and 768 and peaks at 1Mbps sometimes.\n Hope this helps someone.\n",
+  "articleBody": "Prior to using any Debian derivatives, I was a RedHat fan and hence\nheavily favoured Fedora/CentOS/RHEL over other distributions. Over the\nlast few releases Fedora has been a disappointment and I was stuck\nbetween using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked\nfor me). Gentoo was my favoured distribution about 2-3 years ago but\nthe excessive kernel recompilation was really getting to me. To go the\nmore stable path I decided to give Debian a shot. Debian lenny is an\namazing release, except it sucked as a desktop OS for me. Random sound\nissues, flash taking the whole system down and poor 3D acceleration\nreally ruined it for me (couldn’t play quake live even with\nproprietary drivers).\nI decided to finally switch to Ubuntu Jaunty (9.04). Being too lazy to\nconnect an optical drive or buying blank CDs, I decided to install it\nusing my existing GRUB setup (Debian). Turns out it’s easier than\nLindsay Lohan excessively inebriated.\nA few preliminary notes: This has been tested using the Jaunty mini\niso, not sure if other versions work as designed. Did not try\ninstalling using the wireless network (that would be stupid). Need a\ndecent broadband connection (say 512kbps upward) for the installation\nto finish within a reasonable time (leave it overnight only after\nyou’re done selecting packages). Will hose your system if power goes\nout and you’ve crossed the partitioning stage. Take like a backup,\nman.\nStep 1: Get the mini.iso from here :\nhttps://help.ubuntu.com/community/Installation/MinimalCD\nStep 2: Extract the mini.iso to get two files, linux and initrd.gz\nStep 3: Rename those files for easy reference (eg linux_ubuntu \u0026\ninitrd_ubuntu.gz)\nStep 4: Move them to your boot directory\n#sudo mv linux_ubuntu initrd_ubuntu.gz /boot/\nStep 5: Edit /boot/grub/menu.lst using your favourite editor and add\nthe lines to point to these\ntitle\tUbuntu 9.04 installer root (hd0,0) kernel\t/linux_ubuntu initrd /initrd_ubuntu.gz Remember the above setting should be exactly the same as the other\nlines on your existing linux install (If your current linux uses UUIDs\nthen the root line would be replaced with a suitable UUID, the “root”\nparameter might work but I’m not sure) except for the last two lines\n(kernel and initrd)\nStep 6: Reboot select Ubuntu installer, proceed as usual, select your\nmirror, repartition your disks (even the partition you booted from can\nbe destroyed; is that cool or what?) and let the installer do its\nthing.\nI live in an area where powercuts are fairly common (even after a\nlying politician promised there would be no more), so i went with the\nminimal install during the initial setup (so that I’d have something\nto fall back on as soon as possible) . After this I was able to reboot\nto a desktop-less OS. Doing an sudo apt-get install ubuntu-desktop\ngot the latest version of GNOME and associated stuff fresh from the\nrepositories. Jaunty works great for me, even though I’m afflicted\nwith an ATI card (on board) and a faulty USB controller (disabled,\nusing a PCI addon USB card instead).\nTime taken to do the initial install: Approx an hour (including download time)\nTime taken to download the ubuntu-desktop packages: About 1 hr 30 minutes\nTime taken to install/configure the desktop package: About 15 minutes\nMy broadband connection is allegedly 1Mbps (ADSL) but it usually hangs\nsomewhere between 512 and 768 and peaks at 1Mbps sometimes.\nHope this helps someone.\n",
   "wordCount" : "563",
   "inLanguage": "en",
   "datePublished": "2009-09-02T18:23:00Z",
@@ -85,9 +111,6 @@ more stable path I decided to give Debian a shot."/>
   }
 }
 </script>
-
-
-
 </head>
 
 <body class=" dark" id="top">
@@ -97,27 +120,19 @@ more stable path I decided to give Debian a shot."/>
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        .theme-toggle,
-        .top-link {
-            display: none;
-        }
 
-    </style>
-</noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
-            <span class="logo-switches">
-                <a id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -130,12 +145,10 @@ more stable path I decided to give Debian a shot."/>
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                </a>
-                
-                
-            </span>
+                </button>
+            </div>
         </div>
-        <ul id="menu" onscroll="menu_on_scroll()">
+        <ul id="menu">
             <li>
                 <a href="https://blog.rsinha.org/about/" title="About">
                     <span>About</span>
@@ -145,27 +158,23 @@ more stable path I decided to give Debian a shot."/>
                 <a href="https://blog.rsinha.org/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
-            </li></ul>
+            </li>
+        </ul>
     </nav>
 </header>
-
-    <main class="main">
+<main class="main">
 
 <article class="post-single">
   <header class="post-header">
-
+    
     <h1 class="post-title">
       Quick/Lazy hack to install Ubuntu 9.04 using existing GRUB
     </h1>
-    <div class="post-meta">
-
-September 2, 2009&nbsp;·&nbsp;rsinha
+    <div class="post-meta"><span title='2009-09-02 18:23:00 +0000 +0000'>September 2, 2009</span>&nbsp;·&nbsp;rsinha
 
 </div>
   </header> 
-
-  <div class="post-content">
-<p>Prior to using any Debian derivatives, I was a RedHat fan and hence<br>
+  <div class="post-content"><p>Prior to using any Debian derivatives, I was a RedHat fan and hence<br>
 heavily favoured Fedora/CentOS/RHEL over other distributions. Over the<br>
 last few releases Fedora has been a disappointment and I was stuck<br>
 between using Gentoo/Ubuntu. Hell I even gave FreeBSD a shot (sucked<br>
@@ -197,7 +206,7 @@ Step 4: Move them to your boot directory<br>
   #sudo mv linux_ubuntu initrd_ubuntu.gz /boot/<br>
 Step 5: Edit /boot/grub/menu.lst using your favourite editor and add<br>
 the lines to point to these</p>
-<pre><code>  title		Ubuntu 9.04 installer   
+<pre tabindex="0"><code>  title		Ubuntu 9.04 installer   
   root (hd0,0)   
   kernel		/linux_ubuntu   
   initrd /initrd_ubuntu.gz
@@ -226,34 +235,39 @@ Time taken to install/configure the desktop package: About 15 minutes</p>
 somewhere between 512 and 768 and peaks at 1Mbps sometimes.</p>
 <p> Hope this helps someone.</p>
 
-</div>
+
+  </div>
+
   <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
   </footer>
 </article>
-    </main><footer class="footer">
-    <span>&copy; 2021 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
-    <span>&middot;</span>
-    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
-    <span>&middot;</span>
-    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
-
-
-<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" onload="hljs.initHighlightingOnLoad();"></script>
 <script>
-    window.onload = function () {
-        if (localStorage.getItem("menu-scroll-position")) {
-            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
     }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -272,6 +286,9 @@ somewhere between 512 and 768 and peaks at 1Mbps sometimes.</p>
             }
         });
     });
+
+</script>
+<script>
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -282,10 +299,6 @@ somewhere between 512 and 768 and peaks at 1Mbps sometimes.</p>
             mybutton.style.opacity = "0";
         }
     };
-
-    function menu_on_scroll() {
-        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
-    }
 
 </script>
 <script>
@@ -300,7 +313,6 @@ somewhere between 512 and 768 and peaks at 1Mbps sometimes.</p>
     })
 
 </script>
-
 </body>
 
 </html>

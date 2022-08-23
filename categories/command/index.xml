@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>command on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/command/</link>
@@ -16,7 +16,7 @@
       <description>Why bother? I can&amp;rsquo;t think of a reason other than because. My muttrc
 (single gmail account) copied from various muttrcs around the
 internet.
-set imap_user = &amp;quot;EMAILID@gmail.com&amp;quot; set imap_pass = &amp;quot;Password&amp;quot; set smtp_url = &amp;quot;smtp://EMAILID@smtp.gmail.com:587/&amp;quot; set smtp_pass = &amp;quot;&amp;quot; set from = &amp;quot;EMAILID&amp;quot; set realname = &amp;quot;Ritesh Sinha&amp;quot; set folder = &amp;quot;imaps://imap.gmail.com:993&amp;quot; set spoolfile = &amp;quot;+INBOX&amp;quot; set postponed=&amp;quot;+[Gmail]/Drafts&amp;quot; set record = &amp;quot;+[Gmail]/Sent Mail&amp;quot; set header_cache=~/.mutt/cache/headers set message_cachedir=~/.mutt/cache/bodies set certificate_file=~/.mutt/certificates set move = no set include set sort = &#39;threads&#39; set sort_aux = &#39;reverse-last-date-received&#39; set auto_tag = yes set imap_check_subscribed set hostname = gmail.</description>
+set imap_user = &amp;#34;EMAILID@gmail.com&amp;#34; set imap_pass = &amp;#34;Password&amp;#34; set smtp_url = &amp;#34;smtp://EMAILID@smtp.gmail.com:587/&amp;#34; set smtp_pass = &amp;#34;&amp;#34; set from = &amp;#34;EMAILID&amp;#34; set realname = &amp;#34;Ritesh Sinha&amp;#34; set folder = &amp;#34;imaps://imap.gmail.com:993&amp;#34; set spoolfile = &amp;#34;+INBOX&amp;#34; set postponed=&amp;#34;+[Gmail]/Drafts&amp;#34; set record = &amp;#34;+[Gmail]/Sent Mail&amp;#34; set header_cache=~/.mutt/cache/headers set message_cachedir=~/.mutt/cache/bodies set certificate_file=~/.mutt/certificates set move = no set include set sort = &amp;#39;threads&amp;#39; set sort_aux = &amp;#39;reverse-last-date-received&amp;#39; set auto_tag = yes set imap_check_subscribed set hostname = gmail.</description>
     </item>
     
   </channel>

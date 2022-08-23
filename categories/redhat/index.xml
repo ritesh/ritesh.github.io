@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>redhat on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/redhat/</link>
@@ -13,7 +13,8 @@
       <pubDate>Mon, 22 Dec 2008 13:47:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</guid>
-      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination. I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
+      <description>A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.
+I think it&amp;rsquo;s high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too.
 9-year-old TN girl cracks Microsoft exam
 On the other hand, the youngest person to crack the RHCE is 12 years old, which makes you think.</description>
     </item>

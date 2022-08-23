@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>appsec on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/appsec/</link>
@@ -13,8 +13,8 @@
       <pubDate>Tue, 15 Dec 2009 13:29:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/posts/ec-council-ecsa/</guid>
-      <description>How is ECSA different from CEH?    CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
- via eccouncil.org
+      <description>How is ECSA different from CEH? CEH exposes the learner to various hacking tools and techniques, while ECSA exposes the learner to the analysis and interpretation of results obtained from using those tools and techniques.
+via eccouncil.org
 Wait a minute. So the CEH course gives you access to the tools but you need an ECSA to understand what the results of those tools are? HEAD EXPLODES</description>
     </item>
     
@@ -31,7 +31,7 @@ Greetings from
 This mail is to SCHEDULE your interview for the position of “Application Security Architect”.
 More details given below
 The candidate MUST HAVE THE FOLLOWING SKILLS
- Developer Cross site scripting – different classes Web Application - Get Post  GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
+Developer Cross site scripting – different classes Web Application - Get Post GET POST? What happened to HEAD, OPTIONS PROPFIND etc? Just two HTTP verbs are good?</description>
     </item>
     
   </channel>

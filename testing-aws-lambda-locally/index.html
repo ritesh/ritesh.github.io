@@ -6,14 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Testing an AWS Lambda function locally | Ritesh&#39;s Ramblings</title>
-
-<meta name="keywords" content="" />
+<meta name="keywords" content="">
 <meta name="description" content="tl;dr Testing a SAM lambda locally">
 <meta name="author" content="rsinha">
-<link rel="canonical" href="https://blog.rsinha.org/testing-aws-lambda-locally/" />
-<link href="/assets/css/stylesheet.min.9590a9fb00545a5229e34934427b986c9bcf53ba3336ea4493eb2c246dffe91b.css"  rel="preload stylesheet"
-    as="style">
-
+<link rel="canonical" href="https://blog.rsinha.org/testing-aws-lambda-locally/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blog.rsinha.org/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
@@ -21,19 +20,46 @@
 <link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.80.0" />
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-
-<meta property="og:title" content="Testing an AWS Lambda function locally" />
+    </style>
+</noscript><meta property="og:title" content="Testing an AWS Lambda function locally" />
 <meta property="og:description" content="tl;dr Testing a SAM lambda locally" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.rsinha.org/testing-aws-lambda-locally/" />
-<meta property="article:published_time" content="2019-02-12T14:50:01+00:00" />
-<meta property="article:modified_time" content="2019-02-12T14:50:01+00:00" />
+<meta property="og:url" content="https://blog.rsinha.org/testing-aws-lambda-locally/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-02-12T14:50:01&#43;00:00" />
+<meta property="article:modified_time" content="2019-02-12T14:50:01&#43;00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Testing an AWS Lambda function locally"/>
 <meta name="twitter:description" content="tl;dr Testing a SAM lambda locally"/>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://blog.rsinha.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Testing an AWS Lambda function locally",
+      "item": "https://blog.rsinha.org/testing-aws-lambda-locally/"
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,7 +70,7 @@
   "keywords": [
     
   ],
-  "articleBody": "Never had to test AWS Lambda functions locally (test in production YOLO). I’ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it’s probably best to test them locally to discover any regressions early on.\nWhile walking through the docs with a colleague, we found that the nifty way to test a lambda function created using SAM is to run:\n$ sam local start-lambda\nIn the directory where you have your SAM template.yml. This is LambdaInvoking the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.\nimport boto3 import botocore # Set \"running_locally\" flag if you are running the integration test locally running_locally = True if running_locally: # Create Lambda SDK client to connect to appropriate Lambda endpoint lambda_client = boto3.client('lambda', region_name=\"eu-west-1\", endpoint_url=\"http://127.0.0.1:3001\", use_ssl=False, verify=False, config=botocore.client.Config( signature_version=botocore.UNSIGNED, read_timeout=30, retries={'max_attempts': 0}, ) ) else: lambda_client = boto3.client('lambda') # Invoke your Lambda function as you normally usually do. The function will run # locally if it is configured to do so response = lambda_client.invoke(FunctionName=\"HelloFunction\") # Verify the response assert response == \"Hello World\"  This is from the docs, but it took me a while to figure out that FunctionName above needs to refer to the logical name of your Lambda function in the CloudFormation template.\nThe first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust read_timeoutaccordingly).\nIf you’re a security nerd, the bits above that say use_ssl=False and verify=False should give you pause. In this instance, you’re connecting to a service locally and not reaching out to the internet, so you’re OK.\n",
+  "articleBody": "Never had to test AWS Lambda functions locally (test in production YOLO). I’ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it’s probably best to test them locally to discover any regressions early on.\nWhile walking through the docs with a colleague, we found that the nifty way to test a lambda function created using SAM is to run:\n$ sam local start-lambda\nIn the directory where you have your SAM template.yml. This is LambdaInvoking the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.\nimport boto3 import botocore # Set \"running_locally\" flag if you are running the integration test locally running_locally = True if running_locally: # Create Lambda SDK client to connect to appropriate Lambda endpoint lambda_client = boto3.client('lambda', region_name=\"eu-west-1\", endpoint_url=\"http://127.0.0.1:3001\", use_ssl=False, verify=False, config=botocore.client.Config( signature_version=botocore.UNSIGNED, read_timeout=30, retries={'max_attempts': 0}, ) ) else: lambda_client = boto3.client('lambda') # Invoke your Lambda function as you normally usually do. The function will run # locally if it is configured to do so response = lambda_client.invoke(FunctionName=\"HelloFunction\") # Verify the response assert response == \"Hello World\" This is from the docs, but it took me a while to figure out that FunctionName above needs to refer to the logical name of your Lambda function in the CloudFormation template.\nThe first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust read_timeoutaccordingly).\nIf you’re a security nerd, the bits above that say use_ssl=False and verify=False should give you pause. In this instance, you’re connecting to a service locally and not reaching out to the internet, so you’re OK.\n",
   "wordCount" : "295",
   "inLanguage": "en",
   "datePublished": "2019-02-12T14:50:01Z",
@@ -67,9 +93,6 @@
   }
 }
 </script>
-
-
-
 </head>
 
 <body class=" dark" id="top">
@@ -79,27 +102,19 @@
     }
 
 </script>
-<noscript>
-    <style type="text/css">
-        .theme-toggle,
-        .top-link {
-            display: none;
-        }
 
-    </style>
-</noscript>
 <header class="header">
     <nav class="nav">
         <div class="logo">
             <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
-            <span class="logo-switches">
-                <a id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -112,12 +127,10 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                </a>
-                
-                
-            </span>
+                </button>
+            </div>
         </div>
-        <ul id="menu" onscroll="menu_on_scroll()">
+        <ul id="menu">
             <li>
                 <a href="https://blog.rsinha.org/about/" title="About">
                     <span>About</span>
@@ -127,27 +140,23 @@
                 <a href="https://blog.rsinha.org/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
-            </li></ul>
+            </li>
+        </ul>
     </nav>
 </header>
-
-    <main class="main">
+<main class="main">
 
 <article class="post-single">
   <header class="post-header">
-
+    
     <h1 class="post-title">
       Testing an AWS Lambda function locally
     </h1>
-    <div class="post-meta">
-
-February 12, 2019&nbsp;·&nbsp;rsinha
+    <div class="post-meta"><span title='2019-02-12 14:50:01 +0000 GMT'>February 12, 2019</span>&nbsp;·&nbsp;rsinha
 
 </div>
   </header> 
-
-  <div class="post-content">
-<p>Never had to test AWS Lambda functions locally (test in production YOLO).  I&rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&rsquo;s probably best to test them locally to discover any regressions early on.</p>
+  <div class="post-content"><p>Never had to test AWS Lambda functions locally (test in production YOLO).  I&rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&rsquo;s probably best to test them locally to discover any regressions early on.</p>
 <p>While walking through the docs with a colleague, we found that the nifty way to test a lambda function created <a href="https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html">using SAM</a> is to run:</p>
 <p><code>$ sam local start-lambda</code></p>
 <p>In the directory where you have your SAM <code>template.yml</code>. This is <code>LambdaInvoking</code> the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.</p>
@@ -186,34 +195,39 @@ assert response == &quot;Hello World&quot;
 <p>The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust <code>read_timeout</code>accordingly).</p>
 <p>If you&rsquo;re a security nerd, the bits above that say <code>use_ssl=False</code> and <code>verify=False</code> should give you pause. In this instance, you&rsquo;re connecting to a service locally and not reaching out to the internet, so you&rsquo;re OK.</p>
 
-</div>
+
+  </div>
+
   <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
   </footer>
 </article>
-    </main><footer class="footer">
-    <span>&copy; 2021 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
-    <span>&middot;</span>
-    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
-    <span>&middot;</span>
-    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2022 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
-    <button class="top-link" id="top-link" type="button" accesskey="g">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-            <path d="M12 6H0l6-6z" />
-        </svg>
-    </button>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
 </a>
 
-
-
-<script defer src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" onload="hljs.initHighlightingOnLoad();"></script>
 <script>
-    window.onload = function () {
-        if (localStorage.getItem("menu-scroll-position")) {
-            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
     }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -232,6 +246,9 @@ assert response == &quot;Hello World&quot;
             }
         });
     });
+
+</script>
+<script>
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -242,10 +259,6 @@ assert response == &quot;Hello World&quot;
             mybutton.style.opacity = "0";
         }
     };
-
-    function menu_on_scroll() {
-        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
-    }
 
 </script>
 <script>
@@ -260,7 +273,6 @@ assert response == &quot;Hello World&quot;
     })
 
 </script>
-
 </body>
 
 </html>

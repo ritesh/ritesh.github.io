@@ -1,788 +1,472 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://blog.rsinha.org/categories/</loc>
     <lastmod>2021-01-25T13:55:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/2020-04-12-hello-twenty-twenty/</loc>
     <lastmod>2021-01-25T13:55:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/personal/</loc>
     <lastmod>2021-01-25T13:55:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/</loc>
     <lastmod>2021-01-25T13:55:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/</loc>
     <lastmod>2021-01-25T13:55:49+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/aws/</loc>
     <lastmod>2019-02-12T14:50:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/lambda/</loc>
     <lastmod>2019-02-12T14:50:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/testing-aws-lambda-locally/</loc>
     <lastmod>2019-02-12T14:50:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/til/</loc>
     <lastmod>2019-02-12T14:50:01+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/2017-03-07-header-files-qt/</loc>
     <lastmod>2017-03-07T22:38:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2016/11/09/hello-hugo/</loc>
     <lastmod>2016-11-19T22:17:58+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/yak-shaving/</loc>
     <lastmod>2016-11-19T22:17:58+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/</loc>
     <lastmod>2015-07-10T14:49:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/docker/</loc>
     <lastmod>2015-07-10T14:49:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/docker-compose/</loc>
     <lastmod>2015-07-10T14:49:50+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2015/04/05/inhibiting-sleep-on-xubuntu-14-04/</loc>
     <lastmod>2015-04-05T19:35:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/linux/</loc>
     <lastmod>2015-04-05T19:35:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/xubuntu/</loc>
     <lastmod>2015-04-05T19:35:03+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/bsdiff/</loc>
     <lastmod>2015-01-14T12:19:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/</loc>
     <lastmod>2015-01-14T12:19:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/go/</loc>
     <lastmod>2015-01-14T12:19:54+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2014/11/17/another-day/</loc>
     <lastmod>2014-11-17T22:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2013/11/12/getting-live-usb-sticks-to-boot-consistently/</loc>
     <lastmod>2013-11-12T20:53:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/tags/bike/</loc>
     <lastmod>2013-08-10T18:08:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/bikes/</loc>
     <lastmod>2013-08-10T18:08:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2013/08/10/geared-bikes/</loc>
     <lastmod>2013-08-10T18:08:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/tags/</loc>
     <lastmod>2013-08-10T18:08:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2013/05/21/more-black-white/</loc>
     <lastmod>2013-05-21T22:11:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/photos/</loc>
     <lastmod>2013-05-21T22:11:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2013/05/11/brussels/</loc>
     <lastmod>2013-05-11T23:43:20+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2012/09/30/finally-a-flickr-account/</loc>
     <lastmod>2012-09-30T19:56:48+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2012/09/15/giving-up-on-native-linux/</loc>
     <lastmod>2012-09-15T21:36:28+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/mail/</loc>
     <lastmod>2012-05-06T10:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2012/05/06/no-push-email/</loc>
     <lastmod>2012-05-06T10:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/phone/</loc>
     <lastmod>2012-05-06T10:00:18+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2012/05/05/prevent-accidental-rm/</loc>
     <lastmod>2012-05-05T15:53:46+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2011/12/04/do-batch-things-well/</loc>
     <lastmod>2011-12-04T11:24:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/sh/</loc>
     <lastmod>2011-12-04T11:24:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/android/</loc>
     <lastmod>2011-12-03T11:28:59+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2011/12/03/revisiting-miui/</loc>
     <lastmod>2011-12-03T11:28:59+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2011/11/12/creating-an-animated-gif/</loc>
     <lastmod>2011-11-12T13:32:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/python/</loc>
     <lastmod>2011-11-09T22:41:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2011/11/09/why-i-like-python/</loc>
     <lastmod>2011-11-09T22:41:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/2011/07/24/getting-smartvoip-to-work-on-cm7/</loc>
     <lastmod>2011-07-24T14:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/smartvoip/</loc>
     <lastmod>2011-07-24T14:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/voip/</loc>
     <lastmod>2011-07-24T14:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/audit/</loc>
     <lastmod>2011-07-23T10:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/our-security-auditor-is-an-idiot/</loc>
     <lastmod>2011-07-23T10:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/security/</loc>
     <lastmod>2011-07-23T10:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</loc>
     <lastmod>2011-07-16T12:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/programming/</loc>
     <lastmod>2011-07-16T12:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/ruby/</loc>
     <lastmod>2011-07-16T12:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com/</loc>
     <lastmod>2011-04-05T22:49:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/news/</loc>
     <lastmod>2011-04-05T22:49:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/cdecl/</loc>
     <lastmod>2011-02-24T00:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/job/</loc>
     <lastmod>2010-08-27T09:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/nonsense/</loc>
     <lastmod>2010-08-27T09:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/rubbish-job-opening/</loc>
     <lastmod>2010-08-27T09:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/vmware/</loc>
     <lastmod>2010-08-27T09:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/cli/</loc>
     <lastmod>2010-08-26T18:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/command/</loc>
     <lastmod>2010-08-26T18:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/email/</loc>
     <lastmod>2010-08-26T18:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/mutt/</loc>
     <lastmod>2010-08-26T18:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/using-mutt-with-gmail/</loc>
     <lastmod>2010-08-26T18:14:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/getting-rid-of-annoying-ups-beeps/</loc>
     <lastmod>2010-05-15T06:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/aes/</loc>
     <lastmod>2010-05-13T18:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/encryption/</loc>
     <lastmod>2010-05-13T18:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/example/</loc>
     <lastmod>2010-05-13T18:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/python-aes/</loc>
     <lastmod>2010-05-13T18:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/random-idea-number-eleventeen/</loc>
     <lastmod>2010-04-20T13:48:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/bash/</loc>
     <lastmod>2010-04-09T06:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/shutdown/</loc>
     <lastmod>2010-04-09T06:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/shutdown-on-no-network-connectivity/</loc>
     <lastmod>2010-04-09T06:50:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/excerpt-from-raiding-eternity/</loc>
     <lastmod>2010-03-22T11:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/fixing-the-upgrade-from-backtrack-4-beta-to-final/</loc>
     <lastmod>2010-01-12T12:09:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/arora/</loc>
     <lastmod>2010-01-05T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/arora-project-hosting-on-google-code/</loc>
     <lastmod>2010-01-05T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/browser/</loc>
     <lastmod>2010-01-05T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/cooltool/</loc>
     <lastmod>2010-01-05T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/fast/</loc>
     <lastmod>2010-01-05T11:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/make-it-sir-patrick-stewart-to-be-knighted-trekmovie-com/</loc>
     <lastmod>2009-12-21T09:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/game-theory-the-art-of-acting-rational/</loc>
     <lastmod>2009-12-18T07:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/cave/</loc>
     <lastmod>2009-12-16T09:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/crystal/</loc>
     <lastmod>2009-12-16T09:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/geography/</loc>
     <lastmod>2009-12-16T09:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/gypsum/</loc>
     <lastmod>2009-12-16T09:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/the-iron-ammonite-the-deadliest-place-on-earth-surviving-cueva-de-los-cristales-the-giant-crystal-cave/</loc>
     <lastmod>2009-12-16T09:34:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/appsec/</loc>
     <lastmod>2009-12-15T13:29:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/ceh/</loc>
     <lastmod>2009-12-15T13:29:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/ec-council-ecsa/</loc>
     <lastmod>2009-12-15T13:29:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/funny/</loc>
     <lastmod>2009-12-14T14:42:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/opening-for-application-security-architect/</loc>
     <lastmod>2009-12-14T14:42:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/google/</loc>
     <lastmod>2009-12-11T13:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/run-google-wave-inside-thunderbird-3-google-wave-lifehacker/</loc>
     <lastmod>2009-12-11T13:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/thunderbird/</loc>
     <lastmod>2009-12-11T13:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/wave/</loc>
     <lastmod>2009-12-11T13:22:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/apps/</loc>
     <lastmod>2009-11-29T10:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/my-favorite-s60-apps/</loc>
     <lastmod>2009-11-29T10:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/s60/</loc>
     <lastmod>2009-11-29T10:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/symbian/</loc>
     <lastmod>2009-11-29T10:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/india-to-set-up-automatic-monitoring-of-communications-privacy-good-gear-guide/</loc>
     <lastmod>2009-11-27T09:05:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/frustration/</loc>
     <lastmod>2009-11-10T18:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/karmic/</loc>
     <lastmod>2009-11-10T18:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/not-one-music-player-on-karmic-can-sync-with-a-friggin-ipod/</loc>
     <lastmod>2009-11-10T18:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/ubuntu/</loc>
     <lastmod>2009-11-10T18:03:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/facebook-and-myspace-security-backdoor-wide-open-millions-of-accounts-exploitable/</loc>
     <lastmod>2009-11-05T10:59:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/legal/</loc>
     <lastmod>2009-11-05T05:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/murderer-with-aggression-genes-gets-sentence-cut-life-03-november-2009-new-scientist/</loc>
     <lastmod>2009-11-05T05:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/precedent/</loc>
     <lastmod>2009-11-05T05:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/wtf/</loc>
     <lastmod>2009-11-05T05:53:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/iq/</loc>
     <lastmod>2009-11-05T05:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/science/</loc>
     <lastmod>2009-11-05T05:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/smart/</loc>
     <lastmod>2009-11-05T05:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/clever-fools/</loc>
     <lastmod>2009-11-05T05:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/flowchart/</loc>
     <lastmod>2009-11-04T15:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/hey-jude-flow-chart/</loc>
     <lastmod>2009-11-04T15:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/heyjude/</loc>
     <lastmod>2009-11-04T15:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/song/</loc>
     <lastmod>2009-11-04T15:12:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/nokia/</loc>
     <lastmod>2009-09-02T18:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/nokia-beta-labs-introduces-new-apps-ovi-lifecasting-social-messaging/</loc>
     <lastmod>2009-09-02T18:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/ovi/</loc>
     <lastmod>2009-09-02T18:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/social/</loc>
     <lastmod>2009-09-02T18:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/grub/</loc>
     <lastmod>2009-09-02T18:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/lazy/</loc>
     <lastmod>2009-09-02T18:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/quicklazy-hack-to-install-ubuntu-9-04-using-existing-grub/</loc>
     <lastmod>2009-09-02T18:23:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/backblaze/</loc>
     <lastmod>2009-09-02T17:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/cheap/</loc>
     <lastmod>2009-09-02T17:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/</loc>
     <lastmod>2009-09-02T17:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/storage/</loc>
     <lastmod>2009-09-02T17:40:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/9-year-old-cracks-mcse/</loc>
     <lastmod>2008-12-22T13:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/mcse/</loc>
     <lastmod>2008-12-22T13:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/rant/</loc>
     <lastmod>2008-12-22T13:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/redhat/</loc>
     <lastmod>2008-12-22T13:47:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/fedora-10/</loc>
     <lastmod>2008-11-26T00:31:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/dawg-2/</loc>
     <lastmod>2008-11-19T07:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/corsair/</loc>
     <lastmod>2008-11-07T07:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/corsair-mini-4gb-hdtach-scores-2/</loc>
     <lastmod>2008-11-07T07:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/hdtach/</loc>
     <lastmod>2008-11-07T07:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/mini/</loc>
     <lastmod>2008-11-07T07:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/voyager/</loc>
     <lastmod>2008-11-07T07:06:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/bucket/</loc>
     <lastmod>2008-10-13T19:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/my-desk-at-work-2/</loc>
     <lastmod>2008-10-13T11:02:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/fedora/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/howto/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/install/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/installing-truecrypt-on-fedora-9-howto/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/truecrypt/</loc>
     <lastmod>2008-07-09T11:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/freenas/</loc>
     <lastmod>2008-06-12T01:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/nas/</loc>
     <lastmod>2008-06-12T01:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/nasty/</loc>
     <lastmod>2008-06-12T01:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/openfiler/</loc>
     <lastmod>2008-06-12T01:41:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/clean/</loc>
     <lastmod>2008-06-10T23:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/posts/first-post/</loc>
     <lastmod>2008-06-10T23:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/firstpost/</loc>
     <lastmod>2008-06-10T23:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/categories/wwwdc/</loc>
     <lastmod>2008-06-10T23:38:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.rsinha.org/about/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.rsinha.org/archives/</loc>
   </url>
-  
 </urlset>

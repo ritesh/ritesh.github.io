@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>programming on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/programming/</link>
@@ -14,7 +14,7 @@
       
       <guid>https://blog.rsinha.org/posts/installing-rubygems-in-your-home-folder/</guid>
       <description>No root? No problem! Obtain a copy of rubygems from ruby forge.
-$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;quot;RUBYLIB=$HOME:/same/path/as/above/lib&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;quot;export RUBYLIB&amp;quot; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile This should give you a working install of rubygems. Check out the environment
+$ tar xzvf rubygems-1.4.2 $ cd rubygems-1.4.2 $ ruby setup.rb --prefix=/your/home/folder/local $ echo &amp;#34;RUBYLIB=$HOME:/same/path/as/above/lib&amp;#34; &amp;gt;&amp;gt; ~/.bash_profile $ echo &amp;#34;export RUBYLIB&amp;#34; &amp;gt;&amp;gt; ~/.bash_profile $ source ~/.bash_profile This should give you a working install of rubygems. Check out the environment
 $ gem env Install something
 $ gem install rake </description>
     </item>
