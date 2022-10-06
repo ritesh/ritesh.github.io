@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>yak-shaving on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/categories/yak-shaving/</link>
@@ -13,7 +13,7 @@
       <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
-      <description>My experiences in moving from Jekyll to Hugo</description>
+      <description>Finally got around to moving this blog from Jekyll to Hugo and setting up a Cloudflare account with SSL.</description>
     </item>
     
   </channel>

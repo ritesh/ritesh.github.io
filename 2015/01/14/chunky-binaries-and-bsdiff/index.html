@@ -1,162 +1,169 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Chunky binaries and bsdiff | Ritesh&#39;s Ramblings</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful">
+    <meta name="generator" content="Hugo 0.104.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Chunky binaries and bsdiff | Ritesh&#39;s Ramblings</title>
-<meta name="keywords" content="">
-<meta name="description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful">
-<meta name="author" content="rsinha">
-<link rel="canonical" href="https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://blog.rsinha.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://blog.rsinha.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
-    </style>
-</noscript><meta property="og:title" content="Chunky binaries and bsdiff" />
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Chunky binaries and bsdiff" />
 <meta property="og:description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-01-14T12:19:54&#43;00:00" />
-<meta property="article:modified_time" content="2015-01-14T12:19:54&#43;00:00" />
+<meta property="article:published_time" content="2015-01-14T12:19:54+00:00" />
+<meta property="article:modified_time" content="2015-01-14T12:19:54+00:00" /><meta property="og:site_name" content="Ritesh&#39;s Ramblings" />
 
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="name" content="Chunky binaries and bsdiff">
+<meta itemprop="description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful"><meta itemprop="datePublished" content="2015-01-14T12:19:54+00:00" />
+<meta itemprop="dateModified" content="2015-01-14T12:19:54+00:00" />
+<meta itemprop="wordCount" content="847">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chunky binaries and bsdiff"/>
 <meta name="twitter:description" content="If you&rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful"/>
 
+	
+  </head>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://blog.rsinha.org/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Chunky binaries and bsdiff",
-      "item": "https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Chunky binaries and bsdiff",
-  "name": "Chunky binaries and bsdiff",
-  "description": "If you\u0026rsquo;re trying to deploy a large-ish binary file somewhere, you might find this useful",
-  "keywords": [
+  <body class="ma0 avenir bg-near-white">
+
     
-  ],
-  "articleBody": "I’ve lately taken an interest in golang as it seems to be the language du jour for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go’s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn’t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.\nIf you’re not familiar with go, I highly recommend that you check out A Tour of Go and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:\nCompile your application (go build). You may need to cross-compile if you’re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds. Copy the generated binary over to the server that you want to run it. If you want, you could strip the binary to shave off a few MB. Run it :) Set up a reverse proxy to forward all traffic to your application. You only need to do this once. There is no step 5. Contrast this with my current workflow for deploying Python web applications:\nEnsure Python versions match on dev and prod. This can be a nightmare sometimes, but is avoidable by ensuring that dev and production match as closely as possible (use the same version of Ubuntu/Fedora/Debian). Not an issue if your dev box runs the same flavour of Linux as uat/prod. Ensure that native libraries required by Python packages are available on both dev and production hosts (I’m looking at you libpq). Have a well defined fabfile for deployments, or similar. This is not really a complaint, I think fab deploy sounds hilarious when said out loud and is also a nice way to deploy Python web applications. Restart apache/nginx so that it reloads your WSGI application. I think you can touch a file and mod_wsgi reloads your application, but this has never worked reliably for me. The way to set up debug logs for Python applications deployed with mod_wsgi is not straightforward. I gave up after spending a few hours trying, this shouldn’t be that difficult! I’m stuck with trying to reproduce production issues on my dev box. Executable files are all well and good but copying them over to production hosts multiple times a day, usually over SSH, can be slow if you’re on crappy DSL. If I need to do this for servers sitting inside my company’s network, I have to ship files inside an SSH tunnel wrapped inside a VPN connection. This makes it unbearably slow for files larger than 10MB. Why can’t you just diff a binary file and upload only the changed bits? Surely this is possible?\nThis is when I discovered bsdiff and its friend bspatch. I guess I’m fairly late to this party, since bsdiff has been around since the early 2000s (or earlier?). This pair of amazing utilities was written by the Colin Percival of Tarsnap fame. I understand that lots of binary applications use either bsdiff or an application that uses a similar algorithm to generate patches for binary applications.\nThe clue is in the name; bsdiff lets you diff an old binary with a new binary and generates a patch for you. You take this patch, give it to bspatch along with an old binary and it gets transformed to the new one. If the changes between the binaries are small, the generated patch file (as you’d think) is tiny. On average, the patch file is 2-3% of the full binary for the application I’m working on. Instead of copying over the binary to a production host once I’ve compiled my application, I copy the patch instead:\nmv binary binary.old go build bsdiff binary.old binary binary_patch scp binary_patch /path/to/production/binary # On production host mv binary binary.old bspatch binary.old binary binary_patch # Need to do this because the binary loses +x chmod +x binary # All done Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by go build, but there’s no reason why it shouldn’t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a SIGHUP. Go gives you \"os/signal\" but I haven’t had the chance to play around with it yet.\n",
-  "wordCount" : "847",
-  "inLanguage": "en",
-  "datePublished": "2015-01-14T12:19:54Z",
-  "dateModified": "2015-01-14T12:19:54Z",
-  "author":{
-    "@type": "Person",
-    "name": "rsinha"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://blog.rsinha.org/2015/01/14/chunky-binaries-and-bsdiff/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ritesh's Ramblings",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://blog.rsinha.org/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
+   
+  
 
-<body class=" dark" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    }
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Ritesh&#39;s Ramblings
+      
+    </a>
+    <div class="flex-l items-center">
+      
 
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://blog.rsinha.org/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://blog.rsinha.org/posts/" title="Posts">
-                    <span>Posts</span>
-                </a>
-            </li>
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
         </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title">
-      Chunky binaries and bsdiff
-    </h1>
-    <div class="post-meta"><span title='2015-01-14 12:19:54 +0000 UTC'>January 14, 2015</span>&nbsp;·&nbsp;rsinha
-
+      
+      
+<div class="ananke-socials">
+  
+    <a href="" target="_blank" class="Twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
 </div>
-  </header> 
-  <div class="post-content"><p>I&rsquo;ve lately taken an interest in golang as it seems to be the language <em>du jour</em> for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.</p>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Chunky binaries and bsdiff</h1>
+      
+      <p class="tracked">
+        By <strong>rsinha</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2015-01-14T12:19:54Z">January 14, 2015</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;ve lately taken an interest in golang as it seems to be the language <em>du jour</em> for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.</p>
 <p>If you&rsquo;re not familiar with go, I highly recommend that you check out <a href="https://tour.golang.org/welcome/1">A Tour of Go</a> and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:</p>
 <ol>
 <li>Compile your application (<code>go build</code>). You may need to cross-compile if you&rsquo;re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds.</li>
@@ -188,85 +195,59 @@
 </span></span><span style="display:flex;"><span>chmod +x binary
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># All done</span></span></span></code></pre></div>
 <p>Your production host now has the latest version of your binary. I have not tested it on anything else but binaries generated by <code>go build</code>, but there&rsquo;s no reason why it shouldn&rsquo;t work for binaries generated by other compilers.My next experiment will be to figure out how to reload the application after it receives a <code>SIGHUP</code>. Go gives you <code>&quot;os/signal&quot;</code> but I haven&rsquo;t had the chance to play around with it yet.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
 
 
-  </div>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
+
+</aside>
+
+  </article>
+
     </main>
-    
-<footer class="footer">
-    <span>&copy; 2022 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
+    &copy;  Ritesh's Ramblings 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="" target="_blank" class="Twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
 
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
+  </body>
 </html>

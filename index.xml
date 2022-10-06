@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ritesh&#39;s Ramblings</title>
+    <title>Ritesh&#39;s Ramblings Blog on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/</link>
-    <description>Recent content on Ritesh&#39;s Ramblings</description>
+    <description>Recent content in Ritesh&#39;s Ramblings Blog on Ritesh&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Mon, 25 Jan 2021 13:55:49 +0000</lastBuildDate><atom:link href="https://blog.rsinha.org/index.xml" rel="self" type="application/rss+xml" />
@@ -40,7 +40,7 @@
       <pubDate>Sat, 19 Nov 2016 22:17:58 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/2016/11/09/hello-hugo/</guid>
-      <description>My experiences in moving from Jekyll to Hugo</description>
+      <description>Finally got around to moving this blog from Jekyll to Hugo and setting up a Cloudflare account with SSL.</description>
     </item>
     
     <item>
@@ -614,6 +614,23 @@ Parallelized encryption/decryption on multi-core processors (or multi-processor 
 Was following news of the Apple WWDC quite closely even though I don&amp;rsquo;t own any working apple products. The only apple product I have is a 5 year old broken iPod.</description>
     </item>
     
+    <item>
+      <title>About</title>
+      <link>https://blog.rsinha.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/about/</guid>
+      <description>Man sitting outside an M&amp;amp; S store in Glasgow Hello! Thanks for taking the time to visit my blog, which I&amp;rsquo;m not good at updating. If you want to chat email me at riteshkumarsinha AT gmail dot com. Not so good with twitter these days!</description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://blog.rsinha.org/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.rsinha.org/archives/</guid>
+      <description>archives</description>
+    </item>
     
   </channel>
 </rss>

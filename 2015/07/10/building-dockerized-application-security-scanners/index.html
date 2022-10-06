@@ -1,165 +1,172 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Building Dockerized Application Security Scanners | Ritesh&#39;s Ramblings</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A first attempt at automating web application security scans for dockerized web-applications">
+    <meta name="generator" content="Hugo 0.104.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Building Dockerized Application Security Scanners | Ritesh&#39;s Ramblings</title>
-<meta name="keywords" content="">
-<meta name="description" content="A first attempt at automating web application security scans for dockerized web-applications">
-<meta name="author" content="rsinha">
-<link rel="canonical" href="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.bc1149f4a72aa4858d3a9f71462f75e5884ffe8073ea9d6d5761d5663d651e20.css" integrity="sha256-vBFJ9KcqpIWNOp9xRi915YhP/oBz6p1tV2HVZj1lHiA=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://blog.rsinha.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://blog.rsinha.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://blog.rsinha.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://blog.rsinha.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://blog.rsinha.org/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
-    </style>
-</noscript><meta property="og:title" content="Building Dockerized Application Security Scanners" />
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Building Dockerized Application Security Scanners" />
 <meta property="og:description" content="A first attempt at automating web application security scans for dockerized web-applications" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-07-10T14:49:50&#43;00:00" />
-<meta property="article:modified_time" content="2015-07-10T14:49:50&#43;00:00" />
+<meta property="article:published_time" content="2015-07-10T14:49:50+00:00" />
+<meta property="article:modified_time" content="2015-07-10T14:49:50+00:00" /><meta property="og:site_name" content="Ritesh&#39;s Ramblings" />
 
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="name" content="Building Dockerized Application Security Scanners">
+<meta itemprop="description" content="A first attempt at automating web application security scans for dockerized web-applications"><meta itemprop="datePublished" content="2015-07-10T14:49:50+00:00" />
+<meta itemprop="dateModified" content="2015-07-10T14:49:50+00:00" />
+<meta itemprop="wordCount" content="505">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Building Dockerized Application Security Scanners"/>
 <meta name="twitter:description" content="A first attempt at automating web application security scans for dockerized web-applications"/>
 
+	
+  </head>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://blog.rsinha.org/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Building Dockerized Application Security Scanners",
-      "item": "https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Building Dockerized Application Security Scanners",
-  "name": "Building Dockerized Application Security Scanners",
-  "description": "A first attempt at automating web application security scans for dockerized web-applications",
-  "keywords": [
+  <body class="ma0 avenir bg-near-white">
+
     
-  ],
-  "articleBody": "I read an interesting post by @anshuman_bh on automating ZAP scans for dockerized web applications. At the time, I was exploring docker compose (formerly fig) as a way to “container-ize” a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that docker-compose would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing “glue” code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.\nThe Problem If you haven’t read Anshuman’s post yet, I suggest that you check it out to get an understanding of what he’s trying to accomplish. The goal is to automate scans against a web application that runs in a docker container. This is useful if you’re trying to set-up some sort of CI infrastructure that automatically scans new builds of the web application. We want to ensure that no human interaction is required, and reports generated from scans are saved somewhere on the host machine (outside the containers) to be processed or read.\nThe Setup To accomplish this, I’ll use docker-compose instead of plain docker. To follow along, install docker-compose from here. We’ll use three containers:\nThe application being tested. For this example, I’ll use the famous WebGoat application because, well, goats. The Zed Attack Proxy. You could use any other application scanner that supports automation here. A container that contains custom scripts. We could build on the ZAP container too, but I’ve found that this is more flexible. The idea is to spin up the test application, followed by an instance of ZAP. After these containers are up, we want to connect to the ZAP container and direct it to scan the target and save the results once done.\nDocker-composing All The Things Using docker-compose is easy. All you need is one YAML file to define your containers and how they’re linked. Here’s what it looks like for my setup:\nTo test my setup out, start by cloning this repo. Once you have cloned it, run docker-compose build. This will take a while to download images for the first time. Once this is done, run docker-compose up to bring up all containers listed in docker-compose.yml. After the last container exits, you should have a report from the ZAP scan in reports/.\nSo, what just happened? docker-compose looks at the YAML file and figures out what containers need to be started in what sequence. It starts the “target” container, which contains our test application (WebGoat in this case), followed by the ZAP container. The “tooling” container is started last. The Dockerfile for tooling is defined in tools. It builds on the python 2.7 image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.\nHope this gives you ideas for workflows for automating scans. Send comments/questions/flames to @rsinha.\n",
-  "wordCount" : "505",
-  "inLanguage": "en",
-  "datePublished": "2015-07-10T14:49:50Z",
-  "dateModified": "2015-07-10T14:49:50Z",
-  "author":{
-    "@type": "Person",
-    "name": "rsinha"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://blog.rsinha.org/2015/07/10/building-dockerized-application-security-scanners/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ritesh's Ramblings",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://blog.rsinha.org/favicon.ico"
-    }
-  }
-}
-</script>
-</head>
+   
+  
 
-<body class=" dark" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    }
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Ritesh&#39;s Ramblings
+      
+    </a>
+    <div class="flex-l items-center">
+      
 
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://blog.rsinha.org/" accesskey="h" title="Ritesh&#39;s Ramblings (Alt + H)">Ritesh&#39;s Ramblings</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://blog.rsinha.org/about/" title="About">
-                    <span>About</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://blog.rsinha.org/posts/" title="Posts">
-                    <span>Posts</span>
-                </a>
-            </li>
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
         </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    
-    <h1 class="post-title">
-      Building Dockerized Application Security Scanners
-    </h1>
-    <div class="post-meta"><span title='2015-07-10 14:49:50 +0000 UTC'>July 10, 2015</span>&nbsp;·&nbsp;rsinha
-
+      
+      
+<div class="ananke-socials">
+  
+    <a href="" target="_blank" class="Twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
 </div>
-  </header> 
-  <div class="post-content"><p>I read an <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">interesting post</a> by <a href="https://twitter.com/anshuman_bh">@anshuman_bh</a> on automating ZAP scans for dockerized web applications. At the time, I was exploring <a href="https://docs.docker.com/compose/">docker compose</a> (formerly fig) as a way to &ldquo;container-ize&rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that <code>docker-compose</code> would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &ldquo;glue&rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.</p>
-<h3 id="the-problem">The Problem<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h3>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Building Dockerized Application Security Scanners</h1>
+      
+      <p class="tracked">
+        By <strong>rsinha</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2015-07-10T14:49:50Z">July 10, 2015</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I read an <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">interesting post</a> by <a href="https://twitter.com/anshuman_bh">@anshuman_bh</a> on automating ZAP scans for dockerized web applications. At the time, I was exploring <a href="https://docs.docker.com/compose/">docker compose</a> (formerly fig) as a way to &ldquo;container-ize&rdquo; a simple Python web application (Flask, Postgres, RabbitMQ). It occurred to me that <code>docker-compose</code> would be a good way to accomplish this goal. The advantage of using docker-compose over using docker directly is that you can avoid writing &ldquo;glue&rdquo; code by defining links between containers. The example I discuss below is for ZAP, but you could use it for any other web application scanner that can be run in headless mode.</p>
+<h3 id="the-problem">The Problem</h3>
 <p>If you haven&rsquo;t read Anshuman&rsquo;s post yet, I suggest that you <a href="https://abhartiya.wordpress.com/2015/07/09/automating-zap-running-against-a-web-application-in-docker-containers/">check it out</a> to get an understanding of what he&rsquo;s trying to accomplish. The goal is to automate scans against a web application that runs in a docker container. This is useful if you&rsquo;re trying to set-up some sort of CI infrastructure that automatically scans new builds of the web application. We want to ensure that no human interaction is required, and reports generated from scans are saved somewhere on the host machine (outside the containers) to be processed or read.</p>
-<h3 id="the-setup">The Setup<a hidden class="anchor" aria-hidden="true" href="#the-setup">#</a></h3>
+<h3 id="the-setup">The Setup</h3>
 <p>To accomplish this, I&rsquo;ll use docker-compose instead of plain docker. To follow along, install docker-compose <a href="https://docs.docker.com/compose/#installation-and-set-up">from here</a>. We&rsquo;ll use three containers:</p>
 <ul>
 <li>The application being tested. For this example, I&rsquo;ll use the famous WebGoat application because, well, goats.</li>
@@ -167,91 +174,65 @@
 <li>A container that contains custom scripts. We could build on the ZAP container too, but I&rsquo;ve found that this is more flexible.</li>
 </ul>
 <p>The idea is to spin up the test application, followed by an instance of ZAP. After these containers are up, we want to connect to the ZAP container and direct it to scan the target and save the results once done.</p>
-<h3 id="docker-composing-all-the-things">Docker-composing All The Things<a hidden class="anchor" aria-hidden="true" href="#docker-composing-all-the-things">#</a></h3>
+<h3 id="docker-composing-all-the-things">Docker-composing All The Things</h3>
 <p>Using docker-compose is easy. All you need is one YAML file to define your containers and how they&rsquo;re linked. Here&rsquo;s what it looks like for my setup:</p>
 <!-- raw HTML omitted -->
 <p>To test my setup out, start by <a href="https://github.com/ritesh/dockerscan">cloning this repo</a>. Once you have cloned it, run <code>docker-compose build</code>. This will take a while to download images for the first time. Once this is done, run <code>docker-compose up</code> to bring up all containers listed in <code>docker-compose.yml</code>. After the last container exits, you should have a report from the ZAP scan in <code>reports/</code>.</p>
 <p>So, what just happened? <code>docker-compose</code> looks at the YAML file and figures out what containers need to be started in what sequence. It starts the &ldquo;target&rdquo; container, which contains our test application (WebGoat in this case), followed by the ZAP container. The &ldquo;tooling&rdquo; container is started last. The <code>Dockerfile</code> for tooling is defined in <code>tools</code>. It builds on the <code>python 2.7</code> image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.</p>
 <p>Hope this gives you ideas for workflows for automating scans. Send comments/questions/flames to <a href="https://twitter.com/rsinha">@rsinha</a>.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
 
 
-  </div>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
+
+</aside>
+
+  </article>
+
     </main>
-    
-<footer class="footer">
-    <span>&copy; 2022 <a href="https://blog.rsinha.org/">Ritesh&#39;s Ramblings</a></span>
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
+    &copy;  Ritesh's Ramblings 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="" target="_blank" class="Twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
 
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
+  </body>
 </html>
