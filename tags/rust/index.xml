@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on Ritesh&#39;s Ramblings</title>
+    <link>https://blog.rsinha.org/tags/rust/</link>
+    <description>Recent content in rust on Ritesh&#39;s Ramblings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 06 Oct 2022 16:22:48 +0100</lastBuildDate><atom:link href="https://blog.rsinha.org/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adventures Wasm 1</title>
+      <link>https://blog.rsinha.org/posts/adventures-wasm-1/</link>
+      <pubDate>Thu, 06 Oct 2022 16:22:48 +0100</pubDate>
+      
+      <guid>https://blog.rsinha.org/posts/adventures-wasm-1/</guid>
+      <description>Adventures in WebAssembly Land This is Part 1 of my notes on trying out WASM for a non-trivial task. Stay tuned for more fun.
+I&amp;rsquo;ve been on the hype-train again, and the flavour of the month (year? decade?) is Web Assembly. During breaks between the job that I&amp;rsquo;m paid to do, I like to keep up to date on new things and sharpen my technical skills to keep up with the clever people on my team.</description>
+    </item>
+    
+  </channel>
+</rss>
