@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ritesh&#39;s Ramblings Blog on Ritesh&#39;s Ramblings</title>
+    <title>I write, erase, rewrite, / Erase again, and then / A poppy blooms on Ritesh&#39;s Ramblings</title>
     <link>https://blog.rsinha.org/</link>
-    <description>Recent content in Ritesh&#39;s Ramblings Blog on Ritesh&#39;s Ramblings</description>
+    <description>Recent content in I write, erase, rewrite, / Erase again, and then / A poppy blooms on Ritesh&#39;s Ramblings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 06 Oct 2022 16:22:48 +0100</lastBuildDate><atom:link href="https://blog.rsinha.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Adventures Wasm 1</title>
+      <title>Adventures Wasm: Part One</title>
       <link>https://blog.rsinha.org/posts/adventures-wasm-1/</link>
       <pubDate>Thu, 06 Oct 2022 16:22:48 +0100</pubDate>
       
@@ -630,7 +630,8 @@ Was following news of the Apple WWDC quite closely even though I don&amp;rsquo;t
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.rsinha.org/about/</guid>
-      <description>Man sitting outside an M&amp;amp; S store in Glasgow Hello! Thanks for taking the time to visit my blog, which I&amp;rsquo;m not good at updating. If you want to chat email me at riteshkumarsinha AT gmail dot com. Not so good with twitter these days!</description>
+      <description>Man sitting outside an M&amp;amp; S store in Glasgow Hi! I&amp;rsquo;m Ritesh Sinha. I work with computers and am easily distracted. This blog is a collection of posts from different sites, and you&amp;rsquo;ll find a mix of technical and non-technical content.
+If you want to chat, email me at my first name AT hey DOT com.</description>
     </item>
     
   </channel>

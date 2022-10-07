@@ -20,6 +20,14 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/syntax-monokai.css">
+  
+
     
     
     
@@ -54,7 +62,7 @@
   
 
   <header>
-    <div class="bg-black">
+    <div class="bg-near-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -157,7 +165,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>So a friend wanted to implement some sort of NAS setup on his old, decaying PC. The friend in question has quite a large amount of legitimate <em>ahem</em> data. I recommended that he use Openfiler. I found the <a href="http://www.rpath.org/rbuilder/project/openfiler/">rPath version </a> first and so I decided to check it out. I keep hearing that rPath builds very good task specific Machines, so I decided to give it a spin. rPath linux describes itself as a meta-distribution. God knows what that means, I was too lazy to look it up.</p>
+    <div class="nested-copy-line-height lh-copy athelas bg-near-white f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>So a friend wanted to implement some sort of NAS setup on his old, decaying PC. The friend in question has quite a large amount of legitimate <em>ahem</em> data. I recommended that he use Openfiler. I found the <a href="http://www.rpath.org/rbuilder/project/openfiler/">rPath version </a> first and so I decided to check it out. I keep hearing that rPath builds very good task specific Machines, so I decided to give it a spin. rPath linux describes itself as a meta-distribution. God knows what that means, I was too lazy to look it up.</p>
 <p>Downloaded a copy of the installation CD rather than a pre-built VM since my friend would probably use a physical install. Standard install, resembles the CentOS installation (It even uses Anaconda, so I&rsquo;m guessing that it&rsquo;s a customized RedHat distribution). The CD is about 350 MB or so, after installation it takes up 750 MB of space. Quite a lot for a NAS appliance wouldn&rsquo;t you say? The application throws up a friendly URL that you can access it with. Like an idiot I logged in as root and didn&rsquo;t get much of an administrative interface. Upon RTFM, I realized that the admin account is openfiler with the default password as &lsquo;password&rsquo;. One more reason to always <a href="http://wwwold.openfiler.com/docs/manual/">read the fine manual.</a></p>
 <p>Many, many, many configuration options are available. That is to say this is a serious NAS offering. Inbuilt LDAP, FTP, SSH, CIFS/SMB. The sad part is I was too lazy to try any of them out.</p>
 <p>Then I read about FreeNAS and their <a href="http://www.vmware.com/appliances/directory/168">killer 15MB award winning Virtual Machine </a>. So I start up VMware and give it a go. And my, does it work like a charm. Out of the box. Nothing else required. The argument here would probably be that FreeNAS is quite insecure by default, but what the heck, I know what I&rsquo;m doing and it&rsquo;s my goddamn home network. I will configure security later. The main feature that I care about, SMB, works perfectly. Haven&rsquo;t tested other features, but I&rsquo;m guessing they work too.</p>
@@ -181,7 +189,7 @@
   </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
     &copy;  Ritesh's Ramblings 2022 

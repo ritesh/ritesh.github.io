@@ -20,6 +20,14 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/syntax-monokai.css">
+  
+
     
     
     
@@ -54,7 +62,7 @@
   
 
   <header>
-    <div class="bg-black">
+    <div class="bg-near-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -157,7 +165,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Never had to test AWS Lambda functions locally (test in production YOLO).  I&rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&rsquo;s probably best to test them locally to discover any regressions early on.</p>
+    <div class="nested-copy-line-height lh-copy athelas bg-near-white f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Never had to test AWS Lambda functions locally (test in production YOLO).  I&rsquo;ve always ended up writing toy functions that I test using the console. For functions that are non-trivial and have to process different kinds of input events, it&rsquo;s probably best to test them locally to discover any regressions early on.</p>
 <p>While walking through the docs with a colleague, we found that the nifty way to test a lambda function created <a href="https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html">using SAM</a> is to run:</p>
 <p><code>$ sam local start-lambda</code></p>
 <p>In the directory where you have your SAM <code>template.yml</code>. This is <code>LambdaInvoking</code> the function, as opposed to passing it an event via API Gateway. From the docs, write a quick script like this to then invoke the Lambda.</p>
@@ -214,7 +222,7 @@ assert response == &quot;Hello World&quot;
   </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
     &copy;  Ritesh's Ramblings 2022 

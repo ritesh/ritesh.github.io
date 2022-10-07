@@ -20,6 +20,14 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/syntax-monokai.css">
+  
+
     
     
     
@@ -54,7 +62,7 @@
   
 
   <header>
-    <div class="bg-black">
+    <div class="bg-near-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -157,7 +165,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I had been running this blog using <a href="https://jekyllrb.com/">Jekyll</a> for a while now, but didn&rsquo;t quite understand how it all worked. Jekyll is a great tool, and you don&rsquo;t need a whole lot of configuration to get started. If you&rsquo;re using github to host either personal, project or organisation pages, Jekyll is a no-brainer to get started. However, as I&rsquo;m not much of a Ruby programmer, I didn&rsquo;t quite understand how Jekyll worked and having to <code>gem install ruby</code> felt wrong &ndash; especially since it also installs a whole lot of other dependencies that I don&rsquo;t understand, either. Having to get the &lsquo;right&rsquo; version of ruby for jekyll to run is also pretty annoying. After some digging around, I discovered <a href="http://gethugo.io">hugo</a>, which is a static site generator written in Go. I decided to finally take the plunge and move my Jekyll site to Hugo, in the hope that I could eke out at least one blog post about my experience.</p>
+    <div class="nested-copy-line-height lh-copy athelas bg-near-white f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I had been running this blog using <a href="https://jekyllrb.com/">Jekyll</a> for a while now, but didn&rsquo;t quite understand how it all worked. Jekyll is a great tool, and you don&rsquo;t need a whole lot of configuration to get started. If you&rsquo;re using github to host either personal, project or organisation pages, Jekyll is a no-brainer to get started. However, as I&rsquo;m not much of a Ruby programmer, I didn&rsquo;t quite understand how Jekyll worked and having to <code>gem install ruby</code> felt wrong &ndash; especially since it also installs a whole lot of other dependencies that I don&rsquo;t understand, either. Having to get the &lsquo;right&rsquo; version of ruby for jekyll to run is also pretty annoying. After some digging around, I discovered <a href="http://gethugo.io">hugo</a>, which is a static site generator written in Go. I decided to finally take the plunge and move my Jekyll site to Hugo, in the hope that I could eke out at least one blog post about my experience.</p>
 <h3 id="why-hugo">Why, Hugo?</h3>
 <p>Hugo&rsquo;s written in Go, which means that all you need to get started is a binary of Hugo somewhere in your <code>$PATH</code>. That&rsquo;s it. Everything it needs is baked into this statically compiled binary. Go code is easy to follow and the template code used by Hugo is Go&rsquo;s <code>html/template</code> which is available as part of the standard library. Besides, all the cool kids today use go for both personal and professional projects and I didn&rsquo;t want to miss out.</p>
 <p>Hugo shares much of the same common philosophy as Jekyll and possibly the hundreds of <a href="https://www.staticgen.com/">static site generators</a> available today. You write your blog posts in markdown and they are rendered to HTML. The layout of your content and the look of your blog is decided by <a href="http://themes.gohugo.io/">community created themes</a> that you can either customise or use out of the box.  If you&rsquo;re used to WordPress or similar content management platforms, creating a site like this may seem primitive. Hugo doesn&rsquo;t give you an editor or a point and click interface to add upload and add images, for example. But it&rsquo;s not just for people who are suckers for punishment, it&rsquo;s a great way to maintain your blog entirely from the command line (web based editing is on the roadmap - but I wouldn&rsquo;t hold my breath). If you&rsquo;re the type of person who avoids Finder and uses <code>mv</code> &amp; <code>cp</code> instead, Hugo is probably for you.</p>
@@ -219,7 +227,7 @@ cd ..
   </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
     &copy;  Ritesh's Ramblings 2022 

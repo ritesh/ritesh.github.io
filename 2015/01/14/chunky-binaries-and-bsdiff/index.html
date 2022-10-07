@@ -20,6 +20,14 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/syntax-monokai.css">
+  
+
     
     
     
@@ -54,7 +62,7 @@
   
 
   <header>
-    <div class="bg-black">
+    <div class="bg-near-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -157,7 +165,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;ve lately taken an interest in golang as it seems to be the language <em>du jour</em> for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.</p>
+    <div class="nested-copy-line-height lh-copy athelas bg-near-white f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>I&rsquo;ve lately taken an interest in golang as it seems to be the language <em>du jour</em> for web-services. My goto (hah) framework for writing tiny web applications is usually Flask (Python), which is still great for many things. One of my biggest gripes with Flask, and Python web applications in general, is the approach towards deploying 3rd party dependencies along with your application. Go&rsquo;s approach to package management is a bit odd coming from Python-land, but it has the advantage of ensuring that your application doesn&rsquo;t require 3rd party packages installed at runtime. Oh and static typing and all that is cool, too.</p>
 <p>If you&rsquo;re not familiar with go, I highly recommend that you check out <a href="https://tour.golang.org/welcome/1">A Tour of Go</a> and work your way through some of the examples to get a feel for it. One of the key features of go (and the one feature I care most about) is that your applications are native executable files that have dependencies baked-in and, in the case of web applications, come with an in-built HTTP server, instead of a myriad of scripts, configuration files etc. You can still chose to have configuration files for your application at runtime (e.g. a settings.json file), or set up environment variables as needed. This makes shipping your web application as easy as:</p>
 <ol>
 <li>Compile your application (<code>go build</code>). You may need to cross-compile if you&rsquo;re deploying to a different architecture (e.g. x86-64). Cross-compiling is not as difficult as it sounds.</li>
@@ -208,7 +216,7 @@
   </article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.rsinha.org/" >
     &copy;  Ritesh's Ramblings 2022 
