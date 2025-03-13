@@ -1,5 +1,5 @@
 ---
-author: admin
+author: rsinha
 date: 2011-04-05 22:49:00+00:00
 slug: india-graduates-millions-but-too-few-are-fit-to-hire-via-wsj-com
 title: India Graduates Millions, But Too Few Are Fit to Hire via WSJ.com

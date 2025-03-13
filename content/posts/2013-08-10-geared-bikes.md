@@ -1,5 +1,5 @@
 ---
-author: admin
+author: rsinha
 comments: true
 date: 2013-08-10T18:08:46Z
 categories: [bikes]

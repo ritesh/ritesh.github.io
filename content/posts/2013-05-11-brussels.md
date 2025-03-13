@@ -1,5 +1,5 @@
 ---
-author: admin
+author: rsinha
 categories:
 - photos
 comments: true

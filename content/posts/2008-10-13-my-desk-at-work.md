@@ -4,6 +4,6 @@ slug: my-desk-at-work-2
 title: My desk at work
 wordpress_id: 96
 ---
-![Work desk](/static/deskwork.jpeg)
+![Work desk](/deskwork.jpeg)
   
 Cluttered eh?

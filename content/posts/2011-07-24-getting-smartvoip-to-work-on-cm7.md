@@ -1,6 +1,6 @@
 ---
 date: 2011-07-24 14:55:00+00:00
-author: admin
+author: rsinha
 slug: getting-smartvoip-to-work-on-cm7
 title: Getting SmartVOIP to work on CM7
 wordpress_id: 5
