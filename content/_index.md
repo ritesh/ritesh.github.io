@@ -1,9 +1,5 @@
 ---
-title: "I write, erase, rewrite, /
-Erase again, and then /
-A poppy blooms"
-
-description: "A weird collection of posts written infrequently over many years"
-theme_version: '2.8.2'
+featured_image: '/header.jpeg'
 ---
-Welcome to my blog! This blog is a collection of posts with no particular theme in mind.  
+Welcome to my blog! This is an attempt to consolidate
+half-finished ideas and opinions over many years.  

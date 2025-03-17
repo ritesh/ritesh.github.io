@@ -1,7 +1,7 @@
 baseURL= "https://blog.rsinha.org/"
 languageCode= "en-gb"
 theme = "ananke"
-title= "Ritesh's Ramblings"
+title= "Ritesh is Rambling"
 canonifyurls = false
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
@@ -20,7 +20,7 @@ enableRobotsTXT = true
 
 [languages]
 	[languages.en]
-		title = "Ritesh's Ramblings"
+		title = "Ritesh is Rambling"
 		weight = 1
 		contentDir = "content"
 [author]
