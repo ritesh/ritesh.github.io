@@ -5,9 +5,7 @@ title= "Ritesh's Ramblings"
 canonifyurls = false
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
-Paginate = 10
 enableRobotsTXT = true
-googleAnalytics = "UA-65020746-1"
 
 [markup]
 	[highlight]

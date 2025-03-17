@@ -11,7 +11,6 @@ categories:
 - storage
 ---
 
-<blockquote>  
 
 > 
 > At Backblaze, we provide unlimited storage to our customers for only $5 per month, so we had to figure out how to store hundreds of petabytes of customer data in a reliable, scalable way—and keep our costs low. After looking at several overpriced commercial solutions, we decided to build our own custom Backblaze Storage Pods: 67 terabyte 4U servers for $7,867.
@@ -27,20 +26,13 @@ categories:
 > Below is a video that shows a 3-D model of the Backblaze Storage Pod. Continue reading to learn the exact details of the design.
 > 
 >   
-</blockquote>
-
-  
 
 
 via: [http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap...](http://blog.backblaze.com/2009/09/01/petabytes-on-a-budget-how-to-build-cheap-cloud-storage/)
 
   
 
-
  
-
-  
 
 
 Very interesting setup!
-

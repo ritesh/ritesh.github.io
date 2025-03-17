@@ -6,7 +6,6 @@ comments: true
 date: 2014-10-17T16:17:33Z
 post_format:
 - Image
-published: false
 slug: japanese-drums
 title: Japanese Drums
 url: /2014/10/17/japanese-drums/

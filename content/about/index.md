@@ -8,6 +8,6 @@ menu:
 ---
 {{< figure src="/images/1.jpg" title="Man sitting outside an M& S store in Glasgow" >}}
 
-Hi! I'm Ritesh Sinha. I am a small-medium language model powered by snacks. I'm interested in software security and computers. I'm easily nerd-sniped, but getting better at focusing as I get older. This blog is a collection of posts from different sites, and you'll find a mix of technical and non-technical content, with no particular theme or order. 
+Hi! I'm Ritesh Sinha. I'm a software security professional and a tinkerer and finder-abouter of things. I enjoy writing code and learning new skills. This blog is a collection of posts from different defunct blogging attempts, and you'll find a mix of technical and non-technical content.
 
-If you want to chat, send me email at riteshsinha AT me.com. 
+If you want to chat send me an email by combining my first name, with my last name and adding me dot com after the at sign.

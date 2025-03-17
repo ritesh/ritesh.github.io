@@ -11,7 +11,7 @@ categories:
 - redhat
 ---
 
-> A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.</blockquote>
+> A fourth standard girl from rural Tamil Nadu has become the youngest to qualify the Microsoft certified professional examination.
 
 I think it's high time they changed the course material for MCSE. A quick google search will show that the youngest was 10 years old (A Pakistani girl) and many more 10-15 year olds had probably had a go at it too. 
 

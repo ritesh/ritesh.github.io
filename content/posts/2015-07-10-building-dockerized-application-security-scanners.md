@@ -24,10 +24,9 @@ To accomplish this, I'll use docker-compose instead of plain docker. To follow a
 ### Docker-composing All The Things
 
  Using docker-compose is easy. All you need is one YAML file to define your containers and how they're linked. Here's what it looks like for my setup:
-<script src="https://gist.github.com/ritesh/2fcd9fd32995ffeb30f1.js"></script>
+ 
+ {{< gist ritesh 2fcd9fd32995ffeb30f1 >}}
 
 To test my setup out, start by [cloning this repo](https://github.com/ritesh/dockerscan). Once you have cloned it, run `docker-compose build`. This will take a while to download images for the first time. Once this is done, run `docker-compose up` to bring up all containers listed in `docker-compose.yml`. After the last container exits, you should have a report from the ZAP scan in `reports/`.
 
 So, what just happened? `docker-compose` looks at the YAML file and figures out what containers need to be started in what sequence. It starts the "target" container, which contains our test application (WebGoat in this case), followed by the ZAP container. The "tooling" container is started last. The `Dockerfile` for tooling is defined in `tools`. It builds on the `python 2.7` image and contains a script to run the ZAP scan. You could add more tools/scripts here that you might want to run against the web application.
-
-Hope this gives you ideas for workflows for automating scans. Send comments/questions/flames to [@rsinha](https://twitter.com/rsinha). 

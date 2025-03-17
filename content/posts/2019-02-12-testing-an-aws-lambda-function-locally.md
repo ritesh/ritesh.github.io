@@ -48,6 +48,6 @@ In the directory where you have your SAM `template.yml`. This is `LambdaInvoking
 
 This is from the docs, but it took me a while to figure out that `FunctionName` above needs to refer to the _logical_ name of your Lambda function in the CloudFormation template.
 
-The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust `read_timeout`accordingly).
+The first run will be slow as SAM will fetch the container for your function runtime, subsequent runs should be quicker (adjust `read_timeout` accordingly).
 
 If you're a security nerd, the bits above that say `use_ssl=False` and `verify=False` should give you pause. In this instance, you're connecting to a service locally and not reaching out to the internet, so you're OK.

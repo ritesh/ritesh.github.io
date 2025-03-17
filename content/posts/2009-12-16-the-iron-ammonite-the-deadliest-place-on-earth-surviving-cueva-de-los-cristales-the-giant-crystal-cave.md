@@ -15,16 +15,8 @@ categories:
   
      
 
-<blockquote>It's 50oC and has a humidity of 100%, less than a hundred people have been inside and it's so deadly that even with respirators and suits of ice you can only survive for 20 minutes before your body starts to fail. It’s the nearest thing to visiting another planet – it’s going deep inside our own.</blockquote>
-
-  
-  
-
+>It's 50oC and has a humidity of 100%, less than a hundred people have been inside and it's so deadly that even with respirators and suits of ice you can only survive for 20 minutes before your body starts to fail. It’s the nearest thing to visiting another planet – it’s going deep inside our own.
 
 via [ironammonite.com](http://www.ironammonite.com/2009/12/surviving-cueva-de-los-cristales-giant.html)
 
-  
-   
-
 Brilliant account of a visit to the Giant Crystal Cave.
-

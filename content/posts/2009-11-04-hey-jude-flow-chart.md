@@ -40,14 +40,11 @@ categories:
 
 > 
 >   
-</blockquote>
 
   
 
 
 via [feeds.laughingsquid.com](http://feeds.laughingsquid.com/~r/laughingsquid/~3/5rHh5OM-SGk/)
-
-
 
 So useful!
 
