@@ -20,7 +20,7 @@ enableRobotsTXT = true
 
 [languages]
 	[languages.en]
-		title = "Ritesh is Rambling"
+		title = "rsinha's blog"
 		weight = 1
 		contentDir = "content"
 [author]
