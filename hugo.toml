@@ -22,7 +22,8 @@ listdateFormat = "2 Jan 2006"
 # Collection to display on home
 homeCollectionTitle = 'Posts'
 homeCollection = 'posts'
-
+showFooter = true
+footerContent = "Powered by relentless yak-shaving and [tomfran/typo](https://tomfran.github.io/typo-wiki/)"
 
 # Main menu pages
 [[params.menu]]
@@ -34,8 +35,8 @@ name = "posts"
 url = "/posts"
 
 [[params.menu]]
-name = "about"
-url = "/about"
+name = "trivial pursuits"
+url = "/trivial-pursuits"
 
 # Syntax highlight on code blocks
 [markup]
