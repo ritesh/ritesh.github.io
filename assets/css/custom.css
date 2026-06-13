@@ -1,0 +1,107 @@
+/* ------------------------------------------------------------------ *
+ * Project overrides for the typo theme.
+ * Loaded after main.css, so :root variable overrides here win.
+ * Two concerns:
+ *   1. Larger, more legible typography.
+ *   2. Earthy (gruvbox-derived) syntax highlighting that works in
+ *      both light and dark mode.
+ * ------------------------------------------------------------------ */
+
+/* 1. Typography -------------------------------------------------------- */
+
+:root {
+    /* A touch wider for a comfortable ~70-character measure */
+    --main-width: 820px;
+
+    /* Bigger body copy and roomier line spacing for legibility */
+    --p-font-size: 1.06em;
+    --p-line-height: 1.78em;
+
+    /* Stronger heading hierarchy */
+    --h1-font-size: 2.4em;
+    --h2-font-size: 1.9em;
+    --hx-font-size: 1.4em;
+}
+
+body {
+    /* Base bumped from the theme's 18px for larger, easier reading */
+    font-size: 20px;
+    line-height: 1.78;
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Slightly larger, airier code for clarity */
+pre code {
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* 2. Earthy syntax highlighting (class-based / noClasses = false) ------ *
+ *
+ * Colours are drawn from the gruvbox palette — the canonical earthy
+ * scheme — mapped onto an earthy-green spread: olive/forest greens for
+ * strings, amber/yellow for types and classes, clay-orange for keywords,
+ * teal for functions, plum for numbers, warm grey for comments.
+ *
+ * The code surface itself is left to the theme's --code-background, so
+ * highlighting stays cohesive with the earthy palette in both modes.
+ */
+
+.chroma {
+    background: transparent;
+}
+
+/* ---- Light mode (gruvbox light) ---- */
+.chroma .c, .chroma .ch, .chroma .cm, .chroma .c1,
+.chroma .cs, .chroma .cp, .chroma .cpf { color: #7c6f64; font-style: italic; } /* comments  */
+.chroma .k, .chroma .kc, .chroma .kd, .chroma .kn,
+.chroma .kp, .chroma .kr                  { color: #af3a03; }                  /* keywords  */
+.chroma .kt                               { color: #b57614; }                  /* k. types  */
+.chroma .o, .chroma .ow                   { color: #af3a03; }                  /* operators */
+.chroma .nb, .chroma .bp                  { color: #427b58; }                  /* builtins  */
+.chroma .nf, .chroma .fm                  { color: #427b58; }                  /* functions */
+.chroma .nc, .chroma .nn, .chroma .ne     { color: #b57614; }                  /* classes   */
+.chroma .no, .chroma .na, .chroma .nd,
+.chroma .nl, .chroma .py                  { color: #076678; }                  /* names     */
+.chroma .nt                               { color: #af3a03; }                  /* tags      */
+.chroma .s, .chroma .sa, .chroma .sb, .chroma .sc,
+.chroma .dl, .chroma .sd, .chroma .s2, .chroma .se,
+.chroma .sh, .chroma .si, .chroma .sx, .chroma .sr,
+.chroma .s1, .chroma .ss                  { color: #79740e; }                  /* strings   */
+.chroma .m, .chroma .mb, .chroma .mf, .chroma .mh,
+.chroma .mi, .chroma .il, .chroma .mo     { color: #8f3f71; }                  /* numbers   */
+.chroma .ge { font-style: italic; }
+.chroma .gs { font-weight: bold; }
+.chroma .gh, .chroma .gu { color: #79740e; font-weight: bold; }
+.chroma .gd { color: #9d0006; }
+.chroma .gi { color: #79740e; }
+.chroma .err { color: #9d0006; }
+
+/* ---- Dark mode (gruvbox dark) ---- */
+.dark .chroma .c, .dark .chroma .ch, .dark .chroma .cm, .dark .chroma .c1,
+.dark .chroma .cs, .dark .chroma .cp, .dark .chroma .cpf { color: #928374; font-style: italic; }
+.dark .chroma .k, .dark .chroma .kc, .dark .chroma .kd, .dark .chroma .kn,
+.dark .chroma .kp, .dark .chroma .kr                  { color: #fe8019; }
+.dark .chroma .kt                                     { color: #fabd2f; }
+.dark .chroma .o, .dark .chroma .ow                   { color: #fe8019; }
+.dark .chroma .nb, .dark .chroma .bp                  { color: #8ec07c; }
+.dark .chroma .nf, .dark .chroma .fm                  { color: #8ec07c; }
+.dark .chroma .nc, .dark .chroma .nn, .dark .chroma .ne { color: #fabd2f; }
+.dark .chroma .no, .dark .chroma .na, .dark .chroma .nd,
+.dark .chroma .nl, .dark .chroma .py                  { color: #83a598; }
+.dark .chroma .nt                                     { color: #fe8019; }
+.dark .chroma .s, .dark .chroma .sa, .dark .chroma .sb, .dark .chroma .sc,
+.dark .chroma .dl, .dark .chroma .sd, .dark .chroma .s2, .dark .chroma .se,
+.dark .chroma .sh, .dark .chroma .si, .dark .chroma .sx, .dark .chroma .sr,
+.dark .chroma .s1, .dark .chroma .ss                  { color: #b8bb26; }
+.dark .chroma .m, .dark .chroma .mb, .dark .chroma .mf, .dark .chroma .mh,
+.dark .chroma .mi, .dark .chroma .il, .dark .chroma .mo { color: #d3869b; }
+.dark .chroma .gh, .dark .chroma .gu { color: #b8bb26; }
+.dark .chroma .gd { color: #fb4934; }
+.dark .chroma .gi { color: #b8bb26; }
+.dark .chroma .err { color: #fb4934; }
