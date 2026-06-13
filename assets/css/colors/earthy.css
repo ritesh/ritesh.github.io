@@ -1,0 +1,42 @@
+/*
+ * "earthy" — a green, earthy colour palette for the typo theme.
+ *
+ * Colour-theory notes
+ * -------------------
+ * The palette is built around a single dominant hue family — forest / moss /
+ * olive greens (roughly hue 90-130) — and paired with *analogous* warm
+ * neutrals (parchment, sand, clay; hue 45-60) for the page and code surfaces.
+ * Greens sit opposite warm earth tones on the warm/cool axis, so the cream
+ * backgrounds read as a gentle near-complement to the green ink: enough
+ * contrast to be comfortable, never vibrant. Every hue is kept at low
+ * saturation so the whole thing feels natural and grounded rather than digital.
+ *
+ * Text/background pairings are tuned to clear WCAG AA contrast in both modes.
+ */
+
+:root {
+    /* Light: deep pine ink on warm parchment */
+    --content-primary: rgb(47, 58, 44);     /* #2f3a2c forest charcoal-green  */
+    --content-secondary: rgb(95, 107, 78);  /* #5f6b4e muted moss / olive      */
+    --background: rgb(243, 239, 227);        /* #f3efe3 warm parchment / sand   */
+    --code-background: rgb(233, 229, 212);   /* #e9e5d4 soft sage-cream         */
+    --code-border: rgb(200, 194, 166);       /* #c8c2a6 muted olive-tan         */
+
+    /* Legacy aliases used by reset.css */
+    --primary: var(--content-primary);
+    --secondary: var(--content-secondary);
+    --theme: var(--background);
+}
+
+.dark {
+    /* Dark: warm parchment ink on deep forest */
+    --content-primary: rgb(231, 226, 207);   /* #e7e2cf warm parchment / sand  */
+    --content-secondary: rgb(154, 166, 127);  /* #9aa67f sage                   */
+    --background: rgb(27, 32, 26);             /* #1b201a deep forest-black      */
+    --code-background: rgb(35, 42, 32);        /* #232a20 lifted forest          */
+    --code-border: rgb(60, 70, 52);            /* #3c4634 moss                   */
+
+    --primary: var(--content-primary);
+    --secondary: var(--content-secondary);
+    --theme: var(--background);
+}

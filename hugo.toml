@@ -14,7 +14,7 @@ tag = 'tags'
 description = "Blog blog"
 paginationSize = 25
 theme = 'auto'
-colorPalette = 'catpuccin'
+colorPalette = 'earthy'
 hideHeader = 'true'
 # The path to your favicon
 favicon = "images/favicon.png"
@@ -38,10 +38,15 @@ url = "/posts"
 name = "trivial pursuits"
 url = "/trivial-pursuits"
 
-# Syntax highlight on code blocks
+# Syntax highlight on code blocks.
+# noClasses = false makes Chroma emit CSS classes (.chroma .k, ...) instead of
+# inline colours, so the earthy light/dark highlighting in custom.css applies.
 [markup]
 [markup.highlight]
-style = 'algol'
+noClasses = false
+guessSyntax = true
+lineNos = false
+tabWidth = 4
 
 
 [[params.social]]
