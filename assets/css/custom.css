@@ -41,6 +41,72 @@ pre code {
     line-height: 1.6;
 }
 
+/* Header nav links: serif, not monospace, to match the wider theme.
+ * Small uppercase, letter-spaced, in muted moss-green; the active page
+ * stands out in the primary ink. Underline appears only on hover. */
+.header-menu p {
+    font-family: var(--font-body);
+    font-size: 0.78em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-right: 1.25rem;
+}
+
+.header-menu a {
+    color: var(--content-secondary);
+    text-decoration: none;
+}
+
+.header-menu a:hover {
+    color: var(--content-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.header-menu p.bold a {
+    color: var(--content-primary);
+}
+
+/* Breadcrumbs are the same nav on inner pages (header is hidden there),
+ * and the back-to-top link is the same chrome — keep them serif too so
+ * nothing reverts to the code monospace. */
+.breadcrumbs,
+.back-to-top {
+    font-family: var(--font-body);
+    font-size: 0.78em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--content-secondary);
+}
+
+.breadcrumbs a,
+.back-to-top a {
+    color: var(--content-secondary);
+}
+
+.breadcrumbs a:hover,
+.back-to-top a:hover {
+    color: var(--content-primary);
+}
+
+.breadcrumbs-separator {
+    color: var(--content-secondary);
+    opacity: 0.6;
+}
+
+/* Post-list dates: serif with tabular, lining figures so the left-hand
+ * date column still aligns despite the proportional serif face. */
+.line-date {
+    font-family: var(--font-body);
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+    font-size: 0.82em;
+    letter-spacing: 0.02em;
+    color: var(--content-secondary);
+    min-width: 130px;
+    max-width: 130px;
+}
+
 /* 2. Earthy syntax highlighting (class-based / noClasses = false) ------ *
  *
  * Colours are drawn from the gruvbox palette — the canonical earthy
