@@ -4,6 +4,7 @@ date: 2025-01-31 05:30:00+00:00
 
 slug: 2024-01-31-flappy-tburd
 title: Checking out Deepseek R1
+description: "Vibe-coding a Flappy Bird clone in Rust and Bevy using DeepSeek R1 — what the model got right, where it broke on outdated crate APIs, and my take on its chain-of-thought reasoning."
 categories:
     - software
     - games

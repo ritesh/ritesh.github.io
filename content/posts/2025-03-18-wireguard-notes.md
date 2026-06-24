@@ -2,6 +2,7 @@
 date: 2025-03-18 21:06:24+0000
 slug: 2025-03-18-wg-notes
 title: WireGuard notes
+description: "Practical notes on WireGuard, the modern VPN: how its architecture keeps the attack surface small, why it ships by default on Linux, and tips from setting it up."
 categories:
     - software
     - networks

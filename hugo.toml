@@ -5,13 +5,24 @@ theme = "typo"
 title='Ritesh is Rambling'
 copyright = "Ritesh Sinha"
 
+# Generate robots.txt (uses layouts/robots.txt) so crawlers find the sitemap.
+enableRobotsTXT = true
 
 [taxonomies]
 tag = 'tags'
 
+# Sitemap defaults for the auto-generated sitemap.xml.
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 [params]
-  # The description of your website
-description = "Blog blog"
+  # Author, used for SEO metadata and structured data.
+author = "Ritesh Sinha"
+  # The description of your website, used for the homepage meta description,
+  # Open Graph tags, and as a fallback for pages without their own description.
+description = "Ritesh Sinha's blog on software security, programming, Linux, and assorted tinkering — a mix of technical notes and personal posts."
 paginationSize = 25
 theme = 'auto'
 colorPalette = 'earthy'
@@ -55,4 +66,4 @@ url = "https://github.com/ritesh"
 
 [[params.social]]
 name = "linkedin"
-url = "mailto:r@example.org"
+url = "https://uk.linkedin.com/in/riteshks"

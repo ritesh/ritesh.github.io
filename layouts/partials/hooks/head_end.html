@@ -1,0 +1,52 @@
+{{/* Project SEO additions injected into <head> via the typo theme's        */}}
+{{/* head_end hook (see partials/functions/get_hook.html).                   */}}
+
+{{/* Resolve a description using the same fallback chain as head.html. */}}
+{{- $description := "" -}}
+{{- if .IsHome -}}
+    {{- $description = site.Params.Description -}}
+{{- else -}}
+    {{- $description = or .Params.Description .Description .Summary site.Params.Description -}}
+{{- end -}}
+{{- $description = $description | plainify | htmlUnescape | chomp -}}
+
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
+
+{{/* Twitter / X card. twitter:image is omitted on purpose — X falls back to
+     the og:image emitted by opengraph.html. */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+{{- with $description }}
+<meta name="twitter:description" content="{{ . }}">
+{{- end }}
+
+{{/* JSON-LD structured data for richer search results. */}}
+{{- $author := or site.Params.author site.Title -}}
+{{- if .IsPage -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "BlogPosting"
+      "headline" .Title
+      "url" .Permalink
+      "mainEntityOfPage" .Permalink
+      "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
+      "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+      "author" (dict "@type" "Person" "name" $author)
+      "publisher" (dict "@type" "Person" "name" $author)
+  -}}
+  {{- with $description }}{{ $schema = merge $schema (dict "description" .) }}{{ end -}}
+  {{- $tags := slice -}}
+  {{- range .GetTerms "tags" }}{{ $tags = $tags | append .Page.Title }}{{ end -}}
+  {{- with $tags }}{{ $schema = merge $schema (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  <script type="application/ld+json">{{ $schema | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- else -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "WebSite"
+      "name" site.Title
+      "url" site.BaseURL
+      "author" (dict "@type" "Person" "name" $author)
+  -}}
+  {{- with $description }}{{ $schema = merge $schema (dict "description" .) }}{{ end -}}
+  <script type="application/ld+json">{{ $schema | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end -}}

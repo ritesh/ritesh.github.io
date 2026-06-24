@@ -2,6 +2,7 @@
 date: 2010-05-13 18:59:00+00:00
 slug: python-aes
 title: Python AES
+description: "A short example of doing AES encryption in Python with the PyCrypto toolkit."
 wordpress_id: 24
 categories:
 - aes
