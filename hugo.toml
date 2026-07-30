@@ -27,8 +27,10 @@ paginationSize = 25
 theme = 'auto'
 colorPalette = 'earthy'
 hideHeader = 'true'
-# The path to your favicon
-favicon = "images/favicon.png"
+# Favicons are served from the site root (static/favicon.ico,
+# static/favicon-32x32.png, static/apple-touch-icon.png, etc.). The typo theme
+# resolves them relative to faviconPath, which defaults to the root.
+faviconPath = ""
 listdateFormat = "2 Jan 2006"
 # Collection to display on home
 homeCollectionTitle = 'Posts'
