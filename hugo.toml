@@ -1,6 +1,6 @@
 # Basic config
 baseURL = "https://blog.rsinha.org"
-languageCode = 'en-gb'
+locale = 'en-gb'
 theme = "typo"
 title='Ritesh is Rambling'
 copyright = "Ritesh Sinha"
